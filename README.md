@@ -3,44 +3,44 @@
 Up to date (2016-08-14), there are `368` Algorithms / `13` Database / `4` Shell questions on [LeetCode Online Judge](https://leetcode.com/). 
 The number of questions is increasing recently.
 Here is the classification of all `385` questions.
-For more questions and solutions, you can see my [LintCode](https://github.com/kamyu104/LintCode) repository.
+For more questions and solutions, you can see my [LintCode](https://github.com/kinshuk4/LintCode) repository.
 I'll keep updating for full summary and better solutions. Stay tuned for updates.
 (Notes: "📖" means you need to subscribe to [LeetCode premium membership](https://leetcode.com/subscribe/) for the access to premium questions.)
 
 ## Algorithms
 
-* [Bit Manipulation](https://github.com/kamyu104/LeetCode#bit-manipulation)
-* [Array](https://github.com/kamyu104/LeetCode#array)
-* [String](https://github.com/kamyu104/LeetCode#string)
-* [Linked List](https://github.com/kamyu104/LeetCode#linked-list)
-* [Stack](https://github.com/kamyu104/LeetCode#stack)
-* [Queue](https://github.com/kamyu104/LeetCode#queue)
-* [Heap](https://github.com/kamyu104/LeetCode#heap)
-* [Tree](https://github.com/kamyu104/LeetCode#tree)
-* [Hash Table](https://github.com/kamyu104/LeetCode#hash-table)
-* [Data Structure](https://github.com/kamyu104/LeetCode#data-structure)
-* [Math](https://github.com/kamyu104/LeetCode#math)
-* [Two Pointers](https://github.com/kamyu104/LeetCode#two-pointers)
-* [Sort](https://github.com/kamyu104/LeetCode#sort)
-* [Recursion](https://github.com/kamyu104/LeetCode#recursion)
-* [Binary Search](https://github.com/kamyu104/LeetCode#binary-search)
-* [Binary Search Tree](https://github.com/kamyu104/LeetCode#binary-search-tree)
-* [Breadth-First Search](https://github.com/kamyu104/LeetCode#breadth-first-search)
-* [Depth-First Search](https://github.com/kamyu104/LeetCode#depth-first-search)
-* [Backtracking](https://github.com/kamyu104/LeetCode#backtracking)
-* [Dynamic Programming](https://github.com/kamyu104/LeetCode#dynamic-programming)
-* [Greedy](https://github.com/kamyu104/LeetCode#greedy)
-* [Design](https://github.com/kamyu104/LeetCode#design)
+* [Bit Manipulation](https://github.com/kinshuk4/LeetCode#bit-manipulation)
+* [Array](https://github.com/kinshuk4/LeetCode#array)
+* [String](https://github.com/kinshuk4/LeetCode#string)
+* [Linked List](https://github.com/kinshuk4/LeetCode#linked-list)
+* [Stack](https://github.com/kinshuk4/LeetCode#stack)
+* [Queue](https://github.com/kinshuk4/LeetCode#queue)
+* [Heap](https://github.com/kinshuk4/LeetCode#heap)
+* [Tree](https://github.com/kinshuk4/LeetCode#tree)
+* [Hash Table](https://github.com/kinshuk4/LeetCode#hash-table)
+* [Data Structure](https://github.com/kinshuk4/LeetCode#data-structure)
+* [Math](https://github.com/kinshuk4/LeetCode#math)
+* [Two Pointers](https://github.com/kinshuk4/LeetCode#two-pointers)
+* [Sort](https://github.com/kinshuk4/LeetCode#sort)
+* [Recursion](https://github.com/kinshuk4/LeetCode#recursion)
+* [Binary Search](https://github.com/kinshuk4/LeetCode#binary-search)
+* [Binary Search Tree](https://github.com/kinshuk4/LeetCode#binary-search-tree)
+* [Breadth-First Search](https://github.com/kinshuk4/LeetCode#breadth-first-search)
+* [Depth-First Search](https://github.com/kinshuk4/LeetCode#depth-first-search)
+* [Backtracking](https://github.com/kinshuk4/LeetCode#backtracking)
+* [Dynamic Programming](https://github.com/kinshuk4/LeetCode#dynamic-programming)
+* [Greedy](https://github.com/kinshuk4/LeetCode#greedy)
+* [Design](https://github.com/kinshuk4/LeetCode#design)
 
 
 ## Database
 
-* [SQL](https://github.com/kamyu104/LeetCode#sql)
+* [SQL](https://github.com/kinshuk4/LeetCode#sql)
 
 
 ## Shell
 
-* [Shell Script](https://github.com/kamyu104/LeetCode#shell-script)
+* [Shell Script](https://github.com/kinshuk4/LeetCode#shell-script)
 
 ## Bit Manipulation
   #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Tag          | Note
