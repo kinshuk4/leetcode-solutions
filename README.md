@@ -9,38 +9,38 @@ I'll keep updating for full summary and better solutions. Stay tuned for updates
 
 ## Algorithms
 
-* [Bit Manipulation](https://github.com/kinshuk4/LeetCode#bit-manipulation)
-* [Array](https://github.com/kinshuk4/LeetCode#array)
-* [String](https://github.com/kinshuk4/LeetCode#string)
-* [Linked List](https://github.com/kinshuk4/LeetCode#linked-list)
-* [Stack](https://github.com/kinshuk4/LeetCode#stack)
-* [Queue](https://github.com/kinshuk4/LeetCode#queue)
-* [Heap](https://github.com/kinshuk4/LeetCode#heap)
-* [Tree](https://github.com/kinshuk4/LeetCode#tree)
-* [Hash Table](https://github.com/kinshuk4/LeetCode#hash-table)
-* [Data Structure](https://github.com/kinshuk4/LeetCode#data-structure)
-* [Math](https://github.com/kinshuk4/LeetCode#math)
-* [Two Pointers](https://github.com/kinshuk4/LeetCode#two-pointers)
-* [Sort](https://github.com/kinshuk4/LeetCode#sort)
-* [Recursion](https://github.com/kinshuk4/LeetCode#recursion)
-* [Binary Search](https://github.com/kinshuk4/LeetCode#binary-search)
-* [Binary Search Tree](https://github.com/kinshuk4/LeetCode#binary-search-tree)
-* [Breadth-First Search](https://github.com/kinshuk4/LeetCode#breadth-first-search)
-* [Depth-First Search](https://github.com/kinshuk4/LeetCode#depth-first-search)
-* [Backtracking](https://github.com/kinshuk4/LeetCode#backtracking)
-* [Dynamic Programming](https://github.com/kinshuk4/LeetCode#dynamic-programming)
-* [Greedy](https://github.com/kinshuk4/LeetCode#greedy)
-* [Design](https://github.com/kinshuk4/LeetCode#design)
+* [Bit Manipulation](https://github.com/kinshuk4/leetcode-solutions#bit-manipulation)
+* [Array](https://github.com/kinshuk4/leetcode-solutions#array)
+* [String](https://github.com/kinshuk4/leetcode-solutions#string)
+* [Linked List](https://github.com/kinshuk4/leetcode-solutions#linked-list)
+* [Stack](https://github.com/kinshuk4/leetcode-solutions#stack)
+* [Queue](https://github.com/kinshuk4/leetcode-solutions#queue)
+* [Heap](https://github.com/kinshuk4/leetcode-solutions#heap)
+* [Tree](https://github.com/kinshuk4/leetcode-solutions#tree)
+* [Hash Table](https://github.com/kinshuk4/leetcode-solutions#hash-table)
+* [Data Structure](https://github.com/kinshuk4/leetcode-solutions#data-structure)
+* [Math](https://github.com/kinshuk4/leetcode-solutions#math)
+* [Two Pointers](https://github.com/kinshuk4/leetcode-solutions#two-pointers)
+* [Sort](https://github.com/kinshuk4/leetcode-solutions#sort)
+* [Recursion](https://github.com/kinshuk4/leetcode-solutions#recursion)
+* [Binary Search](https://github.com/kinshuk4/leetcode-solutions#binary-search)
+* [Binary Search Tree](https://github.com/kinshuk4/leetcode-solutions#binary-search-tree)
+* [Breadth-First Search](https://github.com/kinshuk4/leetcode-solutions#breadth-first-search)
+* [Depth-First Search](https://github.com/kinshuk4/leetcode-solutions#depth-first-search)
+* [Backtracking](https://github.com/kinshuk4/leetcode-solutions#backtracking)
+* [Dynamic Programming](https://github.com/kinshuk4/leetcode-solutions#dynamic-programming)
+* [Greedy](https://github.com/kinshuk4/leetcode-solutions#greedy)
+* [Design](https://github.com/kinshuk4/leetcode-solutions#design)
 
 
 ## Database
 
-* [SQL](https://github.com/kinshuk4/LeetCode#sql)
+* [SQL](https://github.com/kinshuk4/leetcode-solutions#sql)
 
 
 ## Shell
 
-* [Shell Script](https://github.com/kinshuk4/LeetCode#shell-script)
+* [Shell Script](https://github.com/kinshuk4/leetcode-solutions#shell-script)
 
 ## Bit Manipulation
   #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Tag          | Note
