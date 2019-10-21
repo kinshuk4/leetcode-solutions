@@ -3,7 +3,7 @@
 Up to date (2016-08-14), there are `368` Algorithms / `13` Database / `4` Shell questions on [LeetCode Online Judge](https://leetcode.com/). 
 The number of questions is increasing recently.
 Here is the classification of all `385` questions.
-For more questions and solutions, you can see my [LintCode](https://github.com/kamyu104/LintCode) repository.
+For more questions and solutions, you can see my [LintCode](https://github.com/kinshuk4/lintcode-solutions) repository.
 I'll keep updating for full summary and better solutions. Stay tuned for updates.
 (Notes: "📖" means you need to subscribe to [LeetCode premium membership](https://leetcode.com/subscribe/) for the access to premium questions.)
 
