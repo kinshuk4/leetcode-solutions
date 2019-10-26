@@ -1,6 +1,6 @@
 # [LeetCode](https://leetcode.com/problemset/algorithms/) ![Language](https://img.shields.io/badge/language-Python%20%2F%20C++%2011-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md) ![Progress](https://img.shields.io/badge/progress-385%20%2F%20385-ff69b4.svg)
 
-Up to date (2016-08-14), there are `368` Algorithms / `13` Database / `4` Shell questions on [LeetCode Online Judge](https://leetcode.com/). 
+Currently there are `368` Algorithms / `13` Database / `4` Shell questions on [LeetCode Online Judge](https://leetcode.com/). 
 The number of questions is increasing recently.
 Here is the classification of all `385` questions.
 For more questions and solutions, you can see my [LintCode](https://github.com/kinshuk4/lintcode-solutions) repository.
