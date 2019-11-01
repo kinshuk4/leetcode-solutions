@@ -526,5 +526,144 @@ Note: "♥" means you need to subscribe to [LeetCode premium membership](https:/
 194 | [Transpose File](https://leetcode.com/problems/transpose-file/) | [Shell](./Shell/transpose-file.sh) | _O(n^2)_   | _O(n^2)_        | Medium         ||
 195 | [Tenth Line](https://leetcode.com/problems/tenth-line/) | [Shell](./Shell/tenth-line.sh)    | _O(n)_          | _O(1)_          | Easy           ||
 
+## Company wise interview questions
+
+## Google
+
+| Title                                                        | Solution                                                     | Difficulty | Frequency |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ---------- | --------- |
+| [Plus One](https://leetcode.com/problems/plus-one/)          | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Math/PlusOne.swift) | Easy       | ★★★★★★    |
+| [Number of Islands](https://leetcode.com/problems/number-of-islands/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/DFS/NumberofIslands.swift) | Medium     | ★★★★      |
+| [Summary Ranges](https://leetcode.com/problems/summary-ranges/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Array/SummaryRanges.swift) | Medium     | ★★★★      |
+| [Perfect Squares](https://leetcode.com/problems/perfect-squares/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/DP/PerfectSquares.swift) | Medium     | ★★★★      |
+| [Merge Intervals](https://leetcode.com/problems/merge-intervals/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Sort/MergeIntervals.swift) | Hard       | ★★★       |
+| [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Stack/ValidParentheses.swift) | Easy       | ★★★       |
+| [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Math/TrappingRainWater.swift) | Hard       | ★★        |
+| [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/LinkedList/MergeKSortedLists.swift) | Hard       | ★★        |
+| [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Array/LongestConsecutiveSequence.swift) | Hard       | ★★        |
+| [Find Peak Element](https://leetcode.com/problems/find-peak-element/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Search/FindPeakElement.swift) | Medium     | ★★        |
+| [Power of Two](https://leetcode.com/problems/power-of-two/)  | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Math/PowerTwo.swift) | Easy       | ★★        |
+| [Spiral Matrix](https://leetcode.com/problems/spiral-matrix/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Array/SpiralMatrix.swift) | Medium     | ★★        |
+| [Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Array/SlidingWindowMaximum.swift) | Hard       | ★★        |
+| [Pow(x, n)](https://leetcode.com/problems/isomorphic-strings/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Math/Pow.swift) | Medium     | ★★        |
+| [Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/DFS/LetterCombinationsPhoneNumber.swift) | Medium     | ★★        |
+| [Heaters](https://leetcode.com/problems/heaters/)            | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Array/Heaters.swift) | Easy       | ★         |
+
+## Facebook
+
+| Title                                                        | Solution                                                     | Difficulty | Frequency |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ---------- | --------- |
+| [3Sum](https://leetcode.com/problems/3sum/)                  | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Array/ThreeSum.swift) | Medium     | ★★★★★★    |
+| [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/String/ValidPalindrome.swift) | Easy       | ★★★★★★    |
+| [Valid Palindrome II](https://leetcode.com/problems/valid-palindrome-ii/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/String/ValidPalindromeII.swift) | Easy       | ★★★★★★    |
+| [Move Zeroes](https://leetcode.com/problems/move-zeroes/)    | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Array/MoveZeroes.swift) | Easy       | ★★★★★★    |
+| [Remove Invalid Parentheses](https://leetcode.com/problems/remove-invalid-parentheses/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/DFS/RemoveInvalidParentheses.swift) | Hard       | ★★★★★★    |
+| [Add Binary](https://leetcode.com/problems/add-binary/)      | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Math/AddBinary.swift) | Easy       | ★★★★★     |
+| [Two Sum](https://leetcode.com/problems/two-sum/)            | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Array/TwoSum.swift) | Easy       | ★★★★★     |
+| [Bnary Tree Paths](https://leetcode.com/problems/binary-tree-paths/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Tree/BnaryTreePaths.swift) | Easy       | ★★★★      |
+| [Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/DFS/LetterCombinationsPhoneNumber.swift) | Medium     | ★★★★      |
+| [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/LinkedList/MergeKSortedLists.swift) | Hard       | ★★★★      |
+| [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/LinkedList/ReverseLinkedList.swift) | Easy       | ★★★       |
+| [Merge Intervals](https://leetcode.com/problems/merge-intervals/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Sort/MergeIntervals.swift) | Hard       | ★★★       |
+| [Number of Islands](https://leetcode.com/problems/number-of-islands/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/DFS/NumberofIslands.swift) | Medium     | ★★★       |
+| [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/LinkedList/ReverseLinkedList.swift) | Easy       | ★★★       |
+| [Expression Add Operators](https://leetcode.com/problems/expression-add-operators/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/DFS/ExpressionAddOperators.swift) | Hard       | ★★★       |
+| [Subsets](https://leetcode.com/problems/subsets/)            | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/DFS/Subsets.swift) | Medium     | ★★★       |
+| [Sort Colors](https://leetcode.com/problems/sort-colors/)    | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Sort/SortColors.swift) | Medium     | ★★        |
+
+## Snapchat
+
+| Title                                                        | Solution                                                     | Difficulty | Frequency |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ---------- | --------- |
+| [Game of Life](https://leetcode.com/problems/game-of-life/)  | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Array/GameLife.swift) | Medium     | ★★★★★★    |
+| [Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Sort/MeetingRoomsII.swift) | Medium     | ★★★★★★    |
+| [Valid Sudoku](https://leetcode.com/problems/valid-sudoku/)  | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Array/ValidSudoku.swift) | Easy       | ★★★★★     |
+| [Binary Tree Vertical Order Traversal](https://leetcode.com/problems/binary-tree-vertical-order-traversal/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Tree/BinaryTreeVerticalOrderTraversal.swift) | Medium     | ★★★★      |
+| [Alien Dictionary](https://leetcode.com/problems/alien-dictionary/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Graph/AlienDictionary.swift) | Hard       | ★★★★      |
+| [One Edit Distance](https://leetcode.com/problems/one-edit-distance/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/String/OneEditDistance.swift) | Medium     | ★★★       |
+| [Sudoku Solver](https://leetcode.com/problems/sudoku-solver/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Math/SudokuSolver.swift) | Hard       | ★★★       |
+| [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/LinkedList/ReverseLinkedList.swift) | Easy       | ★★        |
+| [Unique Binary Search Trees](https://leetcode.com/problems/unique-binary-search-trees/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Tree/UniqueBinarySearchTrees.swift) | Medium     | ★★        |
+| [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/String/MinimumWindowSubstring.swift) | Hard       | ★★        |
+| [Remove K Digits](https://leetcode.com/problems/remove-k-digits/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Stack/RemoveKDigits.swift) | Medium     | ★         |
+| [Ternary Expression Parser](https://leetcode.com/problems/ternary-expression-parser/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Stack/TernaryExpressionParser.swift) | Medium     | ★         |
+
+## Uber
+
+| Title                                                        | Solution                                                     | Difficulty | Frequency |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ---------- | --------- |
+| [Valid Sudoku](https://leetcode.com/problems/valid-sudoku/)  | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Array/ValidSudoku.swift) | Easy       | ★★★★      |
+| [Spiral Matrix](https://leetcode.com/problems/spiral-matrix/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Array/SpiralMatrix.swift) | Medium     | ★★★★      |
+| [Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/DFS/LetterCombinationsPhoneNumber.swift) | Medium     | ★★★★      |
+| [Group Anagrams](https://leetcode.com/problems/anagrams/)    | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/String/GroupAnagrams.swift) | Medium     | ★★★★      |
+| [Word Pattern](https://leetcode.com/problems/word-pattern/)  | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/String/WordPattern.swift) | Easy       | ★★★       |
+| [Roman to Integer](https://leetcode.com/problems/roman-to-integer/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Math/RomanToInteger.swift) | Easy       | ★★★       |
+| [Combination Sum](https://leetcode.com/problems/combination-sum/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/DFS/CombinationSum.swift) | Medium     | ★★        |
+
+## Airbnb
+
+| Title                                                        | Solution                                                     | Difficulty | Frequency |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ---------- | --------- |
+| [Two Sum](https://leetcode.com/problems/two-sum/)            | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Array/TwoSum.swift) | Easy       | ★★★★★     |
+| [Text Justification](https://leetcode.com/problems/text-justification/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/String/TextJustification.swift) | Hard       | ★★★★      |
+| [House Robber](https://leetcode.com/problems/house-robber/)  | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/DP/HouseRobber.swift) | Easy       | ★★        |
+| [Single Number](https://leetcode.com/problems/single-number/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Math/SingleNumber.swift) | Medium     | ★★        |
+| [Word Search II](https://leetcode.com/problems/word-search-ii/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/DFS/WordSearchII.swift) | Hard       | ★★        |
+| [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Math/AddTwoNumbers.swift) | Medium     | ★★        |
+
+## LinkedIn
+
+| Title                                                        | Solution                                                     | Difficulty | Frequency |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ---------- | --------- |
+| [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/DP/MaximumSubarray.swift) | Medium     | ★★★★★★    |
+| [Pow(x, n)](https://leetcode.com/problems/isomorphic-strings/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Math/Pow.swift) | Medium     | ★★★★★★    |
+| [Merge Intervals](https://leetcode.com/problems/merge-intervals/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Sort/MergeIntervals.swift) | Hard       | ★★★★★★    |
+| [Isomorphic Strings](https://leetcode.com/problems/isomorphic-strings/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/String/IsomorphicStrings.swift) | Easy       | ★★★★★★    |
+| [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Search/SearchInRotatedSortedArray.swift) | Hard       | ★★★★★     |
+| [Search for a Range](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Search/SearchForARange.swift) | Medium     | ★★★★★     |
+| [Two Sum](https://leetcode.com/problems/two-sum/)            | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Array/TwoSum.swift) | Easy       | ★★★★      |
+| [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Tree/BinaryTreeLevelOrderTraversal.swift) | Easy       | ★★★★      |
+| [Evaluate Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Stack/EvaluateReversePolishNotation.swift) | Medium     | ★★★       |
+| [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/DP/MaximumProductSubarray.swift) | Medium     | ★★★       |
+| [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Array/ProductExceptSelf.swift) | Medium     | ★★★       |
+| [Symmetric Tree](https://leetcode.com/problems/symmetric-tree/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Tree/SymmetricTree.swift) | Easy       | ★★        |
+
+## Amazon
+
+| Title                                                        | Solution                                                     | Difficulty | Frequency |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ---------- | --------- |
+| [Two Sum](https://leetcode.com/problems/two-sum/)            | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Array/TwoSum.swift) | Easy       | ★★★★★★    |
+| [Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/DP/MinCostClimbingStairs.swift) | Easy       | ★★★★      |
+| [Number of Islands](https://leetcode.com/problems/number-of-islands/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/DFS/NumberofIslands.swift) | Medium     | ★★        |
+| [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Math/AddTwoNumbers.swift) | Medium     | ★★        |
+| [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/LinkedList/ReverseLinkedList.swift) | Easy       | ★★        |
+| [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Stack/ValidParentheses.swift) | Easy       | ★★        |
+| [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/DP/LongestPalindromicSubstring.swift) | Medium     | ★★        |
+| [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Math/TrappingRainWater.swift) | Hard       | ★★        |
+| [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/String/LongestSubstringWithoutRepeatingCharacters.swift) | Medium     | ★★        |
+| [Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/DFS/LetterCombinationsPhoneNumber.swift) | Medium     | ★★        |
+| [Valid Anagram](https://leetcode.com/problems/valid-anagram/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/String/ValidAnagram.swift) | Easy       | ★★        |
+| [Rotate Image](https://leetcode.com/problems/rotate-image/)  | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Array/RotateImage.swift) | Medium     | ★★        |
+| [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/DP/BestTimeBuySellStock.swift) | Easy       | ★★        |
+| [3Sum](https://leetcode.com/problems/3sum/)                  | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Array/ThreeSum.swift) | Medium     | ★★        |
+| [Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Array/SlidingWindowMaximum.swift) | Hard       | ★★        |
+
+## Microsoft
+
+| Title                                                        | Solution                                                     | Difficulty | Frequency |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ---------- | --------- |
+| [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/LinkedList/ReverseLinkedList.swift) | Easy       | ★★★★★★    |
+| [Two Sum](https://leetcode.com/problems/two-sum/)            | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Array/TwoSum.swift) | Easy       | ★★★★★     |
+| [String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Math/Atoi.swift) | Easy       | ★★★★      |
+| [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Math/AddTwoNumbers.swift) | Medium     | ★★★★      |
+| [Excel Sheet Column Number](https://leetcode.com/problems/excel-sheet-column-number/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Math/ExcelSheetColumnNumber.swift) | Easy       | ★★★★      |
+| [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/Tree/ValidateBinarySearchTree.swift) | Medium     | ★★★       |
+| [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) | [Swift](https://github.com/soapyigu/LeetCode-Swift/blob/master/LinkedList/MergeTwoSortedLists.swift) | Easy       | ★★★       |
+
+## 
+
+
+
 **Source**
 https://github.com/CodEnFisH/LeetCode-1
+https://github.com/soapyigu/LeetCode-Swift
