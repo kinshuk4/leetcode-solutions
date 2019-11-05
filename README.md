@@ -678,3 +678,7 @@ Note: "♥" means you need to subscribe to [LeetCode premium membership](https:/
 **Source**
 https://github.com/CodEnFisH/LeetCode-1
 https://github.com/kinshuk4/leetcode-solutions
+https://github.com/soapyigu/LeetCode-Swift
+https://github.com/grandyang/leetcode
+https://github.com/qiyuangong/leetcode
+https://github.com/haoel/leetcode
