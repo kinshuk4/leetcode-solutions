@@ -4,8 +4,6 @@ import java.math.BigInteger;
 import java.util.*;
 
 /**
- *
- *
  * <p>For a non-negative integer X, the com.vaani.leetcode.array-form of X is an com.vaani.leetcode.array of its digits in left to right
  * order. For example, if X = 1231, then the com.vaani.leetcode.array form is [1,2,3,1].
  *
@@ -29,22 +27,22 @@ import java.util.*;
  * <p>Solution: O(N) use BigInteger to add long numbers
  */
 public class AddToArrayFormOfInteger {
-  public static void main(String[] args) {
-    //
-  }
+    public static void main(String[] args) {
+        //
+    }
 
-  public List<Integer> addToArrayForm(int[] A, int K) {
-    StringBuilder sb = new StringBuilder();
-    for (int a : A) {
-      sb.append(a);
+    public List<Integer> addToArrayForm(int[] A, int K) {
+        StringBuilder sb = new StringBuilder();
+        for (int a : A) {
+            sb.append(a);
+        }
+        BigInteger big = new BigInteger(sb.toString());
+        BigInteger result = big.add(BigInteger.valueOf(K));
+        String resultStr = result.toString();
+        List<Integer> list = new ArrayList<>();
+        for (char a : resultStr.toCharArray()) {
+            list.add(Integer.parseInt(String.valueOf(a)));
+        }
+        return list;
     }
-    BigInteger big = new BigInteger(sb.toString());
-    BigInteger result = big.add(BigInteger.valueOf(K));
-    String resultStr = result.toString();
-    List<Integer> list = new ArrayList<>();
-    for (char a : resultStr.toCharArray()) {
-      list.add(Integer.parseInt(String.valueOf(a)));
-    }
-    return list;
-  }
 }

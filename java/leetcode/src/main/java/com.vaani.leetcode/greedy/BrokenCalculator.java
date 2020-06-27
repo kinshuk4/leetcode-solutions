@@ -3,7 +3,7 @@ package com.vaani.leetcode.greedy;
 import java.util.*;
 
 /**
- *  On a broken calculator that has a number showing on
+ * On a broken calculator that has a number showing on
  * its display, we can perform two operations:
  *
  * <p>Double: Multiply the number on the display by 2, or; Decrement: Subtract 1 from the number on
@@ -34,27 +34,27 @@ import java.util.*;
  * (even number) + 1 (to move backwards)
  */
 public class BrokenCalculator {
-  public static void main(String[] args) {
-    //
-  }
-
-  public int brokenCalc(int X, int Y) {
-    if (X == Y) return 0;
-    else if (Y < X) return X - Y;
-    else {
-      int count = 0;
-      while (Y > X) {
-        if (Y % 2 == 0) {
-          Y /= 2;
-          count++;
-        } else {
-          Y += 1;
-          Y /= 2;
-          count += 2;
-        }
-      }
-      if (X == Y) return count;
-      else return count + (X - Y);
+    public static void main(String[] args) {
+        //
     }
-  }
+
+    public int brokenCalc(int X, int Y) {
+        if (X == Y) return 0;
+        else if (Y < X) return X - Y;
+        else {
+            int count = 0;
+            while (Y > X) {
+                if (Y % 2 == 0) {
+                    Y /= 2;
+                    count++;
+                } else {
+                    Y += 1;
+                    Y /= 2;
+                    count += 2;
+                }
+            }
+            if (X == Y) return count;
+            else return count + (X - Y);
+        }
+    }
 }

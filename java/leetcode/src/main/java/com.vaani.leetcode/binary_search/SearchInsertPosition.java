@@ -10,21 +10,21 @@ package com.vaani.leetcode.binary_search;
  * <p>Here are few examples. [1,3,5,6], 5 → 2 [1,3,5,6], 2 → 1 [1,3,5,6], 7 → 4 [1,3,5,6], 0 → 0
  */
 public class SearchInsertPosition {
-  public static void main(String[] args) throws Exception {
-    int[] A = {1, 3, 5, 6};
-    new SearchInsertPosition().searchInsert(A, 5);
-  }
-
-  public int searchInsert(int[] nums, int target) {
-    int pos = nums.length;
-    int s = 0, e = nums.length - 1;
-    while (s <= e) {
-      int m = s + (e - s) / 2;
-      if (nums[m] >= target) {
-        pos = m;
-        e = m - 1;
-      } else s = m + 1;
+    public static void main(String[] args) throws Exception {
+        int[] A = {1, 3, 5, 6};
+        new SearchInsertPosition().searchInsert(A, 5);
     }
-    return pos;
-  }
+
+    public int searchInsert(int[] nums, int target) {
+        int pos = nums.length;
+        int s = 0, e = nums.length - 1;
+        while (s <= e) {
+            int m = s + (e - s) / 2;
+            if (nums[m] >= target) {
+                pos = m;
+                e = m - 1;
+            } else s = m + 1;
+        }
+        return pos;
+    }
 }

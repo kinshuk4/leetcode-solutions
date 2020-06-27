@@ -22,33 +22,33 @@ import java.util.*;
  */
 public class LongestWordInDictonary {
 
-  /**
-   * Main method
-   *
-   * @param args
-   */
-  public static void main(String[] args) throws Exception {
-    List<String> dict = Arrays.asList("ale", "apple", "monkey", "plea");
-    System.out.println(new LongestWordInDictonary().findLongestWord("abpcplea", dict));
-  }
-
-  public String findLongestWord(String s, List<String> d) {
-    Collections.sort(
-        d, Comparator.comparing(String::length).reversed().thenComparing(String::compareTo));
-    for (String str : d) {
-      if (str.length() <= s.length()) {
-        int i = 0, j = 0;
-        for (int l1 = s.length(), l2 = str.length(); i < l1 && j < l2; ) {
-          if (s.charAt(i) == str.charAt(j)) {
-            i++;
-            j++;
-          } else {
-            i++;
-          }
-        }
-        if (j >= str.length()) return str;
-      }
+    /**
+     * Main method
+     *
+     * @param args
+     */
+    public static void main(String[] args) throws Exception {
+        List<String> dict = Arrays.asList("ale", "apple", "monkey", "plea");
+        System.out.println(new LongestWordInDictonary().findLongestWord("abpcplea", dict));
     }
-    return "";
-  }
+
+    public String findLongestWord(String s, List<String> d) {
+        Collections.sort(
+                d, Comparator.comparing(String::length).reversed().thenComparing(String::compareTo));
+        for (String str : d) {
+            if (str.length() <= s.length()) {
+                int i = 0, j = 0;
+                for (int l1 = s.length(), l2 = str.length(); i < l1 && j < l2; ) {
+                    if (s.charAt(i) == str.charAt(j)) {
+                        i++;
+                        j++;
+                    } else {
+                        i++;
+                    }
+                }
+                if (j >= str.length()) return str;
+            }
+        }
+        return "";
+    }
 }

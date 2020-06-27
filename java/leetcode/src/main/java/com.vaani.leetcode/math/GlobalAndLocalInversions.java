@@ -27,24 +27,25 @@ package com.vaani.leetcode.math;
  * < max value return false
  */
 public class GlobalAndLocalInversions {
-  /**
-   * Main method
-   *
-   * @param args
-   * @throws Exception
-   */
-  public static void main(String[] args) throws Exception {}
-
-  public boolean isIdealPermutation(int[] A) {
-    if (A.length == 0 || A.length == 1) return true;
-    int max = Integer.MIN_VALUE;
-    for (int i = 1; i < A.length; i++) {
-      if (A[i] < max) {
-        return false;
-      } else {
-        max = Math.max(max, A[i - 1]);
-      }
+    /**
+     * Main method
+     *
+     * @param args
+     * @throws Exception
+     */
+    public static void main(String[] args) throws Exception {
     }
-    return true;
-  }
+
+    public boolean isIdealPermutation(int[] A) {
+        if (A.length == 0 || A.length == 1) return true;
+        int max = Integer.MIN_VALUE;
+        for (int i = 1; i < A.length; i++) {
+            if (A[i] < max) {
+                return false;
+            } else {
+                max = Math.max(max, A[i - 1]);
+            }
+        }
+        return true;
+    }
 }

@@ -16,41 +16,41 @@ import java.util.*;
  * list, push left and right node to com.vaani.leetcode.stack. Reverse the result list and return this as the answer.
  */
 public class BinaryTreePostorderTraversal {
-  public static class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
+    public static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
 
-    TreeNode(int x) {
-      val = x;
+        TreeNode(int x) {
+            val = x;
+        }
     }
-  }
 
-  public static void main(String[] args) throws Exception {
-    TreeNode root = new TreeNode(1);
-    root.right = new TreeNode(2);
-    root.right.left = new TreeNode(3);
-    List<Integer> result = new BinaryTreePostorderTraversal().postorderTraversal(root);
-    result.forEach(System.out::println);
-  }
+    public static void main(String[] args) throws Exception {
+        TreeNode root = new TreeNode(1);
+        root.right = new TreeNode(2);
+        root.right.left = new TreeNode(3);
+        List<Integer> result = new BinaryTreePostorderTraversal().postorderTraversal(root);
+        result.forEach(System.out::println);
+    }
 
-  public List<Integer> postorderTraversal(TreeNode root) {
-    Stack<TreeNode> stack = new Stack<>();
-    List<Integer> result = new ArrayList<>();
-    if (root != null) {
-      stack.push(root);
+    public List<Integer> postorderTraversal(TreeNode root) {
+        Stack<TreeNode> stack = new Stack<>();
+        List<Integer> result = new ArrayList<>();
+        if (root != null) {
+            stack.push(root);
+        }
+        while (!stack.isEmpty()) {
+            TreeNode node = stack.pop();
+            result.add(node.val);
+            if (node.left != null) {
+                stack.push(node.left);
+            }
+            if (node.right != null) {
+                stack.push(node.right);
+            }
+        }
+        Collections.reverse(result);
+        return result;
     }
-    while (!stack.isEmpty()) {
-      TreeNode node = stack.pop();
-      result.add(node.val);
-      if (node.left != null) {
-        stack.push(node.left);
-      }
-      if (node.right != null) {
-        stack.push(node.right);
-      }
-    }
-    Collections.reverse(result);
-    return result;
-  }
 }

@@ -13,25 +13,26 @@ package com.vaani.leetcode.tree;
  * can be a descendant of itself according to the LCA definition.
  */
 public class LowestCommonAncestorBST {
-  class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
+    class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
 
-    TreeNode(int x) {
-      val = x;
+        TreeNode(int x) {
+            val = x;
+        }
     }
-  }
 
-  public static void main(String[] args) throws Exception {}
+    public static void main(String[] args) throws Exception {
+    }
 
-  private TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-    if (root == null) return null;
+    private TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        if (root == null) return null;
 
-    if (p.val == root.val || q.val == root.val) return root;
-    else if ((p.val < root.val && q.val > root.val) || (q.val < root.val && p.val > root.val))
-      return root;
-    else if (p.val < root.val && q.val < root.val) return lowestCommonAncestor(root.left, p, q);
-    else return lowestCommonAncestor(root.right, p, q);
-  }
+        if (p.val == root.val || q.val == root.val) return root;
+        else if ((p.val < root.val && q.val > root.val) || (q.val < root.val && p.val > root.val))
+            return root;
+        else if (p.val < root.val && q.val < root.val) return lowestCommonAncestor(root.left, p, q);
+        else return lowestCommonAncestor(root.right, p, q);
+    }
 }

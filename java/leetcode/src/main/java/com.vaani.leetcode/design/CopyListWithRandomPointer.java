@@ -8,25 +8,25 @@ package com.vaani.leetcode.design;
  */
 public class CopyListWithRandomPointer {
 
-  static class RandomListNode {
-    int label;
-    RandomListNode next, random;
+    static class RandomListNode {
+        int label;
+        RandomListNode next, random;
 
-    RandomListNode(int x) {
-      this.label = x;
+        RandomListNode(int x) {
+            this.label = x;
+        }
     }
-  }
 
-  /**
-   * Main method
-   *
-   * @param args
-   * @throws Exception
-   */
-  public static void main(String[] args) throws Exception {
-    RandomListNode one = new RandomListNode(1);
-    one.next = null;
-    one.random = one;
+    /**
+     * Main method
+     *
+     * @param args
+     * @throws Exception
+     */
+    public static void main(String[] args) throws Exception {
+        RandomListNode one = new RandomListNode(1);
+        one.next = null;
+        one.random = one;
     /*RandomListNode two = new RandomListNode(2);
     RandomListNode three = new RandomListNode(3);
     RandomListNode four = new RandomListNode(4);
@@ -40,37 +40,37 @@ public class CopyListWithRandomPointer {
     three.random = null;
     four.random = two;
     five.random = four;*/
-    RandomListNode result = new CopyListWithRandomPointer().copyRandomList(one);
-    System.out.println();
-  }
-
-  private RandomListNode copyRandomList(RandomListNode head) {
-    if (head == null) return null;
-    RandomListNode ite = head, next;
-    while (ite != null) {
-      next = ite.next;
-      RandomListNode node = new RandomListNode(ite.label);
-      ite.next = node;
-      node.next = next;
-      ite = next;
+        RandomListNode result = new CopyListWithRandomPointer().copyRandomList(one);
+        System.out.println();
     }
 
-    ite = head;
-    while (ite != null) {
-      if (ite.random != null) ite.next.random = ite.random.next;
-      ite = ite.next.next;
-    }
+    private RandomListNode copyRandomList(RandomListNode head) {
+        if (head == null) return null;
+        RandomListNode ite = head, next;
+        while (ite != null) {
+            next = ite.next;
+            RandomListNode node = new RandomListNode(ite.label);
+            ite.next = node;
+            node.next = next;
+            ite = next;
+        }
 
-    ite = head;
-    RandomListNode copyIte = ite.next, copyHead = ite.next;
-    while (copyIte.next != null) {
-      ite.next = copyIte.next;
-      copyIte.next = ite.next.next;
-      copyIte = copyIte.next;
-      ite = ite.next;
-    }
-    ite.next = null;
+        ite = head;
+        while (ite != null) {
+            if (ite.random != null) ite.next.random = ite.random.next;
+            ite = ite.next.next;
+        }
 
-    return copyHead;
-  }
+        ite = head;
+        RandomListNode copyIte = ite.next, copyHead = ite.next;
+        while (copyIte.next != null) {
+            ite.next = copyIte.next;
+            copyIte.next = ite.next.next;
+            copyIte = copyIte.next;
+            ite = ite.next;
+        }
+        ite.next = null;
+
+        return copyHead;
+    }
 }

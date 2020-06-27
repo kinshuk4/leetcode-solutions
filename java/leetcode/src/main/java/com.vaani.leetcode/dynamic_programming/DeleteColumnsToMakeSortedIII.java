@@ -37,38 +37,38 @@ package com.vaani.leetcode.dynamic_programming;
  * <p>1 <= A.length <= 100 1 <= A[i].length <= 100
  */
 public class DeleteColumnsToMakeSortedIII {
-  public static void main(String[] args) {
-    String[] A = {"ghi", "def", "abc"};
-    System.out.println(new DeleteColumnsToMakeSortedIII().minDeletionSize(A));
-  }
-
-  int[] DP;
-
-  public int minDeletionSize(String[] A) {
-    DP = new int[A[0].length()];
-    int max = 0;
-    for (int i = 0; i < A[0].length(); i++) {
-      max = Math.max(max, dp(A, i));
+    public static void main(String[] args) {
+        String[] A = {"ghi", "def", "abc"};
+        System.out.println(new DeleteColumnsToMakeSortedIII().minDeletionSize(A));
     }
-    return A[0].length() - max;
-  }
 
-  private int dp(String[] A, int i) {
-    if (i >= A[0].length()) return 0;
-    else if (DP[i] != 0) return DP[i];
-    DP[i] = 1;
-    for (int j = i + 1; j < A[0].length(); j++) {
-      boolean possible = true;
-      for (String str : A) {
-        if (str.charAt(j) < str.charAt(i)) {
-          possible = false;
-          break;
+    int[] DP;
+
+    public int minDeletionSize(String[] A) {
+        DP = new int[A[0].length()];
+        int max = 0;
+        for (int i = 0; i < A[0].length(); i++) {
+            max = Math.max(max, dp(A, i));
         }
-      }
-      if (possible) {
-        DP[i] = Math.max(DP[i], dp(A, j) + 1);
-      }
+        return A[0].length() - max;
     }
-    return DP[i];
-  }
+
+    private int dp(String[] A, int i) {
+        if (i >= A[0].length()) return 0;
+        else if (DP[i] != 0) return DP[i];
+        DP[i] = 1;
+        for (int j = i + 1; j < A[0].length(); j++) {
+            boolean possible = true;
+            for (String str : A) {
+                if (str.charAt(j) < str.charAt(i)) {
+                    possible = false;
+                    break;
+                }
+            }
+            if (possible) {
+                DP[i] = Math.max(DP[i], dp(A, j) + 1);
+            }
+        }
+        return DP[i];
+    }
 }

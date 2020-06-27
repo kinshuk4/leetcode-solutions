@@ -31,47 +31,47 @@ import java.util.List;
  * index = 2 is "ab", which is an anagram of "ab".
  */
 public class Anagrams {
-  int[] TC = new int[256];
-  int[] PC = new int[256];
+    int[] TC = new int[256];
+    int[] PC = new int[256];
 
-  /**
-   * Main method
-   *
-   * @param args
-   * @throws Exception
-   */
-  public static void main(String[] args) throws Exception {
-    List<Integer> result = new Anagrams().findAnagrams("abab", "ab");
-    result.forEach(System.out::print);
-  }
-
-  public List<Integer> findAnagrams(String s, String p) {
-    List<Integer> result = new ArrayList<>();
-    int pLen = p.length();
-    if (pLen > s.length()) return result;
-    Arrays.fill(TC, 0);
-    Arrays.fill(PC, 0);
-    for (int i = 0; i < pLen; i++) {
-      TC[s.charAt(i)]++;
-      PC[p.charAt(i)]++;
+    /**
+     * Main method
+     *
+     * @param args
+     * @throws Exception
+     */
+    public static void main(String[] args) throws Exception {
+        List<Integer> result = new Anagrams().findAnagrams("abab", "ab");
+        result.forEach(System.out::print);
     }
 
-    int i = pLen;
-    for (int l = s.length(); i < l; i++) {
-      if (compare()) result.add(i - pLen);
+    public List<Integer> findAnagrams(String s, String p) {
+        List<Integer> result = new ArrayList<>();
+        int pLen = p.length();
+        if (pLen > s.length()) return result;
+        Arrays.fill(TC, 0);
+        Arrays.fill(PC, 0);
+        for (int i = 0; i < pLen; i++) {
+            TC[s.charAt(i)]++;
+            PC[p.charAt(i)]++;
+        }
 
-      TC[s.charAt(i)]++;
-      TC[s.charAt(i - pLen)]--;
+        int i = pLen;
+        for (int l = s.length(); i < l; i++) {
+            if (compare()) result.add(i - pLen);
+
+            TC[s.charAt(i)]++;
+            TC[s.charAt(i - pLen)]--;
+        }
+        if (compare()) result.add(i - pLen);
+
+        return result;
     }
-    if (compare()) result.add(i - pLen);
 
-    return result;
-  }
-
-  private boolean compare() {
-    for (int i = 0; i < 256; i++) {
-      if (TC[i] != PC[i]) return false;
+    private boolean compare() {
+        for (int i = 0; i < 256; i++) {
+            if (TC[i] != PC[i]) return false;
+        }
+        return true;
     }
-    return true;
-  }
 }
