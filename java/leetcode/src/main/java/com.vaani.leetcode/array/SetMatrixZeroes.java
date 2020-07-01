@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Created by pradhang on 3/28/2017. Given a m x n matrix, if an element is 0, set its entire row
+ * 3/28/2017. Given a m x n matrix, if an element is 0, set its entire row
  * and column to 0. Do it in place.
  *
  * <p>click to show follow up.

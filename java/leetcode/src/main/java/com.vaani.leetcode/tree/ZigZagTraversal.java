@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by pradhang on 7/11/2017. Given a binary com.vaani.leetcode.tree, return the zigzag level order traversal of
+ * 7/11/2017. Given a binary com.vaani.leetcode.tree, return the zigzag level order traversal of
  * its nodes' values. (ie, from left to right, then right to left for the next level and alternate
  * between).
  *

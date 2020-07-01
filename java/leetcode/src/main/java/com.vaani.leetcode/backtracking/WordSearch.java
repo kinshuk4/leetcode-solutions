@@ -1,7 +1,7 @@
 package com.vaani.leetcode.backtracking;
 
 /**
- * Created by PRADHANG on 4/13/2017. Given a 2D board and a word, find if the word exists in the
+ * 4/13/2017. Given a 2D board and a word, find if the word exists in the
  * grid.
  *
  * <p>The word can be constructed from letters of sequentially adjacent cell, where "adjacent" cells

@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by Goutham Vidya Pradhan on 7/3/2017. Implement a trie with insert, search, and
+ *  7/3/2017. Implement a trie with insert, search, and
  * startsWith methods.
  *
  * <p>Note: You may assume that all inputs are consist of lowercase letters a-z.

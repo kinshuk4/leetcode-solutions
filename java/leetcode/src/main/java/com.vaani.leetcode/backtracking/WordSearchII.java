@@ -3,7 +3,7 @@ package com.vaani.leetcode.backtracking;
 import java.util.*;
 
 /**
- * Created by pradhang on 7/4/2017. Given a 2D board and a list of words from the dictionary, find
+ * 7/4/2017. Given a 2D board and a list of words from the dictionary, find
  * all words in the board.
  *
  * <p>Each word must be constructed from letters of sequentially adjacent cell, where "adjacent"

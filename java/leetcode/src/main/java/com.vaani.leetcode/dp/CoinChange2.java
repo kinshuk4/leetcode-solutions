@@ -1,5 +1,7 @@
 package com.vaani.leetcode.dp;
 
+import com.vaani.dsa.algo.paradigm.dp.CoinChangeCount;
+
 import java.util.Arrays;
 
 /**
@@ -34,7 +36,8 @@ public class CoinChange2 {
 
 
     public int change(int amount, int[] coins) {
-        return dpUtil(amount, coins);
+        return CoinChangeCount.countRecursive(coins, coins.length - 1, amount);
+        //        return dpUtil(amount, coins);
     }
 
     public int dpUtil(int amount, int[] coins) {
