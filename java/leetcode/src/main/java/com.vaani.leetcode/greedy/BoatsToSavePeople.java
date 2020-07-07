@@ -1,6 +1,8 @@
 package com.vaani.leetcode.greedy;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * 09/05/2019 The i-th person has weight people[i], and each boat

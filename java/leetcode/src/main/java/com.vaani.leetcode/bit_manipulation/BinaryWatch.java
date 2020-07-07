@@ -1,6 +1,7 @@
 package com.vaani.leetcode.bit_manipulation;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 05/11/2019 A binary watch has 4 LEDs on the top which represent

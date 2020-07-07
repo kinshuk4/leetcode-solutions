@@ -1,6 +1,5 @@
 package com.vaani.leetcode.array;
 
-import com.vaani.dsa.ds.utils.ArrayUtils;
 import org.junit.Assert;
 
 /**
@@ -79,10 +78,10 @@ public class ThirdMaximumNumber {
         }
 
         if (count < 3) {
-            return (int)maxArr[0];
+            return (int) maxArr[0];
         }
 
-        return (int)maxArr[2];
+        return (int) maxArr[2];
     }
 
     public int thirdMax2(int[] nums) {

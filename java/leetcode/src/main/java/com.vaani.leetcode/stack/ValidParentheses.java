@@ -1,9 +1,5 @@
 package com.vaani.leetcode.stack;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Stack;
-
 import static com.vaani.dsa.ds.algos.stack.ValidParentheses.isValid3;
 
 /**

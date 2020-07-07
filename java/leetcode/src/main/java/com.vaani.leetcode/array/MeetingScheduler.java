@@ -1,6 +1,9 @@
 package com.vaani.leetcode.array;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.PriorityQueue;
 
 /**
  * 19/11/2019 Given the availability time slots arrays slots1 and

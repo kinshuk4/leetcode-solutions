@@ -27,7 +27,7 @@ public class PrisonCellsAfterNDays {
 
         if (patternFound) {
             N = N % patternSize;
-            if (map.containsKey(N)){
+            if (map.containsKey(N)) {
                 cells = map.get(N);
             }
         }
@@ -46,8 +46,8 @@ public class PrisonCellsAfterNDays {
     }
 
     public static void main(String[] args) {
-        int[] input= {0,1,0,1,1,0,0,1};
+        int[] input = {0, 1, 0, 1, 1, 0, 0, 1};
         PrisonCellsAfterNDays underTest = new PrisonCellsAfterNDays();
-        Assert.assertArrayEquals(new int[]{0,0,1,1,0,0,0,0}, underTest.prisonAfterNDays(input, 7));
+        Assert.assertArrayEquals(new int[]{0, 0, 1, 1, 0, 0, 0, 0}, underTest.prisonAfterNDays(input, 7));
     }
 }

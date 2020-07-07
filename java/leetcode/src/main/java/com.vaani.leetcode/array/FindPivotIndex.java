@@ -40,8 +40,8 @@ public class FindPivotIndex {
         }
 
         // cumulative sum of nums array
-        for(int i = 1; i < nums.length ; i++){
-            nums[i] += nums[i-1] ;
+        for (int i = 1; i < nums.length; i++) {
+            nums[i] += nums[i - 1];
         }
 
         int l = 0;

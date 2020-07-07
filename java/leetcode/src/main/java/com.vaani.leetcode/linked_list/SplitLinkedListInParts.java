@@ -1,6 +1,7 @@
 package com.vaani.leetcode.linked_list;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 06/08/2019 Given a (singly) linked list with head node root,

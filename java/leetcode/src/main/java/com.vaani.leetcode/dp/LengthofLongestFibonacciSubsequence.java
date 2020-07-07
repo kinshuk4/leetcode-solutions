@@ -1,6 +1,7 @@
 package com.vaani.leetcode.dp;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 23/08/2019 A sequence X_1, X_2, ..., X_n is fibonacci-like if:

@@ -3,7 +3,6 @@ package com.vaani.leetcode.tree;
 import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
 
 import static com.vaani.dsa.ds.algos.tree.binary.TreeDiameter.getBinaryTreeDiameter;
-import static com.vaani.dsa.ds.algos.tree.binary.TreeDiameter.getDiameter;
 
 /**
  * https://leetcode.com/problems/diameter-of-binary-tree/
@@ -34,10 +33,10 @@ public class DiameterOfBinaryTree {
     }
 
     public int diameterOfBinaryTree(BinaryTreeNode root) {
-        if(root == null){
+        if (root == null) {
             return 0;
         }
-        return getBinaryTreeDiameter(root) -1 ;
+        return getBinaryTreeDiameter(root) - 1;
     }
 
     private int dfs(BinaryTreeNode node) {

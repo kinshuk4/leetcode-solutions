@@ -36,7 +36,7 @@ public class PathSum {
     }
 
     public boolean hasPathSum(BinaryTreeNode root, int sum) {
-        if (root ==null){
+        if (root == null) {
             return false;
         }
         return hasPathSumRecursiveWithoutHelper(root, sum);
@@ -44,16 +44,16 @@ public class PathSum {
 
     public boolean hasPathSumRecursiveWithoutHelper(BinaryTreeNode root, int sum) {
         // isLeafNode?
-        if (root != null && root.left == null && root.right == null){
+        if (root != null && root.left == null && root.right == null) {
             return root.val == sum;
-        }else{
-            boolean isLeftSum=false;
-            boolean isRightSum=false;
+        } else {
+            boolean isLeftSum = false;
+            boolean isRightSum = false;
 
-            if(root.left!=null){
-                isLeftSum = hasPathSumRecursiveWithoutHelper(root.left, sum-root.val);
+            if (root.left != null) {
+                isLeftSum = hasPathSumRecursiveWithoutHelper(root.left, sum - root.val);
             }
-            if(root.right!=null){
+            if (root.right != null) {
                 isRightSum = hasPathSumRecursiveWithoutHelper(root.right, sum - root.val);
             }
             return isLeftSum || isRightSum;

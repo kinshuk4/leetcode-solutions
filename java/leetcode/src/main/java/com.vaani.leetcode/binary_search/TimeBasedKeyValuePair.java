@@ -1,6 +1,8 @@
 package com.vaani.leetcode.binary_search;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * 07/05/2019 Create a timebased key-value store class TimeMap,

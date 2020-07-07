@@ -1,6 +1,7 @@
 package com.vaani.leetcode.rand;
 
-import java.util.*;
+import java.util.Random;
+import java.util.TreeMap;
 
 public class RandomPickWithWeight {
     private TreeMap<Integer, Integer> map;

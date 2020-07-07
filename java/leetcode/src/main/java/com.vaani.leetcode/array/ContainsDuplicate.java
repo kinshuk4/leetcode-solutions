@@ -1,6 +1,7 @@
 package com.vaani.leetcode.array;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
 // https://leetcode.com/problems/contains-duplicate/
 public class ContainsDuplicate {

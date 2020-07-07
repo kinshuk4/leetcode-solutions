@@ -33,7 +33,9 @@ package com.vaani.leetcode.greedy;
  * project which gives maximum profit.
  */
 
-import java.util.*;
+import java.util.Comparator;
+import java.util.Objects;
+import java.util.PriorityQueue;
 
 public class IPO {
 

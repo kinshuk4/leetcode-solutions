@@ -1,6 +1,9 @@
 package com.vaani.leetcode.heap;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.PriorityQueue;
+import java.util.Stack;
 
 /**
  * 30/04/2019 Implement FreqStack, a class which simulates the

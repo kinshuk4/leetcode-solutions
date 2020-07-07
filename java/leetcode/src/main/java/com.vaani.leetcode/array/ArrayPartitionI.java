@@ -1,6 +1,6 @@
 package com.vaani.leetcode.array;
 
-import java.util.*;
+import java.util.Arrays;
 
 /**
  * https://leetcode.com/problems/array-partition-i/

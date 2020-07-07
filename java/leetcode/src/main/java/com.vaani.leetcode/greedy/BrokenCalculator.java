@@ -1,7 +1,5 @@
 package com.vaani.leetcode.greedy;
 
-import java.util.*;
-
 /**
  * On a broken calculator that has a number showing on
  * its display, we can perform two operations:

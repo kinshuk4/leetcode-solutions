@@ -1,7 +1,5 @@
 package com.vaani.leetcode.depth_first_search;
 
-import java.util.*;
-
 /**
  * 29/01/2020
  */

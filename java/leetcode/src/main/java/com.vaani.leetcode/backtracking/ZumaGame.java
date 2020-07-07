@@ -1,6 +1,7 @@
 package com.vaani.leetcode.backtracking;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 14/05/2019 Think about Zuma Game. You have a row of balls on

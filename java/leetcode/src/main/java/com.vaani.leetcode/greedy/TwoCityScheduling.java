@@ -1,6 +1,7 @@
 package com.vaani.leetcode.greedy;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 15/08/2019 There are 2N people a company is planning to

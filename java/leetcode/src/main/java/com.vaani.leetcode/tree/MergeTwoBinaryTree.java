@@ -32,6 +32,7 @@ public class MergeTwoBinaryTree {
     public static void main(String[] args) {
 
     }
+
     public BinaryTreeNode mergeTreesRecursive(BinaryTreeNode t1, BinaryTreeNode t2) {
         BinaryTreeNode t3 = mergeTreeHelper(t1, t2);
         return t3;

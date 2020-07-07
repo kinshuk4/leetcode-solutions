@@ -1,6 +1,7 @@
 package com.vaani.leetcode.tree;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 23/08/2019 Consider all the leaves of a binary com.vaani.leetcode.tree. From left

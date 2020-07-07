@@ -1,7 +1,5 @@
 package com.vaani.leetcode.stack;
 
-import java.util.Stack;
-
 /**
  * 08/03/2017. Design a stack that supports push, pop, top, and
  * retrieving the minimum element in constant time.

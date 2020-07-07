@@ -2,8 +2,6 @@ package com.vaani.leetcode.array;
 
 import org.junit.Assert;
 
-import java.util.*;
-
 /**
  * https://leetcode.com/problems/non-decreasing-array/
  * Non-decreasing Array

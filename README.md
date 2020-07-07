@@ -671,7 +671,7 @@ Note: "♥" means you need to subscribe to [LeetCode premium membership](https:/
 | [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/) | [Swift](https://github.com/kinshuk4/leetcode-solutions/blob/master/Tree/ValidateBinarySearchTree.swift) | Medium     | ★★★       |
 | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) | [Swift](https://github.com/kinshuk4/leetcode-solutions/blob/master/LinkedList/MergeTwoSortedLists.swift) | Easy       | ★★★       |
 
-## 
+
 
 
 

@@ -1,7 +1,6 @@
 package com.vaani.leetcode.tree;
 
 import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
-import com.vaani.dsa.ds.utils.BstUtil;
 
 import java.util.ArrayList;
 import java.util.List;

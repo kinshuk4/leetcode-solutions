@@ -1,6 +1,6 @@
 package com.vaani.leetcode.heap;
 
-import java.util.*;
+import java.util.PriorityQueue;
 
 /**
  * 30/11/2019 We have a list of points on the plane. Find the K

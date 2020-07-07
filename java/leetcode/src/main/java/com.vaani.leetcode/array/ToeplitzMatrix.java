@@ -2,7 +2,7 @@ package com.vaani.leetcode.array;
 
 import org.junit.Assert;
 
-import java.util.*;
+import java.util.Stack;
 
 /**
  * https://leetcode.com/problems/toeplitz-matrix/

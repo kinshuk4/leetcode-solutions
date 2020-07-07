@@ -1,6 +1,6 @@
 package com.vaani.leetcode.two_pointers;
 
-import static com.vaani.dsa.ds.utils.ArrayUtils.swap;
+import static com.vaani.dsa.ds.utils.generic.ArrayUtils.swap;
 
 /**
  * 13/06/2017. Accepted Given an array nums, write a function to

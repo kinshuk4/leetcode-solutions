@@ -1,7 +1,5 @@
 package com.vaani.leetcode.math;
 
-import java.util.*;
-
 /**
  * 01/08/2019 Given an integer, return its base 7 com.vaani.leetcode.string
  * representation.
