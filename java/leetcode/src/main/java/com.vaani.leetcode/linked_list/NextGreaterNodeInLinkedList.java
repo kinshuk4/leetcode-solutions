@@ -30,7 +30,7 @@ import java.util.*;
  * [0, 10000].
  *
  * <p>Solution O(N) solve the problem in the inverse order starting from the tail of the list.
- * Maintain a com.vaani.leetcode.stack of values and on each iteration pop() all the values from the com.vaani.leetcode.stack which are
+ * Maintain a stack of values and on each iteration pop() all the values from the stack which are
  * smaller then the current element.
  */
 public class NextGreaterNodeInLinkedList {

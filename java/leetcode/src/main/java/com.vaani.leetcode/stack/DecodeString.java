@@ -20,7 +20,7 @@ import java.util.Stack;
  * <p>s = "3[a]2[bc]", return "aaabcbc". s = "3[a2[c]]", return "accaccacc". s = "2[abc]3[cd]ef",
  * return "abcabccdcdcdef".
  *
- * <p>Solution: Maintain a com.vaani.leetcode.stack and push items when a character other than ] is encountered. When a
+ * <p>Solution: Maintain a stack and push items when a character other than ] is encountered. When a
  * character ] is encountered pop elements, build com.vaani.leetcode.string and duplicate it.
  */
 public class DecodeString {

@@ -16,8 +16,8 @@ import java.util.*;
  * in any order, but you should keep the order of nodes inside one path.
  *
  * <p>Solution: Do a dfs to reach every path. Since its a DAG there can be no cycles and safe to
- * proceed without checking if the node has already been visited. Maintain a com.vaani.leetcode.stack to keep track of
- * the path and when a leaf node has been reached add the elements in the com.vaani.leetcode.stack to the result com.vaani.leetcode.array
+ * proceed without checking if the node has already been visited. Maintain a stack to keep track of
+ * the path and when a leaf node has been reached add the elements in the stack to the result com.vaani.leetcode.array
  */
 public class AllPathsFromSourceToTarget {
     /**

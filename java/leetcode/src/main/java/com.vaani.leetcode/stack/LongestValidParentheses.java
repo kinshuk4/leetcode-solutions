@@ -13,7 +13,7 @@ import java.util.*;
  * <p>Input: ")()())" Output: 4 Explanation: The longest valid parentheses substring is "()()"
  *
  * <p>Solution: O(N) Iterate through each of the parentheses and if '(' is encountered push it to
- * com.vaani.leetcode.stack else check the top of the com.vaani.leetcode.stack to see if there is a matching parentheses, if yes pop it
+ * stack else check the top of the stack to see if there is a matching parentheses, if yes pop it
  * and then take the length (currIndex - index at top of the com.vaani.leetcode.stack). Maintain a max length and
  * return this as the answer.
  */

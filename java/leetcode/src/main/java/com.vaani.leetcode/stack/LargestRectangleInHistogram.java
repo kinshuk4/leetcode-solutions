@@ -15,13 +15,13 @@ import java.util.Stack;
  * <p>1) Create an empty com.vaani.leetcode.stack.
  *
  * <p>2) Start from first bar, and do following for every bar ‘hist[i]’ where ‘i’ varies from 0 to
- * n-1. a) If com.vaani.leetcode.stack is empty or hist[i] is higher than the bar at top of com.vaani.leetcode.stack, then push ‘i’ to
- * com.vaani.leetcode.stack. b) If this bar is smaller than the top of com.vaani.leetcode.stack, then keep removing the top of com.vaani.leetcode.stack while
- * top of the com.vaani.leetcode.stack is greater. Let the removed bar be hist[tp]. Calculate area of rectangle with
+ * n-1. a) If stack is empty or hist[i] is higher than the bar at top of com.vaani.leetcode.stack, then push ‘i’ to
+ * com.vaani.leetcode.stack. b) If this bar is smaller than the top of com.vaani.leetcode.stack, then keep removing the top of stack while
+ * top of the stack is greater. Let the removed bar be hist[tp]. Calculate area of rectangle with
  * hist[tp] as smallest bar. For hist[tp], the ‘left index’ is previous (previous to tp) item in
- * com.vaani.leetcode.stack and ‘right index’ is ‘i’ (current index).
+ * stack and ‘right index’ is ‘i’ (current index).
  *
- * <p>3) If the com.vaani.leetcode.stack is not empty, then one by one remove all bars from com.vaani.leetcode.stack and do step 2.b for
+ * <p>3) If the stack is not empty, then one by one remove all bars from stack and do step 2.b for
  * every removed bar.
  */
 public class LargestRectangleInHistogram {

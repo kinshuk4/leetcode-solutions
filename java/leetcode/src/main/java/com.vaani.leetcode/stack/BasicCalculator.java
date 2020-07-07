@@ -14,10 +14,10 @@ import java.util.Stack;
  * <p>Some examples: "1 + 1" = 2 " 2-1 + 2 " = 3 "(1+(4+5+2)-3)+(6+8)" = 23 Note: Do not use the
  * eval built-in library function.
  *
- * <p>Solution: O(n) where n is the length of the com.vaani.leetcode.string. Maintain a com.vaani.leetcode.stack and push each character
+ * <p>Solution: O(n) where n is the length of the com.vaani.leetcode.string. Maintain a stack and push each character
  * from the com.vaani.leetcode.string (ignore space). As soon as a close parentheses ')' is encountered, start to pop
- * values and sum-up the total until '(' is poped. Push the total back to com.vaani.leetcode.stack and continue to
- * iterate. The final result will be in the top of the com.vaani.leetcode.stack which is the last and only element in
+ * values and sum-up the total until '(' is poped. Push the total back to stack and continue to
+ * iterate. The final result will be in the top of the stack which is the last and only element in
  * com.vaani.leetcode.stack.
  */
 public class BasicCalculator {

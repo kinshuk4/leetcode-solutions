@@ -10,41 +10,41 @@ import java.util.*;
  *
  * <p>push(int x), which pushes an integer x onto the com.vaani.leetcode.stack. pop(), which removes and returns the
  * most frequent element in the com.vaani.leetcode.stack. If there is a tie for most frequent element, the element
- * closest to the top of the com.vaani.leetcode.stack is removed and returned.
+ * closest to the top of the stack is removed and returned.
  *
  * <p>Example 1:
  *
  * <p>Input: ["FreqStack","push","push","push","push","push","push","pop","pop","pop","pop"],
  * [[],[5],[7],[5],[7],[4],[5],[],[],[],[]] Output: [null,null,null,null,null,null,null,5,7,5,4]
- * Explanation: After making six .push operations, the com.vaani.leetcode.stack is [5,7,5,7,4,5] from bottom to top.
+ * Explanation: After making six .push operations, the stack is [5,7,5,7,4,5] from bottom to top.
  * Then:
  *
- * <p>pop() -> returns 5, as 5 is the most frequent. The com.vaani.leetcode.stack becomes [5,7,5,7,4].
+ * <p>pop() -> returns 5, as 5 is the most frequent. The stack becomes [5,7,5,7,4].
  *
  * <p>pop() -> returns 7, as 5 and 7 is the most frequent, but 7 is closest to the top. The com.vaani.leetcode.stack
  * becomes [5,7,5,4].
  *
- * <p>pop() -> returns 5. The com.vaani.leetcode.stack becomes [5,7,4].
+ * <p>pop() -> returns 5. The stack becomes [5,7,4].
  *
- * <p>pop() -> returns 4. The com.vaani.leetcode.stack becomes [5,7].
+ * <p>pop() -> returns 4. The stack becomes [5,7].
  *
  * <p>Note:
  *
  * <p>Calls to FreqStack.push(int x) will be such that 0 <= x <= 10^9. It is guaranteed that
- * FreqStack.pop() won't be called if the com.vaani.leetcode.stack has zero elements. The total number of
+ * FreqStack.pop() won't be called if the stack has zero elements. The total number of
  * FreqStack.push calls will not exceed 10000 in a single com.vaani.leetcode.test case. The total number of
  * FreqStack.pop calls will not exceed 10000 in a single com.vaani.leetcode.test case. The total number of
  * FreqStack.push and FreqStack.pop calls will not exceed 150000 across all com.vaani.leetcode.test cases.
  *
  * <p>Solution: push O(log N) pop O(log N) Maintain a priority queue with a FreqNode where each
- * FreqNode contains a frequency and a com.vaani.leetcode.stack with (value and pushCount). Each com.vaani.leetcode.stack in a priority
- * queue contains same set of values. Every time when a value is to be added to the com.vaani.leetcode.stack a new Node
- * is created and pushed to com.vaani.leetcode.stack which contains the push value and pushCount.
+ * FreqNode contains a frequency and a stack with (value and pushCount). Each stack in a priority
+ * queue contains same set of values. Every time when a value is to be added to the stack a new Node
+ * is created and pushed to stack which contains the push value and pushCount.
  *
  * <p>Example: For the below push operation push 5, push 5, push 5, push 6, push 6, push 7 the state
- * of priority com.vaani.leetcode.stack will be 3 : 5(0) -> 5(1) -> 5(2) 2 : 6(3) -> 6(4) 1 : 7(5)
+ * of priority stack will be 3 : 5(0) -> 5(1) -> 5(2) 2 : 6(3) -> 6(4) 1 : 7(5)
  *
- * <p>When a push operation is invoked we have to identify in which com.vaani.leetcode.stack the value has to go in
+ * <p>When a push operation is invoked we have to identify in which stack the value has to go in
  * therefore maintain a hashmap with push-value as key and value contains the reference to FreqNode
  * in priority queue. Remove this FreqNode from priority queue and update the com.vaani.leetcode.stack.
  *

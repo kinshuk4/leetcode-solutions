@@ -12,7 +12,7 @@ import java.util.Stack;
  * the height of the com.vaani.leetcode.tree.
  *
  * <p>Solution: The below solution works in average O(1) time and worst case O(h) time using O(h)
- * memory. Use a com.vaani.leetcode.stack to keep track of min value node.
+ * memory. Use a stack to keep track of min value node.
  */
 public class BSTIterator {
 
@@ -77,7 +77,7 @@ public class BSTIterator {
     }
 
     /**
-     * Fill com.vaani.leetcode.stack with min values
+     * Fill stack with min values
      *
      * @param node curr node to begin with
      */

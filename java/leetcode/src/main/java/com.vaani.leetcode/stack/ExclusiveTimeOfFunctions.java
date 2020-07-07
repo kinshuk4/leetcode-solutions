@@ -30,7 +30,7 @@ import java.util.Stack;
  * the exclusive time of function 0. Two functions won't start or end at the same time. Functions
  * could be called recursively, and will always end. 1 <= n <= 100
  *
- * <p>Solution: Use a com.vaani.leetcode.stack to store the logs and update time.
+ * <p>Solution: Use a stack to store the logs and update time.
  */
 public class ExclusiveTimeOfFunctions {
 

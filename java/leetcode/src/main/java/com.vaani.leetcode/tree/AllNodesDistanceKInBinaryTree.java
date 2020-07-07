@@ -30,7 +30,7 @@ import java.util.*;
  * be reached (including the target node) can have child nodes at a distance of K from target node.
  * All the nodes from which a target node cannot be reached definitely cannot have a child node at a
  * distance of K from target node. Do a dfs from root to find the target node. As soon as a target
- * node is found, all the nodes in the recursion com.vaani.leetcode.stack are the ancestors of target node i.e the
+ * node is found, all the nodes in the recursion stack are the ancestors of target node i.e the
  * target node can be reached from each of these nodes. Now do another dfs from each of the nodes
  * starting from target node and all its ancestors up to the root to find nodes at a distance of (K
  * - dk) where dk is the distance to the target node. Keep track of visited nodes in order not to
