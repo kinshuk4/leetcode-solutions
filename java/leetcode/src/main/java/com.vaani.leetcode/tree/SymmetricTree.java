@@ -1,5 +1,9 @@
 package com.vaani.leetcode.tree;
 
+import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+
+import static com.vaani.dsa.ds.algos.tree.binary.IsSymmetricTree.isSymmetricRecursive;
+
 /**
  * 14/08/2017. Given a binary com.vaani.leetcode.tree, check whether it is a mirror
  * of itself (ie, symmetric around its center).
@@ -12,37 +16,14 @@ package com.vaani.leetcode.tree;
  */
 public class SymmetricTree {
 
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
-
-    /**
-     * Main method
-     *
-     * @param args
-     * @throws Exception
-     */
     public static void main(String[] args) throws Exception {
-        TreeNode node = new TreeNode(3);
-        node.left = new TreeNode(4);
-        node.right = new TreeNode(5);
+        BinaryTreeNode node = new BinaryTreeNode(3);
+        node.left = new BinaryTreeNode(4);
+        node.right = new BinaryTreeNode(5);
         System.out.println(new SymmetricTree().isSymmetric(node));
     }
 
-    public boolean isSymmetric(TreeNode root) {
-        if (root == null) return true;
-        return dfs(root.left, root.right);
-    }
-
-    private boolean dfs(TreeNode left, TreeNode right) {
-        if (left == null && right == null) return true;
-        else if (left == null || right == null) return false;
-        return dfs(left.left, right.right) && left.val == right.val && dfs(left.right, right.left);
+    public boolean isSymmetric(BinaryTreeNode root) {
+        return isSymmetricRecursive(root);
     }
 }

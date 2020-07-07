@@ -3,8 +3,8 @@ package com.vaani.leetcode.array;
 import java.util.Arrays;
 
 /**
- * 17/12/2017. Given an unsorted com.vaani.leetcode.array return whether an
- * increasing subsequence of length 3 exists or not in the com.vaani.leetcode.array.
+ * 17/12/2017. Given an unsorted array return whether an
+ * increasing subsequence of length 3 exists or not in the array.
  *
  * <p>Formally the function should: Return true if there exists i, j, k such that arr[i] < arr[j] <
  * arr[k] given 0 ≤ i < j < k ≤ n-1 else return false. Your algorithm should run in O(n) time

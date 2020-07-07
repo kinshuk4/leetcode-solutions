@@ -1,7 +1,7 @@
 package com.vaani.leetcode.dp;
 
 /**
- * 02/04/2017. Given an unsorted com.vaani.leetcode.array of integers, find the
+ * 02/04/2017. Given an unsorted array of integers, find the
  * length of longest increasing subsequence.
  *
  * <p>For example, Given [10, 9, 2, 5, 3, 7, 101, 18], The longest increasing subsequence is [2, 3,

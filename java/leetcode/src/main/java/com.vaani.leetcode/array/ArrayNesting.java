@@ -3,7 +3,7 @@ package com.vaani.leetcode.array;
 import java.util.*;
 
 /**
- * 09/10/2019 A zero-indexed com.vaani.leetcode.array A of length N contains all
+ * 09/10/2019 A zero-indexed array A of length N contains all
  * integers from 0 to N-1. Find and return the longest length of set S, where S[i] = {A[i], A[A[i]],
  * A[A[A[i]]], ... } subjected to the rule below.
  *

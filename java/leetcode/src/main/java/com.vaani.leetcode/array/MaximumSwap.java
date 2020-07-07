@@ -8,7 +8,7 @@ package com.vaani.leetcode.array;
  * <p>Example 1: Input: 2736 Output: 7236 Explanation: Swap the number 2 and the number 7. Example
  * 2: Input: 9973 Output: 9973 Explanation: No swap. Note: The given number is in the range [0, 108]
  *
- * <p>Solution O(n): Create a com.vaani.leetcode.array of digit index. Iterate through the digits starting from left
+ * <p>Solution O(n): Create a array of digit index. Iterate through the digits starting from left
  * and in each iteration check if there is any digit which is greater than the current digit and
  * appearing after the current index, if found then swap and return the new integer.
  */

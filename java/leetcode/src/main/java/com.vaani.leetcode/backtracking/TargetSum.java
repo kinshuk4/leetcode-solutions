@@ -12,7 +12,7 @@ package com.vaani.leetcode.backtracking;
  * <p>-1+1+1+1+1 = 3 +1-1+1+1+1 = 3 +1+1-1+1+1 = 3 +1+1+1-1+1 = 3 +1+1+1+1-1 = 3
  *
  * <p>There are 5 ways to assign symbols to make the sum of nums be target 3. Note: The length of
- * the given com.vaani.leetcode.array is positive and will not exceed 20. The sum of elements in the given com.vaani.leetcode.array will
+ * the given array is positive and will not exceed 20. The sum of elements in the given array will
  * not exceed 1000. Your output answer is guaranteed to be fitted in a 32-bit integer.
  */
 public class TargetSum {

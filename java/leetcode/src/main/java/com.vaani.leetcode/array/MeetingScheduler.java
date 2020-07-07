@@ -7,9 +7,9 @@ import java.util.*;
  * slots2 of two people and a meeting duration duration, return the earliest time slot that works
  * for both of them and is of duration duration.
  *
- * <p>If there is no common time slot that satisfies the requirements, return an empty com.vaani.leetcode.array.
+ * <p>If there is no common time slot that satisfies the requirements, return an empty array.
  *
- * <p>The format of a time slot is an com.vaani.leetcode.array of two elements [start, end] representing an inclusive
+ * <p>The format of a time slot is an array of two elements [start, end] representing an inclusive
  * time range from start to end.
  *
  * <p>It is guaranteed that no two availability slots of the same person intersect with each other.

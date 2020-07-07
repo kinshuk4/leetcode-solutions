@@ -40,7 +40,7 @@ package com.vaani.leetcode.dp;
  * more challenging than usual. It is expected that a 50 sticker com.vaani.leetcode.test case can be solved within 35ms
  * on average.
  *
- * <p>Solution: O(2 ^ T x T x S) where T is the length of target and S is length of sticker com.vaani.leetcode.array.
+ * <p>Solution: O(2 ^ T x T x S) where T is the length of target and S is length of sticker array.
  * Each state is a combination of characters selected in the target sticker plus the total count of
  * stickers used. Cache the minimum count in each state and explore all the different possible
  * states.

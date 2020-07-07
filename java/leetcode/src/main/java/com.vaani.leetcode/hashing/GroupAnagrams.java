@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * 10/03/2017. Given an com.vaani.leetcode.array of strings, group anagrams together.
+ * 10/03/2017. Given an array of strings, group anagrams together.
  *
  * <p>For example, given: ["eat", "tea", "tan", "ate", "nat", "bat"], Return:
  *

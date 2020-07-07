@@ -1,13 +1,15 @@
 package com.vaani.leetcode.two_pointers;
 
+import static com.vaani.dsa.ds.utils.ArrayUtils.swap;
+
 /**
- * 13/06/2017. Accepted Given an com.vaani.leetcode.array nums, write a function to
+ * 13/06/2017. Accepted Given an array nums, write a function to
  * move all 0's to the end of it while maintaining the relative order of the non-zero elements.
  *
  * <p>For example, given nums = [0, 1, 0, 3, 12], after calling your function, nums should be [1, 3,
  * 12, 0, 0].
  *
- * <p>Note: You must do this in-place without making a copy of the com.vaani.leetcode.array. Minimize the total number
+ * <p>Note: You must do this in-place without making a copy of the array. Minimize the total number
  * of operations.
  */
 public class MoveZeroes {
@@ -18,17 +20,31 @@ public class MoveZeroes {
     }
 
     public void moveZeroes(int[] nums) {
-        int i = 0;
-        for (int j = 0, l = nums.length; j < l; ) {
-            if (nums[j] == 0) j++;
-            else {
-                int temp = nums[i];
-                nums[i] = nums[j];
-                nums[j] = temp;
-                i++;
-                j++;
+        int k = 0;
+        int n = nums.length;
+        for (int i = 0; i < n; i++) {
+            if (nums[i] != 0) {
+                swap(nums, i, k++);
             }
         }
-        while (i < nums.length) nums[i++] = 0;
+        while (k < nums.length) {
+            nums[k++] = 0;
+        }
+    }
+
+
+    public void moveZeroes2(int[] nums) {
+        int k = 0;
+        int n = nums.length;
+        for (int i = 0; i < n; ) {
+            if (nums[i] == 0) {
+                i++;
+            } else {
+                swap(nums, i++, k++);
+            }
+        }
+        while (k < nums.length) {
+            nums[k++] = 0;
+        }
     }
 }

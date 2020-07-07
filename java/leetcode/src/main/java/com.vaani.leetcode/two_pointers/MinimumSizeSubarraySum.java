@@ -3,17 +3,17 @@ package com.vaani.leetcode.two_pointers;
 /**
  * 03/12/2017.
  *
- * <p>Given an com.vaani.leetcode.array of n positive integers and a positive integer s, find the minimal length of a
+ * <p>Given an array of n positive integers and a positive integer s, find the minimal length of a
  * contiguous subarray of which the sum ≥ s. If there isn't one, return 0 instead.
  *
- * <p>For example, given the com.vaani.leetcode.array [2,3,1,2,4,3] and s = 7, the subarray [4,3] has the minimal
+ * <p>For example, given the array [2,3,1,2,4,3] and s = 7, the subarray [4,3] has the minimal
  * length under the problem constraint.
  *
  * <p>click to show more practice.
  *
  * <p>Credits: Special thanks to @Freezen for adding this problem and creating all com.vaani.leetcode.test cases.
  *
- * <p>Solution: O(n) solution. Solve using sliding window sub-com.vaani.leetcode.array sum using two pointers.
+ * <p>Solution: O(n) solution. Solve using sliding window sub-array sum using two pointers.
  */
 public class MinimumSizeSubarraySum {
     /**

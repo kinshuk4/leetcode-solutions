@@ -3,7 +3,7 @@ package com.vaani.leetcode.dp;
 /**
  * 16/04/2020 Alice and Bob continue their games with piles of
  * stones. There are several stones arranged in a row, and each stone has an associated value which
- * is an integer given in the com.vaani.leetcode.array stoneValue.
+ * is an integer given in the array stoneValue.
  *
  * <p>Alice and Bob take turns, with Alice starting first. On each player's turn, that player can
  * take 1, 2 or 3 stones from the first remaining stones in the row.

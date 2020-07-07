@@ -3,7 +3,7 @@ package com.vaani.leetcode.hashing;
 import java.util.HashMap;
 
 /**
- * 09/03/2017. Given an com.vaani.leetcode.array of integers, return indices of the
+ * 09/03/2017. Given an array of integers, return indices of the
  * two numbers such that they add up to a specific target.
  *
  * <p>You may assume that each input would have exactly one solution, and you may not use the same

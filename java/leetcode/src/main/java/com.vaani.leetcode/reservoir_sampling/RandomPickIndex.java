@@ -3,11 +3,11 @@ package com.vaani.leetcode.reservoir_sampling;
 import java.util.Random;
 
 /**
- * 10/12/2017. Given an com.vaani.leetcode.array of integers with possible
+ * 10/12/2017. Given an array of integers with possible
  * duplicates, randomly output the index of a given target number. You can assume that the given
- * target number must exist in the com.vaani.leetcode.array.
+ * target number must exist in the array.
  *
- * <p>Note: The com.vaani.leetcode.array size can be very large. Solution that uses too much extra space will not pass
+ * <p>Note: The array size can be very large. Solution that uses too much extra space will not pass
  * the judge.
  *
  * <p>Example:
@@ -17,7 +17,7 @@ import java.util.Random;
  * <p>// pick(3) should return either index 2, 3, or 4 randomly. Each index should have equal
  * probability of returning. solution.pick(3);
  *
- * <p>// pick(1) should return 0. Since in the com.vaani.leetcode.array only nums[0] is equal to 1. solution.pick(1);
+ * <p>// pick(1) should return 0. Since in the array only nums[0] is equal to 1. solution.pick(1);
  */
 public class RandomPickIndex {
 

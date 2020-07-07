@@ -3,7 +3,7 @@ package com.vaani.leetcode.depth_first_search;
 import java.util.*;
 
 /**
- * 15/12/2017. Given an unsorted com.vaani.leetcode.array of integers, find the
+ * 15/12/2017. Given an unsorted array of integers, find the
  * length of the longest consecutive elements sequence.
  *
  * <p>For example, Given [100, 4, 200, 1, 3, 2], The longest consecutive elements sequence is [1, 2,

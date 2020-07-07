@@ -3,7 +3,7 @@ package com.vaani.leetcode.array;
 import java.util.*;
 
 /**
- * 15/08/2019 Given an com.vaani.leetcode.array A of non-negative integers, return
+ * 15/08/2019 Given an array A of non-negative integers, return
  * the maximum sum of elements in two non-overlapping (contiguous) subarrays, which have lengths L
  * and M. (For clarification, the L-length subarray could occur before or after the M-length
  * subarray.)
@@ -28,8 +28,8 @@ import java.util.*;
  * <p>Note:
  *
  * <p>L >= 1 M >= 1 L + M <= A.length <= 1000 0 <= A[i] <= 1000 Solution O(N ^ 2) Find prefix sum of
- * com.vaani.leetcode.array of length L and com.vaani.leetcode.array of length M and keep track of their begin and end indices. Now,
- * brute-force compare pairs of prefix com.vaani.leetcode.array sum where their indices don't overlap and return the
+ * array of length L and array of length M and keep track of their begin and end indices. Now,
+ * brute-force compare pairs of prefix array sum where their indices don't overlap and return the
  * max possible answer.
  */
 public class MaximumSumofTwoNonOverlappingSubarrays {

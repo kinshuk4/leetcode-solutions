@@ -33,8 +33,8 @@ package com.vaani.leetcode.dp;
  * C, C++, or C# will be judged with a slightly smaller time limit.)
  *
  * <p>Solution O(N x N) for each cell containing 1 find the nearest cell containing 0 in both
- * vertical and horizontal direction - save this value in a 2d com.vaani.leetcode.array for each cell. The answer is
- * max value saved in 2d com.vaani.leetcode.array.
+ * vertical and horizontal direction - save this value in a 2d array for each cell. The answer is
+ * max value saved in 2d array.
  */
 public class LargestPlusSign {
 
@@ -50,8 +50,8 @@ public class LargestPlusSign {
     }
 
     public int orderOfLargestPlusSign(int N, int[][] mines) {
-        int[][] A = new int[N][N]; // com.vaani.leetcode.array to save the mines information.
-        int[][] B = new int[N][N]; // com.vaani.leetcode.array to save the minimum distance to the cell containing 0
+        int[][] A = new int[N][N]; // array to save the mines information.
+        int[][] B = new int[N][N]; // array to save the minimum distance to the cell containing 0
         for (int[] row : mines) {
             int r = row[0];
             int c = row[1];

@@ -3,7 +3,7 @@ package com.vaani.leetcode.hashing;
 import java.util.*;
 
 /**
- * 30/04/2019 You are given an com.vaani.leetcode.array A of strings.
+ * 30/04/2019 You are given an array A of strings.
  *
  * <p>Two strings S and T are special-equivalent if after any number of moves, S == T.
  *
@@ -34,7 +34,7 @@ import java.util.*;
  * <p>1 <= A.length <= 1000 1 <= A[i].length <= 20 All A[i] have the same length. All A[i] consist
  * of only lowercase letters.
  *
- * <p>Solution: The character com.vaani.leetcode.array of odd positions and even positions of two special-equivalent
+ * <p>Solution: The character array of odd positions and even positions of two special-equivalent
  * strings should be exactly equal after sorting. Use a hashset to count number of such groups.
  */
 public class GroupsOfSpecialEquivalentStrings {

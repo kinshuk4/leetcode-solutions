@@ -3,7 +3,7 @@ package com.vaani.leetcode.dp;
 import java.util.*;
 
 /**
- * 17/03/2019 You are given an integer com.vaani.leetcode.array A. From some starting
+ * 17/03/2019 You are given an integer array A. From some starting
  * index, you can make a series of jumps. The (1st, 3rd, 5th, ...) jumps in the series are called
  * odd numbered jumps, and the (2nd, 4th, 6th, ...) jumps in the series are called even numbered
  * jumps.
@@ -16,7 +16,7 @@ import java.util.*;
  * to the index j such that A[i] >= A[j] and A[j] is the largest possible value. If there are
  * multiple such indexes j, you can only jump to the smallest such index j. (It may be the case that
  * for some index i, there are no legal jumps.) A starting index is good if, starting from that
- * index, you can reach the end of the com.vaani.leetcode.array (index A.length - 1) by jumping some number of times
+ * index, you can reach the end of the array (index A.length - 1) by jumping some number of times
  * (possibly 0 or more than once.)
  *
  * <p>Return the number of good starting indexes.
@@ -58,9 +58,9 @@ import java.util.*;
  *
  * <p>1 <= A.length <= 20000 0 <= A[i] < 100000
  *
- * <p>Solution: O(N log N) For each com.vaani.leetcode.array index and for each odd/even turn pre-calculate the next
+ * <p>Solution: O(N log N) For each array index and for each odd/even turn pre-calculate the next
  * jump index - this can be achieved in O(n log n) by using a balanced com.vaani.leetcode.tree. Check for each com.vaani.leetcode.array
- * index if we can reach end of the com.vaani.leetcode.array by using the pre-calculated values for next jump - cache
+ * index if we can reach end of the array by using the pre-calculated values for next jump - cache
  * the values to avoid recalculating. Sum up total number of such start indices and that will be the
  * answer.
  */

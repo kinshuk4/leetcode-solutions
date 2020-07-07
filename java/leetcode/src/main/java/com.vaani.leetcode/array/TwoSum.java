@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 11/07/2017. Given an com.vaani.leetcode.array of integers, return indices of the
+ * 11/07/2017. Given an array of integers, return indices of the
  * two numbers such that they add up to a specific target.
  *
  * <p>You may assume that each input would have exactly one solution, and you may not use the same

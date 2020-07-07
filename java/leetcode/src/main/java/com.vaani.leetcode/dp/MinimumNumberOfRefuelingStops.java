@@ -38,7 +38,7 @@ package com.vaani.leetcode.dp;
  * <p>1 <= target, startFuel, stations[i][1] <= 10^9 0 <= stations.length <= 500 0 < stations[0][0]
  * < stations[1][0] < ... < stations[stations.length-1][0] < target
  *
- * <p>Solution O(N ^ 2): Maintain a DP com.vaani.leetcode.array with maximum distance that can be travelled with i
+ * <p>Solution O(N ^ 2): Maintain a DP array with maximum distance that can be travelled with i
  * stops. DP[i] is the max distance that can be travelled with exactly i stops. The minimum i where
  * the target can be achieved (dp[i] >= target) will be the answer.
  */

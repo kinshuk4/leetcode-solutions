@@ -3,10 +3,10 @@ package com.vaani.leetcode.binary_search;
 /**
  * 11/12/2017.
  *
- * <p>Follow up for H-Index: What if the citations com.vaani.leetcode.array is sorted in ascending order? Could you
+ * <p>Follow up for H-Index: What if the citations array is sorted in ascending order? Could you
  * optimize your algorithm?
  *
- * @see com.vaani.leetcode.array.HIndex
+ * @see array.HIndex
  */
 public class HIndexII {
     /**

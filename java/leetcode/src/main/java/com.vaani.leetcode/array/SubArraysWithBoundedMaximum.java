@@ -1,11 +1,11 @@
 package com.vaani.leetcode.array;
 
 /**
- * 29/03/2019 We are given an com.vaani.leetcode.array A of positive integers, and
+ * 29/03/2019 We are given an array A of positive integers, and
  * two positive integers L and R (L <= R).
  *
  * <p>Return the number of (contiguous, non-empty) subarrays such that the value of the maximum
- * com.vaani.leetcode.array element in that subarray is at least L and at most R.
+ * array element in that subarray is at least L and at most R.
  *
  * <p>Example : Input: A = [2, 1, 4, 3] L = 2 R = 3 Output: 3 Explanation: There are three subarrays
  * that meet the requirements: [2], [2, 1], [3]. Note:

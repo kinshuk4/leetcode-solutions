@@ -13,7 +13,7 @@ import java.util.*;
  * courses you should take to finish all courses.
  *
  * <p>There may be multiple correct orders, you just need to return one of them. If it is impossible
- * to finish all courses, return an empty com.vaani.leetcode.array.
+ * to finish all courses, return an empty array.
  *
  * <p>For example:
  *

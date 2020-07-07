@@ -12,7 +12,7 @@ import java.util.List;
  * j), the brick (if it exists) on that location will disappear, and then some other bricks may drop
  * because of that erasure.
  *
- * <p>Return an com.vaani.leetcode.array representing the number of bricks that will drop after each erasure in
+ * <p>Return an array representing the number of bricks that will drop after each erasure in
  * sequence.
  *
  * <p>Example 1: Input: grid = [[1,0,0,0],[1,1,1,0]] hits = [[1,0]] Output: [2] Explanation: If we

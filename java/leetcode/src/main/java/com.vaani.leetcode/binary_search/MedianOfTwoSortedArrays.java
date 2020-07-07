@@ -21,7 +21,7 @@ import java.util.List;
  *
  * <p>The basic idea is that if you are given two arrays A and B and know the length of each, you
  * can check whether an element A[i] is the median in constant time. Suppose that the median is
- * A[i]. Since the com.vaani.leetcode.array is sorted, it is greater than exactly i − 1 values in com.vaani.leetcode.array A. Then if it
+ * A[i]. Since the array is sorted, it is greater than exactly i − 1 values in array A. Then if it
  * is the median, it is also greater than exactly j = [n / 2] − (i − 1) elements in B. It requires
  * constant time to check if B[j] A[i] <= B[j + 1]. If A[i] is not the median, then depending on
  * whether A[i] is greater or less than B[j] and B[j + 1], you know that A[i] is either greater than
@@ -43,8 +43,8 @@ public class MedianOfTwoSortedArrays {
     /**
      * Find median
      *
-     * @param nums1 com.vaani.leetcode.array one
-     * @param nums2 com.vaani.leetcode.array two
+     * @param nums1 array one
+     * @param nums2 array two
      * @return
      */
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {

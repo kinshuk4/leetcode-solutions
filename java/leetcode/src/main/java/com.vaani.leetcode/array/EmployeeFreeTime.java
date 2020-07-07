@@ -30,7 +30,7 @@ import java.util.List;
  *
  * <p>Solution: O(L X N x N) Where L is the number of schedules, N is the length of schedules for
  * each employee. Merge all the intervals to form a single merged com.vaani.leetcode.array, now by using this com.vaani.leetcode.array
- * form a result com.vaani.leetcode.array with the intervals which form the free time.
+ * form a result array with the intervals which form the free time.
  */
 public class EmployeeFreeTime {
 

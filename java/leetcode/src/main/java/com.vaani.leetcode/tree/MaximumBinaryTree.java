@@ -1,20 +1,20 @@
 package com.vaani.leetcode.tree;
 
 /**
- * 19/08/2017. Given an integer com.vaani.leetcode.array with no duplicates. A
- * maximum com.vaani.leetcode.tree building on this com.vaani.leetcode.array is defined as follow:
+ * 19/08/2017. Given an integer array with no duplicates. A
+ * maximum com.vaani.leetcode.tree building on this array is defined as follow:
  *
- * <p>The root is the maximum number in the com.vaani.leetcode.array. The left subtree is the maximum com.vaani.leetcode.tree constructed
+ * <p>The root is the maximum number in the array. The left subtree is the maximum com.vaani.leetcode.tree constructed
  * from left part subarray divided by the maximum number. The right subtree is the maximum com.vaani.leetcode.tree
  * constructed from right part subarray divided by the maximum number. Construct the maximum com.vaani.leetcode.tree by
- * the given com.vaani.leetcode.array and output the root node of this com.vaani.leetcode.tree.
+ * the given array and output the root node of this com.vaani.leetcode.tree.
  *
  * <p>Example 1: Input: [3,2,1,6,0,5] Output: return the com.vaani.leetcode.tree root node representing the following
  * com.vaani.leetcode.tree:
  *
  * <p>6 / \ 3 5 \ / 2 0 \ 1
  *
- * <p>Note: The size of the given com.vaani.leetcode.array will be in the range [1,1000].
+ * <p>Note: The size of the given array will be in the range [1,1000].
  */
 public class MaximumBinaryTree {
 

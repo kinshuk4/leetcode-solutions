@@ -1,10 +1,10 @@
 package com.vaani.leetcode.array;
 
 /**
- * 01/08/2017. Rotate an com.vaani.leetcode.array of n elements to the right by k
+ * 01/08/2017. Rotate an array of n elements to the right by k
  * steps.
  *
- * <p>For example, with n = 7 and k = 3, the com.vaani.leetcode.array [1,2,3,4,5,6,7] is rotated to [5,6,7,1,2,3,4].
+ * <p>For example, with n = 7 and k = 3, the array [1,2,3,4,5,6,7] is rotated to [5,6,7,1,2,3,4].
  *
  * <p>Note: Try to come up as many solutions as you can, there are at least 3 different ways to
  * solve this problem.

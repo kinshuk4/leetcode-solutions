@@ -6,7 +6,7 @@ import java.util.*;
  * 09/10/2019 Given an m * n matrix M initialized with all 0's and
  * several update operations.
  *
- * <p>Operations are represented by a 2D com.vaani.leetcode.array, and each operation is represented by an com.vaani.leetcode.array with
+ * <p>Operations are represented by a 2D com.vaani.leetcode.array, and each operation is represented by an array with
  * two positive integers a and b, which means M[i][j] should be added by one for all 0 <= i < a and
  * 0 <= j < b.
  *

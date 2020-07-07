@@ -14,7 +14,7 @@ package com.vaani.leetcode.dp;
  * <p>Follow up: Could you solve it in O(nk) runtime?
  *
  * <p>Solution: Worst case run-time complexity of O(n x k) : Perform a prefix and postfix sum and
- * maintain a auxiliary com.vaani.leetcode.array to keep track of prefix and post-fix sum. Perform a bottom-up dp to
+ * maintain a auxiliary array to keep track of prefix and post-fix sum. Perform a bottom-up dp to
  * calculate the final result. DP[i][j] = DP[i][j] + Min(LeftPrefixSum[i + 1][j], RightPrefixSum[i +
  * 1][j])
  */

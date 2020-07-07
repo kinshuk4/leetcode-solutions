@@ -1,6 +1,6 @@
 package com.vaani.leetcode.two_pointers;
 /**
- * 17/02/2018. Your are given an com.vaani.leetcode.array of positive integers nums.
+ * 17/02/2018. Your are given an array of positive integers nums.
  *
  * <p>Count and print the number of (contiguous) subarrays where the product of all the elements in
  * the subarray is less than k.

@@ -1,18 +1,18 @@
 package com.vaani.leetcode.array;
 
 /**
- * 09/02/2018. In a given integer com.vaani.leetcode.array nums, there is always
+ * 09/02/2018. In a given integer array nums, there is always
  * exactly one largest element.
  *
- * <p>Find whether the largest element in the com.vaani.leetcode.array is at least twice as much as every other number
- * in the com.vaani.leetcode.array.
+ * <p>Find whether the largest element in the array is at least twice as much as every other number
+ * in the array.
  *
  * <p>If it is, return the index of the largest element, otherwise return -1.
  *
  * <p>Example 1:
  *
  * <p>Input: nums = [3, 6, 1, 0] Output: 1 Explanation: 6 is the largest integer, and for every
- * other number in the com.vaani.leetcode.array x, 6 is more than twice as big as x. The index of value 6 is 1, so we
+ * other number in the array x, 6 is more than twice as big as x. The index of value 6 is 1, so we
  * return 1.
  *
  * <p>Example 2:

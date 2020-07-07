@@ -10,7 +10,7 @@ import java.util.*;
  * that j > i, node_j.val > node_i.val, and j is the smallest possible choice. If such a j does not
  * exist, the next larger value is 0.
  *
- * <p>Return an com.vaani.leetcode.array of integers answer, where answer[i] = next_larger(node_{i+1}).
+ * <p>Return an array of integers answer, where answer[i] = next_larger(node_{i+1}).
  *
  * <p>Note that in the example inputs (not outputs) below, arrays such as [2,1,5] represent the
  * serialization of a linked list with a head node value of 2, second node value of 1, and third

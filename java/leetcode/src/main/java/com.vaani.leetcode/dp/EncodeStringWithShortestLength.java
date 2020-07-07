@@ -38,7 +38,7 @@ package com.vaani.leetcode.dp;
  * <p>Input: "abbbabbbcabbbabbbc" Output: "2[2[abbb]c]" Explanation: "abbbabbbc" occurs twice, but
  * "abbbabbbc" can also be encoded to "2[abbb]c", so one answer can be "2[2[abbb]c]".
  *
- * <p>Solution: O(N ^ 4) Maintain a 2d String com.vaani.leetcode.array of minimum substring and split each substring
+ * <p>Solution: O(N ^ 4) Maintain a 2d String array of minimum substring and split each substring
  * and combine the minimum substrings So, the answer could be either DP[i][j] = min(DP[i][k] + DP[k
  * + 1][j]) or split (i, j) at every index k and check if a new minimum substring can be formed
  * which is lesser than the current minimum.

@@ -1,7 +1,7 @@
 package com.vaani.leetcode.binary_search;
 
 /**
- * 20/05/2017. Given an com.vaani.leetcode.array of integers sorted in ascending
+ * 20/05/2017. Given an array of integers sorted in ascending
  * order, find the starting and ending position of a given target value.
  *
  * <p>Your algorithm's runtime complexity must be in the order of O(log n).

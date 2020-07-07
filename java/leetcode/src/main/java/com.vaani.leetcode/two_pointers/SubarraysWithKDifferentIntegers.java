@@ -1,7 +1,7 @@
 package com.vaani.leetcode.two_pointers;
 
 /**
- * Given an com.vaani.leetcode.array A of positive integers, call a
+ * Given an array A of positive integers, call a
  * (contiguous, not necessarily distinct) subarray of A good if the number of different integers in
  * that subarray is exactly K.
  *

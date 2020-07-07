@@ -1,8 +1,8 @@
 package com.vaani.leetcode.array;
 
 /**
- * 23/10/2019 Given a binary com.vaani.leetcode.array data, return the minimum number
- * of swaps required to group all 1’s present in the com.vaani.leetcode.array together in any place in the com.vaani.leetcode.array.
+ * 23/10/2019 Given a binary array data, return the minimum number
+ * of swaps required to group all 1’s present in the array together in any place in the array.
  *
  * <p>Example 1:
  *
@@ -15,7 +15,7 @@ package com.vaani.leetcode.array;
  *
  * <p>Input: [1,0,1,0,1,0,0,1,1,0,1] Output: 3 Explanation: One possible solution that uses 3 swaps
  * is [0,0,0,0,0,1,1,1,1,1,1]. Solution: O(N) All the 1s to be grouped together would mean that all
- * 1s should occupy a small window in a com.vaani.leetcode.array, this window could be in any part of the com.vaani.leetcode.array - a
+ * 1s should occupy a small window in a com.vaani.leetcode.array, this window could be in any part of the array - a
  * window with minimum number of 0s is the minimum number of swap required.
  */
 public class MinimumSwapsToGroupAll1Together {

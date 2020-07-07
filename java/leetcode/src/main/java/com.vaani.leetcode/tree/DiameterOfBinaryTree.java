@@ -1,7 +1,12 @@
 package com.vaani.leetcode.tree;
 
+import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+
+import static com.vaani.dsa.ds.algos.tree.binary.TreeDiameter.getBinaryTreeDiameter;
+import static com.vaani.dsa.ds.algos.tree.binary.TreeDiameter.getDiameter;
+
 /**
- * 18/10/2017.
+ * https://leetcode.com/problems/diameter-of-binary-tree/
  *
  * <p>Given a binary com.vaani.leetcode.tree, you need to compute the length of the diameter of the com.vaani.leetcode.tree. The diameter
  * of a binary com.vaani.leetcode.tree is the length of the longest path between any two nodes in a com.vaani.leetcode.tree. This path may
@@ -14,36 +19,28 @@ package com.vaani.leetcode.tree;
  */
 public class DiameterOfBinaryTree {
 
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
-
     private int max = 0;
 
-    /**
-     * Main method
-     *
-     * @param args
-     * @throws Exception
-     */
     public static void main(String[] args) throws Exception {
-        TreeNode root = new TreeNode(5);
-        root.left = new TreeNode(4);
+        BinaryTreeNode root = new BinaryTreeNode(5);
+        root.left = new BinaryTreeNode(4);
+        System.out.println(new DiameterOfBinaryTree().diameterOfBinaryTreeDFS(root));
         System.out.println(new DiameterOfBinaryTree().diameterOfBinaryTree(root));
     }
 
-    public int diameterOfBinaryTree(TreeNode root) {
+    public int diameterOfBinaryTreeDFS(BinaryTreeNode root) {
         dfs(root);
         return max;
     }
 
-    private int dfs(TreeNode node) {
+    public int diameterOfBinaryTree(BinaryTreeNode root) {
+        if(root == null){
+            return 0;
+        }
+        return getBinaryTreeDiameter(root) -1 ;
+    }
+
+    private int dfs(BinaryTreeNode node) {
         if (node != null) {
             int left = dfs(node.left);
             int right = dfs(node.right);

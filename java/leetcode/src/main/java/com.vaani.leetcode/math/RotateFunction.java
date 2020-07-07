@@ -1,10 +1,10 @@
 package com.vaani.leetcode.math;
 
 /**
- * 18/03/2017. Given an com.vaani.leetcode.array of integers A and let n to be its
+ * 18/03/2017. Given an array of integers A and let n to be its
  * length.
  *
- * <p>Assume Bk to be an com.vaani.leetcode.array obtained by rotating the com.vaani.leetcode.array A k positions clock-wise, we define a
+ * <p>Assume Bk to be an array obtained by rotating the array A k positions clock-wise, we define a
  * "rotation function" F on A as follow:
  *
  * <p>F(k) = 0 * Bk[0] + 1 * Bk[1] + ... + (n-1) * Bk[n-1].

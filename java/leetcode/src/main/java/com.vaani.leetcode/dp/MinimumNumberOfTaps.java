@@ -8,7 +8,7 @@ import java.util.Arrays;
  *
  * <p>There are n + 1 taps located at points [0, 1, ..., n] in the garden.
  *
- * <p>Given an integer n and an integer com.vaani.leetcode.array ranges of length n + 1 where ranges[i] (0-indexed)
+ * <p>Given an integer n and an integer array ranges of length n + 1 where ranges[i] (0-indexed)
  * means the i-th tap can water the area [i - ranges[i], i + ranges[i]] if it was open.
  *
  * <p>Return the minimum number of taps that should be open to water the whole garden, If the garden

@@ -1,17 +1,17 @@
 package com.vaani.leetcode.divide_and_conquer;
 
 /**
- * 01/08/2019 Given an com.vaani.leetcode.array nums, we call (i, j) an important
+ * 01/08/2019 Given an array nums, we call (i, j) an important
  * reverse pair if i < j and nums[i] > 2*nums[j].
  *
- * <p>You need to return the number of important reverse pairs in the given com.vaani.leetcode.array.
+ * <p>You need to return the number of important reverse pairs in the given array.
  *
  * <p>Example1:
  *
  * <p>Input: [1,3,2,3,1] Output: 2 Example2:
  *
- * <p>Input: [2,4,3,5,1] Output: 3 Note: The length of the given com.vaani.leetcode.array will not exceed 50,000. All
- * the numbers in the input com.vaani.leetcode.array are in the range of 32-bit integer.
+ * <p>Input: [2,4,3,5,1] Output: 3 Note: The length of the given array will not exceed 50,000. All
+ * the numbers in the input array are in the range of 32-bit integer.
  *
  * <p>Solution: O(N log N) Given two sorted arrays A[] and B[] it is quite easy to see for every
  * element i in A, how many elements in A have a value > 2 * B[j] using binary search (also possible

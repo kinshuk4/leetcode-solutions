@@ -1,10 +1,10 @@
 package com.vaani.leetcode.greedy;
 
 /**
- * 17/03/2017. Given an com.vaani.leetcode.array of non-negative integers, you are
- * initially positioned at the first index of the com.vaani.leetcode.array.
+ * 17/03/2017. Given an array of non-negative integers, you are
+ * initially positioned at the first index of the array.
  *
- * <p>Each element in the com.vaani.leetcode.array represents your maximum jump length at that position.
+ * <p>Each element in the array represents your maximum jump length at that position.
  *
  * <p>Determine if you are able to reach the last index.
  *

@@ -3,7 +3,7 @@ package com.vaani.leetcode.dp;
 import java.util.Arrays;
 
 /**
- * 17/12/2017. Given an integer com.vaani.leetcode.array with all positive numbers
+ * 17/12/2017. Given an integer array with all positive numbers
  * and no duplicates, find the number of possible combinations that add up to a positive integer
  * target.
  *

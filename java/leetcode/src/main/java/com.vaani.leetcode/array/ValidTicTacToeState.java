@@ -24,7 +24,7 @@ package com.vaani.leetcode.array;
  *
  * <p>Example 4: Input: board = ["XOX", "O O", "XOX"] Output: true Note:
  *
- * <p>board is a length-3 com.vaani.leetcode.array of strings, where each com.vaani.leetcode.string board[i] has length 3. Each
+ * <p>board is a length-3 array of strings, where each com.vaani.leetcode.string board[i] has length 3. Each
  * board[i][j] is a character in the set {" ", "X", "O"}.
  *
  * <p>Solution: Do a brute-force check for each row, column and diagonals and keep track of count of

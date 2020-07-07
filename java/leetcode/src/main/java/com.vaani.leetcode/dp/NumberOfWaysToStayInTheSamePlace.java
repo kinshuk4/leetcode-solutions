@@ -3,9 +3,9 @@ package com.vaani.leetcode.dp;
 import java.util.Arrays;
 
 /**
- * 05/04/2020 You have a pointer at index 0 in an com.vaani.leetcode.array of size
+ * 05/04/2020 You have a pointer at index 0 in an array of size
  * arrLen. At each step, you can move 1 position to the left, 1 position to the right in the com.vaani.leetcode.array
- * or stay in the same place (The pointer should not be placed outside the com.vaani.leetcode.array at any time).
+ * or stay in the same place (The pointer should not be placed outside the array at any time).
  *
  * <p>Given two integers steps and arrLen, return the number of ways such that your pointer still at
  * index 0 after exactly steps steps.
@@ -28,7 +28,7 @@ import java.util.Arrays;
  * <p>1 <= steps <= 500 1 <= arrLen <= 10^6
  *
  * <p>Solution O(S x S) where S is number of steps. This is quite a straight forward problem. Every
- * state is a combination of position in the com.vaani.leetcode.array and the number of steps. From every state we can
+ * state is a combination of position in the array and the number of steps. From every state we can
  * traverse in three direction remain in the same position i.e (i, n - 1), move right (i + 1, n - 1)
  * and move left (i - 1, n - 1). The base state will be (0, 0) which is equal to count of 1, memoize
  * each state and do a dop down dp staring from state (0, N).

@@ -3,14 +3,14 @@ package com.vaani.leetcode.hashing;
 import java.util.*;
 
 /**
- * 26/11/2019 Given an com.vaani.leetcode.array of integers A, return the largest
+ * 26/11/2019 Given an array of integers A, return the largest
  * integer that only occurs once.
  *
  * <p>If no integer occurs once, return -1.
  *
  * <p>Example 1:
  *
- * <p>Input: [5,7,3,9,4,9,8,3,1] Output: 8 Explanation: The maximum integer in the com.vaani.leetcode.array is 9 but it
+ * <p>Input: [5,7,3,9,4,9,8,3,1] Output: 8 Explanation: The maximum integer in the array is 9 but it
  * is repeated. The number 8 occurs only once, so it's the answer. Example 2:
  *
  * <p>Input: [9,9,8,8] Output: -1 Explanation: There is no number that occurs only once.

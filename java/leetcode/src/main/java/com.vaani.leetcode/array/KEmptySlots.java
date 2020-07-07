@@ -7,7 +7,7 @@ import java.util.TreeSet;
  * is a flower. The N flowers will bloom one by one in N days. In each day, there will be exactly
  * one flower blooming and it will be in the status of blooming since then.
  *
- * <p>Given an com.vaani.leetcode.array flowers consists of number from 1 to N. Each number in the com.vaani.leetcode.array represents the
+ * <p>Given an array flowers consists of number from 1 to N. Each number in the array represents the
  * place where the flower will open in that day.
  *
  * <p>For example, flowers[i] = x means that the unique flower that blooms at day i will be at
@@ -21,10 +21,10 @@ import java.util.TreeSet;
  *
  * <p>Example 1: Input: flowers: [1,3,2] k: 1 Output: 2 Explanation: In the second day, the first
  * and the third flower have become blooming. Example 2: Input: flowers: [1,2,3] k: 1 Output: -1
- * Note: The given com.vaani.leetcode.array will be in the range [1, 20000].
+ * Note: The given array will be in the range [1, 20000].
  *
  * <p>Solution: O(n log n). Maintain a com.vaani.leetcode.tree-set of bloomed flowers and for every element in the
- * com.vaani.leetcode.array find the upper and lower bound bloomed flowers and calculate their difference with the
+ * array find the upper and lower bound bloomed flowers and calculate their difference with the
  * current. If the difference is k return the current day, if none found then return -1
  */
 public class KEmptySlots {

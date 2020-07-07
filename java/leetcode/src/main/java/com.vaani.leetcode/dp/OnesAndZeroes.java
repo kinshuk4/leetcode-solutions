@@ -5,14 +5,14 @@ package com.vaani.leetcode.dp;
  * have to generate maximum benefit is what we always want to pursue.
  *
  * <p>For now, suppose you are a dominator of m 0s and n 1s respectively. On the other hand, there
- * is an com.vaani.leetcode.array with strings consisting of only 0s and 1s.
+ * is an array with strings consisting of only 0s and 1s.
  *
  * <p>Now your task is to find the maximum number of strings that you can form with given m 0s and n
  * 1s. Each 0 and 1 can be used at most once.
  *
  * <p>Note:
  *
- * <p>The given numbers of 0s and 1s will both not exceed 100 The size of given com.vaani.leetcode.string com.vaani.leetcode.array won't
+ * <p>The given numbers of 0s and 1s will both not exceed 100 The size of given com.vaani.leetcode.string array won't
  * exceed 600.
  *
  * <p>Example 1:
@@ -28,8 +28,8 @@ package com.vaani.leetcode.dp;
  *
  * <p>Explanation: You could form "10", but then you'd have nothing left. Better form "0" and "1".
  *
- * <p>Solution: O(S x m x n) For every com.vaani.leetcode.string com.vaani.leetcode.array position we have two choices i. pick this value
- * or ii. not pick this value. Evaluate both these cases and cache the result in a dp com.vaani.leetcode.array.
+ * <p>Solution: O(S x m x n) For every com.vaani.leetcode.string array position we have two choices i. pick this value
+ * or ii. not pick this value. Evaluate both these cases and cache the result in a dp array.
  */
 public class OnesAndZeroes {
     public static void main(String[] args) {

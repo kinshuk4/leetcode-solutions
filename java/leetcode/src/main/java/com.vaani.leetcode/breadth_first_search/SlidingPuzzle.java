@@ -23,7 +23,7 @@ import java.util.*;
  * [[1,2,0],[4,5,3]] After move 5: [[1,2,3],[4,5,0]] Input: board = [[3,2,4],[1,5,0]] Output: 14
  * Note:
  *
- * <p>board will be a 2 x 3 com.vaani.leetcode.array as described above. board[i][j] will be a permutation of [0, 1, 2,
+ * <p>board will be a 2 x 3 array as described above. board[i][j] will be a permutation of [0, 1, 2,
  * 3, 4, 5].
  *
  * <p>Solution: Do a bfs of each state of the board to find the least possible moves.

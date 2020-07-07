@@ -4,8 +4,8 @@ import java.math.BigInteger;
 import java.util.*;
 
 /**
- * <p>For a non-negative integer X, the com.vaani.leetcode.array-form of X is an com.vaani.leetcode.array of its digits in left to right
- * order. For example, if X = 1231, then the com.vaani.leetcode.array form is [1,2,3,1].
+ * <p>For a non-negative integer X, the com.vaani.leetcode.array-form of X is an array of its digits in left to right
+ * order. For example, if X = 1231, then the array form is [1,2,3,1].
  *
  * <p>Given the com.vaani.leetcode.array-form A of a non-negative integer X, return the com.vaani.leetcode.array-form of the integer X+K.
  *

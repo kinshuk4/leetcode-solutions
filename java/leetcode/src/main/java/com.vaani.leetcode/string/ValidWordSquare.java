@@ -42,7 +42,7 @@ import java.util.*;
  * <p>Therefore, it is NOT a valid word square.
  *
  * <p>Solution: O(N x M) where N is number of words and M is max length of a com.vaani.leetcode.string. Save strings
- * for each column and each row in a com.vaani.leetcode.array and compare them both.
+ * for each column and each row in a array and compare them both.
  */
 public class ValidWordSquare {
     public static void main(String[] args) {

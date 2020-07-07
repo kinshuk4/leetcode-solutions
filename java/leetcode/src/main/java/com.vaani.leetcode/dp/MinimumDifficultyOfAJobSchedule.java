@@ -8,7 +8,7 @@ package com.vaani.leetcode.dp;
  * difficulties of each day of the d days. The difficulty of a day is the maximum difficulty of a
  * job done in that day.
  *
- * <p>Given an com.vaani.leetcode.array of integers jobDifficulty and an integer d. The difficulty of the i-th job is
+ * <p>Given an array of integers jobDifficulty and an integer d. The difficulty of the i-th job is
  * jobDifficulty[i].
  *
  * <p>Return the minimum difficulty of a job schedule. If you cannot find a schedule for the jobs

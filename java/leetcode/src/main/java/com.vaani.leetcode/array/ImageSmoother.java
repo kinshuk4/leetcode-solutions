@@ -1,7 +1,8 @@
 package com.vaani.leetcode.array;
 
 /**
- * 17/02/2018. * Given a 2D integer matrix M representing the gray
+ * https://leetcode.com/problems/image-smoother/
+ * Given a 2D integer matrix M representing the gray
  * scale of an image, you need to com.vaani.leetcode.design a smoother to make the gray scale of each cell becomes the
  * average gray scale (rounding down) of all the 8 surrounding cells and itself. If a cell has less
  * than 8 surrounding cells, then use as many as you can.
@@ -14,30 +15,44 @@ package com.vaani.leetcode.array;
  */
 public class ImageSmoother {
 
-    int[] R = {1, -1, 0, 0, 1, -1, 1, -1};
-    int[] C = {0, 0, -1, 1, 1, 1, -1, -1};
 
     public static void main(String[] args) throws Exception {
+        int[][] M = {
+                {2, 3, 4},
+                {5, 6, 7},
+                {8, 9, 10},
+                {11, 12, 13},
+                {14, 15, 16}
+        };
+
+        ImageSmoother underTest = new ImageSmoother();
+
+        System.out.println(underTest.imageSmoother(M));
     }
 
     public int[][] imageSmoother(int[][] M) {
-        int[][] result = new int[M.length][M[0].length];
-        for (int i = 0; i < M.length; i++) {
-            for (int j = 0; j < M[0].length; j++) {
-                int numCount = 0;
-                int totalCount = 1;
-                for (int k = 0; k < 8; k++) {
-                    int newR = i + R[k];
-                    int newC = j + C[k];
-                    if (newR >= 0 && newC >= 0 && newR < M.length && newC < M[0].length) {
-                        if (M[newR][newC] > 0) {
-                            numCount += M[newR][newC];
-                        }
-                        totalCount++;
+        int m = M.length;
+        int n = M[0].length;
+
+        int[][] result = new int[m][n];
+        // directions we can go in
+        int[] dx = {-1, -1, -1, 0, 0, 0, 1, 1, 1};
+        int[] dy = {-1, 0, 1, -1, 0, 1, -1, 0, 1};
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                int sum = 0;
+                int totalCells = 0;
+                for (int k = 0; k < dx.length; k++) {
+                    int cellI = i + dx[k];
+                    int cellJ = j + dy[k];
+                    if (cellI >= 0 && cellJ >= 0 && cellI < m && cellJ < n) {
+                        sum += M[cellI][cellJ];
+                        totalCells++;
                     }
                 }
-                if (M[i][j] == 1) numCount++;
-                result[i][j] = numCount / totalCount;
+
+                result[i][j] = sum / totalCells;
             }
         }
         return result;

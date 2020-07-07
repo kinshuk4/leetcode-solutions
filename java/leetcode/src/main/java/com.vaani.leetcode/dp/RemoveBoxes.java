@@ -13,7 +13,7 @@ package com.vaani.leetcode.dp;
  * 3, 4, 3, 1] (3*3=9 points) ----> [1, 3, 3, 3, 1] (1*1=1 points) ----> [1, 1] (3*3=9 points) ---->
  * [] (2*2=4 points) Note: The number of boxes n would not exceed 100.
  *
- * <p>Solution O(N ^ 4) For each sub-com.vaani.leetcode.array [l, r] make a dp cache and calculate maximum of [l, i][1]
+ * <p>Solution O(N ^ 4) For each sub-array [l, r] make a dp cache and calculate maximum of [l, i][1]
  * + [i + 1, r][1] or maximum of [l + 1, i - 1][n] + [i, r][1] where boxes[l] == boxes[i] where n is
  * the count of repetitions
  */

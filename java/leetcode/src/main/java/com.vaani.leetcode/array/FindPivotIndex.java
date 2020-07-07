@@ -1,8 +1,9 @@
 package com.vaani.leetcode.array;
 
 /**
- * 06/08/2019 Given an com.vaani.leetcode.array of integers nums, write a method that
- * returns the "pivot" index of this com.vaani.leetcode.array.
+ * https://leetcode.com/problems/find-pivot-index/
+ * Given an array of integers nums, write a method that
+ * returns the "pivot" index of this array.
  *
  * <p>We define the pivot index as the index where the sum of the numbers to the left of the index
  * is equal to the sum of the numbers to the right of the index.
@@ -26,7 +27,7 @@ package com.vaani.leetcode.array;
  * <p>The length of nums will be in the range [0, 10000]. Each element nums[i] will be an integer in
  * the range [-1000, 1000].
  *
- * <p>Solution: O(N) maintain a prefix and posfix sum com.vaani.leetcode.array and then use this to arrive at the
+ * <p>Solution: O(N) maintain a prefix and posfix sum array and then use this to arrive at the
  * answer.
  */
 public class FindPivotIndex {
@@ -34,6 +35,37 @@ public class FindPivotIndex {
     }
 
     public int pivotIndex(int[] nums) {
+        if (nums.length == 0) {
+            return -1;
+        }
+
+        // cumulative sum of nums array
+        for(int i = 1; i < nums.length ; i++){
+            nums[i] += nums[i-1] ;
+        }
+
+        int l = 0;
+        int r = nums.length - 1;
+
+
+        // if the numbers at the first and last index are equal, return 0
+        // This also handles arrays that have only 1 character
+        if (nums[l] - nums[r] == 0) {
+            return 0;
+        }
+        for (int i = 1; i < nums.length; i++) {
+            /* If the number at the last index minus the number at the current index
+             * is equal to the previous index, return  the current index
+             * */
+            if (nums[r] - nums[i] == nums[i - 1]) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    public int pivotIndex2(int[] nums) {
         if (nums.length == 1) return 0;
         int[] left = new int[nums.length];
         int[] right = new int[nums.length];

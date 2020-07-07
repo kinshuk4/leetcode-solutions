@@ -4,8 +4,8 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 
 /**
- * 06/04/2019 Given an com.vaani.leetcode.array A, we may rotate it by a non-negative
- * integer K so that the com.vaani.leetcode.array becomes A[K], A[K+1], A{K+2], ... A[A.length - 1], A[0], A[1], ...,
+ * 06/04/2019 Given an array A, we may rotate it by a non-negative
+ * integer K so that the array becomes A[K], A[K+1], A{K+2], ... A[A.length - 1], A[0], A[1], ...,
  * A[K-1]. Afterward, any entries that are less than or equal to their index are worth 1 point.
  *
  * <p>For example, if we have [2, 4, 1, 3, 0], and we rotate by K = 2, it becomes [1, 3, 0, 2, 4].

@@ -1,7 +1,7 @@
 package com.vaani.leetcode.tree;
 
 /**
- * 25/02/2017. Given an com.vaani.leetcode.array where elements are sorted in
+ * 25/02/2017. Given an array where elements are sorted in
  * ascending order, convert it to a height balanced BST.
  */
 public class SortedArrayToBST {

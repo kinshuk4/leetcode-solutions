@@ -111,7 +111,7 @@ public class TicTacToe {
     /**
      * Increment row / col count
      *
-     * @param cells  com.vaani.leetcode.array of cells
+     * @param cells  array of cells
      * @param key    row / col key
      * @param player Player object
      */

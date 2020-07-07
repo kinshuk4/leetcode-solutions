@@ -1,8 +1,8 @@
 package com.vaani.leetcode.array;
 
 /**
- * 04/07/2017. Given an com.vaani.leetcode.array containing n distinct numbers taken
- * from 0, 1, 2, ..., n, find the one that is missing from the com.vaani.leetcode.array.
+ * 04/07/2017. Given an array containing n distinct numbers taken
+ * from 0, 1, 2, ..., n, find the one that is missing from the array.
  *
  * <p>For example, Given nums = [0, 1, 3] return 2.
  *

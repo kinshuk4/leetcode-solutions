@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * 17/02/2018. Given a non-empty integer com.vaani.leetcode.array, find the minimum
- * number of moves required to make all com.vaani.leetcode.array elements equal, where a move is incrementing a
+ * number of moves required to make all array elements equal, where a move is incrementing a
  * selected element by 1 or decrementing a selected element by 1.
  *
  * <p>You may assume the com.vaani.leetcode.array's length is at most 10,000.
@@ -20,8 +20,8 @@ import java.util.Arrays;
  *
  * <p>[1,2,3] => [2,2,3] => [2,2,2]
  *
- * <p>Solution: O(n log n): Sort the com.vaani.leetcode.array and find the median of the com.vaani.leetcode.array. Use the median of com.vaani.leetcode.array
- * to increment/decrement other value of com.vaani.leetcode.array. Sum up the difference and return the answer.
+ * <p>Solution: O(n log n): Sort the array and find the median of the array. Use the median of com.vaani.leetcode.array
+ * to increment/decrement other value of array. Sum up the difference and return the answer.
  */
 public class MinimumMovesToEqualArray {
     /**

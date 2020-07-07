@@ -3,24 +3,24 @@ package com.vaani.leetcode.divide_and_conquer;
 import java.util.*;
 
 /**
- * 30/06/2018. Given an com.vaani.leetcode.array nums, we call (i, j) an important
+ * 30/06/2018. Given an array nums, we call (i, j) an important
  * reverse pair if i < j and nums[i] > 2*nums[j].
  *
- * <p>You need to return the number of important reverse pairs in the given com.vaani.leetcode.array.
+ * <p>You need to return the number of important reverse pairs in the given array.
  *
  * <p>Example1:
  *
  * <p>Input: [1,3,2,3,1] Output: 2 Example2:
  *
- * <p>Input: [2,4,3,5,1] Output: 3 Note: The length of the given com.vaani.leetcode.array will not exceed 50,000. All
- * the numbers in the input com.vaani.leetcode.array are in the range of 32-bit integer.
+ * <p>Input: [2,4,3,5,1] Output: 3 Note: The length of the given array will not exceed 50,000. All
+ * the numbers in the input array are in the range of 32-bit integer.
  *
- * <p>Solution: O(n log n): Example: 1,3,2,3,1 1. Sort the com.vaani.leetcode.array in non-increasing order (if there
- * is a collision, sort by lower index). So the sorted com.vaani.leetcode.array will be (3, 3, 2, 1, 1) having indexes
- * (1, 3, 2, 0, 4) 2. Maintain a prefix sum of index (starting from 1) for the sorted com.vaani.leetcode.array. So,
- * prefix sum for the above sorted com.vaani.leetcode.array is (1, 2, 3, 4, 5) Now, the basic idea is to iterate from
- * index n - 1 to 0 in the original com.vaani.leetcode.array and for each element calculate the element p (num[i] x 2)
- * and find the upper bound of the element p in sorted com.vaani.leetcode.array which is 3 at index 1 in this case and
+ * <p>Solution: O(n log n): Example: 1,3,2,3,1 1. Sort the array in non-increasing order (if there
+ * is a collision, sort by lower index). So the sorted array will be (3, 3, 2, 1, 1) having indexes
+ * (1, 3, 2, 0, 4) 2. Maintain a prefix sum of index (starting from 1) for the sorted array. So,
+ * prefix sum for the above sorted array is (1, 2, 3, 4, 5) Now, the basic idea is to iterate from
+ * index n - 1 to 0 in the original array and for each element calculate the element p (num[i] x 2)
+ * and find the upper bound of the element p in sorted array which is 3 at index 1 in this case and
  * add prefix sum of the index 1 to the result. So the result now becomes 2.
  *
  * <p>To maintain a prefix sum and update it efficiently we have to use a BIT or Fenwick com.vaani.leetcode.tree.

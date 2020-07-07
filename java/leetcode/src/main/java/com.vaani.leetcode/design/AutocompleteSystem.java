@@ -20,7 +20,7 @@ import java.util.*;
  * <p>The constructor function:
  *
  * <p>AutocompleteSystem(String[] sentences, int[] times): This is the constructor. The input is
- * historical data. Sentences is a com.vaani.leetcode.string com.vaani.leetcode.array consists of previously typed sentences. Times is the
+ * historical data. Sentences is a com.vaani.leetcode.string array consists of previously typed sentences. Times is the
  * corresponding times a sentence has been typed. Your system should record these historical data.
  *
  * <p>Now, the user wants to input a new sentence. The following function will provide the next
@@ -99,7 +99,7 @@ public class AutocompleteSystem {
     /**
      * Initialize the trie data-structure
      *
-     * @param sentences com.vaani.leetcode.array of sentences
+     * @param sentences array of sentences
      * @param times     degree
      */
     public AutocompleteSystem(String[] sentences, int[] times) {

@@ -3,7 +3,7 @@ package com.vaani.leetcode.array;
 import java.util.Arrays;
 
 /**
- * 27/11/2017. Given an com.vaani.leetcode.array of meeting time intervals consisting
+ * 27/11/2017. Given an array of meeting time intervals consisting
  * of start and end times [[s1,e1],[s2,e2],...] (si < ei), determine if a person could attend all
  * meetings.
  *

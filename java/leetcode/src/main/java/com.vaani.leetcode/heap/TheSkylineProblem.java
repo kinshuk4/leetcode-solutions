@@ -43,7 +43,7 @@ import java.util.*;
  * three lines of height 5 should be merged into one in the final output as such: [...[2 3], [4 5],
  * [12 7], ...]
  *
- * <p>Solution: 1. Sort com.vaani.leetcode.array of points. Each point here is either a start of a rectangle or end of
+ * <p>Solution: 1. Sort array of points. Each point here is either a start of a rectangle or end of
  * a rectangle. 2. Maintain a priority queue of rectangles ordered by increasing order of height, if
  * height of two rectangle is same then, order by left most start index. 3. For each point starting
  * from left-most point: 3.a. Add all the rectangles which starts at this point. 3.b. Remove all the

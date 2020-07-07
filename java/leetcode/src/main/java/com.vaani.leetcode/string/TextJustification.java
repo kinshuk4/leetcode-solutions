@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 09/03/2017. Given an com.vaani.leetcode.array of words and a length L, format the
+ * 09/03/2017. Given an array of words and a length L, format the
  * text such that each line has exactly L characters and is fully (left and right) justified.
  *
  * <p>You should pack your words in a com.vaani.leetcode.greedy approach; that is, pack as many words as you can in

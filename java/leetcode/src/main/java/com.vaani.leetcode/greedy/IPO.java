@@ -23,10 +23,10 @@ package com.vaani.leetcode.greedy;
  * start the project indexed 1 or the project indexed 2. Since you can choose at most 2 projects,
  * you need to finish the project indexed 2 to get the maximum capital. Therefore, output the final
  * maximized capital, which is 0 + 1 + 3 = 4. Note: You may assume all numbers in the input are
- * non-negative integers. The length of Profits com.vaani.leetcode.array and Capital com.vaani.leetcode.array will not exceed 50,000. The
+ * non-negative integers. The length of Profits array and Capital array will not exceed 50,000. The
  * answer is guaranteed to fit in a 32-bit signed integer.
  *
- * <p>Solution: O(N log N) where N is the size of Capital/Profit com.vaani.leetcode.array. General intuition is to pick
+ * <p>Solution: O(N log N) where N is the size of Capital/Profit array. General intuition is to pick
  * a project which gives maximum profit for the available capital. Sum the profit with the original
  * capital and this becomes the new available capital now, again pick the project which gives
  * maximum profit. Continue this until K projects are picked. Maintain a priority queue to pick the

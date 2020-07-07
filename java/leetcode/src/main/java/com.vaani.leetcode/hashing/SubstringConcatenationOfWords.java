@@ -22,7 +22,7 @@ import java.util.Map;
  * of words and store this in a HashMap. 2. For every substring (substring of s) of length
  * (words[0].length() * words.length) split this into words of length words[0].length and calculate
  * the word frequency for the split words. If the word frequency matches the word frequency of the
- * given original word list then add the starting index of this substring into the result com.vaani.leetcode.array.
+ * given original word list then add the starting index of this substring into the result array.
  *
  * <p>A small optimization is to break the substring match as soon as you find out that the word
  * formed from the substring is not part of the original given word list or if the frequency of the

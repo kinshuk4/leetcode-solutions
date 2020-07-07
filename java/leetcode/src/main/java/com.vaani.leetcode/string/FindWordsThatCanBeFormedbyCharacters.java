@@ -3,7 +3,7 @@ package com.vaani.leetcode.string;
 import java.util.*;
 
 /**
- * 28/08/2019 You are given an com.vaani.leetcode.array of strings words and a com.vaani.leetcode.string
+ * 28/08/2019 You are given an array of strings words and a com.vaani.leetcode.string
  * chars.
  *
  * <p>A com.vaani.leetcode.string is good if it can be formed by characters from chars (each character can only be used

@@ -1,7 +1,7 @@
 package com.vaani.leetcode.binary_search;
 
 /**
- * 30/01/2020 You are given a sorted com.vaani.leetcode.array consisting of only
+ * 30/01/2020 You are given a sorted array consisting of only
  * integers where every element appears exactly twice, except for one element which appears exactly
  * once. Find this single element that appears only once.
  *

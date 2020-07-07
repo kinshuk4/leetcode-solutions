@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * 05/05/2019 In a country popular for train travel, you have
  * planned some train travelling one year in advance. The days of the year that you will travel is
- * given as an com.vaani.leetcode.array days. Each day is an integer from 1 to 365.
+ * given as an array days. Each day is an integer from 1 to 365.
  *
  * <p>Train tickets are sold in 3 different ways:
  *

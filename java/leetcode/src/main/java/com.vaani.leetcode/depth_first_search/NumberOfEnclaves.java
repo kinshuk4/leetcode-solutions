@@ -1,7 +1,7 @@
 package com.vaani.leetcode.depth_first_search;
 
 /**
- * 31/07/2019 Given a 2D com.vaani.leetcode.array A, each cell is 0 (representing
+ * 31/07/2019 Given a 2D array A, each cell is 0 (representing
  * sea) or 1 (representing land)
  *
  * <p>A move consists of walking from one land square 4-directionally to another land square, or off

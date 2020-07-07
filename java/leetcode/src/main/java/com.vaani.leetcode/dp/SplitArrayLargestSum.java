@@ -1,8 +1,8 @@
 package com.vaani.leetcode.dp;
 
 /**
- * 24/12/2017. Given an com.vaani.leetcode.array which consists of non-negative
- * integers and an integer m, you can split the com.vaani.leetcode.array into m non-empty continuous subarrays. Write
+ * 24/12/2017. Given an array which consists of non-negative
+ * integers and an integer m, you can split the array into m non-empty continuous subarrays. Write
  * an algorithm to minimize the largest sum among these m subarrays.
  *
  * <p>Note: If n is the length of com.vaani.leetcode.array, assume the following constraints are satisfied:
@@ -16,7 +16,7 @@ package com.vaani.leetcode.dp;
  * <p>Explanation: There are four ways to split nums into two subarrays. The best way is to split it
  * into [7,2,5] and [10,8], where the largest sum among the two subarrays is only 18.
  *
- * <p>Solution O(n ^ 2 * k) Build a bottom up min-max dp table for each sub-com.vaani.leetcode.array ranging from n ->
+ * <p>Solution O(n ^ 2 * k) Build a bottom up min-max dp table for each sub-array ranging from n ->
  * 0
  */
 public class SplitArrayLargestSum {

@@ -33,7 +33,7 @@ import java.util.Arrays;
  *
  * <p>1 <= A.length <= 1000 1 <= A[i] <= 10^6 A[i] != A[j] for all i != j
  *
- * <p>Solution: O(N) General idea is to start from the last element and build the com.vaani.leetcode.array of element
+ * <p>Solution: O(N) General idea is to start from the last element and build the array of element
  * in the backwards order. Use a doubly-ended queue which allows you to poll from either end of a
  * queue.
  */

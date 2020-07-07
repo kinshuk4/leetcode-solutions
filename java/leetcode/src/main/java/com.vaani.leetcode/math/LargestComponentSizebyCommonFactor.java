@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * 20/08/2019 Given a non-empty com.vaani.leetcode.array of unique positive integers
+ * 20/08/2019 Given a non-empty array of unique positive integers
  * A, consider the following graph:
  *
  * <p>There are A.length nodes, labelled A[0] to A[A.length - 1]; There is an edge between A[i] and

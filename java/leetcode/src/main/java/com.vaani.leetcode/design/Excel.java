@@ -11,7 +11,7 @@ import java.util.*;
  * <p>Excel(int H, char W): This is the constructor. The inputs represents the height and width of
  * the Excel form. H is a positive integer, range from 1 to 26. It represents the height. W is a
  * character range from 'A' to 'Z'. It represents that the width is the number of characters from
- * 'A' to W. The Excel form content is represented by a height * width 2D integer com.vaani.leetcode.array C, it should
+ * 'A' to W. The Excel form content is represented by a height * width 2D integer array C, it should
  * be initialized to zero. You should assume that the first row of C starts from 1, and the first
  * column of C starts from 'A'.
  *
@@ -40,7 +40,7 @@ import java.util.*;
  *
  * <p>
  *
- * <p>Example 1: Excel(3,"C"); // construct a 3*3 2D com.vaani.leetcode.array with all zero. // A B C // 1 0 0 0 // 2 0
+ * <p>Example 1: Excel(3,"C"); // construct a 3*3 2D array with all zero. // A B C // 1 0 0 0 // 2 0
  * 0 0 // 3 0 0 0
  *
  * <p>Set(1, "A", 2); // set C(1,"A") to be 2. // A B C // 1 2 0 0 // 2 0 0 0 // 3 0 0 0

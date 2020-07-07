@@ -18,9 +18,9 @@ import java.util.stream.Collectors;
  * "abc??", "?abc?", "??abc" in the first turn. (Note that the stamp must be fully contained in the
  * boundaries of the sequence in order to stamp.)
  *
- * <p>If the sequence is possible to stamp, then return an com.vaani.leetcode.array of the index of the left-most
+ * <p>If the sequence is possible to stamp, then return an array of the index of the left-most
  * letter being stamped at each turn. If the sequence is not possible to stamp, return an empty
- * com.vaani.leetcode.array.
+ * array.
  *
  * <p>For example, if the sequence is "ababc", and the stamp is "abc", then we could return the
  * answer [0, 2], corresponding to the moves "?????" -> "abc??" -> "ababc".

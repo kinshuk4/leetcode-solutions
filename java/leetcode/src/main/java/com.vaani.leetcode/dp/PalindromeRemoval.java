@@ -1,12 +1,12 @@
 package com.vaani.leetcode.dp;
 
 /**
- * 12/05/2020 Given an integer com.vaani.leetcode.array arr, in one move you can
+ * 12/05/2020 Given an integer array arr, in one move you can
  * select a palindromic subarray arr[i], arr[i+1], ..., arr[j] where i <= j, and remove that
- * subarray from the given com.vaani.leetcode.array. Note that after removing a subarray, the elements on the left and
+ * subarray from the given array. Note that after removing a subarray, the elements on the left and
  * on the right of that subarray move to fill the gap left by the removal.
  *
- * <p>Return the minimum number of moves needed to remove all numbers from the com.vaani.leetcode.array.
+ * <p>Return the minimum number of moves needed to remove all numbers from the array.
  *
  * <p>Example 1:
  *

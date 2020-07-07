@@ -1,7 +1,7 @@
 package com.vaani.leetcode.dp;
 
 /**
- * 14/12/2017. Your are given an com.vaani.leetcode.array of integers prices, for
+ * 14/12/2017. Your are given an array of integers prices, for
  * which the i-th element is the price of a given stock on day i; and a non-negative integer fee
  * representing a transaction fee.
  *

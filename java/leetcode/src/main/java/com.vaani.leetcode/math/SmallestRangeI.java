@@ -3,10 +3,10 @@ package com.vaani.leetcode.math;
 import java.util.*;
 
 /**
- * 22/08/2019 Given an com.vaani.leetcode.array A of integers, for each integer A[i]
+ * 22/08/2019 Given an array A of integers, for each integer A[i]
  * we may choose any x with -K <= x <= K, and add x to A[i].
  *
- * <p>After this process, we have some com.vaani.leetcode.array B.
+ * <p>After this process, we have some array B.
  *
  * <p>Return the smallest possible difference between the maximum value of B and the minimum value
  * of B.

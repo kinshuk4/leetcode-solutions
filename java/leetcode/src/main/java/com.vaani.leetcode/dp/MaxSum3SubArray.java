@@ -3,7 +3,7 @@ package com.vaani.leetcode.dp;
 /**
  * 22/11/2017.
  *
- * <p>In a given com.vaani.leetcode.array nums of positive integers, find three non-overlapping subarrays with maximum
+ * <p>In a given array nums of positive integers, find three non-overlapping subarrays with maximum
  * sum.
  *
  * <p>Each subarray will be of size k, and we want to maximize the sum of all 3*k entries.
@@ -17,7 +17,7 @@ package com.vaani.leetcode.dp;
  * 20000. nums[i] will be between 1 and 65535. k will be between 1 and floor(nums.length / 3).
  *
  * <p>Solution: O(N) solution by prefix and reverse-prefix sum First calculate max index for com.vaani.leetcode.array
- * index k, then use this to calculate max index for two com.vaani.leetcode.array indices j and k and again use this
+ * index k, then use this to calculate max index for two array indices j and k and again use this
  * result to calculate the final max index for i, j and k for the 3 arrays.
  */
 public class MaxSum3SubArray {

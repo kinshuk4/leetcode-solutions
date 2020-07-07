@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * 23/04/2018. Given a non-empty 2D com.vaani.leetcode.array grid of 0's and 1's, an
+ * 23/04/2018. Given a non-empty 2D array grid of 0's and 1's, an
  * island is a group of 1's (representing land) connected 4-directionally (horizontal or vertical.)
  * You may assume all four edges of the grid are surrounded by water.
  *

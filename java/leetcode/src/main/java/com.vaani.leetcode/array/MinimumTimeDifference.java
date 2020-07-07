@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
  * list is at least 2 and won't exceed 20000. The input time is legal and ranges from 00:00 to
  * 23:59.
  *
- * <p>Solution: O(N log N) convert each time value of the form hh:mm to minutes and sort the com.vaani.leetcode.array.
+ * <p>Solution: O(N log N) convert each time value of the form hh:mm to minutes and sort the array.
  * For every pair (i, j) where j = i + 1 (also for the case where i = 0 and j = N - 1) check the
  * minute difference and return the minimum time difference as the answer.
  */

@@ -24,7 +24,7 @@ import java.util.Map;
  *
  * <p>1. 5 -> 3 2. 5 -> 2 -> 1 3. -3 -> 11
  */
-public class PathSumIII {
+public class PathSum3 {
     /**
      *
      */
@@ -43,7 +43,7 @@ public class PathSumIII {
 
     public static void main(String[] args) throws Exception {
         TreeNode node = new TreeNode(1);
-        System.out.println(new PathSumIII().pathSum(node, 0));
+        System.out.println(new PathSum3().pathSum(node, 0));
     }
 
     public int pathSum(TreeNode root, int sum) {
