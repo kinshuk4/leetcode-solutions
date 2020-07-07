@@ -6,7 +6,7 @@ import java.util.*;
  * 28/08/2019 You are given an array of strings words and a com.vaani.leetcode.string
  * chars.
  *
- * <p>A com.vaani.leetcode.string is good if it can be formed by characters from chars (each character can only be used
+ * <p>A string is good if it can be formed by characters from chars (each character can only be used
  * once).
  *
  * <p>Return the sum of lengths of all good strings in words.

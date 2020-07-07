@@ -3,7 +3,7 @@ package com.vaani.leetcode.greedy;
 /**
  * 07/05/2019
  *
- * <p>Given two integers A and B, return any com.vaani.leetcode.string S such that:
+ * <p>Given two integers A and B, return any string S such that:
  *
  * <p>S has length A + B and contains exactly A 'a' letters, and exactly B 'b' letters; The
  * substring 'aaa' does not occur in S; The substring 'bbb' does not occur in S.

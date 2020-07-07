@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 3/15/2017. Given a com.vaani.leetcode.string s, partition s such that every substring of the
+ * 3/15/2017. Given a string s, partition s such that every substring of the
  * partition is a palindrome.
  *
  * <p>Return all possible palindrome partitioning of s.

@@ -3,7 +3,7 @@ package com.vaani.leetcode.dp;
 import java.util.Arrays;
 
 /**
- * 4/3/2017. Given a com.vaani.leetcode.string s, partition s such that every substring of the
+ * 4/3/2017. Given a string s, partition s such that every substring of the
  * partition is a palindrome.
  *
  * <p>Return the minimum cuts needed for a palindrome partitioning of s.

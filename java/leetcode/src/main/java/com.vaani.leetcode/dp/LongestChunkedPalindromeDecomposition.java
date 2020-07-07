@@ -10,15 +10,15 @@ package com.vaani.leetcode.dp;
  * <p>Example 1:
  *
  * <p>Input: text = "ghiabcdefhelloadamhelloabcdefghi" Output: 7 Explanation: We can split the
- * com.vaani.leetcode.string on "(ghi)(abcdef)(hello)(adam)(hello)(abcdef)(ghi)". Example 2:
+ * string on "(ghi)(abcdef)(hello)(adam)(hello)(abcdef)(ghi)". Example 2:
  *
- * <p>Input: text = "merchant" Output: 1 Explanation: We can split the com.vaani.leetcode.string on "(merchant)".
+ * <p>Input: text = "merchant" Output: 1 Explanation: We can split the string on "(merchant)".
  * Example 3:
  *
- * <p>Input: text = "antaprezatepzapreanta" Output: 11 Explanation: We can split the com.vaani.leetcode.string on
+ * <p>Input: text = "antaprezatepzapreanta" Output: 11 Explanation: We can split the string on
  * "(a)(nt)(a)(pre)(za)(tpe)(za)(pre)(a)(nt)(a)". Example 4:
  *
- * <p>Input: text = "aaa" Output: 3 Explanation: We can split the com.vaani.leetcode.string on "(a)(a)(a)".
+ * <p>Input: text = "aaa" Output: 3 Explanation: We can split the string on "(a)(a)(a)".
  *
  * <p>Constraints:
  *

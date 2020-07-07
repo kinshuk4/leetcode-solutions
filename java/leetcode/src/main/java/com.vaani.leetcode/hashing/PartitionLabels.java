@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 10/04/2018. A com.vaani.leetcode.string S of lowercase letters is given. We want
- * to partition this com.vaani.leetcode.string into as many parts as possible so that each letter appears in at most
+ * 10/04/2018. A string S of lowercase letters is given. We want
+ * to partition this string into as many parts as possible so that each letter appears in at most
  * one part, and return a list of integers representing the size of these parts.
  *
  * <p>Example 1: Input: S = "ababcbacadefegdehijhklij" Output: [9,7,8] Explanation: The partition is

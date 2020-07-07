@@ -3,7 +3,7 @@ package com.vaani.leetcode.dp;
 import java.util.Arrays;
 
 /**
- * 22/04/2020 You are given a com.vaani.leetcode.string s containing lowercase
+ * 22/04/2020 You are given a string s containing lowercase
  * letters and an integer k. You need to :
  *
  * <p>First, change some characters of s to other lowercase English letters. Then divide s into k
@@ -12,10 +12,10 @@ import java.util.Arrays;
  *
  * <p>Example 1:
  *
- * <p>Input: s = "abc", k = 2 Output: 1 Explanation: You can split the com.vaani.leetcode.string into "ab" and "c", and
+ * <p>Input: s = "abc", k = 2 Output: 1 Explanation: You can split the string into "ab" and "c", and
  * change 1 character in "ab" to make it palindrome. Example 2:
  *
- * <p>Input: s = "aabbc", k = 3 Output: 0 Explanation: You can split the com.vaani.leetcode.string into "aa", "bb" and
+ * <p>Input: s = "aabbc", k = 3 Output: 0 Explanation: You can split the string into "aa", "bb" and
  * "c", all of them are palindrome. Example 3:
  *
  * <p>Input: s = "leetcode", k = 8 Output: 0

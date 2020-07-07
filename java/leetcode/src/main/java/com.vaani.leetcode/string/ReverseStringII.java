@@ -1,12 +1,12 @@
 package com.vaani.leetcode.string;
 
 /**
- * 30/07/2019 Given a com.vaani.leetcode.string and an integer k, you need to reverse
+ * 30/07/2019 Given a string and an integer k, you need to reverse
  * the first k characters for every 2k characters counting from the start of the com.vaani.leetcode.string. If there
  * are less than k characters left, reverse all of them. If there are less than 2k but greater than
  * or equal to k characters, then reverse the first k characters and left the other as original.
- * Example: Input: s = "abcdefg", k = 2 Output: "bacdfeg" Restrictions: The com.vaani.leetcode.string consists of lower
- * English letters only. Length of the given com.vaani.leetcode.string and k will in the range [1, 10000]
+ * Example: Input: s = "abcdefg", k = 2 Output: "bacdfeg" Restrictions: The string consists of lower
+ * English letters only. Length of the given string and k will in the range [1, 10000]
  *
  * <p>Solution O(N)
  */

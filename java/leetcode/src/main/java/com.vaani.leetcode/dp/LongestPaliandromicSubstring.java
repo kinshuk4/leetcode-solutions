@@ -1,7 +1,7 @@
 package com.vaani.leetcode.dp;
 
 /**
- * 24/02/2017. Given a com.vaani.leetcode.string s, find the longest palindromic
+ * 24/02/2017. Given a string s, find the longest palindromic
  * substring in s. You may assume that the maximum length of s is 1000.
  *
  * <p>Example:

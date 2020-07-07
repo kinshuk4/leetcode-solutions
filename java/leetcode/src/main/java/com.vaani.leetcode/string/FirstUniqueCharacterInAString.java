@@ -8,7 +8,7 @@ package com.vaani.leetcode.string;
  *
  * <p>s = "leetcode" return 0.
  *
- * <p>s = "loveleetcode", return 2. Note: You may assume the com.vaani.leetcode.string contain only lowercase letters.
+ * <p>s = "loveleetcode", return 2. Note: You may assume the string contain only lowercase letters.
  */
 public class FirstUniqueCharacterInAString {
     int[] CHAR = new int[256];

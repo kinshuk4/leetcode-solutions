@@ -2,7 +2,7 @@ package com.vaani.leetcode.string;
 
 /**
  * 12/04/2018. Write a function to find the longest common prefix
- * com.vaani.leetcode.string amongst an array of strings.
+ * string amongst an array of strings.
  *
  * <p>Solution: O(N x M) where N is the length of the given array and M is the max_length of a
  * com.vaani.leetcode.string.

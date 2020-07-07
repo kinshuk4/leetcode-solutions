@@ -4,7 +4,7 @@ import java.util.*;
 
 /**
  * Given an array equations of strings that represent
- * relationships between variables, each com.vaani.leetcode.string equations[i] has length 4 and takes one of two
+ * relationships between variables, each string equations[i] has length 4 and takes one of two
  * different forms: "a==b" or "a!=b". Here, a and b are lowercase letters (not necessarily
  * different) that represent one-letter variable names.
  *

@@ -11,7 +11,7 @@ import java.util.*;
  * ["battab", "tabbat"] Example 2: Given words = ["abcd", "dcba", "lls", "s", "sssll"] Return [[0,
  * 1], [1, 0], [3, 2], [2, 4]] The palindromes are ["dcbaabcd", "abcddcba", "slls", "llssssll"]
  *
- * <p>Solution O(n x m ^ 2) where m is the average length of each com.vaani.leetcode.string and n is the number of
+ * <p>Solution O(n x m ^ 2) where m is the average length of each string and n is the number of
  * strings.
  */
 public class PalindromePairs {

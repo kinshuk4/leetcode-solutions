@@ -5,14 +5,14 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * 19/05/2017. The com.vaani.leetcode.string "PAYPALISHIRING" is written in a zigzag
+ * 19/05/2017. The string "PAYPALISHIRING" is written in a zigzag
  * pattern on a given number of rows like this: (you may want to display this pattern in a fixed
  * font for better legibility)
  *
  * <p>P A H N A P L S I I G Y I R And then read line by line: "PAHNAPLSIIGYIR" Write the code that
- * will take a com.vaani.leetcode.string and make this conversion given a number of rows:
+ * will take a string and make this conversion given a number of rows:
  *
- * <p>com.vaani.leetcode.string convert(com.vaani.leetcode.string text, int nRows); convert("PAYPALISHIRING", 3) should return
+ * <p>string convert(string text, int nRows); convert("PAYPALISHIRING", 3) should return
  * "PAHNAPLSIIGYIR".
  */
 public class ZigZagConversion {

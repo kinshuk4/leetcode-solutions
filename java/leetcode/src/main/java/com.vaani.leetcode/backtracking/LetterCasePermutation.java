@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 12/04/2018. Given a com.vaani.leetcode.string S, we can transform every letter
+ * 12/04/2018. Given a string S, we can transform every letter
  * individually to be lowercase or uppercase to create another com.vaani.leetcode.string. Return a list of all possible
  * strings we could create.
  *
@@ -14,7 +14,7 @@ import java.util.List;
  *
  * <p>Input: S = "12345" Output: ["12345"] Note:
  *
- * <p>S will be a com.vaani.leetcode.string with length at most 12. S will consist only of letters or digits.
+ * <p>S will be a string with length at most 12. S will consist only of letters or digits.
  *
  * <p>Solution: O(N x 2 ^ N) Backtrack and generate all possible combinations.
  */

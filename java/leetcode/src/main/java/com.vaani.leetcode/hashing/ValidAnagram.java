@@ -6,7 +6,7 @@ package com.vaani.leetcode.hashing;
  *
  * <p>For example, s = "anagram", t = "nagaram", return true. s = "rat", t = "car", return false.
  *
- * <p>Note: You may assume the com.vaani.leetcode.string contains only lowercase alphabets.
+ * <p>Note: You may assume the string contains only lowercase alphabets.
  *
  * <p>Follow up: What if the inputs contain unicode characters? How would you adapt your solution to
  * such case?

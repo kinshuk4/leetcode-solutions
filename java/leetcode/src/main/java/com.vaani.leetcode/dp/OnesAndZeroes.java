@@ -12,7 +12,7 @@ package com.vaani.leetcode.dp;
  *
  * <p>Note:
  *
- * <p>The given numbers of 0s and 1s will both not exceed 100 The size of given com.vaani.leetcode.string array won't
+ * <p>The given numbers of 0s and 1s will both not exceed 100 The size of given string array won't
  * exceed 600.
  *
  * <p>Example 1:
@@ -28,7 +28,7 @@ package com.vaani.leetcode.dp;
  *
  * <p>Explanation: You could form "10", but then you'd have nothing left. Better form "0" and "1".
  *
- * <p>Solution: O(S x m x n) For every com.vaani.leetcode.string array position we have two choices i. pick this value
+ * <p>Solution: O(S x m x n) For every string array position we have two choices i. pick this value
  * or ii. not pick this value. Evaluate both these cases and cache the result in a dp array.
  */
 public class OnesAndZeroes {

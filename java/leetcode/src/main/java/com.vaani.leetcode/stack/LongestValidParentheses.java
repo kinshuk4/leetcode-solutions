@@ -3,7 +3,7 @@ package com.vaani.leetcode.stack;
 import java.util.*;
 
 /**
- * 08/07/2018. Given a com.vaani.leetcode.string containing just the characters '('
+ * 08/07/2018. Given a string containing just the characters '('
  * and ')', find the length of the longest valid (well-formed) parentheses substring.
  *
  * <p>Example 1:

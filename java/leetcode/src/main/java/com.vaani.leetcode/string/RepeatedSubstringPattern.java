@@ -1,9 +1,9 @@
 package com.vaani.leetcode.string;
 
 /**
- * 25/03/2017. Given a non-empty com.vaani.leetcode.string check if it can be
+ * 25/03/2017. Given a non-empty string check if it can be
  * constructed by taking a substring of it and appending multiple copies of the substring together.
- * You may assume the given com.vaani.leetcode.string consists of lowercase English letters only and its length will
+ * You may assume the given string consists of lowercase English letters only and its length will
  * not exceed 10000.
  *
  * <p>Example 1: Input: "abab"

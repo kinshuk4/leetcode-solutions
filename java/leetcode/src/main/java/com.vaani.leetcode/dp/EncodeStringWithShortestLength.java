@@ -1,7 +1,7 @@
 package com.vaani.leetcode.dp;
 
 /**
- * 15/09/2019 Given a non-empty com.vaani.leetcode.string, encode the com.vaani.leetcode.string such
+ * 15/09/2019 Given a non-empty com.vaani.leetcode.string, encode the string such
  * that its encoded length is the shortest.
  *
  * <p>The encoding rule is: k[encoded_string], where the encoded_string inside the square brackets
@@ -9,9 +9,9 @@ package com.vaani.leetcode.dp;
  *
  * <p>Note:
  *
- * <p>k will be a positive integer and encoded com.vaani.leetcode.string will not be empty or have extra space. You may
- * assume that the input com.vaani.leetcode.string contains only lowercase English letters. The com.vaani.leetcode.string's length is at
- * most 160. If an encoding process does not make the com.vaani.leetcode.string shorter, then do not encode it. If
+ * <p>k will be a positive integer and encoded string will not be empty or have extra space. You may
+ * assume that the input string contains only lowercase English letters. The com.vaani.leetcode.string's length is at
+ * most 160. If an encoding process does not make the string shorter, then do not encode it. If
  * there are several solutions, return any of them is fine.
  *
  * <p>Example 1:

@@ -1,10 +1,10 @@
 package com.vaani.leetcode.string;
 
 /**
- * 21/03/2017. Given an input com.vaani.leetcode.string, reverse the com.vaani.leetcode.string word by
+ * 21/03/2017. Given an input com.vaani.leetcode.string, reverse the string word by
  * word. A word is defined as a sequence of non-space characters.
  *
- * <p>The input com.vaani.leetcode.string does not contain leading or trailing spaces and the words are always
+ * <p>The input string does not contain leading or trailing spaces and the words are always
  * separated by a single space.
  *
  * <p>For example, Given s = "the sky is blue", return "blue is sky the".

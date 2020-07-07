@@ -7,9 +7,9 @@ import java.util.Set;
 
 /**
  * 17/10/2017. Remove the minimum number of invalid parentheses in
- * order to make the input com.vaani.leetcode.string valid. Return all possible results.
+ * order to make the input string valid. Return all possible results.
  *
- * <p>Note: The input com.vaani.leetcode.string may contain letters other than the parentheses ( and ).
+ * <p>Note: The input string may contain letters other than the parentheses ( and ).
  *
  * <p>Examples: "()())()" -> ["()()()", "(())()"] "(a)())()" -> ["(a)()()", "(a())()"] ")(" -> [""]
  *

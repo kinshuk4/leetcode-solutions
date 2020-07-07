@@ -3,8 +3,8 @@ package com.vaani.leetcode.string;
 import java.util.*;
 
 /**
- * 15/02/2018. Given a com.vaani.leetcode.string and a com.vaani.leetcode.string dictionary, find the
- * longest com.vaani.leetcode.string in the dictionary that can be formed by deleting some characters of the given
+ * 15/02/2018. Given a string and a string dictionary, find the
+ * longest string in the dictionary that can be formed by deleting some characters of the given
  * com.vaani.leetcode.string. If there are more than one possible results, return the longest word with the smallest
  * lexicographical order. If there is no possible result, return the empty com.vaani.leetcode.string.
  *

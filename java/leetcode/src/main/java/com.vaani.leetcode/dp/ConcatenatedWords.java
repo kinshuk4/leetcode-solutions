@@ -10,7 +10,7 @@ import java.util.Set;
  * duplicates), please write a program that returns all concatenated words in the given list of
  * words.
  *
- * <p>A concatenated word is defined as a com.vaani.leetcode.string that is comprised entirely of at least two shorter
+ * <p>A concatenated word is defined as a string that is comprised entirely of at least two shorter
  * words in the given array.
  *
  * <p>Example: Input:
@@ -23,7 +23,7 @@ import java.util.Set;
  * "dog" and "cat".
  *
  * <p>Note: The number of elements of the given array will not exceed 10,000 The length sum of
- * elements in the given array will not exceed 600,000. All the input com.vaani.leetcode.string will only include lower
+ * elements in the given array will not exceed 600,000. All the input string will only include lower
  * case letters. The returned elements order does not matter.
  */
 public class ConcatenatedWords {

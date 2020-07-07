@@ -1,15 +1,15 @@
 package com.vaani.leetcode.string;
 
 /**
- * 20/08/2019 Given a com.vaani.leetcode.string S of '(' and ')' parentheses, we add
+ * 20/08/2019 Given a string S of '(' and ')' parentheses, we add
  * the minimum number of parentheses ( '(' or ')', and in any positions ) so that the resulting
- * parentheses com.vaani.leetcode.string is valid.
+ * parentheses string is valid.
  *
- * <p>Formally, a parentheses com.vaani.leetcode.string is valid if and only if:
+ * <p>Formally, a parentheses string is valid if and only if:
  *
  * <p>It is the empty com.vaani.leetcode.string, or It can be written as AB (A concatenated with B), where A and B are
  * valid strings, or It can be written as (A), where A is a valid com.vaani.leetcode.string. Given a parentheses
- * com.vaani.leetcode.string, return the minimum number of parentheses we must add to make the resulting com.vaani.leetcode.string valid.
+ * com.vaani.leetcode.string, return the minimum number of parentheses we must add to make the resulting string valid.
  *
  * <p>Example 1:
  *

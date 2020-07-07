@@ -3,7 +3,7 @@ package com.vaani.leetcode.string;
 /**
  * 28/03/2019 We are given two strings, A and B.
  *
- * <p>A shift on A consists of taking com.vaani.leetcode.string A and moving the leftmost character to the rightmost
+ * <p>A shift on A consists of taking string A and moving the leftmost character to the rightmost
  * position. For example, if A = 'abcde', then it will be 'bcdea' after one shift on A. Return True
  * if and only if A can become B after some number of shifts on A.
  *

@@ -1,7 +1,7 @@
 package com.vaani.leetcode.string;
 
 /**
- * 21/03/2017. Implement atoi to convert a com.vaani.leetcode.string to an integer.
+ * 21/03/2017. Implement atoi to convert a string to an integer.
  *
  * <p>Hint: Carefully consider all possible input cases. If you want a challenge, please do not see
  * below and ask yourself what are the possible input cases.

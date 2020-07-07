@@ -1,14 +1,14 @@
 package com.vaani.leetcode.string;
 
 /**
- * 20/03/2019 Given a non-empty com.vaani.leetcode.string s and an abbreviation abbr,
- * return whether the com.vaani.leetcode.string matches with the given abbreviation.
+ * 20/03/2019 Given a non-empty string s and an abbreviation abbr,
+ * return whether the string matches with the given abbreviation.
  *
- * <p>A com.vaani.leetcode.string such as "word" contains only the following valid abbreviations:
+ * <p>A string such as "word" contains only the following valid abbreviations:
  *
  * <p>["word", "1ord", "w1rd", "wo1d", "wor1", "2rd", "w2d", "wo2", "1o1d", "1or1", "w1r1", "1o2",
  * "2r1", "3d", "w3", "4"] Notice that only the above abbreviations are valid abbreviations of the
- * com.vaani.leetcode.string "word". Any other com.vaani.leetcode.string is not a valid abbreviation of "word".
+ * string "word". Any other string is not a valid abbreviation of "word".
  *
  * <p>Note: Assume s contains only lowercase letters and abbr contains only lowercase letters and
  * digits.

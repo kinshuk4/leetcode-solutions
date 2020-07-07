@@ -5,7 +5,7 @@ package com.vaani.leetcode.stack;
  * possible attendance records with length n, which will be regarded as rewardable. The answer may
  * be very large, return it after mod 109 + 7.
  *
- * <p>A student attendance record is a com.vaani.leetcode.string that only contains the following three characters:
+ * <p>A student attendance record is a string that only contains the following three characters:
  *
  * <p>'A' : Absent. 'L' : Late. 'P' : Present. A record is regarded as rewardable if it doesn't
  * contain more than one 'A' (absent) or more than two continuous 'L' (late).

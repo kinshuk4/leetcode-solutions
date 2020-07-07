@@ -1,7 +1,7 @@
 package com.vaani.leetcode.string;
 
 /**
- * 01/08/2019 Write a function to check whether an input com.vaani.leetcode.string is
+ * 01/08/2019 Write a function to check whether an input string is
  * a valid IPv4 address or IPv6 address or neither.
  *
  * <p>IPv4 addresses are canonically represented in dot-decimal notation, which consists of four
@@ -41,7 +41,7 @@ package com.vaani.leetcode.string;
  *
  * <p>Explanation: This is neither a IPv4 address nor a IPv6 address.
  *
- * <p>Solution: O(N) split the com.vaani.leetcode.string by each '.' or ':' and then validate each parts.
+ * <p>Solution: O(N) split the string by each '.' or ':' and then validate each parts.
  */
 public class ValidateIPAddress {
     public static void main(String[] args) {

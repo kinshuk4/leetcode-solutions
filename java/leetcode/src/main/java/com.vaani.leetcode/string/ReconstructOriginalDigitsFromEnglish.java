@@ -3,7 +3,7 @@ package com.vaani.leetcode.string;
 import java.util.*;
 
 /**
- * 04/06/2019 Given a non-empty com.vaani.leetcode.string containing an out-of-order
+ * 04/06/2019 Given a non-empty string containing an out-of-order
  * English representation of digits 0-9, output the digits in ascending order.
  *
  * <p>Note: Input contains only lowercase English letters. Input is guaranteed to be valid and can

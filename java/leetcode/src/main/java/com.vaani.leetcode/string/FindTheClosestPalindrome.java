@@ -9,7 +9,7 @@ package com.vaani.leetcode.string;
  * <p>Example 1: Input: "123" Output: "121" Note: The input n is a positive integer represented by
  * com.vaani.leetcode.string, whose length will not exceed 18. If there is a tie, return the smaller one as answer.
  *
- * <p>Solution O(N): General idea is to consider the first half of the com.vaani.leetcode.string and make a new com.vaani.leetcode.string
+ * <p>Solution O(N): General idea is to consider the first half of the string and make a new com.vaani.leetcode.string
  * by reversing the first half of com.vaani.leetcode.string. Concatenate the first_half and the new_string and return
  * this as an answer. There are also a lot of edge cases to be considered using this approach.
  */

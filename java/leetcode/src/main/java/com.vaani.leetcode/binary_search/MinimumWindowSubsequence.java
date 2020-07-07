@@ -6,7 +6,7 @@ import java.util.*;
  * 06/08/2019 Given strings S and T, find the minimum (contiguous)
  * substring W of S, so that T is a subsequence of W.
  *
- * <p>If there is no such window in S that covers all characters in T, return the empty com.vaani.leetcode.string "".
+ * <p>If there is no such window in S that covers all characters in T, return the empty string "".
  * If there are multiple such minimum-length windows, return the one with the left-most starting
  * index.
  *
@@ -23,7 +23,7 @@ import java.util.*;
  *
  * <p>Solution O(S x T x log S) General idea is to first find the left-most left (l) and right (r)
  * index where r - l is minimum and the minimum window contains the sub-sequence and iteratively
- * check the next left-most indices and continue for the entire com.vaani.leetcode.string S. A naive implementation
+ * check the next left-most indices and continue for the entire string S. A naive implementation
  * would result in O(S ^ 2) therefore to speed up we have to maintain a hashtable of character as
  * key and all its index of occurrence in a sorted list. Now, since this list is sorted we can
  * easily find the next left-most by binarySearch or even better by using a TreeSet higher or ceil

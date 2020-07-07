@@ -11,7 +11,7 @@ import java.util.*;
  * S[j].
  *
  * <p>Now, a group of special-equivalent strings from A is a non-empty subset S of A such that any
- * com.vaani.leetcode.string not in S is not special-equivalent with any com.vaani.leetcode.string in S.
+ * string not in S is not special-equivalent with any string in S.
  *
  * <p>Return the number of groups of special-equivalent strings from A.
  *

@@ -1,7 +1,7 @@
 package com.vaani.leetcode.string;
 
 /**
- * 10/05/2019 You are given a com.vaani.leetcode.string representing an attendance
+ * 10/05/2019 You are given a string representing an attendance
  * record for a student. The record only contains the following three characters: 'A' : Absent. 'L'
  * : Late. 'P' : Present. A student could be rewarded if his attendance record doesn't contain more
  * than one 'A' (absent) or more than two continuous 'L' (late).

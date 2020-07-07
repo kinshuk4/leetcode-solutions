@@ -6,7 +6,7 @@ import java.util.Stack;
  * 06/02/2018. Implement a basic calculator to evaluate a simple
  * expression com.vaani.leetcode.string.
  *
- * <p>The expression com.vaani.leetcode.string may contain open ( and closing parentheses ), the plus + or minus sign
+ * <p>The expression string may contain open ( and closing parentheses ), the plus + or minus sign
  * -, non-negative integers and empty spaces .
  *
  * <p>You may assume that the given expression is always valid.
@@ -15,7 +15,7 @@ import java.util.Stack;
  * eval built-in library function.
  *
  * <p>Solution: O(n) where n is the length of the com.vaani.leetcode.string. Maintain a stack and push each character
- * from the com.vaani.leetcode.string (ignore space). As soon as a close parentheses ')' is encountered, start to pop
+ * from the string (ignore space). As soon as a close parentheses ')' is encountered, start to pop
  * values and sum-up the total until '(' is poped. Push the total back to stack and continue to
  * iterate. The final result will be in the top of the stack which is the last and only element in
  * com.vaani.leetcode.stack.

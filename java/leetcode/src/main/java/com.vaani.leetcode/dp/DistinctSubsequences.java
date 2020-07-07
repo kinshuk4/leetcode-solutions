@@ -3,10 +3,10 @@ package com.vaani.leetcode.dp;
 import java.util.Arrays;
 
 /**
- * 08/05/2020 Given a com.vaani.leetcode.string S and a com.vaani.leetcode.string T, count the number of
+ * 08/05/2020 Given a string S and a string T, count the number of
  * distinct subsequences of S which equals T.
  *
- * <p>A subsequence of a com.vaani.leetcode.string is a new com.vaani.leetcode.string which is formed from the original com.vaani.leetcode.string by deleting
+ * <p>A subsequence of a string is a new string which is formed from the original string by deleting
  * some (can be none) of the characters without disturbing the relative positions of the remaining
  * characters. (ie, "ACE" is a subsequence of "ABCDE" while "AEC" is not).
  *

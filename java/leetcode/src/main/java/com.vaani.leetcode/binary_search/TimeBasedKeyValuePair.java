@@ -6,13 +6,13 @@ import java.util.*;
  * 07/05/2019 Create a timebased key-value store class TimeMap,
  * that supports two operations.
  *
- * <p>1. set(com.vaani.leetcode.string key, com.vaani.leetcode.string value, int timestamp)
+ * <p>1. set(string key, string value, int timestamp)
  *
- * <p>Stores the key and value, along with the given timestamp. 2. get(com.vaani.leetcode.string key, int timestamp)
+ * <p>Stores the key and value, along with the given timestamp. 2. get(string key, int timestamp)
  *
  * <p>Returns a value such that set(key, value, timestamp_prev) was called previously, with
  * timestamp_prev <= timestamp. If there are multiple such values, it returns the one with the
- * largest timestamp_prev. If there are no values, it returns the empty com.vaani.leetcode.string ("").
+ * largest timestamp_prev. If there are no values, it returns the empty string ("").
  *
  * <p>Example 1:
  *

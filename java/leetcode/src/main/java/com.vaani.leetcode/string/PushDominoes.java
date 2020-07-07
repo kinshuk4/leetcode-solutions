@@ -19,11 +19,11 @@ package com.vaani.leetcode.string;
  * <p>For the purposes of this question, we will consider that a falling domino expends no
  * additional force to a falling or already fallen domino.
  *
- * <p>Given a com.vaani.leetcode.string "S" representing the initial state. S[i] = 'L', if the i-th domino has been
+ * <p>Given a string "S" representing the initial state. S[i] = 'L', if the i-th domino has been
  * pushed to the left; S[i] = 'R', if the i-th domino has been pushed to the right; S[i] = '.', if
  * the i-th domino has not been pushed.
  *
- * <p>Return a com.vaani.leetcode.string representing the final state.
+ * <p>Return a string representing the final state.
  *
  * <p>Example 1:
  *

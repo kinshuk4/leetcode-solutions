@@ -7,10 +7,10 @@ package com.vaani.leetcode.string;
  * <p>For example, "A man, a plan, a canal: Panama" is a palindrome. "race a car" is not a
  * palindrome.
  *
- * <p>Note: Have you consider that the com.vaani.leetcode.string might be empty? This is a good question to ask during
+ * <p>Note: Have you consider that the string might be empty? This is a good question to ask during
  * an interview.
  *
- * <p>For the purpose of this problem, we define empty com.vaani.leetcode.string as valid palindrome.
+ * <p>For the purpose of this problem, we define empty string as valid palindrome.
  */
 public class ValidPalindrome {
     public static void main(String[] args) throws Exception {

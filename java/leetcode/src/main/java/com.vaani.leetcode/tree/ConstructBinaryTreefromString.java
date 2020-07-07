@@ -18,8 +18,8 @@ package com.vaani.leetcode.tree;
  * <p>Note: There will only be '(', ')', '-' and '0' ~ '9' in the input com.vaani.leetcode.string. An empty com.vaani.leetcode.tree is
  * represented by "" instead of "()".
  *
- * <p>Solution: O(N ^ 2) Form a node for every number and treat the first sub-com.vaani.leetcode.string within round
- * braces as left node and the second sub-com.vaani.leetcode.string within the round braces as the right node.
+ * <p>Solution: O(N ^ 2) Form a node for every number and treat the first sub-string within round
+ * braces as left node and the second sub-string within the round braces as the right node.
  * Recursively solve each substring within the round braces.
  */
 public class ConstructBinaryTreefromString {

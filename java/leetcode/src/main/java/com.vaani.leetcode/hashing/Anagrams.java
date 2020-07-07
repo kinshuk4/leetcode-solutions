@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * 25/02/2017. Given a com.vaani.leetcode.string s and a non-empty com.vaani.leetcode.string p, find all
+ * 25/02/2017. Given a string s and a non-empty string p, find all
  * the start indices of p's anagrams in s.
  *
  * <p>Strings consists of lowercase English letters only and the length of both strings s and p will

@@ -10,10 +10,10 @@ package com.vaani.leetcode.string;
  * <p>Example 1: Input: N = 10 Output: 9 Example 2: Input: N = 1234 Output: 1234 Example 3: Input: N
  * = 332 Output: 299 Note: N is an integer in the range [0, 10^9].
  *
- * <p>Solution O(N): Convert to com.vaani.leetcode.string for easier manipulation. Start from N.length - 1 and iterate
+ * <p>Solution O(N): Convert to string for easier manipulation. Start from N.length - 1 and iterate
  * through until index 0.Mark the index where the violation occurs. Decrement the value of the
  * latest index where the violation occurs and append '9' to rest of the trailing digits. Convert
- * the com.vaani.leetcode.string to integer before returning.
+ * the string to integer before returning.
  */
 public class MonotoneIncreasingDigits {
     /**

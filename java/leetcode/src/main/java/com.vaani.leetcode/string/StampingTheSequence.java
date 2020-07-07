@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * 12/10/2019 You want to form a target com.vaani.leetcode.string of lowercase
+ * 12/10/2019 You want to form a target string of lowercase
  * letters.
  *
  * <p>At the beginning, your sequence is target.length '?' marks. You also have a stamp of lowercase
@@ -41,7 +41,7 @@ import java.util.stream.Collectors;
  * <p>1 <= stamp.length <= target.length <= 1000 stamp and target only contain lowercase letters.
  *
  * <p>Solution: O(N ^ 2) General idea is to work the answer in the reverse order. For example if the
- * target com.vaani.leetcode.string is 'aaabb' and stamp is 'aabb' then first stamp would be at 0 resulting in aabb?
+ * target string is 'aaabb' and stamp is 'aabb' then first stamp would be at 0 resulting in aabb?
  * and the next stamp would be at 1 resulting in 'aaabb' Consider each window of size = stamp.size
  * from index 0 (call this window at index i). For every window keep track of matched indices and
  * unmatched indices. Also, additionally Maintain a general-matched-index set containing all the

@@ -13,16 +13,16 @@ import java.util.Set;
  * <p>For example, assuming the password is "345", I can open it when I type "012345", but I enter a
  * total of 6 digits.
  *
- * <p>Please return any com.vaani.leetcode.string of minimum length that is guaranteed to open the box after the entire
- * com.vaani.leetcode.string is inputted.
+ * <p>Please return any string of minimum length that is guaranteed to open the box after the entire
+ * string is inputted.
  *
  * <p>Example 1: Input: n = 1, k = 2 Output: "01" Note: "10" will be accepted too. Example 2: Input:
  * n = 2, k = 2 Output: "00110" Note: "01100", "10011", "11001" will be accepted too. Note: n will
  * be in the range [1, 4]. k will be in the range [1, 10]. k^n will be at most 4096.
  *
  * <p>Solution O(n x k ^ n) Do a dfs and explore every possible states which form a n digit number
- * with-in the given range k. Maintain a 'result' com.vaani.leetcode.string and keep appending the new digit in every
- * state, if the total number of states visited reaches k ^ n then, the result com.vaani.leetcode.string will be the
+ * with-in the given range k. Maintain a 'result' string and keep appending the new digit in every
+ * state, if the total number of states visited reaches k ^ n then, the result string will be the
  * answer.
  */
 public class CrackingTheSafe {

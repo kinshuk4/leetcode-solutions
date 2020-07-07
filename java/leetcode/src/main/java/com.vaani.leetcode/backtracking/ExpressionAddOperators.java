@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 05/12/2017. Given a com.vaani.leetcode.string that contains only digits 0-9 and a
+ * 05/12/2017. Given a string that contains only digits 0-9 and a
  * target value, return all possibilities to add binary operators (not unary) +, -, or * between the
  * digits so they evaluate to the target value.
  *

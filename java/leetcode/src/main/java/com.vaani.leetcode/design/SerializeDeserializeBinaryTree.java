@@ -10,7 +10,7 @@ import java.util.*;
  *
  * <p>Design an algorithm to serialize and deserialize a binary com.vaani.leetcode.tree. There is no restriction on how
  * your serialization/deserialization algorithm should work. You just need to ensure that a binary
- * com.vaani.leetcode.tree can be serialized to a com.vaani.leetcode.string and this com.vaani.leetcode.string can be deserialized to the original com.vaani.leetcode.tree
+ * com.vaani.leetcode.tree can be serialized to a string and this string can be deserialized to the original com.vaani.leetcode.tree
  * structure.
  *
  * <p>For example, you may serialize the following com.vaani.leetcode.tree

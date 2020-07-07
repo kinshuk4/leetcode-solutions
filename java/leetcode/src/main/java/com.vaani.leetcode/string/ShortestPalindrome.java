@@ -3,7 +3,7 @@ package com.vaani.leetcode.string;
 /**
  * 21/07/2018.
  *
- * <p>Given a com.vaani.leetcode.string s, you are allowed to convert it to a palindrome by adding characters in front
+ * <p>Given a string s, you are allowed to convert it to a palindrome by adding characters in front
  * of it. Find and return the shortest palindrome you can find by performing this transformation.
  *
  * <p>Example 1:
@@ -13,7 +13,7 @@ package com.vaani.leetcode.string;
  * <p>Input: "abcd" Output: "dcbabcd"
  *
  * <p>Solution: O(N ^ 2): for i : (s.length() - 1 -> 0) check if (0, i) is a paliandrome, if not
- * append char at i to result com.vaani.leetcode.string else return com.vaani.leetcode.string (result + (0, i))
+ * append char at i to result string else return string (result + (0, i))
  */
 public class ShortestPalindrome {
 

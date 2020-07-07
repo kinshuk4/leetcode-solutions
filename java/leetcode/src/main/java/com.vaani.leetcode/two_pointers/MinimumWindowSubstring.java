@@ -3,7 +3,7 @@ package com.vaani.leetcode.two_pointers;
 /**
  * 03/12/2017.
  *
- * <p>Given a com.vaani.leetcode.string S and a com.vaani.leetcode.string T, find the minimum window in S which will contain all the
+ * <p>Given a string S and a string T, find the minimum window in S which will contain all the
  * characters in T in complexity O(n).
  *
  * <p>For example, S = "ADOBECODEBANC" T = "ABC" Minimum window is "BANC".

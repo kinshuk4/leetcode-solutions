@@ -1,12 +1,12 @@
 package com.vaani.leetcode.string;
 /**
- * 20/03/2019 Given a com.vaani.leetcode.string which consists of lowercase or
+ * 20/03/2019 Given a string which consists of lowercase or
  * uppercase letters, find the length of the longest palindromes that can be built with those
  * letters.
  *
  * <p>This is case sensitive, for example "Aa" is not considered a palindrome here.
  *
- * <p>Note: Assume the length of given com.vaani.leetcode.string will not exceed 1,010.
+ * <p>Note: Assume the length of given string will not exceed 1,010.
  *
  * <p>Example:
  *

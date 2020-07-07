@@ -29,7 +29,7 @@ import java.util.stream.Stream;
  *
  * <p>Solution: O(w + S) where w is the max length of each word in the dictionary and S is the
  * length of the com.vaani.leetcode.string. Add all the words in the dictionary to a trie and evaluate each word in the
- * com.vaani.leetcode.string to check if it matches any path in the trie. Terminate the search as soon as a leaf node
+ * string to check if it matches any path in the trie. Terminate the search as soon as a leaf node
  * in the trie has been reached.
  */
 public class ReplaceWords {

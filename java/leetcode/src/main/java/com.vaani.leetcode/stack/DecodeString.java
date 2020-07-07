@@ -9,7 +9,7 @@ import java.util.Stack;
  * <p>The encoding rule is: k[encoded_string], where the encoded_string inside the square brackets
  * is being repeated exactly k times. Note that k is guaranteed to be a positive integer.
  *
- * <p>You may assume that the input com.vaani.leetcode.string is always valid; No extra white spaces, square brackets
+ * <p>You may assume that the input string is always valid; No extra white spaces, square brackets
  * are well-formed, etc.
  *
  * <p>Furthermore, you may assume that the original data does not contain any digits and that digits
@@ -21,7 +21,7 @@ import java.util.Stack;
  * return "abcabccdcdcdef".
  *
  * <p>Solution: Maintain a stack and push items when a character other than ] is encountered. When a
- * character ] is encountered pop elements, build com.vaani.leetcode.string and duplicate it.
+ * character ] is encountered pop elements, build string and duplicate it.
  */
 public class DecodeString {
 

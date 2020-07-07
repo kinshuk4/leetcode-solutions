@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
  * <p>Design an algorithm to serialize and deserialize an N-ary com.vaani.leetcode.tree. An N-ary com.vaani.leetcode.tree is a rooted com.vaani.leetcode.tree
  * in which each node has no more than N children. There is no restriction on how your
  * serialization/deserialization algorithm should work. You just need to ensure that an N-ary com.vaani.leetcode.tree
- * can be serialized to a com.vaani.leetcode.string and this com.vaani.leetcode.string can be deserialized to the original com.vaani.leetcode.tree structure.
+ * can be serialized to a string and this string can be deserialized to the original com.vaani.leetcode.tree structure.
  *
  * <p>For example, you may serialize the following 3-ary com.vaani.leetcode.tree
  *

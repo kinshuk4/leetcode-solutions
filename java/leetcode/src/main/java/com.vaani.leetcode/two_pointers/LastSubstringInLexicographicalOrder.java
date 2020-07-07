@@ -1,7 +1,7 @@
 package com.vaani.leetcode.two_pointers;
 
 /**
- * 30/08/2019 Given a com.vaani.leetcode.string s, return the last substring of s in
+ * 30/08/2019 Given a string s, return the last substring of s in
  * lexicographical order.
  *
  * <p>Example 1:
@@ -16,7 +16,7 @@ package com.vaani.leetcode.two_pointers;
  * <p>1 <= s.length <= 4 * 10^5 s contains only lowercase English letters.
  *
  * <p>Solution O(N) General idea is as below. Fix the index 0 as the answer initially and start
- * iterating the com.vaani.leetcode.string character by character, if a char is encountered with is greater than the
+ * iterating the string character by character, if a char is encountered with is greater than the
  * current answer then mark this as the answer, if it is same as the current answer then this new
  * char can be a potential candidate for a answer hence mark this as a candidate and start comparing
  * all the further characters of candidate char and all further chars of current answer if any point

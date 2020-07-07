@@ -8,7 +8,7 @@ import java.util.*;
  * rotate freely and wrap around: for example we can turn '9' to be '0', or '0' to be '9'. Each move
  * consists of turning one wheel one slot.
  *
- * <p>The lock initially starts at '0000', a com.vaani.leetcode.string representing the state of the 4 wheels.
+ * <p>The lock initially starts at '0000', a string representing the state of the 4 wheels.
  *
  * <p>You are given a list of deadends dead ends, meaning if the lock displays any of these codes,
  * the wheels of the lock will stop turning and you will be unable to open it.
@@ -25,8 +25,8 @@ import java.util.*;
  * ["8887","8889","8878","8898","8788","8988","7888","9888"], target = "8888" Output: -1
  * Explanation: We can't reach the target without getting stuck. Example 4: Input: deadends =
  * ["0000"], target = "8888" Output: -1 Note: The length of deadends will be in the range [1, 500].
- * target will not be in the list deadends. Every com.vaani.leetcode.string in deadends and the com.vaani.leetcode.string target will be a
- * com.vaani.leetcode.string of4 digits from the 10,000 possibilities '0000' to '9999'.
+ * target will not be in the list deadends. Every string in deadends and the string target will be a
+ * string of4 digits from the 10,000 possibilities '0000' to '9999'.
  *
  * <p>Solution: Perform a bfs of each state starting from 0000 and return the minimum distance.
  */

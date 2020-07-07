@@ -3,10 +3,10 @@ package com.vaani.leetcode.dp;
 import java.util.Arrays;
 
 /**
- * 23/04/2020 Given a com.vaani.leetcode.string s and an integer k, find out if the
- * given com.vaani.leetcode.string is a K-Palindrome or not.
+ * 23/04/2020 Given a string s and an integer k, find out if the
+ * given string is a K-Palindrome or not.
  *
- * <p>A com.vaani.leetcode.string is K-Palindrome if it can be transformed into a palindrome by removing at most k
+ * <p>A string is K-Palindrome if it can be transformed into a palindrome by removing at most k
  * characters from it.
  *
  * <p>Example 1:

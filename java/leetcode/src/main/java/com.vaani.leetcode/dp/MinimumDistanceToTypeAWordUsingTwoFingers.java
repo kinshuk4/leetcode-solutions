@@ -10,7 +10,7 @@ package com.vaani.leetcode.dp;
  * letter B is located at coordinate (0,1), the letter P is located at coordinate (2,3) and the
  * letter Z is located at coordinate (4,1).
  *
- * <p>Given the com.vaani.leetcode.string word, return the minimum total distance to type such com.vaani.leetcode.string using only two
+ * <p>Given the string word, return the minimum total distance to type such string using only two
  * fingers. The distance between coordinates (x1,y1) and (x2,y2) is |x1 - x2| + |y1 - y2|.
  *
  * <p>Note that the initial positions of your two fingers are considered free so don't count towards

@@ -1,7 +1,7 @@
 package com.vaani.leetcode.two_pointers;
 
 /**
- * 04/04/2019 Given com.vaani.leetcode.string S and a dictionary of words words, find
+ * 04/04/2019 Given string S and a dictionary of words words, find
  * the number of words[i] that is a subsequence of S.
  *
  * <p>Example : Input: S = "abcde" words = ["a", "bb", "acd", "ace"] Output: 3 Explanation: There
@@ -12,7 +12,7 @@ package com.vaani.leetcode.two_pointers;
  * words[i] will be in the range of [1, 50].
  *
  * <p>Solution: O((w + S) x N (no of words)) Using two pointers technique check if each of the given
- * com.vaani.leetcode.string is a sub-sequence of the main com.vaani.leetcode.string.
+ * string is a sub-sequence of the main com.vaani.leetcode.string.
  */
 public class NumberOfMatchingSubsequences {
 

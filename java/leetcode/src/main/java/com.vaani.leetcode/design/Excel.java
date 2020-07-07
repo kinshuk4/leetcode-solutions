@@ -30,11 +30,11 @@ import java.util.*;
  * function return the sum result at C(row, column). This sum formula should exist until this cell
  * is overlapped by another value or another sum formula.
  *
- * <p>numbers is a list of strings that each com.vaani.leetcode.string represent a cell or a range of cells. If the
- * com.vaani.leetcode.string represent a single cell, then it has the following format : ColRow. For example, "F7"
+ * <p>numbers is a list of strings that each string represent a cell or a range of cells. If the
+ * string represent a single cell, then it has the following format : ColRow. For example, "F7"
  * represents the cell at (7, F).
  *
- * <p>If the com.vaani.leetcode.string represent a range of cells, then it has the following format : ColRow1:ColRow2.
+ * <p>If the string represent a range of cells, then it has the following format : ColRow1:ColRow2.
  * The range will always be a rectangle, and ColRow1 represent the position of the top-left cell,
  * and ColRow2 represents the position of the bottom-right cell.
  *

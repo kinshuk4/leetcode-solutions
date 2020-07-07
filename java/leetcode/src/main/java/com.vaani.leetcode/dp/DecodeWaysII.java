@@ -4,7 +4,7 @@ package com.vaani.leetcode.dp;
  * 11/12/2017. A message containing letters from A-Z is being
  * encoded to numbers using the following mapping way:
  *
- * <p>'A' -> 1 'B' -> 2 ... 'Z' -> 26 Beyond that, now the encoded com.vaani.leetcode.string can also contain the
+ * <p>'A' -> 1 'B' -> 2 ... 'Z' -> 26 Beyond that, now the encoded string can also contain the
  * character '*', which can be treated as one of the numbers from 1 to 9.
  *
  * <p>Given the encoded message containing digits and the character '*', return the total number of
@@ -14,7 +14,7 @@ package com.vaani.leetcode.dp;
  *
  * <p>Example 1: Input: "*" Output: 9 Explanation: The encoded message can be decoded to the com.vaani.leetcode.string:
  * "A", "B", "C", "D", "E", "F", "G", "H", "I". Example 2: Input: "1*" Output: 9 + 9 = 18 Note: The
- * length of the input com.vaani.leetcode.string will fit in range [1, 105]. The input com.vaani.leetcode.string will only contain the
+ * length of the input string will fit in range [1, 105]. The input string will only contain the
  * character '*' and digits '0' - '9'.
  *
  * <p>Solution: O(n) consider each digit and a pair of digits and perform a cartesian product to

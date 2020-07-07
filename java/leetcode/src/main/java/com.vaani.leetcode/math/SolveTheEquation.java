@@ -2,7 +2,7 @@ package com.vaani.leetcode.math;
 
 /**
  * 16/02/2018. Solve a given equation and return the value of x in
- * the form of com.vaani.leetcode.string "x=#value". The equation contains only '+', '-' operation, the variable x and
+ * the form of string "x=#value". The equation contains only '+', '-' operation, the variable x and
  * its coefficient.
  *
  * <p>If there is no solution for the equation, return "No solution".

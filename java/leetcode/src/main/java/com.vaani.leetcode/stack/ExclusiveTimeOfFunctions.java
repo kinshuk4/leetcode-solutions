@@ -12,7 +12,7 @@ import java.util.Stack;
  * <p>Each function has a unique id, start from 0 to n-1. A function may be called recursively or by
  * another function.
  *
- * <p>A log is a com.vaani.leetcode.string has this format : function_id:start_or_end:timestamp. For example,
+ * <p>A log is a string has this format : function_id:start_or_end:timestamp. For example,
  * "0:start:0" means function 0 starts from the very beginning of time 0. "0:end:0" means function 0
  * ends to the very end of time 0.
  *
