@@ -9,7 +9,7 @@ import java.util.Stack;
  * <p>Calling next() will return the next smallest number in the BST.
  *
  * <p>Note: next() and hasNext() should run in average O(1) time and uses O(h) memory, where h is
- * the height of the com.vaani.leetcode.tree.
+ * the height of the tree.
  *
  * <p>Solution: The below solution works in average O(1) time and worst case O(h) time using O(h)
  * memory. Use a stack to keep track of min value node.

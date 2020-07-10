@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
  * or transmitted across a network connection link to be reconstructed later in the same or another
  * computer environment.
  *
- * <p>Design an algorithm to serialize and deserialize an N-ary com.vaani.leetcode.tree. An N-ary com.vaani.leetcode.tree is a rooted com.vaani.leetcode.tree
+ * <p>Design an algorithm to serialize and deserialize an N-ary tree. An N-ary com.vaani.leetcode.tree is a rooted com.vaani.leetcode.tree
  * in which each node has no more than N children. There is no restriction on how your
  * serialization/deserialization algorithm should work. You just need to ensure that an N-ary com.vaani.leetcode.tree
  * can be serialized to a string and this string can be deserialized to the original com.vaani.leetcode.tree structure.
@@ -64,7 +64,7 @@ public class SerializeAndDeserializeNAryTree {
         System.out.println(rootNode);
     }
 
-    // Encodes a com.vaani.leetcode.tree to a single com.vaani.leetcode.string.
+    // Encodes a com.vaani.leetcode.tree to a single string.
     public String serialize(Node root) {
         if (root != null) {
             String curr = String.valueOf(root.val);
@@ -80,7 +80,7 @@ public class SerializeAndDeserializeNAryTree {
         }
     }
 
-    // Decodes your encoded data to com.vaani.leetcode.tree.
+    // Decodes your encoded data to tree.
     public Node deserialize(String data) {
         char[] arr = data.toCharArray();
         StringBuilder num = new StringBuilder();

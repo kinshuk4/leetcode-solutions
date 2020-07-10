@@ -24,7 +24,7 @@ package com.vaani.leetcode.string;
  * <p>Besides, extra leading zeros in the IPv6 is also invalid. For example, the address
  * 02001:0db8:85a3:0000:0000:8a2e:0370:7334 is invalid.
  *
- * <p>Note: You may assume there is no extra space or special characters in the input com.vaani.leetcode.string.
+ * <p>Note: You may assume there is no extra space or special characters in the input string.
  *
  * <p>Example 1: Input: "172.16.254.1"
  *

@@ -8,7 +8,7 @@ import java.util.Arrays;
  *
  * <p>First, change some characters of s to other lowercase English letters. Then divide s into k
  * non-empty disjoint substrings such that each substring is palindrome. Return the minimal number
- * of characters that you need to change to divide the com.vaani.leetcode.string.
+ * of characters that you need to change to divide the string.
  *
  * <p>Example 1:
  *

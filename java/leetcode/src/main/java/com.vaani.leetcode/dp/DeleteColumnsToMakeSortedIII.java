@@ -4,7 +4,7 @@ package com.vaani.leetcode.dp;
  * 21/02/2020 We are given an array A of N lowercase letter
  * strings, all of the same length.
  *
- * <p>Now, we may choose any set of deletion indices, and for each com.vaani.leetcode.string, we delete all the
+ * <p>Now, we may choose any set of deletion indices, and for each string, we delete all the
  * characters in those indices.
  *
  * <p>For example, if we have an array A = ["babca","bbazb"] and deletion indices {0, 1, 4}, then

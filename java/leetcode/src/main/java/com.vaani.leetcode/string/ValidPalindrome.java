@@ -1,7 +1,7 @@
 package com.vaani.leetcode.string;
 
 /**
- * 13/07/2017. Given a com.vaani.leetcode.string, determine if it is a palindrome,
+ * 13/07/2017. Given a string, determine if it is a palindrome,
  * considering only alphanumeric characters and ignoring cases.
  *
  * <p>For example, "A man, a plan, a canal: Panama" is a palindrome. "race a car" is not a

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 23/08/2019 Consider all the leaves of a binary com.vaani.leetcode.tree. From left
+ * 23/08/2019 Consider all the leaves of a binary tree. From left
  * to right order, the values of those leaves form a leaf value sequence.
  *
  * <p>For example, in the given com.vaani.leetcode.tree above, the leaf value sequence is (6, 7, 4, 9, 8).

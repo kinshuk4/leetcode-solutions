@@ -4,7 +4,7 @@ import java.util.*;
 
 /**
  * 01/08/2019 You need to find the largest value in each row of a
- * binary com.vaani.leetcode.tree.
+ * binary tree.
  *
  * <p>Example: Input:
  *

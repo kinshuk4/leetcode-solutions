@@ -8,7 +8,7 @@ package com.vaani.leetcode.array;
  * larger if more time has elapsed since midnight.
  *
  * <p>Return the answer as a string of length 5. If no valid time can be made, return an empty
- * com.vaani.leetcode.string.
+ * string.
  *
  * <p>Example 1:
  *

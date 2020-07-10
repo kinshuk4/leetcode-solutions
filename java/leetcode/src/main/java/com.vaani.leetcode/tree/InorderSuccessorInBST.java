@@ -4,10 +4,10 @@ package com.vaani.leetcode.tree;
  * 14/05/2017. Given a binary search com.vaani.leetcode.tree and a node in it, find
  * the in-order successor of that node in the BST.
  *
- * <p>Note: If the given node has no in-order successor in the com.vaani.leetcode.tree, return null.
+ * <p>Note: If the given node has no in-order successor in the tree, return null.
  *
  * <p>Solution: The below solution works with worst case time complexity of O(h) where h is the
- * height of the com.vaani.leetcode.tree. If the current node is <= target_node, recursively iterate the right of the
+ * height of the tree. If the current node is <= target_node, recursively iterate the right of the
  * current node. else if the current node is > target_node then mark the current node as the
  * successor and recursively iterate the left of the current node.
  */

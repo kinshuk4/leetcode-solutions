@@ -28,7 +28,7 @@ import java.util.stream.Stream;
  * words number <= 1000 1 <= root length <= 100 1 <= sentence words length <= 1000
  *
  * <p>Solution: O(w + S) where w is the max length of each word in the dictionary and S is the
- * length of the com.vaani.leetcode.string. Add all the words in the dictionary to a trie and evaluate each word in the
+ * length of the string. Add all the words in the dictionary to a trie and evaluate each word in the
  * string to check if it matches any path in the trie. Terminate the search as soon as a leaf node
  * in the trie has been reached.
  */

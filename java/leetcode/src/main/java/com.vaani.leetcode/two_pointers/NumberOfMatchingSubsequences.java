@@ -12,7 +12,7 @@ package com.vaani.leetcode.two_pointers;
  * words[i] will be in the range of [1, 50].
  *
  * <p>Solution: O((w + S) x N (no of words)) Using two pointers technique check if each of the given
- * string is a sub-sequence of the main com.vaani.leetcode.string.
+ * string is a sub-sequence of the main string.
  */
 public class NumberOfMatchingSubsequences {
 

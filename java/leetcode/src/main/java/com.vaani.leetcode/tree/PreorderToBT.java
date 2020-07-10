@@ -4,10 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 25/02/2017. Given preorder and inorder traversal of a com.vaani.leetcode.tree,
- * construct the binary com.vaani.leetcode.tree.
+ * 25/02/2017. Given preorder and inorder traversal of a tree,
+ * construct the binary tree.
  *
- * <p>Note: You may assume that duplicates do not exist in the com.vaani.leetcode.tree.
+ * <p>Note: You may assume that duplicates do not exist in the tree.
  */
 public class PreorderToBT {
     public class TreeNode {

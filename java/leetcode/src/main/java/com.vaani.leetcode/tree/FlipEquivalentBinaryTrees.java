@@ -21,7 +21,7 @@ package com.vaani.leetcode.tree;
  * <p>Each com.vaani.leetcode.tree will have at most 100 nodes. Each value in each com.vaani.leetcode.tree will be a unique integer in the
  * range [0, 99]. Solution O(N ^ 2) Since the node values are unique general idea is to find the
  * node on right com.vaani.leetcode.tree for every node on the left com.vaani.leetcode.tree and check if the values need to be swapped, if
- * yes then swap the node's left and right child in the left com.vaani.leetcode.tree. After this operation is complete
+ * yes then swap the node's left and right child in the left tree. After this operation is complete
  * check if both the trees are equal
  */
 public class FlipEquivalentBinaryTrees {

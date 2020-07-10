@@ -6,7 +6,7 @@ package com.vaani.leetcode.tree;
  *
  * <p>The null node needs to be represented by empty parenthesis pair "()". And you need to omit all
  * the empty parenthesis pairs that don't affect the one-to-one mapping relationship between the
- * string and the original binary com.vaani.leetcode.tree.
+ * string and the original binary tree.
  *
  * <p>Example 1: Input: Binary com.vaani.leetcode.tree: [1,2,3,4] 1 / \ 2 3 / 4
  *

@@ -9,7 +9,7 @@ package com.vaani.leetcode.string;
  * or 21. 21 is read off as "one 2, then one 1" or 1211. Given an integer n, generate the nth term
  * of the count-and-say sequence.
  *
- * <p>Note: Each term of the sequence of integers will be represented as a com.vaani.leetcode.string.
+ * <p>Note: Each term of the sequence of integers will be represented as a string.
  *
  * <p>Example 1:
  *

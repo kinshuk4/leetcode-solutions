@@ -17,7 +17,7 @@ import java.util.*;
  * <p>Solution: O(N) General idea is to note some unique characters in english representation of a
  * digit such as 'x' 'x' can occur only in digit 6, similarly for 'z' it can occur only for digit 0
  * and likewise. Keep a character frequency hashmap and decrement the count as and when a new digit
- * is formed. Sort the digits and return a concatenated com.vaani.leetcode.string.
+ * is formed. Sort the digits and return a concatenated string.
  */
 public class ReconstructOriginalDigitsFromEnglish {
     public static void main(String[] args) {

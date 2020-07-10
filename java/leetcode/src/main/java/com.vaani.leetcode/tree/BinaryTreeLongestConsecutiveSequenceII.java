@@ -1,7 +1,7 @@
 package com.vaani.leetcode.tree;
 
 /**
- * 11/02/2018. Given a binary com.vaani.leetcode.tree, you need to find the length of
+ * 11/02/2018. Given a binary tree, you need to find the length of
  * Longest Consecutive Path in Binary Tree.
  *
  * <p>Especially, this path can be either increasing or decreasing. For example, [1,2,3,4] and

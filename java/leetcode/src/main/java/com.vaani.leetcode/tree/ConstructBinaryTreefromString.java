@@ -4,7 +4,7 @@ package com.vaani.leetcode.tree;
  * 30/07/2019 You need to construct a binary com.vaani.leetcode.tree from a com.vaani.leetcode.string
  * consisting of parenthesis and integers.
  *
- * <p>The whole input represents a binary com.vaani.leetcode.tree. It contains an integer followed by zero, one or two
+ * <p>The whole input represents a binary tree. It contains an integer followed by zero, one or two
  * pairs of parenthesis. The integer represents the root's value and a pair of parenthesis contains
  * a child binary com.vaani.leetcode.tree with the same structure.
  *
@@ -15,7 +15,7 @@ package com.vaani.leetcode.tree;
  *
  * <p>4 / \ 2 6 /\ / 3 1 5
  *
- * <p>Note: There will only be '(', ')', '-' and '0' ~ '9' in the input com.vaani.leetcode.string. An empty com.vaani.leetcode.tree is
+ * <p>Note: There will only be '(', ')', '-' and '0' ~ '9' in the input string. An empty com.vaani.leetcode.tree is
  * represented by "" instead of "()".
  *
  * <p>Solution: O(N ^ 2) Form a node for every number and treat the first sub-string within round

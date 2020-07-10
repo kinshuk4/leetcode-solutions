@@ -7,8 +7,8 @@ import static com.vaani.dsa.ds.algos.tree.binary.TreeDiameter.getBinaryTreeDiame
 /**
  * https://leetcode.com/problems/diameter-of-binary-tree/
  *
- * <p>Given a binary com.vaani.leetcode.tree, you need to compute the length of the diameter of the com.vaani.leetcode.tree. The diameter
- * of a binary com.vaani.leetcode.tree is the length of the longest path between any two nodes in a com.vaani.leetcode.tree. This path may
+ * <p>Given a binary tree, you need to compute the length of the diameter of the tree. The diameter
+ * of a binary com.vaani.leetcode.tree is the length of the longest path between any two nodes in a tree. This path may
  * or may not pass through the root.
  *
  * <p>Example: Given a binary com.vaani.leetcode.tree 1 / \ 2 3 / \ 4 5 Return 3, which is the length of the path

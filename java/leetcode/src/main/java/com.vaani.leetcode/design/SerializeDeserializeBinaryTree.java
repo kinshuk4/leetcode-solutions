@@ -8,7 +8,7 @@ import java.util.*;
  * or transmitted across a network connection link to be reconstructed later in the same or another
  * computer environment.
  *
- * <p>Design an algorithm to serialize and deserialize a binary com.vaani.leetcode.tree. There is no restriction on how
+ * <p>Design an algorithm to serialize and deserialize a binary tree. There is no restriction on how
  * your serialization/deserialization algorithm should work. You just need to ensure that a binary
  * com.vaani.leetcode.tree can be serialized to a string and this string can be deserialized to the original com.vaani.leetcode.tree
  * structure.
@@ -16,7 +16,7 @@ import java.util.*;
  * <p>For example, you may serialize the following com.vaani.leetcode.tree
  *
  * <p>1 / \ 2 3 / \ 4 5 as "[1,2,3,null,null,4,5]", just the same as how LeetCode OJ serializes a
- * binary com.vaani.leetcode.tree. You do not necessarily need to follow this format, so please be creative and come up
+ * binary tree. You do not necessarily need to follow this format, so please be creative and come up
  * with different approaches yourself. Note: Do not use class member/global/static variables to
  * store states. Your serialize and deserialize algorithms should be stateless.
  */
@@ -65,7 +65,7 @@ public class SerializeDeserializeBinaryTree {
         TreeNode result = new SerializeDeserializeBinaryTree().deserialize(serializedStr);
     }
 
-    // Encodes a com.vaani.leetcode.tree to a single com.vaani.leetcode.string.
+    // Encodes a com.vaani.leetcode.tree to a single string.
     public String serialize(TreeNode root) {
         if (root == null) return null;
         List<String> list = new ArrayList<>();
@@ -87,7 +87,7 @@ public class SerializeDeserializeBinaryTree {
         }
     }
 
-    // Decodes your encoded data to com.vaani.leetcode.tree.
+    // Decodes your encoded data to tree.
     public TreeNode deserialize(String data) {
         if (data == null || data.isEmpty()) return null;
         StringTokenizer st = new StringTokenizer(data, ",");

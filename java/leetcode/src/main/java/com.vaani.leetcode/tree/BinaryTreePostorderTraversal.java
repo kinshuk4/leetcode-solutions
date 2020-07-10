@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Stack;
 
 /**
- * 28/07/2018. Given a binary com.vaani.leetcode.tree, return the postorder traversal
+ * 28/07/2018. Given a binary tree, return the postorder traversal
  * of its nodes' values.
  *
  * <p>Example:

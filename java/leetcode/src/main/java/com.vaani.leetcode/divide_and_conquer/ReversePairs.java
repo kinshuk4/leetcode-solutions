@@ -26,7 +26,7 @@ import java.util.List;
  * and find the upper bound of the element p in sorted array which is 3 at index 1 in this case and
  * add prefix sum of the index 1 to the result. So the result now becomes 2.
  *
- * <p>To maintain a prefix sum and update it efficiently we have to use a BIT or Fenwick com.vaani.leetcode.tree.
+ * <p>To maintain a prefix sum and update it efficiently we have to use a BIT or Fenwick tree.
  */
 public class ReversePairs {
 

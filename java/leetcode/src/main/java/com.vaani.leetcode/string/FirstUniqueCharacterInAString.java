@@ -1,7 +1,7 @@
 package com.vaani.leetcode.string;
 
 /**
- * 09/03/2017. Given a com.vaani.leetcode.string, find the first non-repeating
+ * 09/03/2017. Given a string, find the first non-repeating
  * character in it and return it's index. If it doesn't exist, return -1.
  *
  * <p>Examples:

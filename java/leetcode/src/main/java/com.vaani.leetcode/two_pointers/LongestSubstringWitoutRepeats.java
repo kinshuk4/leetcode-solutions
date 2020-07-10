@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * 09/03/2017. Given a com.vaani.leetcode.string, find the length of the longest
+ * 09/03/2017. Given a string, find the length of the longest
  * substring without repeating characters.
  *
  * <p>Examples:

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 09/03/2017. Given a digit com.vaani.leetcode.string, return all possible letter
+ * 09/03/2017. Given a digit string, return all possible letter
  * combinations that the number could represent.
  *
  * <p>A mapping of digit to letters (just like on the telephone buttons) is given below. 1 2(abc)

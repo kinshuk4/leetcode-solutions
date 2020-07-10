@@ -9,7 +9,7 @@ package com.vaani.leetcode.tree;
  *
  * <p>Note:
  *
- * <p>You may only use constant extra space. For example, Given the following binary com.vaani.leetcode.tree, 1 / \ 2 3
+ * <p>You may only use constant extra space. For example, Given the following binary tree, 1 / \ 2 3
  * / \ \ 4 5 7 After calling your function, the com.vaani.leetcode.tree should look like: 1 -> NULL / \ 2 -> 3 -> NULL
  * / \ \ 4-> 5 -> 7 -> NULL
  */

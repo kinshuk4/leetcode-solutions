@@ -47,7 +47,7 @@ public class WildcardMatching {
                 } else if (p.charAt(j) == '*') {
                     starIdx = j;
                     starPosAtStr = i;
-                    j++; // increment only pattern index. This is because '*' can match also empty com.vaani.leetcode.string.
+                    j++; // increment only pattern index. This is because '*' can match also empty string.
                 } else if (starIdx != -1) {
                     i = ++starPosAtStr;
                     j = starIdx + 1;

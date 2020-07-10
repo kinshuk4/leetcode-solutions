@@ -22,7 +22,7 @@ import java.util.*;
  *
  * <p>Note: You may assume all letters are in lowercase. You may assume that if a is a prefix of b,
  * then a must appear before b in the given dictionary. If the order is invalid, return an empty
- * com.vaani.leetcode.string. There may be multiple valid order of letters, return any one of them is fine.
+ * string. There may be multiple valid order of letters, return any one of them is fine.
  *
  * <p>Solution: Build a graph with with character links and perform a topological sort. Topological
  * sort can be performed only on a DAG hence if there is a cycle immediately return empty com.vaani.leetcode.string

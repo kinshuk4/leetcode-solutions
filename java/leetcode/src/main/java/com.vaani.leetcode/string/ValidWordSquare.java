@@ -9,7 +9,7 @@ import java.util.List;
  * valid word square.
  *
  * <p>A sequence of words forms a valid word square if the kth row and column read the exact same
- * com.vaani.leetcode.string, where 0 ≤ k < max(numRows, numColumns).
+ * string, where 0 ≤ k < max(numRows, numColumns).
  *
  * <p>Note: The number of words given is at least 1 and does not exceed 500. Word length will be at
  * least 1 and does not exceed 500. Each word contains only lowercase English alphabet a-z. Example
@@ -43,7 +43,7 @@ import java.util.List;
  *
  * <p>Therefore, it is NOT a valid word square.
  *
- * <p>Solution: O(N x M) where N is number of words and M is max length of a com.vaani.leetcode.string. Save strings
+ * <p>Solution: O(N x M) where N is number of words and M is max length of a string. Save strings
  * for each column and each row in a array and compare them both.
  */
 public class ValidWordSquare {

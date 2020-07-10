@@ -7,7 +7,7 @@ import java.util.*;
  * has exactly 0 or 2 children.
  *
  * <p>Return a list of all possible full binary trees with N nodes. Each element of the answer is
- * the root node of one possible com.vaani.leetcode.tree.
+ * the root node of one possible tree.
  *
  * <p>Each node of each com.vaani.leetcode.tree in the answer must have node.val = 0.
  *

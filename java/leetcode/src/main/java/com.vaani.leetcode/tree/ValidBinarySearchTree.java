@@ -1,7 +1,7 @@
 package com.vaani.leetcode.tree;
 
 /**
- * 09/03/2017. Given a binary com.vaani.leetcode.tree, determine if it is a valid
+ * 09/03/2017. Given a binary tree, determine if it is a valid
  * binary search com.vaani.leetcode.tree (BST).
  *
  * <p>Assume a BST is defined as follows:

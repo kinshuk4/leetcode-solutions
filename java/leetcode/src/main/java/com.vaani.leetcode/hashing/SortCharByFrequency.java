@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * 25/03/2017. Given a com.vaani.leetcode.string, sort it in decreasing order based
+ * 25/03/2017. Given a string, sort it in decreasing order based
  * on the frequency of characters.
  *
  * <p>Example 1:

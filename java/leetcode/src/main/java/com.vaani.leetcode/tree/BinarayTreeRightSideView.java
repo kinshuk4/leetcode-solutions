@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 12/03/2017. Given a binary com.vaani.leetcode.tree, imagine yourself standing on
+ * 12/03/2017. Given a binary tree, imagine yourself standing on
  * the right side of it, return the values of the nodes you can see ordered from top to bottom.
  *
- * <p>For example: Given the following binary com.vaani.leetcode.tree, 1 <--- / \ 2 3 <--- \ \ 5 4 <--- You should
+ * <p>For example: Given the following binary tree, 1 <--- / \ 2 3 <--- \ \ 5 4 <--- You should
  * return [1, 3, 4].
  */
 public class BinarayTreeRightSideView {

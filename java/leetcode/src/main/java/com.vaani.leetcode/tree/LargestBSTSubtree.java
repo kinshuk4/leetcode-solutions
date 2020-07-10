@@ -3,7 +3,7 @@ package com.vaani.leetcode.tree;
 /**
  * 08/05/2017.
  *
- * <p>Given a binary com.vaani.leetcode.tree, find the largest subtree which is a Binary Search Tree (BST), where
+ * <p>Given a binary tree, find the largest subtree which is a Binary Search Tree (BST), where
  * largest means subtree with largest number of nodes in it.
  *
  * <p>Note: A subtree must include all of its descendants. Here's an example: 10 / \ 5 15 / \ \ 1 8

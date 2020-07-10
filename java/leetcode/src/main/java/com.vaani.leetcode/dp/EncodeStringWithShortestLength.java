@@ -1,7 +1,7 @@
 package com.vaani.leetcode.dp;
 
 /**
- * 15/09/2019 Given a non-empty com.vaani.leetcode.string, encode the string such
+ * 15/09/2019 Given a non-empty string, encode the string such
  * that its encoded length is the shortest.
  *
  * <p>The encoding rule is: k[encoded_string], where the encoded_string inside the square brackets
@@ -17,7 +17,7 @@ package com.vaani.leetcode.dp;
  * <p>Example 1:
  *
  * <p>Input: "aaa" Output: "aaa" Explanation: There is no way to encode it such that it is shorter
- * than the input com.vaani.leetcode.string, so we do not encode it.
+ * than the input string, so we do not encode it.
  *
  * <p>Example 2:
  *

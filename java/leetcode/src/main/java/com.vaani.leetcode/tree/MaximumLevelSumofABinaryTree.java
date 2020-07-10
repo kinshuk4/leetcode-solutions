@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 28/08/2019 Given the root of a binary com.vaani.leetcode.tree, the level of its
+ * 28/08/2019 Given the root of a binary tree, the level of its
  * root is 1, the level of its children is 2, and so on.
  *
  * <p>Return the smallest level X such that the sum of all the values of nodes at level X is

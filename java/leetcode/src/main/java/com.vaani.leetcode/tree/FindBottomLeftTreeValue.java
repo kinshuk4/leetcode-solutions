@@ -1,8 +1,8 @@
 package com.vaani.leetcode.tree;
 
 /**
- * 30/08/2017. Given a binary com.vaani.leetcode.tree, find the leftmost value in the
- * last row of the com.vaani.leetcode.tree.
+ * 30/08/2017. Given a binary tree, find the leftmost value in the
+ * last row of the tree.
  *
  * <p>Example 1: Input:
  *

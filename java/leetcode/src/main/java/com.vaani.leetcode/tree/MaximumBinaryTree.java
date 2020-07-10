@@ -7,7 +7,7 @@ package com.vaani.leetcode.tree;
  * <p>The root is the maximum number in the array. The left subtree is the maximum com.vaani.leetcode.tree constructed
  * from left part subarray divided by the maximum number. The right subtree is the maximum com.vaani.leetcode.tree
  * constructed from right part subarray divided by the maximum number. Construct the maximum com.vaani.leetcode.tree by
- * the given array and output the root node of this com.vaani.leetcode.tree.
+ * the given array and output the root node of this tree.
  *
  * <p>Example 1: Input: [3,2,1,6,0,5] Output: return the com.vaani.leetcode.tree root node representing the following
  * com.vaani.leetcode.tree:

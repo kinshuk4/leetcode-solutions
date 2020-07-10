@@ -5,10 +5,10 @@ import java.util.Map;
 
 /**
  * 02/05/2018. Given a binary com.vaani.leetcode.tree where every node has a unique
- * value, and a target key k, find the value of the nearest leaf node to target k in the com.vaani.leetcode.tree.
+ * value, and a target key k, find the value of the nearest leaf node to target k in the tree.
  *
  * <p>Here, nearest to a leaf means the least number of edges travelled on the binary com.vaani.leetcode.tree to reach
- * any leaf of the com.vaani.leetcode.tree. Also, a node is called a leaf if it has no children.
+ * any leaf of the tree. Also, a node is called a leaf if it has no children.
  *
  * <p>In the following examples, the input com.vaani.leetcode.tree is represented in flattened form row by row. The
  * actual root com.vaani.leetcode.tree given will be a TreeNode object.

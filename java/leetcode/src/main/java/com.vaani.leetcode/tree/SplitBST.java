@@ -7,7 +7,7 @@ package com.vaani.leetcode.tree;
  * than the target value. It's not necessarily the case that the com.vaani.leetcode.tree contains a node with value V.
  *
  * <p>Additionally, most of the structure of the original com.vaani.leetcode.tree should remain. Formally, for any
- * child C with parent P in the original com.vaani.leetcode.tree, if they are both in the same subtree after the split,
+ * child C with parent P in the original tree, if they are both in the same subtree after the split,
  * then node C should still have the parent P.
  *
  * <p>You should output the root TreeNode of both subtrees after splitting, in any order.
@@ -29,7 +29,7 @@ package com.vaani.leetcode.tree;
  * different.
  *
  * <p>Solution: O(N) if a current node is <= to key then the current node and its child nodes form
- * the left sub-com.vaani.leetcode.tree. Split the right node further recursively
+ * the left sub-tree. Split the right node further recursively
  */
 public class SplitBST {
 

@@ -7,9 +7,9 @@ package com.vaani.leetcode.string;
  *
  * <p>Formally, a parentheses string is valid if and only if:
  *
- * <p>It is the empty com.vaani.leetcode.string, or It can be written as AB (A concatenated with B), where A and B are
- * valid strings, or It can be written as (A), where A is a valid com.vaani.leetcode.string. Given a parentheses
- * com.vaani.leetcode.string, return the minimum number of parentheses we must add to make the resulting string valid.
+ * <p>It is the empty string, or It can be written as AB (A concatenated with B), where A and B are
+ * valid strings, or It can be written as (A), where A is a valid string. Given a parentheses
+ * string, return the minimum number of parentheses we must add to make the resulting string valid.
  *
  * <p>Example 1:
  *

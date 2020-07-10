@@ -5,7 +5,7 @@ import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
 import static com.vaani.dsa.ds.algos.tree.binary.IsSymmetricTree.isSymmetricRecursive;
 
 /**
- * 14/08/2017. Given a binary com.vaani.leetcode.tree, check whether it is a mirror
+ * 14/08/2017. Given a binary tree, check whether it is a mirror
  * of itself (ie, symmetric around its center).
  *
  * <p>For example, this binary com.vaani.leetcode.tree [1,2,2,3,4,4,3] is symmetric:

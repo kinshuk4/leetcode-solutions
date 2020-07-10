@@ -3,7 +3,7 @@ package com.vaani.leetcode.string;
 /**
  * 18/09/2017. Given two strings s1 and s2, write a function to
  * return true if s2 contains the permutation of s1. In other words, one of the first com.vaani.leetcode.string's
- * permutations is the substring of the second com.vaani.leetcode.string.
+ * permutations is the substring of the second string.
  *
  * <p>Example 1: Input:s1 = "ab" s2 = "eidbaooo" Output:True Explanation: s2 contains one
  * permutation of s1 ("ba").

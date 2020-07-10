@@ -1,7 +1,7 @@
 package com.vaani.leetcode.tree;
 
 /**
- * 04/07/2017. Given a binary com.vaani.leetcode.tree, flatten it to a linked list
+ * 04/07/2017. Given a binary tree, flatten it to a linked list
  * in-place.
  *
  * <p>For example, Given

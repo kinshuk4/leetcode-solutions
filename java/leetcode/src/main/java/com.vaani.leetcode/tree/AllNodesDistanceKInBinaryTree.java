@@ -27,7 +27,7 @@ import java.util.Set;
  * <p>Note:
  *
  * <p>The given com.vaani.leetcode.tree is non-empty. Each node in the com.vaani.leetcode.tree has unique values 0 <= node.val <= 500. The
- * target node is a node in the com.vaani.leetcode.tree. 0 <= K <= 1000.
+ * target node is a node in the tree. 0 <= K <= 1000.
  *
  * <p>Solution: O(N) The general intuition is as below. All the nodes from which a target nodes can
  * be reached (including the target node) can have child nodes at a distance of K from target node.

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 09/12/2017. Given a binary com.vaani.leetcode.tree, return all root-to-leaf paths.
+ * 09/12/2017. Given a binary tree, return all root-to-leaf paths.
  *
  * <p>For example, given the following binary com.vaani.leetcode.tree:
  *

@@ -6,7 +6,7 @@ package com.vaani.leetcode.string;
  * all the possible loops, you need to find the lexicographically biggest string after cutting the
  * loop, which will make the looped string into a regular one.
  *
- * <p>Specifically, to find the lexicographically biggest com.vaani.leetcode.string, you need to experience two phases:
+ * <p>Specifically, to find the lexicographically biggest string, you need to experience two phases:
  *
  * <p>Concatenate all the strings into a loop, where you can reverse some strings or not and connect
  * them in the same order as given. Cut and make one breakpoint in any place of the loop, which will

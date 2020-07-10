@@ -1,8 +1,8 @@
 package com.vaani.leetcode.tree;
 
 /**
- * 14/08/2019 Given a binary com.vaani.leetcode.tree, return the tilt of the whole
- * com.vaani.leetcode.tree.
+ * 14/08/2019 Given a binary tree, return the tilt of the whole
+ * tree.
  *
  * <p>The tilt of a com.vaani.leetcode.tree node is defined as the absolute difference between the sum of all left
  * subtree node values and the sum of all right subtree node values. Null node has tilt 0.

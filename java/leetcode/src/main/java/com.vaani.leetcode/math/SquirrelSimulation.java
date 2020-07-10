@@ -1,7 +1,7 @@
 package com.vaani.leetcode.math;
 
 /**
- * 25/04/2019 There's a com.vaani.leetcode.tree, a squirrel, and several nuts.
+ * 25/04/2019 There's a tree, a squirrel, and several nuts.
  * Positions are represented by the cells in a 2D grid. Your goal is to find the minimal distance
  * for the squirrel to collect all the nuts and put them under the com.vaani.leetcode.tree one by one. The squirrel can
  * only take at most one nut at one time and can move in four directions - up, down, left and right,
