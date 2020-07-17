@@ -3,9 +3,8 @@ package com.vaani.leetcode.breadth_first_search;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
-/**
- * 04/12/2019 In a given grid, each cell can have one of three
- * values:
+/** https://leetcode.com/problems/rotting-oranges/
+ * In a given grid, each cell can have one of three values:
  *
  * <p>the value 0 representing an empty cell; the value 1 representing a fresh orange; the value 2
  * representing a rotten orange. Every minute, any fresh orange that is adjacent (4-directionally)
@@ -29,8 +28,7 @@ import java.util.Queue;
  * <p>1 <= grid.length <= 10 1 <= grid[0].length <= 10 grid[i][j] is only 0, 1, or 2.
  */
 public class RottingOranges {
-    final int[] R = {1, -1, 0, 0};
-    final int[] C = {0, 0, 1, -1};
+
 
     public static void main(String[] args) {
         int[][] A = {{2, 1, 1}, {1, 1, 0}, {0, 1, 1}};
@@ -38,23 +36,28 @@ public class RottingOranges {
     }
 
     private class Node {
-        int r, c, v;
+        int r, c, timeFrame;
 
-        Node(int r, int c, int v) {
+        Node(int r, int c, int timeFrame) {
             this.r = r;
             this.c = c;
-            this.v = v;
+            this.timeFrame = timeFrame;
         }
     }
 
     public int orangesRotting(int[][] grid) {
         Queue<Node> queue = new ArrayDeque<>();
-        boolean[][] done = new boolean[grid.length][grid[0].length];
-        for (int i = 0; i < grid.length; i++) {
-            for (int j = 0; j < grid[0].length; j++) {
+        int m = grid.length;
+        int n = grid[0].length;
+        final int[] R = {1, -1, 0, 0};
+        final int[] C = {0, 0, 1, -1};
+
+        boolean[][] visited = new boolean[m][n];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
                 if (grid[i][j] == 2) {
                     queue.offer(new Node(i, j, 0));
-                    done[i][j] = true;
+                    visited[i][j] = true;
                 }
             }
         }
@@ -64,18 +67,60 @@ public class RottingOranges {
             for (int i = 0; i < 4; i++) {
                 int newR = curr.r + R[i];
                 int newC = curr.c + C[i];
-                if (newR >= 0 && newR < grid.length && newC >= 0 && newC < grid[0].length) {
-                    if (!done[newR][newC] && grid[newR][newC] != 0) {
-                        done[newR][newC] = true;
-                        max = Math.max(max, curr.v + 1);
-                        queue.offer(new Node(newR, newC, curr.v + 1));
+                if (newR >= 0 && newR < m && newC >= 0 && newC < n) {
+                    if (!visited[newR][newC] && grid[newR][newC] != 0) {
+                        visited[newR][newC] = true;
+                        max = Math.max(max, curr.timeFrame + 1);
+                        queue.offer(new Node(newR, newC, curr.timeFrame + 1));
                     }
                 }
             }
         }
-        for (int i = 0; i < grid.length; i++) {
-            for (int j = 0; j < grid[0].length; j++) {
-                if (grid[i][j] == 1 && !done[i][j]) {
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == 1 && !visited[i][j]) {
+                    return -1;
+                }
+            }
+        }
+        return max;
+    }
+
+    // without extra space - visited
+    @SuppressWarnings("Duplicates")
+    public int orangesRotting2(int[][] grid) {
+        Queue<Node> queue = new ArrayDeque<>();
+        int m = grid.length;
+        int n = grid[0].length;
+        final int[] R = {1, -1, 0, 0};
+        final int[] C = {0, 0, 1, -1};
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == 2) {
+                    queue.offer(new Node(i, j, 0));
+                }
+            }
+        }
+        int max = 0;
+        while (!queue.isEmpty()) {
+            Node curr = queue.poll();
+            for (int i = 0; i < 4; i++) {
+                int newR = curr.r + R[i];
+                int newC = curr.c + C[i];
+                if (newR >= 0 && newR < m && newC >= 0 && newC < n) {
+                    // orange is not rotten yet
+                    if (grid[newR][newC] == 1) {
+                        grid[newR][newC] = 2; // make it rotten
+                        max = Math.max(max, curr.timeFrame + 1);
+                        queue.offer(new Node(newR, newC, curr.timeFrame + 1));
+                    }
+                }
+            }
+        }
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                // if any orange is not yet rotten
+                if (grid[i][j] == 1) {
                     return -1;
                 }
             }

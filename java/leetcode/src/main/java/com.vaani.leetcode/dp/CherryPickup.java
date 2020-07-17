@@ -21,7 +21,7 @@ import java.util.Arrays;
  * one more cherry. The total number of cherries picked up is 5, and this is the maximum possible.
  * Note:
  *
- * <p>grid is an N by N 2D com.vaani.leetcode.array, with 1 <= N <= 50. Each grid[i][j] is an integer in the set {-1,
+ * <p>grid is an N by N 2D array, with 1 <= N <= 50. Each grid[i][j] is an integer in the set {-1,
  * 0, 1}. It is guaranteed that grid[0][0] and grid[N-1][N-1] are not -1.
  *
  * <p>Solution O(N ^ 3) time-complexity. Traversing from (0, 0) -> (n - 1, n - 1) or the other way

@@ -1,7 +1,8 @@
 package com.vaani.leetcode.string;
 
 /**
- * 09/03/2017. Given a string, find the first non-repeating
+ * https://leetcode.com/problems/first-unique-character-in-a-string/
+ * = Given a string, find the first non-repeating
  * character in it and return it's index. If it doesn't exist, return -1.
  *
  * <p>Examples:
@@ -11,7 +12,7 @@ package com.vaani.leetcode.string;
  * <p>s = "loveleetcode", return 2. Note: You may assume the string contain only lowercase letters.
  */
 public class FirstUniqueCharacterInAString {
-    int[] CHAR = new int[256];
+
 
     /**
      * Main method
@@ -24,12 +25,17 @@ public class FirstUniqueCharacterInAString {
     }
 
     public int firstUniqChar(String s) {
-        if (s == null || s.isEmpty()) return -1;
-
-        for (int i = 0, l = s.length(); i < l; i++) CHAR[s.charAt(i)]++;
+        int[] charMap = new int[256];
+        if (s == null || s.isEmpty()) {
+            return -1;
+        }
 
         for (int i = 0, l = s.length(); i < l; i++) {
-            if (CHAR[s.charAt(i)] == 1) return i;
+            charMap[s.charAt(i)]++;
+        }
+
+        for (int i = 0, l = s.length(); i < l; i++) {
+            if (charMap[s.charAt(i)] == 1) return i;
         }
 
         return -1;

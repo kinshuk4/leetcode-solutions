@@ -1,9 +1,12 @@
 package com.vaani.leetcode.depth_first_search;
 
+import com.vaani.dsa.ds.core.graph.simple.UnweightedAdjListGraph;
+
 import java.util.*;
 
 /**
- * 23/06/2017. There are a total of n courses you have to take,
+ * https://leetcode.com/articles/course-schedule-ii/
+ * There are a total of n courses you have to take,
  * labeled from 0 to n - 1.
  *
  * <p>Some courses may have prerequisites, for example to take course 0 you have to first take
@@ -36,24 +39,49 @@ public class CourseScheduleII {
 
     public static void main(String[] args) throws Exception {
         int[][] pre = {{1, 0}};
-        int[] result = new CourseScheduleII().findOrder(2, pre);
+        CourseScheduleII underTest = new CourseScheduleII();
+        int[] result = underTest.findOrder1DFS(2, pre);
         for (int i : result) System.out.print(i + " ");
         System.out.println();
+
+        result = underTest.findOrder2Kahn(2, pre);
+        Arrays.stream(result).forEach(x -> System.out.print(x + " "));
+        System.out.println();
+
+
+        result = underTest.findOrder2Kahn(2, new int[][]{});
+        Arrays.stream(result).forEach(x -> System.out.print(x + " "));
+        System.out.println();
+
     }
 
-    public int[] findOrder(int numCourses, int[][] prerequisites) {
+    // build graph
+    private Map<Integer, List<Integer>> buildGraph(int n, int[][] prerequisites) {
+        Map<Integer, List<Integer>> graph = new HashMap<>();
+
+        for (int i = 0; i < n; i++) {
+            graph.put(i, new ArrayList<>());
+        }
+
+        for (int[] children : prerequisites) {
+//            graph.putIfAbsent(children[0], new ArrayList<>());
+            System.out.println(children[0]);
+            graph.get(children[0]).add(children[1]);
+        }
+        return graph;
+    }
+
+    public int[] findOrder1DFS(int numCourses, int[][] prerequisites) {
         int j = 0;
         int[] courses = new int[numCourses];
         int[] result = new int[numCourses];
-        for (int i = 0; i < numCourses; i++) courses[i] = j++;
-        graph = new HashMap<>();
+        for (int i = 0; i < numCourses; i++) {
+            courses[i] = j++;
+        }
+        graph = buildGraph(numCourses, prerequisites);
         visited = new BitSet();
         toposorted = new ArrayDeque<>();
-        // build graph
-        for (int[] children : prerequisites) {
-            graph.putIfAbsent(children[0], new ArrayList<>());
-            graph.get(children[0]).add(children[1]);
-        }
+
         graph.keySet().stream().filter(v -> !visited.get(v)).forEach(this::dfs);
 
         visited.clear();
@@ -66,14 +94,14 @@ public class CourseScheduleII {
             courses[v] = -1;
         }
         // add the remaining courses
-        for (int c : courses) if (c != -1) result[i++] = c;
+        for (int c : courses) {
+            if (c != -1) result[i++] = c;
+        }
         return result;
     }
 
     /**
      * Mark a vetex and its connected vertices as visited.
-     *
-     * @param v vertex
      */
     private void relax(int v) {
         visited.set(v);
@@ -83,11 +111,7 @@ public class CourseScheduleII {
         }
     }
 
-    /**
-     * Toposort
-     *
-     * @param v vertex
-     */
+
     private void dfs(int v) {
         visited.set(v);
         List<Integer> children = graph.get(v);
@@ -96,4 +120,107 @@ public class CourseScheduleII {
         }
         toposorted.offer(v);
     }
+
+    private Map<Integer, List<Integer>> buildGraph2(int n, int[][] prerequisites) {
+        Map<Integer, List<Integer>> graph = new HashMap<>();
+
+        for (int i = 0; i < n; i++) {
+            graph.put(i, new ArrayList<>());
+        }
+
+        for (int[] children : prerequisites) {
+            graph.get(children[1]).add(children[0]);
+        }
+        return graph;
+    }
+
+    public int[] findOrder2Kahn(int numCourses, int[][] prerequisites) {
+        Map<Integer, List<Integer>> graph = buildGraph2(numCourses, prerequisites);
+
+        int[] inDegrees = new int[numCourses];
+        for (int node : graph.keySet()) {
+            List<Integer> adjNodes = graph.get(node);
+            for (int adjNode : adjNodes) {
+                inDegrees[adjNode]++;
+            }
+        }
+
+        // start the bfs
+        Queue<Integer> queue = new LinkedList<>();
+
+        // Add all the nodes with indegree 0
+        for (int i = 0; i < inDegrees.length; i++) {
+            if (inDegrees[i] == 0) {
+                queue.add(i);
+            }
+        }
+
+        int count = 0; //used for checking if graph is acyclic
+        List<Integer> resultList = new LinkedList<>();
+        while (!queue.isEmpty()) {
+            int node = queue.poll();
+            count++;
+            resultList.add(node);
+            List<Integer> adjNodes = graph.get(node);
+            for (int adjNode : adjNodes) {
+                inDegrees[adjNode]--;
+                if (inDegrees[adjNode] == 0) {
+                    queue.add(adjNode);
+                }
+            }
+
+        }
+
+        // graph has cycle
+        if (count != numCourses) {
+            return null;
+        }
+
+        return resultList.stream().mapToInt(Integer::intValue).toArray();
+    }
+
+    // submitted
+    public int[] findOrder3Topo(int numCourses, int[][] prerequisites) {
+        UnweightedAdjListGraph graph = new UnweightedAdjListGraph(numCourses, true);
+        for (int[] children : prerequisites) {
+            graph.addEdge(children[1], children[0]);
+        }
+
+        if(graph.hasCycle()){
+            return new int[]{};
+        }
+
+        BitSet visited = new BitSet();
+
+        Stack<Integer> stack = new Stack<>();// for the topo sort
+
+        for (int i = 0; i < numCourses; ++i) {
+            if (!visited.get(i)) {
+                dfs2(graph, i, visited, stack);
+            }
+        }
+
+
+        List<Integer> resultList = new LinkedList<>();
+        while (!stack.isEmpty()) {
+            resultList.add(stack.pop());
+        }
+        return resultList.stream().mapToInt(Integer::intValue).toArray();
+    }
+
+    private void dfs2(UnweightedAdjListGraph graph, int node, BitSet visited, Stack<Integer> stack) {
+        visited.set(node);
+        Optional<List<Integer>> adjListOptional = graph.getAdjList(node);
+        if(adjListOptional.isPresent()){
+            for (int adjNode : adjListOptional.get()) {
+                if (!visited.get(adjNode)) {
+                    dfs2(graph, adjNode, visited, stack);
+                }
+            }
+        }
+
+        stack.push(node);
+    }
+
+
 }

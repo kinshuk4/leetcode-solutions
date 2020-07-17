@@ -2,8 +2,8 @@ package com.vaani.leetcode.design;
 
 import java.util.*;
 
-/**
- * 23/03/2017. Design a data structure that supports all following
+/** https://leetcode.com/problems/insert-delete-getrandom-o1/
+ * Design a data structure that supports all following
  * operations in average O(1) time.
  *
  * <p>insert(val): Inserts an item val to the set if not already present. remove(val): Removes an
@@ -26,17 +26,17 @@ import java.util.*;
  *
  * <p>// Since 2 is the only number in the set, getRandom always return 2. randomSet.getRandom();
  */
-public class RandomizedSet {
-    private Map<Integer, Integer> map;
-    private List<Integer> list;
+public class RandomizedSetUsingTwoMaps {
+    private Map<Integer, Integer> valueMap;
+    private Map<Integer, Integer> idxMap;
     private Random random;
 
     /**
      * Initialize your data structure here.
      */
-    public RandomizedSet() {
-        map = new HashMap<>();
-        list = new ArrayList<>();
+    public RandomizedSetUsingTwoMaps() {
+        valueMap = new HashMap<>();
+        idxMap = new HashMap<>();
         random = new Random();
     }
 
@@ -47,7 +47,7 @@ public class RandomizedSet {
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
-        RandomizedSet rSet = new RandomizedSet();
+        RandomizedSetUsingTwoMaps rSet = new RandomizedSetUsingTwoMaps();
         System.out.println(rSet.getRandom());
         System.out.println(rSet.insert(1));
         System.out.println(rSet.insert(2));
@@ -70,31 +70,37 @@ public class RandomizedSet {
      * element.
      */
     public boolean insert(int val) {
-        if (!map.keySet().contains(val)) {
-            int pos = list.size();
-            map.put(val, pos);
-            list.add(val);
-            return true;
+        if(valueMap.containsKey(val)){
+            return false;
         }
-        return false;
+
+        valueMap.put(val, valueMap.size());
+        idxMap.put(idxMap.size(), val);
+
+        return true;
     }
 
     /**
      * Removes a value from the set. Returns true if the set contained the specified element.
      */
     public boolean remove(int val) {
-        if (map.containsKey(val)) {
-            int size = list.size();
-            int posVal = map.get(val);
-            if (posVal < (size - 1)) {
-                int last = list.get(size - 1);
-                map.put(last, posVal);
-                list.set(posVal, last);
+        if(valueMap.containsKey(val)){
+            int idx = valueMap.get(val);
+            valueMap.remove(val);
+            idxMap.remove(idx);
+
+            // Remove the last element from the list - otherwise there will be a
+            // collission in the indexMap as we already have value of size-1
+            // in the map
+            Integer tailElem = idxMap.get(idxMap.size());
+            if(tailElem!=null){
+                idxMap.put(idx,tailElem);
+                valueMap.put(tailElem, idx);
             }
-            map.remove(val);
-            list.remove(size - 1);
+
             return true;
         }
+
         return false;
     }
 
@@ -104,6 +110,16 @@ public class RandomizedSet {
     public int getRandom() {
     /*if(list.size() == 0) return 0;
     else if (list.size() == 1) return list.get(0);*/
-        return list.get(random.nextInt(list.size() - 1));
+        if(valueMap.size()==0){
+            return -1;
+        }
+
+        if(valueMap.size()==1){
+            return idxMap.get(0);
+        }
+
+        int idx = random.nextInt(valueMap.size());
+
+        return idxMap.get(idx);
     }
 }

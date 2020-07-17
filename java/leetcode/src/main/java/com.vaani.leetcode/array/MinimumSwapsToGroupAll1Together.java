@@ -10,12 +10,12 @@ package com.vaani.leetcode.array;
  * [1,1,1,0,0] using 1 swap. [0,1,1,1,0] using 2 swaps. [0,0,1,1,1] using 1 swap. The minimum is 1.
  * Example 2:
  *
- * <p>Input: [0,0,0,1,0] Output: 0 Explanation: Since there is only one 1 in the com.vaani.leetcode.array, no swaps
+ * <p>Input: [0,0,0,1,0] Output: 0 Explanation: Since there is only one 1 in the array, no swaps
  * needed. Example 3:
  *
  * <p>Input: [1,0,1,0,1,0,0,1,1,0,1] Output: 3 Explanation: One possible solution that uses 3 swaps
  * is [0,0,0,0,0,1,1,1,1,1,1]. Solution: O(N) All the 1s to be grouped together would mean that all
- * 1s should occupy a small window in a com.vaani.leetcode.array, this window could be in any part of the array - a
+ * 1s should occupy a small window in a array, this window could be in any part of the array - a
  * window with minimum number of 0s is the minimum number of swap required.
  */
 public class MinimumSwapsToGroupAll1Together {

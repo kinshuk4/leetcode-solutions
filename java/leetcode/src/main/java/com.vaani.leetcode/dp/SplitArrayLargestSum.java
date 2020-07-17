@@ -5,7 +5,7 @@ package com.vaani.leetcode.dp;
  * integers and an integer m, you can split the array into m non-empty continuous subarrays. Write
  * an algorithm to minimize the largest sum among these m subarrays.
  *
- * <p>Note: If n is the length of com.vaani.leetcode.array, assume the following constraints are satisfied:
+ * <p>Note: If n is the length of array, assume the following constraints are satisfied:
  *
  * <p>1 ≤ n ≤ 1000 1 ≤ m ≤ min(50, n) Examples:
  *

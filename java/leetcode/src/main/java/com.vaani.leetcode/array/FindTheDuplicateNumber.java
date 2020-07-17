@@ -22,7 +22,25 @@ import java.util.*;
  * There is only one duplicate number in the array, but it could be repeated more than once.
  */
 public class FindTheDuplicateNumber {
+    // this method fails when first value is 0, but problem mentions numbers from range 1,n
     public int findDuplicate(int[] nums) {
+        int slow = nums[0];
+        int fast = nums[0];
+        // once we have a cycle, slow = fast
+        do {
+            slow = nums[slow];
+            fast = nums[nums[fast]];
+        } while (slow != fast);
+
+        slow = nums[0];
+        while (slow != fast) {
+            slow = nums[slow];
+            fast = nums[fast];
+        }
+        return slow;
+    }
+
+    public int findDuplicate2(int[] nums) {
         int N = nums.length;
         int n = N - 1;
         int expectedSum = n * (n + 1) / 2;

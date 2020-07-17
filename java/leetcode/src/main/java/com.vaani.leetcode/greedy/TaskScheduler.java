@@ -49,26 +49,18 @@ public class TaskScheduler {
         System.out.println(new TaskScheduler().leastInterval(tasks, 2));
     }
 
-    /**
-     * @param tasks
-     * @param n
-     * @return
-     */
-    public int leastInterval(char[] tasks, int n) {
+    public int leastInterval1(char[] tasks, int n) {
         PriorityQueue<Task> queue =
                 new PriorityQueue<>(Comparator.comparing(Task::getCount).reversed());
         List<Task> waiting = new ArrayList<>();
-        Map<Character, Integer> map = new HashMap<>();
+        Map<Character, Integer> frequencyMap = new HashMap<>();
         for (char c : tasks) {
-            if (map.get(c) == null) {
-                map.put(c, 1);
-            } else {
-                int v = map.get(c) + 1;
-                map.put(c, v);
-            }
+            frequencyMap.put(c, frequencyMap.getOrDefault(c, 0) + 1);
         }
-        for (char c : map.keySet()) {
-            Task task = new Task(c, map.get(c));
+
+
+        for (char c : frequencyMap.keySet()) {
+            Task task = new Task(c, frequencyMap.get(c));
             queue.offer(task);
         }
         int count = 0;
@@ -90,5 +82,36 @@ public class TaskScheduler {
             waiting.clear();
         }
         return count;
+    }
+
+    public int leastInterval(char[] tasks, int n) {
+        Map<Character, Integer> frequencyMap = new HashMap<>();
+        for (char c : tasks) {
+            frequencyMap.put(c, frequencyMap.getOrDefault(c, 0) + 1);
+        }
+
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+        maxHeap.addAll(frequencyMap.values());
+
+        int cycles = 0;
+        while (!maxHeap.isEmpty()) {
+            List<Integer> temp = new ArrayList<>();
+            for (int i = 0; i < n + 1; i++) {
+                if (!maxHeap.isEmpty()) {
+                    temp.add(maxHeap.remove());
+                }
+            }
+
+            for (int i : temp) {
+                if (--i > 0) {
+                    maxHeap.add(i);
+                }
+            }
+
+            cycles += maxHeap.isEmpty() ? temp.size() : n + 1;
+        }
+
+
+        return cycles;
     }
 }

@@ -2,9 +2,8 @@ package com.vaani.leetcode.design;
 
 import java.util.*;
 
-/**
- * 14/04/2018. Design a data structure that supports all following
- * operations in average O(1) time.
+/** https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/
+ * Design a data structure that supports all following operations in average O(1) time.
  *
  * <p>Note: Duplicate elements are allowed. insert(val): Inserts an item val to the collection.
  * remove(val): Removes an item val from the collection if present. getRandom: Returns a random
@@ -38,7 +37,7 @@ import java.util.*;
  * from array this operation requires only O(1) time getRandom(): Generate a random number between 0
  * and size of array and return the element at that position.
  */
-public class RandomizedCollection {
+public class RandomizedCollectionUsingMapAndList {
 
     private Map<Integer, Set<Integer>> map;
     private List<Integer> list;
@@ -46,7 +45,7 @@ public class RandomizedCollection {
     /**
      * Initialize your data structure here.
      */
-    public RandomizedCollection() {
+    public RandomizedCollectionUsingMapAndList() {
         map = new HashMap<>();
         list = new ArrayList<>();
     }
@@ -107,7 +106,7 @@ public class RandomizedCollection {
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
-        RandomizedCollection collection = new RandomizedCollection();
+        RandomizedCollectionUsingMapAndList collection = new RandomizedCollectionUsingMapAndList();
         System.out.println(collection.insert(1));
         System.out.println(collection.insert(1));
         System.out.println(collection.insert(2));

@@ -12,10 +12,10 @@ import java.util.Arrays;
  * <p>Given a list of non-negative integers representing the amount of money of each house,
  * determine the maximum amount of money you can rob tonight without alerting the police.
  */
-public class HouseRobberII {
+public class HouseRobber2 {
     public static void main(String[] args) throws Exception {
         int[] nums = {6, 3, 10, 8, 2, 10, 3, 5, 10, 5, 3};
-        System.out.println(new HouseRobberII().rob(nums));
+        System.out.println(new HouseRobber2().rob(nums));
     }
 
     public int rob(int[] nums) {

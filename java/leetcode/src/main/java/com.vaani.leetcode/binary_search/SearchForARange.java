@@ -6,7 +6,7 @@ package com.vaani.leetcode.binary_search;
  *
  * <p>Your algorithm's runtime complexity must be in the order of O(log n).
  *
- * <p>If the target is not found in the com.vaani.leetcode.array, return [-1, -1].
+ * <p>If the target is not found in the array, return [-1, -1].
  *
  * <p>For example, Given [5, 7, 7, 8, 8, 10] and target value 8, return [3, 4].
  *

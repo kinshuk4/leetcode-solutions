@@ -1,10 +1,10 @@
 package com.vaani.leetcode.two_pointers;
 
 /**
- * 04/07/2017. Given a sorted com.vaani.leetcode.array, remove the duplicates in
+ * 04/07/2017. Given a sorted array, remove the duplicates in
  * place such that each element appear only once and return the new length.
  *
- * <p>Do not allocate extra space for another com.vaani.leetcode.array, you must do this in place with constant memory.
+ * <p>Do not allocate extra space for another array, you must do this in place with constant memory.
  *
  * <p>For example, Given input array nums = [1,1,2],
  *

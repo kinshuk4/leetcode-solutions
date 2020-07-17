@@ -1,9 +1,11 @@
 package com.vaani.leetcode.depth_first_search;
 
+import com.vaani.dsa.ds.core.graph.simple.UnweightedAdjListGraph;
+
 import java.util.*;
 
-/**
- * 22/06/2017. There are a total of n courses you have to take,
+/** https://leetcode.com/problems/course-schedule/
+ * There are a total of n courses you have to take,
  * labeled from 0 to n - 1.
  *
  * <p>Some courses may have prerequisites, for example to take course 0 you have to first take
@@ -36,10 +38,10 @@ public class CourseSchedule {
 
     public static void main(String[] args) throws Exception {
         int[][] pre = {{1, 0}};
-        System.out.println(new CourseSchedule().canFinish(2, pre));
+        System.out.println(new CourseSchedule().canFinish1(2, pre));
     }
 
-    public boolean canFinish(int numCourses, int[][] prerequisites) {
+    public boolean canFinish1(int numCourses, int[][] prerequisites) {
         graph = new HashMap<>();
         visited = new BitSet();
         toposorted = new ArrayDeque<>();
@@ -48,24 +50,20 @@ public class CourseSchedule {
             graph.putIfAbsent(children[0], new ArrayList<>());
             graph.get(children[0]).add(children[1]);
         }
-        graph.keySet().stream().filter(v -> !visited.get(v)).forEach(this::dfs);
+        graph.keySet().stream().filter(v -> !visited.get(v)).forEach(this::dfs1);
 
         visited.clear();
 
         while (!toposorted.isEmpty()) {
             int v = toposorted.poll();
             if (visited.get(v)) return false;
-            relax(v);
+            relax1(v);
         }
         return true;
     }
 
-    /**
-     * Mark a vetex and its connected vertices as visited.
-     *
-     * @param v vertex
-     */
-    private void relax(int v) {
+
+    private void relax1(int v) {
         visited.set(v);
         List<Integer> children = graph.get(v);
         if (children != null) {
@@ -73,17 +71,26 @@ public class CourseSchedule {
         }
     }
 
-    /**
-     * Toposort
-     *
-     * @param v vertex
-     */
-    private void dfs(int v) {
+
+    private void dfs1(int v) {
         visited.set(v);
         List<Integer> children = graph.get(v);
         if (children != null) {
-            for (int c : children) if (!visited.get(c)) dfs(c);
+            for (int c : children) if (!visited.get(c)) dfs1(c);
         }
         toposorted.offer(v);
+    }
+
+    public boolean canFinish2Topo(int numCourses, int[][] prerequisites) {
+        UnweightedAdjListGraph graph = new UnweightedAdjListGraph(numCourses, true);
+        for (int[] children : prerequisites) {
+            graph.addEdge(children[1], children[0]);
+        }
+        // if there is a cycle, we have a deadlock, hence we return false
+        if(graph.hasCycle()){
+            return false;
+        }
+
+        return true;
     }
 }

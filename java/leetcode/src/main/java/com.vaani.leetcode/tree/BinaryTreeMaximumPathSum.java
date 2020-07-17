@@ -24,12 +24,7 @@ public class BinaryTreeMaximumPathSum {
 
     private int max = Integer.MIN_VALUE;
 
-    /**
-     * Main method
-     *
-     * @param args
-     * @throws Exception
-     */
+
     public static void main(String[] args) throws Exception {
         TreeNode root = new TreeNode(5);
         root.left = new TreeNode(4);
@@ -38,19 +33,19 @@ public class BinaryTreeMaximumPathSum {
         root.right = new TreeNode(7);
         root.right.left = new TreeNode(2);
         root.right.left.left = new TreeNode(9);
-        System.out.println(new BinaryTreeMaximumPathSum().maxPathSum(root));
+        System.out.println(new BinaryTreeMaximumPathSum().maxPathSum3(root));
     }
 
-    public int maxPathSum(TreeNode root) {
+    public int maxPathSum3(TreeNode root) {
         if (root == null) return 0;
-        dfs(root);
+        dfs3(root);
         return max;
     }
 
-    private int dfs(TreeNode root) {
+    private int dfs3(TreeNode root) {
         if (root == null) return 0;
-        int left = dfs(root.left);
-        int right = dfs(root.right);
+        int left = dfs3(root.left);
+        int right = dfs3(root.right);
         max = Math.max(max, root.val);
         max = Math.max(max, root.val + left);
         max = Math.max(max, root.val + right);

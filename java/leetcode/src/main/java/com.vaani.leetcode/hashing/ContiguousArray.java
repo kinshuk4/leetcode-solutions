@@ -3,8 +3,8 @@ package com.vaani.leetcode.hashing;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * 16/12/2017. Given a binary com.vaani.leetcode.array, find the maximum length of a
+/** https://leetcode.com/problems/contiguous-array/
+ * Given a binary array, find the maximum length of a
  * contiguous subarray with equal number of 0 and 1.
  *
  * <p>Example 1: Input: [0,1] Output: 2 Explanation: [0, 1] is the longest contiguous subarray with
@@ -29,22 +29,23 @@ public class ContiguousArray {
         System.out.println(new ContiguousArray().findMaxLength(A));
     }
 
+    // Make numbers with value 0 as -1
     public int findMaxLength(int[] nums) {
         Map<Integer, Integer> map = new HashMap<>();
-        int count = 0;
+        int sum = 0;
         int max = 0;
+
         for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == 0) {
-                count--;
-            } else count++;
-            if (count == 0) {
+            sum += nums[i] == 0 ? -1 : 1;
+
+            if (sum == 0) {
                 max = Math.max(max, i + 1);
             } else {
-                if (map.containsKey(count)) {
-                    int index = map.get(count);
+                if (map.containsKey(sum)) {
+                    int index = map.get(sum);
                     max = Math.max(max, i - index);
                 } else {
-                    map.put(count, i);
+                    map.put(sum, i);
                 }
             }
         }

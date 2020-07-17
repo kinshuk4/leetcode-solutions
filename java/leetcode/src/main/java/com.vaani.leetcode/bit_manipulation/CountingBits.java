@@ -23,6 +23,20 @@ public class CountingBits {
     public int[] countBits(int num) {
         int[] result = new int[num + 1];
         result[0] = 0;
+
+        for (int i = 1; i < num + 1; i++) {
+            // if i is odd, then number of set bits is 1 + numBits(i/2)
+            if (i % 2 == 1) {
+                result[i] = result[i / 2] + 1;
+            } else { // when even, bits are same as numBits(i/2)
+                result[i] = result[i / 2];
+            }
+
+            // one liner:
+//            result[i] = result[i / 2] + i % 2;
+        }
+
+
         return result;
 
     }

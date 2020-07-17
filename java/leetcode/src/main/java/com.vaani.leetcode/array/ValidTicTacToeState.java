@@ -5,7 +5,7 @@ package com.vaani.leetcode.array;
  * board. Return True if and only if it is possible to reach this board position during the course
  * of a valid tic-tac-toe game.
  *
- * <p>The board is a 3 x 3 com.vaani.leetcode.array, and consists of characters " ", "X", and "O". The " " character
+ * <p>The board is a 3 x 3 array, and consists of characters " ", "X", and "O". The " " character
  * represents an empty square.
  *
  * <p>Here are the rules of Tic-Tac-Toe:

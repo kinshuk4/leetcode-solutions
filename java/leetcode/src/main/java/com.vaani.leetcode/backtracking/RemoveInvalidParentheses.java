@@ -5,9 +5,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-/**
- * 17/10/2017. Remove the minimum number of invalid parentheses in
- * order to make the input string valid. Return all possible results.
+/** https://leetcode.com/problems/remove-invalid-parentheses/
+ * Remove the minimum number of invalid parentheses in order to make the input string valid. Return all possible results.
  *
  * <p>Note: The input string may contain letters other than the parentheses ( and ).
  *

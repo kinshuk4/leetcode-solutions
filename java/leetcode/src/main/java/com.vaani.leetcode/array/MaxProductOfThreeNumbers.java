@@ -3,7 +3,7 @@ package com.vaani.leetcode.array;
 import java.util.Arrays;
 
 /**
- * 27/06/2017. Given an integer com.vaani.leetcode.array, find three numbers whose
+ * 27/06/2017. Given an integer array, find three numbers whose
  * product is maximum and output the maximum product.
  *
  * <p>Example 1: Input: [1,2,3] Output: 6 Example 2: Input: [1,2,3,4] Output: 24 Note: The length of

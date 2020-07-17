@@ -1,7 +1,7 @@
 package com.vaani.leetcode.dp;
 
 /**
- * 31/03/2017. Given n, how many structurally unique BST's (binary
+ *Given n, how many structurally unique BST's (binary
  * search trees) that store values 1...n?
  *
  * <p>For example, Given n = 3, there are a total of 5 unique BST's.
