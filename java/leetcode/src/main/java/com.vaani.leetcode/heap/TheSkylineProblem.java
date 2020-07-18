@@ -3,7 +3,7 @@ package com.vaani.leetcode.heap;
 import java.util.*;
 
 /**
- * 13/09/2017.
+ * https://leetcode.com/problems/the-skyline-problem/
  *
  * <p>A city's skyline is the outer contour of the silhouette formed by all the buildings in that
  * city when viewed from a distance. Now suppose you are given the locations and height of all the
@@ -73,38 +73,32 @@ public class TheSkylineProblem {
                 {0, 30, 30}, {2, 9, 10}, {3, 7, 15}, {4, 8, 10}, {5, 12, 12}, {15, 20, 10}, {19, 24, 8}
         };
         // int[][] A = {{2,9,10}, {3,9,11}, {4,9,12}, {5,9,13}};
-        List<int[]> result = new TheSkylineProblem().getSkyline(A);
+        List<List<Integer>> result = new TheSkylineProblem().getSkyline(A);
         result.forEach(
                 x -> {
-                    System.out.println(x[0] + " " + x[1]);
+                    System.out.println(x.get(0) + " " + x.get(1));
                 });
     }
 
-    public List<int[]> getSkyline(int[][] buildings) {
+    public List<List<Integer>> getSkyline(int[][] buildings) {
         PriorityQueue<Rectangle> pq =
-                new PriorityQueue<>(
-                        Comparator.comparing(Rectangle::getH)
-                                .reversed()
-                                .thenComparing(
-                                        Rectangle
-                                                ::getX1)); // order by height, if height is same then, order by left most
+                new PriorityQueue<>(Comparator.comparing(Rectangle::getH)
+                        .reversed()
+                        .thenComparing(Rectangle::getX1)); // order by height, if height is same then, order by left most
         // starting edge.
-        List<int[]> result = new ArrayList<>();
+        List<List<Integer>> result = new ArrayList<>();
         Set<Integer> set = new HashSet<>();
         for (int[] p : buildings) {
             set.add(p[0]);
             set.add(p[1]);
         }
-        List<Integer> points = new ArrayList<>();
-        points.addAll(set);
+        List<Integer> points = new ArrayList<>(set);
         points.sort(Integer::compare);
 
         for (int i = 0, j = 0, l = points.size(); i < l; i++) {
             int curr = points.get(i);
 
-            for (int k = j;
-                 k < buildings.length;
-                 k++) { // add all the rectangles that begin at this point
+            for (int k = j; k < buildings.length; k++) { // add all the rectangles that begin at this point
                 int[] rectangle = buildings[k];
                 if (rectangle[0] == curr) {
                     pq.offer(new Rectangle(rectangle[0], rectangle[1], rectangle[2]));
@@ -113,6 +107,7 @@ public class TheSkylineProblem {
                     break;
                 }
             }
+
             int max = Integer.MIN_VALUE;
             while (!pq.isEmpty()) { // remove all the rectangles that end at this point
                 if (pq.peek().getX2() == curr) {
@@ -125,31 +120,23 @@ public class TheSkylineProblem {
                 }
             }
             if (pq.isEmpty()) {
-                result.add(
-                        makeNewPoint(
-                                curr,
-                                0)); // This is the last rectangle after this there is a gap of at least one unit
+                result.add(makeNewPoint(curr, 0)); // This is the last rectangle after this there is a gap of at least one unit
             } else {
                 if (max > pq.peek().getH()) {
-                    result.add(
-                            makeNewPoint(
-                                    curr,
-                                    pq.peek()
-                                            .getH())); // one of the larger rectangle's right edge intersects with a
+                    result.add(makeNewPoint(curr, pq.peek().getH())); // one of the larger rectangle's right edge intersects with a
                     // smaller one
                 } else if (max < pq.peek().getH() && pq.peek().getX1() == curr) {
-                    result.add(
-                            makeNewPoint(curr, pq.peek().getH())); // new larger rectangle begins at this point
+                    result.add(makeNewPoint(curr, pq.peek().getH())); // new larger rectangle begins at this point
                 }
             }
         }
         return result;
     }
 
-    private int[] makeNewPoint(int x, int y) {
-        int[] point = new int[2];
-        point[0] = x;
-        point[1] = y;
+    private List<Integer> makeNewPoint(int x, int y) {
+        List<Integer> point = new ArrayList<>();
+        point.add(0, x);
+        point.add(1, y);
         return point;
     }
 
@@ -173,5 +160,93 @@ public class TheSkylineProblem {
         public int getX1() {
             return x1;
         }
+    }
+
+    // buildings = {0, 30, 30}, {2, 9, 10}, {3, 7, 15}, {4, 8, 10}, {5, 12, 12}, {15, 20, 10}, {19, 24, 8}
+    // Simpler solution using array as Object model in a way
+    // priority_queue.remove() is heavy operation here
+    // https://leetcode.com/problems/the-skyline-problem/discuss/61193/Short-Java-solution
+    @SuppressWarnings("Duplicates")
+    public List<List<Integer>> getSkyline2(int[][] buildings) {
+        List<List<Integer>> result = new ArrayList<>();
+
+
+        List<int[]> height = new ArrayList<>(); // height list to store all buildings' heights
+        for (int[] b : buildings) {
+            height.add(new int[]{b[0], -b[2]});  // start of a building, height stored as negative
+            height.add(new int[]{b[1], b[2]}); // end of a building, height stored as positive
+        }
+
+        // sort the height list by X1, X2 of building. If equal, sort by height
+        height.sort((a, b) -> (a[0] == b[0] ? a[1] - b[1] : a[0] - b[0]));
+
+        // a max pq that stores all the encountered buildings' heights in descending order
+        Queue<Integer> maxHeap = new PriorityQueue<>((a, b) -> (b - a));
+
+        maxHeap.offer(0);
+        int prevMax = 0;
+
+
+        for (int[] h : height) {
+            if (h[1] < 0) {
+                maxHeap.offer(-h[1]); // h[1] < 0, that means it meets a new building, so add it to pq
+            } else {
+                maxHeap.remove(h[1]); // h[1] >=0, that means it has reached the end of the building, so remove it from pq
+            }
+
+            // the current max height in all encountered buildings
+            int currMax = maxHeap.peek();
+            // if the max height is different from the previous one, that means a critical point is met, add to result list
+            if (prevMax != currMax) {
+                result.add(List.of(h[0], currMax));
+                prevMax = currMax;
+            }
+        }
+        return result;
+    }
+
+    // Same as above, but with treemap
+    @SuppressWarnings("Duplicates")
+    public List<List<Integer>> getSkyline3(int[][] buildings) {
+        List<List<Integer>> result = new ArrayList<>();
+
+
+        List<int[]> height = new ArrayList<>(); // height list to store all buildings' heights
+        for (int[] b : buildings) {
+            height.add(new int[]{b[0], -b[2]});  // start of a building, height stored as negative
+            height.add(new int[]{b[1], b[2]}); // end of a building, height stored as positive
+        }
+
+        // sort the height list by X1, X2 of building. If equal, sort by height
+        height.sort((a, b) -> (a[0] == b[0] ? a[1] - b[1] : a[0] - b[0]));
+
+        // a max pq that stores all the encountered buildings' heights in descending order
+        SortedMap<Integer, Integer> heightMap = new TreeMap<>(Collections.reverseOrder());
+
+        heightMap.put(0, 1);
+        int prevMax = 0;
+
+
+        for (int[] h : height) {
+            if (h[1] < 0) {
+                heightMap.put(-h[1], heightMap.getOrDefault(-h[1], 0) + 1); // h[1] < 0, that means it meets a new building, so add it to pq
+            } else {
+                Integer cnt = heightMap.get(h[1]);
+                if (cnt == 1) {
+                    heightMap.remove(h[1]);
+                } else {
+                    heightMap.put(h[1], cnt - 1);
+                }
+            }
+
+            // the current max height in all encountered buildings
+            int currMax = heightMap.firstKey();
+            // if the max height is different from the previous one, that means a critical point is met, add to result list
+            if (prevMax != currMax) {
+                result.add(List.of(h[0], currMax));
+                prevMax = currMax;
+            }
+        }
+        return result;
     }
 }

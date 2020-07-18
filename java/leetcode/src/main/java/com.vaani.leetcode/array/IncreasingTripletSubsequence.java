@@ -2,8 +2,8 @@ package com.vaani.leetcode.array;
 
 import java.util.Arrays;
 
-/**
- * 17/12/2017. Given an unsorted array return whether an
+/** https://leetcode.com/problems/increasing-triplet-subsequence/
+ * Given an unsorted array return whether an
  * increasing subsequence of length 3 exists or not in the array.
  *
  * <p>Formally the function should: Return true if there exists i, j, k such that arr[i] < arr[j] <
@@ -28,6 +28,7 @@ public class IncreasingTripletSubsequence {
     }
 
     public boolean increasingTriplet(int[] nums) {
+        // create array in increasing sequence - min0< min1< min2
         int[] A = new int[3];
         Arrays.fill(A, Integer.MAX_VALUE);
         for (int num : nums) {
@@ -38,6 +39,18 @@ public class IncreasingTripletSubsequence {
             } else if (num < A[2] && num > A[1]) {
                 return true;
             }
+        }
+        return false;
+    }
+
+    // even better
+    public boolean increasingTriplet2(int[] nums) {
+        // start with two largest values, as soon as we find a number bigger than both, while both have been updated, return true.
+        int small = Integer.MAX_VALUE, big = Integer.MAX_VALUE;
+        for (int n : nums) {
+            if (n <= small) { small = n; } // update small if n is smaller than both
+            else if (n <= big) { big = n; } // update big only if greater than small but smaller than big
+            else return true; // return if you find a number bigger than both
         }
         return false;
     }

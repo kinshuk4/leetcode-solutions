@@ -24,12 +24,7 @@ public class RemoveInvalidParentheses {
     private int maxLen = Integer.MIN_VALUE;
     private int minDiff = Integer.MAX_VALUE;
 
-    /**
-     * Main method
-     *
-     * @param args
-     * @throws Exception
-     */
+
     public static void main(String[] args) throws Exception {
         List<String> result = new RemoveInvalidParentheses().removeInvalidParentheses("())())");
         result.forEach(System.out::println);
@@ -42,8 +37,7 @@ public class RemoveInvalidParentheses {
         return result;
     }
 
-    private void backTrack(
-            String s, int i, int count, List<String> result, String state, int selected, int total) {
+    private void backTrack(String s, int i, int count, List<String> result, String state, int selected, int total) {
         if (i >= s.length()) {
             if (count == 0) {
                 if (selected >= maxLen) {

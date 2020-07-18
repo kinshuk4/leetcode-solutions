@@ -11,8 +11,8 @@ import java.util.Stack;
  *
  * <p>FreqStack has two functions:
  *
- * <p>push(int x), which pushes an integer x onto the com.vaani.leetcode.stack. pop(), which removes and returns the
- * most frequent element in the com.vaani.leetcode.stack. If there is a tie for most frequent element, the element
+ * <p>push(int x), which pushes an integer x onto the stack. pop(), which removes and returns the
+ * most frequent element in the stack. If there is a tie for most frequent element, the element
  * closest to the top of the stack is removed and returned.
  *
  * <p>Example 1:
@@ -49,10 +49,10 @@ import java.util.Stack;
  *
  * <p>When a push operation is invoked we have to identify in which stack the value has to go in
  * therefore maintain a hashmap with push-value as key and value contains the reference to FreqNode
- * in priority queue. Remove this FreqNode from priority queue and update the com.vaani.leetcode.stack.
+ * in priority queue. Remove this FreqNode from priority queue and update the stack.
  *
  * <p>When a pop operation is invoked remove the FreqNode from the top of the priority queue and pop
- * the value from top of its com.vaani.leetcode.stack.
+ * the value from top of its stack.
  */
 public class FreqStack {
 

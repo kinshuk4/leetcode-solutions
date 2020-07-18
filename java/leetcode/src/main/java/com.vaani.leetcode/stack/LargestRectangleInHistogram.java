@@ -12,11 +12,11 @@ import java.util.Stack;
  *
  * <p>Solution O(N):
  *
- * <p>1) Create an empty com.vaani.leetcode.stack.
+ * <p>1) Create an empty stack.
  *
  * <p>2) Start from first bar, and do following for every bar ‘hist[i]’ where ‘i’ varies from 0 to
  * n-1. a) If stack is empty or hist[i] is higher than the bar at top of com.vaani.leetcode.stack, then push ‘i’ to
- * com.vaani.leetcode.stack. b) If this bar is smaller than the top of com.vaani.leetcode.stack, then keep removing the top of stack while
+ * stack. b) If this bar is smaller than the top of com.vaani.leetcode.stack, then keep removing the top of stack while
  * top of the stack is greater. Let the removed bar be hist[tp]. Calculate area of rectangle with
  * hist[tp] as smallest bar. For hist[tp], the ‘left index’ is previous (previous to tp) item in
  * stack and ‘right index’ is ‘i’ (current index).

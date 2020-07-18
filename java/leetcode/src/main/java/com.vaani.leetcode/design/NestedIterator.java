@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * 30/11/2017.
+ * https://leetcode.com/problems/flatten-nested-list-iterator/
  *
  * <p>Given a nested list of integers, implement an iterator to flatten it.
  *
@@ -23,10 +23,6 @@ import java.util.List;
  * should be: [1,4,6].
  */
 public class NestedIterator implements Iterator<Integer> {
-
-    private List<Integer> result;
-    private int curr, size;
-
     // This is the interface that allows for creating nested lists.
     // You should not implement it, or speculate about its implementation
     public interface NestedInteger {
@@ -41,6 +37,9 @@ public class NestedIterator implements Iterator<Integer> {
         // Return null if this NestedInteger holds a single integer
         public List<NestedInteger> getList();
     }
+
+    private List<Integer> result;
+    private int curr, size;
 
     public NestedIterator(List<NestedInteger> nestedList) {
         this.result = new ArrayList<>();

@@ -2,7 +2,8 @@ package com.vaani.leetcode.design;
 
 import java.util.*;
 
-/** https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/
+/**
+ * https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/
  * Design a data structure that supports all following operations in average O(1) time.
  *
  * <p>Note: Duplicate elements are allowed. insert(val): Inserts an item val to the collection.
@@ -37,18 +38,18 @@ import java.util.*;
  * from array this operation requires only O(1) time getRandom(): Generate a random number between 0
  * and size of array and return the element at that position.
  */
-public class RandomizedCollectionUsingMapAndList {
+public class RandomizedCollectionUsingTwoMaps {
 
     private final Map<Integer, Set<Integer>> valueMap;
-    private final List<Integer> list;
+    private final Map<Integer, Integer> indexMap;
     private final Random random;
 
     /**
      * Initialize your data structure here.
      */
-    public RandomizedCollectionUsingMapAndList() {
+    public RandomizedCollectionUsingTwoMaps() {
         valueMap = new HashMap<>();
-        list = new ArrayList<>();
+        indexMap = new HashMap<>();
         random = new Random();
     }
 
@@ -57,12 +58,18 @@ public class RandomizedCollectionUsingMapAndList {
      * specified element.
      */
     public boolean insert(int val) {
-        boolean status = valueMap.containsKey(val);
-        valueMap.putIfAbsent(val, new HashSet<>());
-        Set<Integer> set = valueMap.get(val);
-        list.add(val);
-        set.add(list.size() - 1);
-        return !status;
+        int size2 = indexMap.size();
+        indexMap.put(size2 + 1, val);
+
+        if (valueMap.containsKey(val)) {
+            valueMap.get(val).add(size2 + 1);
+            return false;
+        } else {
+            HashSet<Integer> set = new HashSet<Integer>();
+            set.add(size2 + 1);
+            valueMap.put(val, set);
+            return true;
+        }
     }
 
     /**
@@ -72,29 +79,52 @@ public class RandomizedCollectionUsingMapAndList {
     public boolean remove(int val) {
         if (valueMap.containsKey(val)) {
             Set<Integer> set = valueMap.get(val);
-            int valIndex = set.iterator().next();
-            set.remove(valIndex);
-            if (set.isEmpty()) {
+            int removeIdx = set.iterator().next();
+
+
+            //remove from set of map1
+            set.remove(removeIdx);
+
+            if (set.size() == 0) {
                 valueMap.remove(val);
             }
-            if (valIndex == list.size() - 1) { // if this is the last index then simply remove it
-                list.remove(list.size() - 1);
-            } else {
-                int lastEle = list.get(list.size() - 1);
-                valueMap.get(lastEle).remove(list.size() - 1);
-                valueMap.get(lastEle).add(valIndex);
-                list.set(valIndex, lastEle);
-                list.remove(list.size() - 1);
+
+            if (removeIdx == indexMap.size()) {
+                indexMap.remove(removeIdx);
+                return true;
             }
+
+            int size2 = indexMap.size();
+            int key = indexMap.get(size2);
+
+            Set<Integer> setChange = valueMap.get(key);
+            setChange.remove(size2);
+            setChange.add(removeIdx);
+
+
+            indexMap.remove(size2);
+            indexMap.remove(removeIdx);
+
+            indexMap.put(removeIdx, key);
+
             return true;
-        } else return false;
+        }
+
+        return false;
     }
 
     /**
      * Get a random element from the collection.
      */
     public int getRandom() {
-        return list.get(random.nextInt(list.size()));
+        if (valueMap.size() == 0)
+            return -1;
+
+        if (indexMap.size() == 1) {
+            return indexMap.get(1);
+        }
+
+        return indexMap.get(random.nextInt(indexMap.size()) + 1); // nextInt() returns a random number in [0, n).
     }
 
     /**
@@ -104,7 +134,7 @@ public class RandomizedCollectionUsingMapAndList {
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
-        RandomizedCollectionUsingMapAndList collection = new RandomizedCollectionUsingMapAndList();
+        RandomizedCollectionUsingTwoMaps collection = new RandomizedCollectionUsingTwoMaps();
         System.out.println(collection.insert(1));
         System.out.println(collection.insert(1));
         System.out.println(collection.insert(2));

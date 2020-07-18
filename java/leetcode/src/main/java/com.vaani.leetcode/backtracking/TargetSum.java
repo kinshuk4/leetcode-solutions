@@ -63,6 +63,16 @@ public class TargetSum {
 
         int sumToCheck = (sumOfArrayElement + sum) / 2;
 
-        return countSubsetDP(arr, sumToCheck);
+        return subsetSum2(arr, sumToCheck);
+    }
+
+    // https://leetcode.com/problems/target-sum/discuss/97334/Java-(15-ms)-C%2B%2B-(3-ms)-O(ns)-iterative-DP-solution-using-subset-sum-with-explanation
+    public static int subsetSum2(int[] nums, int s) {
+        int[] dp = new int[s + 1];
+        dp[0] = 1;
+        for (int n : nums)
+            for (int i = s; i >= n; i--)
+                dp[i] += dp[i - n];
+        return dp[s];
     }
 }

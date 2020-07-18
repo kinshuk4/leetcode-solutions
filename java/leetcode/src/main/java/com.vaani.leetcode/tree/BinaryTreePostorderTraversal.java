@@ -16,7 +16,7 @@ import java.util.Stack;
  * <p>Output: [3,2,1] Follow up: Recursive solution is trivial, could you do it iteratively?
  *
  * <p>Solution: O(N). Maintain a com.vaani.leetcode.stack, for every node which you pop from stack add it to result
- * list, push left and right node to com.vaani.leetcode.stack. Reverse the result list and return this as the answer.
+ * list, push left and right node to stack. Reverse the result list and return this as the answer.
  */
 public class BinaryTreePostorderTraversal {
     public static class TreeNode {
