@@ -30,7 +30,7 @@ import java.util.*;
 public class IntersectionOfTwoArrays {
     public int[] intersectHashing(int[] nums1, int[] nums2) {
         List<Integer> result = new ArrayList<Integer>();
-        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        Map<Integer, Integer> map = new HashMap<>();
         for (int num : nums1) {
             map.put(num, map.getOrDefault(num, 0) + 1);
         }

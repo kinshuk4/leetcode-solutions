@@ -32,12 +32,7 @@ public class WallsAndGates {
         }
     }
 
-    /**
-     * Main method
-     *
-     * @param args
-     * @throws Exception
-     */
+
     public static void main(String[] args) throws Exception {
         int[][] A = {
                 {Integer.MAX_VALUE, -1, 0, Integer.MAX_VALUE},
@@ -45,10 +40,10 @@ public class WallsAndGates {
                 {Integer.MAX_VALUE, -1, Integer.MAX_VALUE, -1},
                 {0, -1, Integer.MAX_VALUE, Integer.MAX_VALUE}
         };
-        new WallsAndGates().wallsAndGates(A);
+        new WallsAndGates().wallsAndGatesBFS(A);
     }
 
-    public void wallsAndGates(int[][] rooms) {
+    public void wallsAndGatesBFS(int[][] rooms) {
         Queue<Cell> queue = new ArrayDeque<>();
         for (int i = 0; i < rooms.length; i++) {
             for (int j = 0; j < rooms[0].length; j++) {
@@ -71,5 +66,26 @@ public class WallsAndGates {
                 }
             }
         }
+    }
+
+    public void wallsAndGatesDFS(int[][] rooms) {
+        for (int i = 0; i < rooms.length; i++) {
+            for (int j = 0; j < rooms[0].length; j++) {
+                if (rooms[i][j] == 0) { // treat each co-ordinates of gate as a sourced
+                    dfs(rooms, i, j, 0);
+                }
+            }
+        }
+    }
+
+    public void dfs(int[][] rooms, int i, int j, int dist) {
+        if (i < 0 || i >= rooms.length || j < 0 || j >= rooms.length || rooms[i][j] < dist) {
+            return;
+        }
+        rooms[i][j] = dist;
+        dfs(rooms, i + 1, j, dist + 1);
+        dfs(rooms, i - 1, j, dist + 1);
+        dfs(rooms, i, j - 1, dist + 1);
+        dfs(rooms, i, j + 1, dist + 1);
     }
 }

@@ -1,5 +1,7 @@
 package com.vaani.leetcode.design;
 
+import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+
 import java.util.Stack;
 
 /**
@@ -16,28 +18,18 @@ import java.util.Stack;
  */
 public class BSTIterator {
 
-    private Stack<TreeNode> stack;
-
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
+    private Stack<BinaryTreeNode> stack;
 
     public static void main(String[] args) throws Exception {
-        TreeNode root = new TreeNode(10);
-        root.left = new TreeNode(5);
-        root.left.left = new TreeNode(4);
-        root.left.right = new TreeNode(8);
-        root.left.left.left = new TreeNode(1);
-        root.left.right.left = new TreeNode(7);
-        root.right = new TreeNode(12);
-        root.right.left = new TreeNode(11);
-        root.right.right = new TreeNode(15);
+        BinaryTreeNode root = new BinaryTreeNode(10);
+        root.left = new BinaryTreeNode(5);
+        root.left.left = new BinaryTreeNode(4);
+        root.left.right = new BinaryTreeNode(8);
+        root.left.left.left = new BinaryTreeNode(1);
+        root.left.right.left = new BinaryTreeNode(7);
+        root.right = new BinaryTreeNode(12);
+        root.right.left = new BinaryTreeNode(11);
+        root.right.right = new BinaryTreeNode(15);
         BSTIterator ite = new BSTIterator(root);
         System.out.println("Hasnext: " + ite.hasNext());
         System.out.println("next: " + ite.next());
@@ -52,7 +44,7 @@ public class BSTIterator {
         System.out.println("Hasnext: " + ite.hasNext());
     }
 
-    public BSTIterator(TreeNode root) {
+    public BSTIterator(BinaryTreeNode root) {
         stack = new Stack<>();
         fillStack(root);
     }
@@ -69,7 +61,7 @@ public class BSTIterator {
      */
     public int next() {
         if (!stack.isEmpty()) {
-            TreeNode top = stack.pop();
+            BinaryTreeNode top = stack.pop();
             fillStack(top.right);
             return top.val;
         }
@@ -81,8 +73,8 @@ public class BSTIterator {
      *
      * @param node curr node to begin with
      */
-    private void fillStack(TreeNode node) {
-        TreeNode ite = node;
+    private void fillStack(BinaryTreeNode node) {
+        BinaryTreeNode ite = node;
         while (ite != null) {
             stack.push(ite);
             ite = ite.left;
