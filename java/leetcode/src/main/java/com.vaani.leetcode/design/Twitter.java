@@ -145,7 +145,7 @@ public class Twitter {
                 }
             }
             Comparator<Tweet> comparator =
-                    new Comparator<Tweet>() {
+                    new Comparator<>() {
                         @Override
                         public int compare(Tweet o1, Tweet o2) {
                             return Long.compare(o2.time, o1.time);

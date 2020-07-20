@@ -9,7 +9,7 @@ public class DesignBoundedBlockingQueue {
         int capacity;
 
         public BoundedBlockingQueue(int capacity) {
-            queue = new LinkedList<Integer>();
+            queue = new LinkedList<>();
             this.capacity = capacity;
         }
 

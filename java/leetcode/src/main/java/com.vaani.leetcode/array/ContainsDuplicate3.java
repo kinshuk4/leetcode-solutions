@@ -9,7 +9,7 @@ public class ContainsDuplicate3 {
         if (nums == null || nums.length < 2 || k < 0 || t < 0)
             return false;
 
-        TreeSet<Long> set = new TreeSet<Long>();
+        TreeSet<Long> set = new TreeSet<>();
         for (int i = 0; i < nums.length; i++) {
             long curr = (long) nums[i];
 

@@ -50,7 +50,7 @@ public class DesignTwitter {
 		/** Compose a new tweet. */
 		public void postTweet(int userId, int tweetId) {
 			if (!tweet.containsKey(userId)) {
-				LinkedList<Integer> tweetList = new LinkedList<Integer>();
+				LinkedList<Integer> tweetList = new LinkedList<>();
 				tweetList.add(globalStamp);
 				tweet.put(userId, tweetList);
 			} else {
@@ -75,7 +75,7 @@ public class DesignTwitter {
 					user.add(userid);
 				}
 			}
-			PriorityQueue<Integer> pq = new PriorityQueue<Integer>(new Comparator<Integer>() {
+			PriorityQueue<Integer> pq = new PriorityQueue<>(new Comparator<>() {
 				@Override
 				public int compare(Integer o1, Integer o2) {
 					if (o1 - o2 < 0)
@@ -111,7 +111,7 @@ public class DesignTwitter {
 		 */
 		public void follow(int followerId, int followeeId) {
 			if (!follow.containsKey(followerId)) {
-				LinkedList<Integer> followee = new LinkedList<Integer>();
+				LinkedList<Integer> followee = new LinkedList<>();
 				followee.add(followeeId);
 				follow.put(followerId, followee);
 			} else {

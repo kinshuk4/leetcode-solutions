@@ -65,7 +65,7 @@ public class RandomizedCollectionUsingTwoMaps {
             valueMap.get(val).add(size2 + 1);
             return false;
         } else {
-            HashSet<Integer> set = new HashSet<Integer>();
+            HashSet<Integer> set = new HashSet<>();
             set.add(size2 + 1);
             valueMap.put(val, set);
             return true;

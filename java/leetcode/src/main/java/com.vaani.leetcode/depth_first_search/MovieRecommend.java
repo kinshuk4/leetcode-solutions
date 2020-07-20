@@ -32,7 +32,7 @@ public class MovieRecommend {
         dfs(movie);
         Set<Movie> result = new HashSet<>();
         Comparator<Movie> cmp =
-                new Comparator<Movie>() {
+                new Comparator<>() {
                     @Override
                     public int compare(Movie o1, Movie o2) {
                         return Float.compare(o2.rating, o1.rating);

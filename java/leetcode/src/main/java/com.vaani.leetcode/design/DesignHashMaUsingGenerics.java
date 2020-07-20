@@ -40,7 +40,7 @@ public class DesignHashMaUsingGenerics {
                 }
             }
             if (!found)
-                this.bucket.add(new Pair<Integer, Integer>(key, value));
+                this.bucket.add(new Pair<>(key, value));
         }
 
         public void remove(Integer key) {

@@ -56,7 +56,7 @@ public class PathSum2 {
         // is Leaf Node
         if (root.left == null && root.right == null) {
             if (root.val == sum) {
-                result.add(new ArrayList<Integer>(single));
+                result.add(new ArrayList<>(single));
             }
         } else {
             if (root.left != null) {
@@ -80,12 +80,12 @@ public class PathSum2 {
         if (root == null) {
             return result;
         }
-        helper2(root, 0, sum, new ArrayList<Integer>(), result);
+        helper2(root, 0, sum, new ArrayList<>(), result);
         return result;
     }
 
     public void helper2(BinaryTreeNode root, int curSum, int target, List<Integer> list, List<List<Integer>> result) {
-        ArrayList<Integer> curList = new ArrayList<Integer>(list);
+        ArrayList<Integer> curList = new ArrayList<>(list);
         if (root == null) {
             return;
         }

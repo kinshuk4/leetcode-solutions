@@ -29,7 +29,7 @@ import java.util.*;
  */
 public class IntersectionOfTwoArrays {
     public int[] intersectHashing(int[] nums1, int[] nums2) {
-        List<Integer> result = new ArrayList<Integer>();
+        List<Integer> result = new ArrayList<>();
         Map<Integer, Integer> map = new HashMap<>();
         for (int num : nums1) {
             map.put(num, map.getOrDefault(num, 0) + 1);
@@ -49,7 +49,7 @@ public class IntersectionOfTwoArrays {
     }
 
     public int[] intersectSort(int[] nums1, int[] nums2) {
-        List<Integer> res = new ArrayList<Integer>();
+        List<Integer> res = new ArrayList<>();
         Arrays.sort(nums1);
         Arrays.sort(nums2);
         int i = 0;

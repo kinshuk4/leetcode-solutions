@@ -39,8 +39,8 @@ directory.check(2);
 */
 public class DesignPhoneDirectory {
 	class PhoneDirectory {
-		Set<Integer> used = new HashSet<Integer>();
-		Queue<Integer> available = new LinkedList<Integer>();
+		Set<Integer> used = new HashSet<>();
+		Queue<Integer> available = new LinkedList<>();
 		int max;
 
 		public PhoneDirectory(int maxNumbers) {
