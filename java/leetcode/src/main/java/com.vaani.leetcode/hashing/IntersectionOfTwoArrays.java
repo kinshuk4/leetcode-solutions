@@ -1,9 +1,10 @@
 package com.vaani.leetcode.hashing;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
- * https://leetcode.com/problems/intersection-of-two-arrays-ii/
+ * https://leetcode.com/problems/intersection-of-two-arrays/
  * Given two arrays, write a function to compute their intersection.
  * <p>
  * Example 1:
@@ -29,42 +30,12 @@ import java.util.*;
  */
 public class IntersectionOfTwoArrays {
     public int[] intersectHashing(int[] nums1, int[] nums2) {
-        List<Integer> result = new ArrayList<>();
-        Map<Integer, Integer> map = new HashMap<>();
-        for (int num : nums1) {
-            map.put(num, map.getOrDefault(num, 0) + 1);
-        }
-        for (int num : nums2) {
-            if (map.containsKey(num)) {
-                int count = map.get(num);
-                result.add(num);
-                if (count - 1 == 0) {
-                    map.remove(num);
-                } else {
-                    map.put(num, count - 1);
-                }
-            }
-        }
+        Set<Integer> set1 = Arrays.stream(nums1).boxed().collect(Collectors.toSet());
+        Set<Integer> set2 = Arrays.stream(nums2).boxed().collect(Collectors.toSet());
+        Set<Integer> result = new HashSet<>(set1);
+        result.retainAll(set2);
         return result.stream().mapToInt(i -> i).toArray();
     }
 
-    public int[] intersectSort(int[] nums1, int[] nums2) {
-        List<Integer> res = new ArrayList<>();
-        Arrays.sort(nums1);
-        Arrays.sort(nums2);
-        int i = 0;
-        int j = 0;
-        while (i < nums1.length && j < nums2.length) {
-            if (nums1[i] == nums2[j]) {
-                res.add(nums1[i]);
-                i++;
-                j++;
-            } else if (nums1[i] < nums2[j]) {
-                i++;
-            } else {
-                j++;
-            }
-        }
-        return res.stream().mapToInt(k -> k).toArray();
-    }
+
 }

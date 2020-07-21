@@ -4,8 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 11/04/2018. Given two strings s and t, determine if they are
- * isomorphic.
+ * Given two strings s and t, determine if they are isomorphic.
  *
  * <p>Two strings are isomorphic if the characters in s can be replaced to get t.
  *
@@ -23,29 +22,53 @@ import java.util.Map;
  * and compare character by character.
  */
 public class IsomorphicStrings {
-    /**
-     * Main method
-     *
-     * @param args
-     * @throws Exception
-     */
     public static void main(String[] args) throws Exception {
         System.out.println(new IsomorphicStrings().isIsomorphic("abc", "dea"));
     }
 
     public boolean isIsomorphic(String s, String t) {
-        if (s.length() != t.length()) return false;
+        if (s.length() != t.length()) {
+            return false;
+        }
         Map<Character, Character> first = new HashMap<>();
         Map<Character, Character> second = new HashMap<>();
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
+            char d = t.charAt(i);
             if (first.containsKey(c)) {
-                char secondC = first.get(c);
-                if (t.charAt(i) != secondC) return false;
+                char dStored = first.get(c);
+                if (d != dStored) {
+                    return false;
+                }
             } else {
-                first.put(c, t.charAt(i));
-                if (second.containsKey(t.charAt(i))) return false;
-                second.put(t.charAt(i), c);
+                first.put(c, d);
+                if (second.containsKey(d)) {
+                    return false;
+                }
+                second.put(d, c);
+            }
+        }
+        return true;
+    }
+
+    // slow but clean
+    public boolean isIsomorphic2(String s, String t) {
+        if (s.length() != t.length()) {
+            return false;
+        }
+        Map<Character, Character> map = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            char d = t.charAt(i);
+            map.put(c, d);
+        }
+
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            char d = t.charAt(i);
+            char dStored = map.get(c);
+            if (dStored != d) {
+                return false;
             }
         }
         return true;
