@@ -30,7 +30,7 @@ import java.util.Map;
  */
 public class FindWordsThatCanBeFormedbyCharacters {
     public static void main(String[] args) {
-        String[] A = {"cat", "bt", "hat", "com.vaani.leetcode/tree"};
+        String[] A = {"cat", "bt", "hat", "com/vaani/leetcode/tree"};
         String chars = "atach";
         new FindWordsThatCanBeFormedbyCharacters().countCharacters(A, chars);
     }
