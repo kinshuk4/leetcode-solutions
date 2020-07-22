@@ -1,10 +1,10 @@
 package com.vaani.leetcode.tree;
 
 /**
- * 06/08/2019 For a binary com.vaani.leetcode.tree T, we can define a flip operation
+ * 06/08/2019 For a binary tree T, we can define a flip operation
  * as follows: choose any node, and swap the left and right child subtrees.
  *
- * <p>A binary com.vaani.leetcode.tree X is flip equivalent to a binary com.vaani.leetcode.tree Y if and only if we can make X equal to Y
+ * <p>A binary tree X is flip equivalent to a binary tree Y if and only if we can make X equal to Y
  * after some number of flip operations.
  *
  * <p>Write a function that determines whether two binary trees are flip equivalent. The trees are
@@ -18,9 +18,9 @@ package com.vaani.leetcode.tree;
  *
  * <p>Note:
  *
- * <p>Each com.vaani.leetcode.tree will have at most 100 nodes. Each value in each com.vaani.leetcode.tree will be a unique integer in the
+ * <p>Each tree will have at most 100 nodes. Each value in each tree will be a unique integer in the
  * range [0, 99]. Solution O(N ^ 2) Since the node values are unique general idea is to find the
- * node on right com.vaani.leetcode.tree for every node on the left com.vaani.leetcode.tree and check if the values need to be swapped, if
+ * node on right tree for every node on the left tree and check if the values need to be swapped, if
  * yes then swap the node's left and right child in the left tree. After this operation is complete
  * check if both the trees are equal
  */

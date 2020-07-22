@@ -1,5 +1,7 @@
 package com.vaani.leetcode.tree;
 
+import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+
 /**
  * 11/02/2018. Given a binary tree, you need to find the length of
  * Longest Consecutive Path in Binary Tree.
@@ -12,17 +14,7 @@ package com.vaani.leetcode.tree;
  * [2, 1]. Example 2: Input: 2 / \ 1 3 Output: 3 Explanation: The longest consecutive path is [1, 2,
  * 3] or [3, 2, 1]. Note: All the values of com.vaani.leetcode.tree nodes are in the range of [-1e7, 1e7].
  */
-public class BinaryTreeLongestConsecutiveSequenceII {
-
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
+public class BinaryTreeLongestConsecutiveSequence2 {
 
     private class Node {
         int i, d;
@@ -38,14 +30,14 @@ public class BinaryTreeLongestConsecutiveSequenceII {
     private int max = Integer.MIN_VALUE;
 
     public static void main(String[] args) throws Exception {
-        TreeNode root = new TreeNode(2);
-        root.left = new TreeNode(1);
+        BinaryTreeNode root = new BinaryTreeNode(2);
+        root.left = new BinaryTreeNode(1);
         // root.left.left = new TreeNode(4);
-        root.right = new TreeNode(3);
-        System.out.println(new BinaryTreeLongestConsecutiveSequenceII().longestConsecutive(root));
+        root.right = new BinaryTreeNode(3);
+        System.out.println(new BinaryTreeLongestConsecutiveSequence2().longestConsecutive(root));
     }
 
-    public int longestConsecutive(TreeNode root) {
+    public int longestConsecutive(BinaryTreeNode root) {
         Node n = preorder(root);
         if (n != null) {
             max = Math.max(max, n.d);
@@ -58,7 +50,7 @@ public class BinaryTreeLongestConsecutiveSequenceII {
         return max;
     }
 
-    private Node preorder(TreeNode node) {
+    private Node preorder(BinaryTreeNode node) {
         if (node == null) return null;
         Node left = preorder(node.left);
         Node curr = new Node(1, 1, node.val);

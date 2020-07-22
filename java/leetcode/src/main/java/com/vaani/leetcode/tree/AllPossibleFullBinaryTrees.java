@@ -3,13 +3,13 @@ package com.vaani.leetcode.tree;
 import java.util.*;
 
 /**
- * 30/04/2019 A full binary com.vaani.leetcode.tree is a binary com.vaani.leetcode.tree where each node
+ * 30/04/2019 A full binary tree is a binary tree where each node
  * has exactly 0 or 2 children.
  *
  * <p>Return a list of all possible full binary trees with N nodes. Each element of the answer is
  * the root node of one possible tree.
  *
- * <p>Each node of each com.vaani.leetcode.tree in the answer must have node.val = 0.
+ * <p>Each node of each tree in the answer must have node.val = 0.
  *
  * <p>You may return the final list of trees in any order.
  *
@@ -23,8 +23,8 @@ import java.util.*;
  *
  * <p>1 <= N <= 20
  *
- * <p>Solution: O(2 ^ N) A full binary com.vaani.leetcode.tree can only be generated for a case with odd number of
- * nodes. Start with a base case - when only one node is given a full binary com.vaani.leetcode.tree can be formed with
+ * <p>Solution: O(2 ^ N) A full binary tree can only be generated for a case with odd number of
+ * nodes. Start with a base case - when only one node is given a full binary tree can be formed with
  * only one node. Cache this value in a hashmap.
  *
  * <p>Now, iteratively generate a list of possible trees for 3, 5, 7 . . . N - ((N + 1) % 2) and

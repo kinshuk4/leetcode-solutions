@@ -47,6 +47,8 @@ public class StringCompression {
         System.out.println(new StringCompression().compress(A));
     }
 
+    // when we have ['a], then we just return [a] and not [a1]
+    // so, length of repeatin char should be strictly > 1
     public int compress(char[] chars) {
         int count = 0;
         int i = 0;
@@ -55,18 +57,16 @@ public class StringCompression {
             if (chars[i] == chars[j]) {
                 count++;
             } else {
-                chars[p] = chars[i];
-                p++;
-                if (count > 1) {
-                    String countStr = String.valueOf(count);
-                    for (int l = 0; l < countStr.length(); l++) {
-                        chars[p++] = countStr.charAt(l);
-                    }
-                }
+                p = updateCharsWithCount(chars, count, i, p);
                 i = j;
                 count = 1;
             }
         }
+        p = updateCharsWithCount(chars, count, i, p);
+        return p;
+    }
+
+    private int updateCharsWithCount(char[] chars, int count, int i, int p) {
         chars[p] = chars[i];
         p++;
         if (count > 1) {
@@ -76,5 +76,33 @@ public class StringCompression {
             }
         }
         return p;
+    }
+
+
+    public int compressCleaner(char[] chars) {
+        int n = chars.length;
+        if(n <= 1){
+            return n;
+        }
+        int i = 0;
+        int idx = 0;
+        while (i < n){
+            int j = i;
+            while (j < n && chars[j] == chars[i]){
+                j++;
+            }
+            chars[idx++] = chars[i];
+            // the substring with repeating chars should have size strictly greater than 1
+            if(j - i > 1){
+                 String count = Integer.toString(j - i);
+                 for (char ch: count.toCharArray()){
+                     chars[idx++] = ch;
+                 }
+            }
+
+            // update i
+            i = j;
+        }
+        return idx;
     }
 }

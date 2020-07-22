@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * 26/04/2019 We are given a binary com.vaani.leetcode.tree (with root node root), a
+ * 26/04/2019 We are given a binary tree (with root node root), a
  * target node, and an integer value K.
  *
  * <p>Return a list of the values of all nodes that have a distance K from the target node. The
@@ -26,7 +26,7 @@ import java.util.Set;
  *
  * <p>Note:
  *
- * <p>The given com.vaani.leetcode.tree is non-empty. Each node in the com.vaani.leetcode.tree has unique values 0 <= node.val <= 500. The
+ * <p>The given tree is non-empty. Each node in the tree has unique values 0 <= node.val <= 500. The
  * target node is a node in the tree. 0 <= K <= 1000.
  *
  * <p>Solution: O(N) The general intuition is as below. All the nodes from which a target nodes can

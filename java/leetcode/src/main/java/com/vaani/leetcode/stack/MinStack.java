@@ -1,5 +1,6 @@
 package com.vaani.leetcode.stack;
 
+import com.vaani.dsa.algo.ds.stack.*;
 /**
  * 08/03/2017. Design a stack that supports push, pop, top, and
  * retrieving the minimum element in constant time.
@@ -18,18 +19,18 @@ public class MinStack {
     }
 
     private static void minstackTwoStacks() {
-        com.vaani.dsa.ds.algos.stack.MinStack minStack = new com.vaani.dsa.ds.algos.stack.MinStack();
-        minStack.push(-2);
-        minStack.push(0);
-        minStack.push(-3);
-        System.out.println(minStack.getMin());
-        minStack.pop();
-        System.out.println(minStack.top());
-        System.out.println(minStack.getMin());
+        MinStack minStack = new MinStack();
+//        minStack.push(-2);
+//        minStack.push(0);
+//        minStack.push(-3);
+//        System.out.println(minStack.getMin());
+//        minStack.pop();
+//        System.out.println(minStack.top());
+//        System.out.println(minStack.getMin());
     }
 
     private static void minstackOneStack() {
-        com.vaani.dsa.ds.algos.stack.MinStackUsingOneStack minStack = new com.vaani.dsa.ds.algos.stack.MinStackUsingOneStack();
+        MinStackUsingOneStack minStack = new MinStackUsingOneStack();
         minStack.push(-2);
         minStack.push(0);
         minStack.push(-3);

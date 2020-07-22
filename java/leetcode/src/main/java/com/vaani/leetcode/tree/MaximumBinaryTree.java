@@ -2,14 +2,14 @@ package com.vaani.leetcode.tree;
 
 /**
  * 19/08/2017. Given an integer array with no duplicates. A
- * maximum com.vaani.leetcode.tree building on this array is defined as follow:
+ * maximum tree building on this array is defined as follow:
  *
- * <p>The root is the maximum number in the array. The left subtree is the maximum com.vaani.leetcode.tree constructed
+ * <p>The root is the maximum number in the array. The left subtree is the maximum tree constructed
  * from left part subarray divided by the maximum number. The right subtree is the maximum com.vaani.leetcode.tree
- * constructed from right part subarray divided by the maximum number. Construct the maximum com.vaani.leetcode.tree by
+ * constructed from right part subarray divided by the maximum number. Construct the maximum tree by
  * the given array and output the root node of this tree.
  *
- * <p>Example 1: Input: [3,2,1,6,0,5] Output: return the com.vaani.leetcode.tree root node representing the following
+ * <p>Example 1: Input: [3,2,1,6,0,5] Output: return the tree root node representing the following
  * com.vaani.leetcode.tree:
  *
  * <p>6 / \ 3 5 \ / 2 0 \ 1

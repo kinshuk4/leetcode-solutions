@@ -9,7 +9,7 @@ import static com.vaani.dsa.ds.utils.simple.BinaryTreeUtil.getABinaryTree1;
 
 /**
  * https://leetcode.com/problems/path-sum-iii/
- * 08/04/2017. You are given a binary com.vaani.leetcode.tree in which each node
+ * 08/04/2017. You are given a binary tree in which each node
  * contains an integer value.
  *
  * <p>Find the number of paths that sum to a given value.
@@ -17,7 +17,7 @@ import static com.vaani.dsa.ds.utils.simple.BinaryTreeUtil.getABinaryTree1;
  * <p>The path does not need to start or end at the root or a leaf, but it must go downwards
  * (traveling only from parent nodes to child nodes).
  *
- * <p>The com.vaani.leetcode.tree has no more than 1,000 nodes and the values are in the range -1,000,000 to 1,000,000.
+ * <p>The tree has no more than 1,000 nodes and the values are in the range -1,000,000 to 1,000,000.
  *
  * <p>Example:
  */

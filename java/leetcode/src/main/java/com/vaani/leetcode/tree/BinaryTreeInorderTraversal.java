@@ -8,7 +8,7 @@ import java.util.Stack;
  * 06/08/2017. Given a binary tree, return the inorder traversal
  * of its nodes' values.
  *
- * <p>For example: Given binary com.vaani.leetcode.tree [1,null,2,3], 1 \ 2 / 3 return [1,3,2].
+ * <p>For example: Given binary tree [1,null,2,3], 1 \ 2 / 3 return [1,3,2].
  *
  * <p>Note: Recursive solution is trivial, could you do it iteratively?
  */

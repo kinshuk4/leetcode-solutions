@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.vaani.dsa.algo.array.nsum.ThreeSum.threeSum;
+import static com.vaani.dsa.algo.ds.array.nsum.ThreeSum.threeSum;
 
 /**
  * https://leetcode.com/problems/3sum/

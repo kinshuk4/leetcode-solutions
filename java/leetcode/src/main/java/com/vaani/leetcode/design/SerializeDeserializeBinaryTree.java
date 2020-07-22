@@ -10,7 +10,7 @@ import java.util.*;
  *
  * <p>Design an algorithm to serialize and deserialize a binary tree. There is no restriction on how
  * your serialization/deserialization algorithm should work. You just need to ensure that a binary
- * com.vaani.leetcode.tree can be serialized to a string and this string can be deserialized to the original com.vaani.leetcode.tree
+ * tree can be serialized to a string and this string can be deserialized to the original com.vaani.leetcode.tree
  * structure.
  *
  * <p>For example, you may serialize the following com.vaani.leetcode.tree
@@ -65,7 +65,7 @@ public class SerializeDeserializeBinaryTree {
         TreeNode result = new SerializeDeserializeBinaryTree().deserialize(serializedStr);
     }
 
-    // Encodes a com.vaani.leetcode.tree to a single string.
+    // Encodes a tree to a single string.
     public String serialize(TreeNode root) {
         if (root == null) return null;
         List<String> list = new ArrayList<>();

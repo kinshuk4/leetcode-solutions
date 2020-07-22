@@ -8,7 +8,7 @@ package com.vaani.leetcode.tree;
  *
  * <p>1 / \ 2 5 / \ \ 3 4 6
  *
- * <p>The flattened com.vaani.leetcode.tree should look like: 1 \ 2 \ 3 \ 4 \ 5 \ 6
+ * <p>The flattened tree should look like: 1 \ 2 \ 3 \ 4 \ 5 \ 6
  *
  * <p>Solution: Do a pre-order traversal and maintain head and tail of a linked list at each
  * recursive step. i. Join the current node to the head of the left sub-list to form the current

@@ -1,7 +1,7 @@
 package com.vaani.leetcode.tree;
 
 /**
- * 14/05/2017. Given a binary search com.vaani.leetcode.tree and a node in it, find
+ * 14/05/2017. Given a binary search tree and a node in it, find
  * the in-order successor of that node in the BST.
  *
  * <p>Note: If the given node has no in-order successor in the tree, return null.

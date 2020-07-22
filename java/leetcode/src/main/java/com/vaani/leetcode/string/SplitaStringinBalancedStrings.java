@@ -33,18 +33,18 @@ package com.vaani.leetcode.string;
  */
 public class SplitaStringinBalancedStrings {
     public int balancedStringSplit(String s) {
-        int res = 0, left = 0, right = 0;
+        int result = 0, left = 0, right = 0;
         for (char c : s.toCharArray()) {
-            if(c == 'L'){
+            if (c == 'L') {
                 left++;
-            }else {
+            } else {
 
-                right++;
+                left--;
             }
-            if(left-right==0){
-                res++;
+            if (left == 0) {
+                result++;
             }
         }
-        return res;
+        return result;
     }
 }

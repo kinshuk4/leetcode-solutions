@@ -4,14 +4,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 02/05/2018. Given a binary com.vaani.leetcode.tree where every node has a unique
+ * 02/05/2018. Given a binary tree where every node has a unique
  * value, and a target key k, find the value of the nearest leaf node to target k in the tree.
  *
- * <p>Here, nearest to a leaf means the least number of edges travelled on the binary com.vaani.leetcode.tree to reach
+ * <p>Here, nearest to a leaf means the least number of edges travelled on the binary tree to reach
  * any leaf of the tree. Also, a node is called a leaf if it has no children.
  *
- * <p>In the following examples, the input com.vaani.leetcode.tree is represented in flattened form row by row. The
- * actual root com.vaani.leetcode.tree given will be a TreeNode object.
+ * <p>In the following examples, the input tree is represented in flattened form row by row. The
+ * actual root tree given will be a TreeNode object.
  *
  * <p>Example 1:
  *
@@ -29,9 +29,9 @@ import java.util.Map;
  * 5 / 6
  *
  * <p>Output: 3 Explanation: The leaf node with value 3 (and not the leaf node with value 6) is
- * nearest to the node with value 2. Note: root represents a binary com.vaani.leetcode.tree with at least 1 node and at
+ * nearest to the node with value 2. Note: root represents a binary tree with at least 1 node and at
  * most 1000 nodes. Every node has a unique node.val in range [1, 1000]. There exists some node in
- * the given binary com.vaani.leetcode.tree for which node.val == k.
+ * the given binary tree for which node.val == k.
  *
  * <p>Solution: O(N): Maintain a hashmap of distances from each node in the first iteration. In the
  * second iteration, find the key value node and then calculate distance from each node during

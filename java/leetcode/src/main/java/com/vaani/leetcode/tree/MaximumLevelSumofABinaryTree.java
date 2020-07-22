@@ -17,10 +17,10 @@ import java.util.Map;
  *
  * <p>Note:
  *
- * <p>The number of nodes in the given com.vaani.leetcode.tree is between 1 and 10^4. -10^5 <= node.val <= 10^5
+ * <p>The number of nodes in the given tree is between 1 and 10^4. -10^5 <= node.val <= 10^5
  *
  * <p>Solution: Keep a hashmap key-value pairs where key is the level and value is the sum of values
- * at that level, do a inorder search in the com.vaani.leetcode.tree and sum up the values at each level.
+ * at that level, do a inorder search in the tree and sum up the values at each level.
  */
 public class MaximumLevelSumofABinaryTree {
     public class TreeNode {

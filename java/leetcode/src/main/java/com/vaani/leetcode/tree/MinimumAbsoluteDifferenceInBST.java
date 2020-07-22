@@ -1,7 +1,7 @@
 package com.vaani.leetcode.tree;
 
 /**
- * 15/02/2018. Given a binary search com.vaani.leetcode.tree with non-negative
+ * 15/02/2018. Given a binary search tree with non-negative
  * values, find the minimum absolute difference between values of any two nodes.
  *
  * <p>Example:

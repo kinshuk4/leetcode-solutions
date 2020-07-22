@@ -9,20 +9,20 @@ import java.util.*;
  * non-negative 2D map, in this map:
  *
  * <p>0 represents the obstacle can't be reached. 1 represents the ground can be walked through. The
- * place with number bigger than 1 represents a com.vaani.leetcode.tree can be walked through, and this positive number
+ * place with number bigger than 1 represents a tree can be walked through, and this positive number
  * represents the com.vaani.leetcode.tree's height. You are asked to cut off all the trees in this forest in the order
- * of com.vaani.leetcode.tree's height - always cut off the com.vaani.leetcode.tree with lowest height first. And after cutting, the
- * original place has the com.vaani.leetcode.tree will become a grass (value 1).
+ * of com.vaani.leetcode.tree's height - always cut off the tree with lowest height first. And after cutting, the
+ * original place has the tree will become a grass (value 1).
  *
  * <p>You will start from the point (0, 0) and you should output the minimum steps you need to walk
  * to cut off all the trees. If you can't cut off all the trees, output -1 in that situation.
  *
- * <p>You are guaranteed that no two trees have the same height and there is at least one com.vaani.leetcode.tree needs
+ * <p>You are guaranteed that no two trees have the same height and there is at least one tree needs
  * to be cut off.
  *
  * <p>Example 1: Input: [ [1,2,3], [0,0,4], [7,6,5] ] Output: 6 Example 2: Input: [ [1,2,3],
  * [0,0,0], [7,6,5] ] Output: -1 Example 3: Input: [ [2,3,4], [0,0,5], [8,7,6] ] Output: 6
- * Explanation: You started from the point (0,0) and you can cut off the com.vaani.leetcode.tree in (0,0) directly
+ * Explanation: You started from the point (0,0) and you can cut off the tree in (0,0) directly
  * without walking. Hint: size of the given matrix will not exceed 50x50.
  *
  * <p>Solution: O(N x M) ^ 2: Bfs to each height starting from 1 and calculate the total sum of

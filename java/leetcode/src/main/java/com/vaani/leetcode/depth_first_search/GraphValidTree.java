@@ -18,7 +18,7 @@ import java.util.List;
  * <p>Note: you can assume that no duplicate edges will appear in edges. Since all edges are
  * undirected, [0, 1] is the same as [1, 0] and thus will not appear together in edges.
  *
- * <p>Solution O(E + V). A graph is a com.vaani.leetcode.tree if there are no cycles and number of connected components
+ * <p>Solution O(E + V). A graph is a tree if there are no cycles and number of connected components
  * is 1.
  */
 public class GraphValidTree {

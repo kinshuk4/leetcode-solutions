@@ -1,6 +1,6 @@
 package com.vaani.leetcode.binary_search;
 
-import com.vaani.dsa.algo.array.sorted.SearchInsertPosition;
+import com.vaani.dsa.algo.ds.array.sorted.SearchInsertPosition;
 
 /**
  * 22/05/2017. Given a sorted array and a target value, return the

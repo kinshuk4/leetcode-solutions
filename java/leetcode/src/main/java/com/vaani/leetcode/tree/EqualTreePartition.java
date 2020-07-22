@@ -1,8 +1,8 @@
 package com.vaani.leetcode.tree;
 
 /**
- * 17/02/2018. Given a binary com.vaani.leetcode.tree with n nodes, your task is to
- * check if it's possible to partition the com.vaani.leetcode.tree to two trees which have the equal sum of values
+ * 17/02/2018. Given a binary tree with n nodes, your task is to
+ * check if it's possible to partition the tree to two trees which have the equal sum of values
  * after removing exactly one edge on the original tree.
  *
  * <p>Example 1: Input: 5 / \ 10 10 / \ 2 3
@@ -15,8 +15,8 @@ package com.vaani.leetcode.tree;
  *
  * <p>Sum: 15 Example 2: Input: 1 / \ 2 10 / \ 2 20
  *
- * <p>Output: False Explanation: You can't split the com.vaani.leetcode.tree into two trees with equal sum after
- * removing exactly one edge on the tree. Note: The range of com.vaani.leetcode.tree node value is in the range of
+ * <p>Output: False Explanation: You can't split the tree into two trees with equal sum after
+ * removing exactly one edge on the tree. Note: The range of tree node value is in the range of
  * [-100000, 100000]. 1 <= n <= 10000
  */
 public class EqualTreePartition {

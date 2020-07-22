@@ -1,10 +1,10 @@
 package com.vaani.leetcode.tree;
 
 /**
- * 28/07/2018. Two elements of a binary search com.vaani.leetcode.tree (BST) are
+ * 28/07/2018. Two elements of a binary search tree (BST) are
  * swapped by mistake.
  *
- * <p>Recover the com.vaani.leetcode.tree without changing its structure.
+ * <p>Recover the tree without changing its structure.
  *
  * <p>Example 1:
  *

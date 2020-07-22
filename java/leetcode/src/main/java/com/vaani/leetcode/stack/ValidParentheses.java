@@ -1,6 +1,6 @@
 package com.vaani.leetcode.stack;
 
-import static com.vaani.dsa.ds.algos.stack.ValidParentheses.isValid3;
+import static com.vaani.dsa.algo.ds.stack.ValidParentheses.isValid3;
 
 /**
  * https://leetcode.com/problems/valid-parentheses/

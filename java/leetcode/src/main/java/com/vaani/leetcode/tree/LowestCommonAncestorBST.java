@@ -1,7 +1,7 @@
 package com.vaani.leetcode.tree;
 
 /**
- * 09/03/2017. Given a binary search com.vaani.leetcode.tree (BST), find the lowest
+ * 09/03/2017. Given a binary search tree (BST), find the lowest
  * common ancestor (LCA) of two given nodes in the BST.
  *
  * <p>According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined

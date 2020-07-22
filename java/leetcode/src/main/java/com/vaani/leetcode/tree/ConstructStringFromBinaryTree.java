@@ -2,7 +2,7 @@ package com.vaani.leetcode.tree;
 
 /**
  * 10/06/2017. Accepted You need to construct a string consists of
- * parenthesis and integers from a binary com.vaani.leetcode.tree with the preorder traversing way.
+ * parenthesis and integers from a binary tree with the preorder traversing way.
  *
  * <p>The null node needs to be represented by empty parenthesis pair "()". And you need to omit all
  * the empty parenthesis pairs that don't affect the one-to-one mapping relationship between the

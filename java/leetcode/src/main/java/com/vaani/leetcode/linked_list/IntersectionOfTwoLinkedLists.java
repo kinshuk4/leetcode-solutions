@@ -2,7 +2,7 @@ package com.vaani.leetcode.linked_list;
 
 import com.vaani.dsa.ds.core.list.sll.simple.ListNode;
 
-import static com.vaani.dsa.ds.algos.list.linked.IntersectionOfTwoLinkedLists.getIntersectionNode2;
+import static com.vaani.dsa.algo.ds.list.linked.IntersectionOfTwoLinkedLists.getIntersectionNode2;
 
 /**
  * Write a program to find the node at which the

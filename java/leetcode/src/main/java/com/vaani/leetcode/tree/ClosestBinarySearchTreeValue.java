@@ -1,7 +1,7 @@
 package com.vaani.leetcode.tree;
 
 /**
- * 10/05/2017. Given a non-empty binary search com.vaani.leetcode.tree and a target
+ * 10/05/2017. Given a non-empty binary search tree and a target
  * value, find the value in the BST that is closest to the target.
  *
  * <p>Note: Given target value is a floating point. You are guaranteed to have only one unique value

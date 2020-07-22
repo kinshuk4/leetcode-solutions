@@ -12,7 +12,7 @@ package com.vaani.leetcode.tree;
  *
  * <p>1 / \ 2 3 / / \ 4 5 6 / 7
  *
- * <p>Output: 7 Note: You may assume the com.vaani.leetcode.tree (i.e., the given root node) is not NULL. Solution:
+ * <p>Output: 7 Note: You may assume the tree (i.e., the given root node) is not NULL. Solution:
  * O(N) do a inorder search to find the left most value. Keep a level counter to keep track of what
  * level you are at when you do a inorder search.
  */

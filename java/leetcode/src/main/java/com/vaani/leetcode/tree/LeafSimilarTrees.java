@@ -7,7 +7,7 @@ import java.util.List;
  * 23/08/2019 Consider all the leaves of a binary tree. From left
  * to right order, the values of those leaves form a leaf value sequence.
  *
- * <p>For example, in the given com.vaani.leetcode.tree above, the leaf value sequence is (6, 7, 4, 9, 8).
+ * <p>For example, in the given tree above, the leaf value sequence is (6, 7, 4, 9, 8).
  *
  * <p>Two binary trees are considered leaf-similar if their leaf value sequence is the same.
  *
@@ -15,7 +15,7 @@ import java.util.List;
  * leaf-similar.
  *
  * <p>Solution: Do a inorder traversal for each trree and keep track of all the leaf nodes of the
- * com.vaani.leetcode.tree in a list. Compare the list and return the answer.
+ * tree in a list. Compare the list and return the answer.
  */
 public class LeafSimilarTrees {
     public class TreeNode {

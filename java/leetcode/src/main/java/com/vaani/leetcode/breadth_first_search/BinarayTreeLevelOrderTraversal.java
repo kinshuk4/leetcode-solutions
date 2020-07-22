@@ -9,7 +9,7 @@ import java.util.Queue;
  * 13/03/2017. Given a binary tree, return the level order
  * traversal of its nodes' values. (ie, from left to right, level by level).
  *
- * <p>For example: Given binary com.vaani.leetcode.tree [3,9,20,null,null,15,7], 3 / \ 9 20 / \ 15 7 return its level
+ * <p>For example: Given binary tree [3,9,20,null,null,15,7], 3 / \ 9 20 / \ 15 7 return its level
  * order traversal as: [ [3], [9,20], [15,7] ]
  */
 public class BinarayTreeLevelOrderTraversal {
