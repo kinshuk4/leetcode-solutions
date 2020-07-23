@@ -15,7 +15,7 @@ import java.util.Map;
  *
  * <p>Example 1:
  *
- * <p>Input: root = [1, 3, 2], k = 1 Diagram of binary com.vaani.leetcode.tree: 1 / \ 3 2
+ * <p>Input: root = [1, 3, 2], k = 1 Diagram of binary tree: 1 / \ 3 2
  *
  * <p>Output: 2 (or 3)
  *
@@ -25,7 +25,7 @@ import java.util.Map;
  *
  * <p>Explanation: The nearest leaf node is the root node itself. Example 3:
  *
- * <p>Input: root = [1,2,3,4,null,null,null,5,null,6], k = 2 Diagram of binary com.vaani.leetcode.tree: 1 / \ 2 3 / 4 /
+ * <p>Input: root = [1,2,3,4,null,null,null,5,null,6], k = 2 Diagram of binary tree: 1 / \ 2 3 / 4 /
  * 5 / 6
  *
  * <p>Output: 3 Explanation: The leaf node with value 3 (and not the leaf node with value 6) is

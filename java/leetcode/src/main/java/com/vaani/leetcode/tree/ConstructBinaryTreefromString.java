@@ -11,7 +11,7 @@ package com.vaani.leetcode.tree;
  * <p>You always start to construct the left child node of the parent first if it exists.
  *
  * <p>Example: Input: "4(2(3)(1))(6(5))" Output: return the tree root node representing the
- * following com.vaani.leetcode.tree:
+ * following tree:
  *
  * <p>4 / \ 2 6 /\ / 3 1 5
  *

@@ -1,42 +1,71 @@
 package com.vaani.leetcode.tree;
 
+import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 09/12/2017. Given a binary tree, return all root-to-leaf paths.
- *
- * <p>For example, given the following binary com.vaani.leetcode.tree:
- *
- * <p>1 / \ 2 3 \ 5 All root-to-leaf paths are:
- *
- * <p>["1->2->5", "1->3"]
+ * Given a binary tree, return all root-to-leaf paths.
+ * <p>
+ * Note: A leaf is a node with no children.
  */
+
+/*
+Example:
+
+Input:
+
+   1
+ /   \
+2     3
+ \
+  5
+
+Output: ["1->2->5", "1->3"]
+
+Explanation: All root-to-leaf paths are: 1->2->5, 1->3
+
+ */
+
 public class BinaryTreePaths {
 
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
-
-    public List<String> binaryTreePaths(TreeNode root) {
+    public List<String> binaryTreePaths(BinaryTreeNode root) {
         List<String> result = new ArrayList<>();
-        new BinaryTreePaths().inorder(root, result, "");
+        if (root == null) {
+            return result;
+        }
+        //inorder1(root, result, "");
+        inorder(root, result, "");
         return result;
     }
 
-    private void inorder(TreeNode node, List<String> list, String path) {
-        if (node != null) {
-            if (node.left == null && node.right == null) {
-                list.add(path + node.val);
+    private final static String ARROW = "->";
+
+    private void inorder(BinaryTreeNode root, List<String> list, String currentPath) {
+        currentPath += root.val;
+        // if leaf
+        if (root.left == null && root.right == null) {
+            list.add(currentPath);
+            return;
+        }
+        if (root.left != null) {
+            inorder(root.left, list, currentPath + ARROW);
+        }
+
+        if (root.right != null) {
+            inorder(root.right, list, currentPath + ARROW);
+        }
+
+    }
+
+    private void inorder1(BinaryTreeNode root, List<String> list, String currentPath) {
+        if (root != null) {
+            if (root.left == null && root.right == null) {
+                list.add(currentPath + root.val);
             } else {
-                inorder(node.left, list, path + node.val + "->");
-                inorder(node.right, list, path + node.val + "->");
+                inorder1(root.left, list, currentPath + root.val + "->");
+                inorder1(root.right, list, currentPath + root.val + "->");
             }
         }
     }

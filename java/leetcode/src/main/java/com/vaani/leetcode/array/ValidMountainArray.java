@@ -31,6 +31,7 @@ package com.vaani.leetcode.array;
  * 0 <= A[i] <= 10000
  */
 public class ValidMountainArray {
+    // simple to read
     public boolean validMountainArray(int[] A) {
         boolean up = false, down = false;
         int i = 0;
@@ -50,5 +51,27 @@ public class ValidMountainArray {
             }
         }
         return i == A.length - 1 && up & down;
+    }
+
+    public boolean validMountainArray2(int[] A) {
+        int i = 0;
+        int n = A.length;
+        while (i < n && i + 1 < n && A[i] < A[i + 1]) {
+            i++;
+        }
+
+        if (i == 0 || i + 1 >= n) {
+            return false;
+        }
+
+        while (i < n && i + 1 < n) {
+            if (A[i] <= A[i + 1]) {
+                return false;
+            }
+            i++;
+        }
+
+        return true;
+
     }
 }

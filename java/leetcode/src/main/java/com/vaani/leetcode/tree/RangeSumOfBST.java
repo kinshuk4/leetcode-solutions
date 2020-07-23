@@ -3,6 +3,8 @@ package com.vaani.leetcode.tree;
 
 import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 /**
@@ -79,7 +81,7 @@ public class RangeSumOfBST {
     static class Iterative {
         public int rangeSumBST(BinaryTreeNode root, int L, int R) {
             int ans = 0;
-            Stack<BinaryTreeNode> stack = new Stack();
+            Stack<BinaryTreeNode> stack = new Stack<>();
             stack.push(root);
             while (!stack.isEmpty()) {
                 BinaryTreeNode node = stack.pop();
@@ -94,6 +96,29 @@ public class RangeSumOfBST {
 
             }
             return ans;
+        }
+    }
+
+    static class UsingLevelOrderTraversal {
+        public int rangeSumBST(BinaryTreeNode root, int L, int R) {
+            int sum = 0;
+            Queue<BinaryTreeNode> queue = new LinkedList<>();
+            queue.add(root);
+            while (!queue.isEmpty()) {
+                BinaryTreeNode curr = queue.poll();
+
+                if (curr.val >= L && curr.val <= R) {
+                    sum += curr.val;
+                }
+                if (curr.left != null && curr.val > L) {
+                    queue.add(curr.left);
+                }
+                if (curr.right != null && curr.val < R) {
+                    queue.add(curr.right);
+                }
+
+            }
+            return sum;
         }
     }
 }

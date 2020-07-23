@@ -27,18 +27,19 @@ import java.util.*;
  */
 public class LastStoneWeight {
     public int lastStoneWeight(int[] stones) {
-        PriorityQueue<Integer> q = new PriorityQueue<>(Comparator.reverseOrder());
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Comparator.reverseOrder());
         for (int st : stones) {
-            q.offer(st);
+            maxHeap.offer(st);
         }
-        while (q.size() > 1) {
-            int diff = q.poll() - q.poll();
+        while (maxHeap.size() > 1) {
+            // stone 1 - stone 2
+            int diff = maxHeap.poll() - maxHeap.poll();
             if(diff > 0){
-                q.offer(diff);
+                maxHeap.offer(diff);
             }
 
         }
-        return q.isEmpty() ? 0: q.peek();
+        return maxHeap.isEmpty() ? 0: maxHeap.peek();
     }
 
 }

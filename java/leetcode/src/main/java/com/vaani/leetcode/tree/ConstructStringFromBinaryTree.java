@@ -8,12 +8,12 @@ package com.vaani.leetcode.tree;
  * the empty parenthesis pairs that don't affect the one-to-one mapping relationship between the
  * string and the original binary tree.
  *
- * <p>Example 1: Input: Binary com.vaani.leetcode.tree: [1,2,3,4] 1 / \ 2 3 / 4
+ * <p>Example 1: Input: Binary tree: [1,2,3,4] 1 / \ 2 3 / 4
  *
  * <p>Output: "1(2(4))(3)"
  *
  * <p>Explanation: Originallay it needs to be "1(2(4)())(3()())", but you need to omit all the
- * unnecessary empty parenthesis pairs. And it will be "1(2(4))(3)". Example 2: Input: Binary com.vaani.leetcode.tree:
+ * unnecessary empty parenthesis pairs. And it will be "1(2(4))(3)". Example 2: Input: Binary tree:
  * [1,2,3,null,4] 1 / \ 2 3 \ 4
  *
  * <p>Output: "1(2()(4))(3)"

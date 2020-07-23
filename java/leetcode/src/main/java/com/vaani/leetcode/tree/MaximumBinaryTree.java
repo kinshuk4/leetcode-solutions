@@ -10,7 +10,7 @@ package com.vaani.leetcode.tree;
  * the given array and output the root node of this tree.
  *
  * <p>Example 1: Input: [3,2,1,6,0,5] Output: return the tree root node representing the following
- * com.vaani.leetcode.tree:
+ * tree:
  *
  * <p>6 / \ 3 5 \ / 2 0 \ 1
  *
