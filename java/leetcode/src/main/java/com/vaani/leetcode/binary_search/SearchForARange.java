@@ -35,8 +35,8 @@ public class SearchForARange {
     /**
      * Find index
      *
-     * @param nums         nums com.vaani.leetcode.array
-     * @param target       target
+     * @param nums         nums array
+* @param target       target
      * @param isLowerIndex true if target is to find lower index, false otherwise
      * @return index
      */

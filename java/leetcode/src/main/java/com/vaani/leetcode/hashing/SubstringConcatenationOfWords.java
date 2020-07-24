@@ -18,8 +18,8 @@ import java.util.Map;
  *
  * <p>Input: s = "wordgoodgoodgoodbestword", words = ["word","good","best","word"] Output: []
  *
- * <p>Solution: General idea is to do the following 1. Calculate the word count for the given com.vaani.leetcode.array
- * of words and store this in a HashMap. 2. For every substring (substring of s) of length
+ * <p>Solution: General idea is to do the following 1. Calculate the word count for the given array
+* of words and store this in a HashMap. 2. For every substring (substring of s) of length
  * (words[0].length() * words.length) split this into words of length words[0].length and calculate
  * the word frequency for the split words. If the word frequency matches the word frequency of the
  * given original word list then add the starting index of this substring into the result array.

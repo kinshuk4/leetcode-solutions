@@ -24,8 +24,8 @@ import java.util.Set;
  * sum of the given matchsticks is in the range of 0 to 10^9. The length of the given matchstick
  * array will not exceed 15.
  *
- * <p>Solution: O(2 ^ N): Generate a power set of all combination of numbers for the given com.vaani.leetcode.array
- * which sum up to the length of a side of square. Now, to check if a square can be made using all
+ * <p>Solution: O(2 ^ N): Generate a power set of all combination of numbers for the given array
+* which sum up to the length of a side of square. Now, to check if a square can be made using all
  * the sides sticks of different length, generate a hash for for each of the combination which was
  * generated in the previous step. The hash function should be such that it uses unique indexes of
  * each match stick. If 4 different hash values are formed using unique and all indices then a

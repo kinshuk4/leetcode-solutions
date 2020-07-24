@@ -1,8 +1,8 @@
 package com.vaani.leetcode.dp;
 
 /**
- * 02/04/2017. Find the contiguous subarray within an com.vaani.leetcode.array
- * (containing at least one number) which has the largest product.
+ * 02/04/2017. Find the contiguous subarray within an array
+* (containing at least one number) which has the largest product.
  *
  * <p>For example, given the array [2,3,-2,4], the contiguous subarray [2,3] has the largest product
  * = 6.

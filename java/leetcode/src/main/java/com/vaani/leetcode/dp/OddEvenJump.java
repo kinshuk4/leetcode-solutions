@@ -61,8 +61,8 @@ import java.util.TreeSet;
  * <p>1 <= A.length <= 20000 0 <= A[i] < 100000
  *
  * <p>Solution: O(N log N) For each array index and for each odd/even turn pre-calculate the next
- * jump index - this can be achieved in O(n log n) by using a balanced tree. Check for each com.vaani.leetcode.array
- * index if we can reach end of the array by using the pre-calculated values for next jump - cache
+ * jump index - this can be achieved in O(n log n) by using a balanced tree. Check for each array
+* index if we can reach end of the array by using the pre-calculated values for next jump - cache
  * the values to avoid recalculating. Sum up total number of such start indices and that will be the
  * answer.
  */

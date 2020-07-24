@@ -6,7 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 10/04/2018. A string S of lowercase letters is given. We want
+ * https://leetcode.com/problems/partition-labels/
+ * A string S of lowercase letters is given. We want
  * to partition this string into as many parts as possible so that each letter appears in at most
  * one part, and return a list of integers representing the size of these parts.
  *
@@ -16,22 +17,18 @@ import java.util.Map;
  * less parts. Note:
  *
  * <p>S will have length in range [1, 500]. S will consist of lowercase letters ('a' to 'z') only.
- *
- * <p>Solution O(n): Maintain a hashmap index of last occurrence of a character and do a linear
- * check for max index, get the length and add it to the result set.
  */
 public class PartitionLabels {
 
-    /**
-     * Main method
-     *
-     * @param args
-     * @throws Exception
-     */
     public static void main(String[] args) throws Exception {
         System.out.println(new PartitionLabels().partitionLabels("abc"));
+        System.out.println(new PartitionLabels().partitionLabels3("ababcbacadefegdehijhklij"));
     }
 
+    /*
+     Solution O(n): Maintain a hashmap index of last occurrence of a character and do a linear
+     check for max index, get the length and add it to the result set.
+     */
     public List<Integer> partitionLabels(String S) {
         if (S == null || S.trim().isEmpty()) return new ArrayList<>();
         Map<Character, Integer> map = new HashMap<>();
@@ -55,5 +52,64 @@ public class PartitionLabels {
             }
         }
         return result;
+    }
+
+    public List<Integer> partitionLabels2(String S) {
+        List<Integer> result = new ArrayList<>();
+        if (S == null || S.trim().isEmpty()) {
+            return result;
+        }
+        int[] lastIndices = new int[26];
+        int n = S.length();
+        for (int i = 0; i < n; i++) {
+            char c = S.charAt(i);
+            lastIndices[c - 'a'] = i;
+        }
+        int i = 0;
+
+        while (i < n) {
+            int end = lastIndices[S.charAt(i) - 'a'];
+            int j = i;
+            while (j != end) {
+                end = Math.max(end, lastIndices[S.charAt(j++) - 'a']);
+            }
+            result.add(j - i + 1);
+            i = j + 1;
+        }
+
+        return result;
+    }
+
+    public List<Integer> partitionLabels3(String S) {
+        Map<Character, Integer> map = new HashMap<>();
+        for (int i = 0; i < S.length(); i++) {
+            char c = S.charAt(i);
+            map.putIfAbsent(c, i);
+            map.remove(c);
+            map.put(c, i);
+        }
+        char start = S.charAt(0);
+        int currMax = map.get(start);
+        int startIndex = 0;
+        List<Integer> list = new ArrayList<>();
+        while (true) {
+            int i = startIndex;
+            for (; i <= currMax; i++) {
+                char c = S.charAt(i);
+                int pos = map.get(c);
+                currMax = Math.max(currMax, pos);
+            }
+            if (i > currMax && i < S.length()) {
+                list.add(i - startIndex);
+                startIndex = i;
+                currMax = map.get(S.charAt(i));
+            } else {
+                if (i == S.length()) {
+                    list.add(i - startIndex);
+                    break;
+                }
+            }
+        }
+        return list;
     }
 }

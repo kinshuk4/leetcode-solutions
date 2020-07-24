@@ -1,11 +1,12 @@
 package com.vaani.leetcode.greedy;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-/**
- * 15/08/2019 There are 2N people a company is planning to
- * interview. The cost of flying the i-th person to city A is costs[i][0], and the cost of flying
+/** https://leetcode.com/problems/two-city-scheduling/
+ * There are 2N people a company is planning to interview.
+ * The cost of flying the i-th person to city A is costs[i][0], and the cost of flying
  * the i-th person to city B is costs[i][1].
  *
  * <p>Return the minimum cost to fly every person to a city such that exactly N people arrive in
@@ -37,31 +38,58 @@ public class TwoCityScheduling {
         System.out.println(new TwoCityScheduling().twoCitySchedCost(A));
     }
 
-    class Pair {
-        int max, i;
+    static class Pair {
+        int diff, i;
 
-        Pair(int max, int i) {
-            this.max = max;
+        Pair(int diff, int i) {
+            this.diff = diff;
             this.i = i;
         }
     }
 
+    /*
+    The idea is to send each person to city A. Now, we need to send n persons to city B.
+    Which persons do we need to send city B? Here, we need to minimize the cost.
+    We have already paid money to go to city A.
+    So, Send the persons to city B who get more refund
+    so that our cost will be minimized.
+     */
     public int twoCitySchedCost(int[][] costs) {
-        int min = 0;
+        int cityACosts = 0;
+
 
         for (int i = 0; i < costs.length; i++) {
-            min += costs[i][0];
+            cityACosts += costs[i][0];
         }
 
         List<Pair> list = new ArrayList<>();
         for (int i = 0; i < costs.length; i++) {
             list.add(new Pair(costs[i][0] - costs[i][1], i));
         }
-        list.sort((o1, o2) -> Integer.compare(o2.max, o1.max));
+        list.sort((o1, o2) -> Integer.compare(o2.diff, o1.diff)); // In reverse diff order
 
-        for (int i = 0, N = (list.size() / 2); i < N; i++) {
-            min -= list.get(i).max;
+        int min = cityACosts;
+
+        for (int i = 0; i < costs.length / 2; i++) {
+            min -= list.get(i).diff;
         }
         return min;
+    }
+
+    public int twoCitySchedCostWithoutDataModel(int[][] costs) {
+        int N = costs.length/2;
+        int[] refund = new int[N * 2];
+        int minCost = 0, index = 0;
+        for(int[] cost : costs){
+            refund[index++] = cost[1] - cost[0];
+            minCost += cost[0];
+        }
+
+        // negative refunds will be earlier
+        Arrays.sort(refund);
+        for(int i = 0; i < N; i++){
+            minCost += refund[i];
+        }
+        return minCost;
     }
 }

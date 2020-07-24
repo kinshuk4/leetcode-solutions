@@ -1,8 +1,7 @@
 package com.vaani.leetcode.string;
 
-/**
- * 01/08/2019 Write a function to check whether an input string is
- * a valid IPv4 address or IPv6 address or neither.
+/** https://leetcode.com/problems/validate-ip-address/
+ * Write a function to check whether an input string is a valid IPv4 address or IPv6 address or neither.
  *
  * <p>IPv4 addresses are canonically represented in dot-decimal notation, which consists of four
  * decimal numbers, each ranging from 0 to 255, separated by dots ("."), e.g.,172.16.254.1;
@@ -44,6 +43,11 @@ package com.vaani.leetcode.string;
  * <p>Solution: O(N) split the string by each '.' or ':' and then validate each parts.
  */
 public class ValidateIPAddress {
+
+    public static final String NEITHER = "Neither";
+    public static final String IPV_4 = "IPv4";
+    public static final String IPV_6 = "IPv6";
+
     public static void main(String[] args) {
 
         System.out.println(
@@ -52,44 +56,62 @@ public class ValidateIPAddress {
 
     public String validIPAddress(String IP) {
         if (IP.contains(".")) {
-            if (IP.endsWith(".") || IP.startsWith(".")) return "Neither";
+            if (IP.endsWith(".") || IP.startsWith(".")) {
+                return NEITHER;
+            }
             String[] ipv4 = IP.split("\\.");
-            if (ipv4.length != 4) return "Neither";
-            else {
+            if (ipv4.length != 4) {
+                return NEITHER;
+            } else {
                 for (String part : ipv4) {
-                    if (part.isEmpty()) return "Neither";
-                    if (part.length() > 1 && part.startsWith("0")) return "Neither";
-                    else {
-                        if (part.length() > 3) return "Neither";
+                    if (part.isEmpty()) {
+                        return NEITHER;
+                    }
+                    if (part.length() > 1 && part.startsWith("0")) {
+                        return NEITHER;
+                    } else {
+                        if (part.length() > 3) {
+                            return NEITHER;
+                        }
                         for (char c : part.toCharArray()) {
-                            if (c < '0' || c > '9') return "Neither";
+                            if (c < '0' || c > '9') {
+                                return NEITHER;
+                            }
                         }
                         int value = Integer.parseInt(part);
-                        if (value < 0 || value > 255) return "Neither";
+                        if (value < 0 || value > 255) {
+                            return NEITHER;
+                        }
                     }
                 }
             }
-            return "IPv4";
+            return IPV_4;
         } else if (IP.contains(":")) {
-            if (IP.endsWith(":") || IP.startsWith(":")) return "Neither";
+            if (IP.endsWith(":") || IP.startsWith(":")) {
+                return NEITHER;
+            }
             String[] ipv6 = IP.split(":");
-            if (ipv6.length != 8) return "Neither";
-            else {
+            if (ipv6.length != 8) {
+                return NEITHER;
+            } else {
                 for (String part : ipv6) {
-                    if (part.isEmpty()) return "Neither";
-                    if (part.length() > 4) return "Neither";
-                    else {
+                    if (part.isEmpty()) {
+                        return NEITHER;
+                    }
+                    if (part.length() > 4) {
+                        return NEITHER;
+                    } else {
                         for (char c : part.toCharArray()) {
                             if ((c >= '0' && c <= '9') || (c >= 'a' && c <= 'f') || (c >= 'A' && c <= 'F')) {
 
                             } else {
-                                return "Neither";
+                                return NEITHER;
                             }
                         }
                     }
                 }
             }
-            return "IPv6";
-        } else return "Neither";
+            return IPV_6;
+        } else return NEITHER;
     }
 }

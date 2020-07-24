@@ -30,8 +30,10 @@ package com.vaani.leetcode.string;
  * Both the source and target strings consist of only lowercase English letters from “a”-“z”.
  * The lengths of source and target string are between 1 and 1000.
  */
-// Time - O (n*m), Space - O(m)
+
 public class ShortestWayToFormSubstring {
+    // Time - O (n*m), Space - O(m)
+    //https://www.youtube.com/watch?v=evesA3gr9BE
     public int shortestWay(String source, String target) {
         int numSubsequences = 0;
         String remaining = target;

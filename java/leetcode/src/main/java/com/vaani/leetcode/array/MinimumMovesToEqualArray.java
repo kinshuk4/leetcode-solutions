@@ -20,8 +20,8 @@ import java.util.Arrays;
  *
  * <p>[1,2,3] => [2,2,3] => [2,2,2]
  *
- * <p>Solution: O(n log n): Sort the array and find the median of the array. Use the median of com.vaani.leetcode.array
- * to increment/decrement other value of array. Sum up the difference and return the answer.
+ * <p>Solution: O(n log n): Sort the array and find the median of the array. Use the median of array
+* to increment/decrement other value of array. Sum up the difference and return the answer.
  */
 public class MinimumMovesToEqualArray {
     /**

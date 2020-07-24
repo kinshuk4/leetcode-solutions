@@ -16,8 +16,8 @@ package com.vaani.leetcode.dp;
  * answer of [1, 3, 5] would be lexicographically larger. Note: nums.length will be between 1 and
  * 20000. nums[i] will be between 1 and 65535. k will be between 1 and floor(nums.length / 3).
  *
- * <p>Solution: O(N) solution by prefix and reverse-prefix sum First calculate max index for com.vaani.leetcode.array
- * index k, then use this to calculate max index for two array indices j and k and again use this
+ * <p>Solution: O(N) solution by prefix and reverse-prefix sum First calculate max index for array
+* index k, then use this to calculate max index for two array indices j and k and again use this
  * result to calculate the final max index for i, j and k for the 3 arrays.
  */
 public class MaxSum3SubArray {

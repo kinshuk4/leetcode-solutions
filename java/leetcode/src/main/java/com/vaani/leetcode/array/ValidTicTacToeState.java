@@ -1,8 +1,8 @@
 package com.vaani.leetcode.array;
 
 /**
- * 29/03/2019 A Tic-Tac-Toe board is given as a string com.vaani.leetcode.array
- * board. Return True if and only if it is possible to reach this board position during the course
+ * 29/03/2019 A Tic-Tac-Toe board is given as a string array
+* board. Return True if and only if it is possible to reach this board position during the course
  * of a valid tic-tac-toe game.
  *
  * <p>The board is a 3 x 3 array, and consists of characters " ", "X", and "O". The " " character

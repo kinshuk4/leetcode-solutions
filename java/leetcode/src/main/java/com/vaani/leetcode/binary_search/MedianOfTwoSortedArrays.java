@@ -49,8 +49,8 @@ public class MedianOfTwoSortedArrays {
      */
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         if (nums1.length > nums2.length)
-            return findMedianSortedArrays(nums2, nums1); // ensure always nums1 is the shortest com.vaani.leetcode.array
-        int T = nums1.length + nums2.length, low = -1, high = -1;
+            return findMedianSortedArrays(nums2, nums1); // ensure always nums1 is the shortest array
+int T = nums1.length + nums2.length, low = -1, high = -1;
         int median = (T - 1) / 2;
         boolean isOdd = false;
         if ((T % 2) != 0) isOdd = true;

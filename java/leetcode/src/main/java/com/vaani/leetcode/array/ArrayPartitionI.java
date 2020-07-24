@@ -11,8 +11,8 @@ import java.util.Arrays;
  * <p>Example 1: Input: [1,4,3,2]
  *
  * <p>Output: 4 Explanation: n is 2, and the maximum sum of pairs is 4 = min(1, 2) + min(3, 4).
- * Note: n is a positive integer, which is in the range of [1, 10000]. All the integers in the com.vaani.leetcode.array
- * will be in the range of [-10000, 10000].
+ * Note: n is a positive integer, which is in the range of [1, 10000]. All the integers in the array
+* will be in the range of [-10000, 10000].
  *
  * <p>Solution: O(n log n) General idea is to pair the smallest with the next smallest value inorder
  * to get the max sum of minimum.
