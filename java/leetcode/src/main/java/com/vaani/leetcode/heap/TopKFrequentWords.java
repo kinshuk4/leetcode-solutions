@@ -2,9 +2,8 @@ package com.vaani.leetcode.heap;
 
 import java.util.*;
 
-/**
- * 07/04/2018. Given a non-empty list of words, return the k most
- * frequent elements.
+/** https://leetcode.com/problems/top-k-frequent-words/
+ * Given a non-empty list of words, return the k most frequent elements.
  *
  * <p>Your answer should be sorted by frequency from highest to lowest. If two words have the same
  * frequency, then the word with the lower alphabetical order comes first.
@@ -23,22 +22,6 @@ import java.util.*;
  */
 public class TopKFrequentWords {
 
-    class Pair {
-        String word;
-        int freq;
-
-        Pair(String word, int freq) {
-            this.word = word;
-            this.freq = freq;
-        }
-    }
-
-    /**
-     * Main method
-     *
-     * @param args
-     * @throws Exception
-     */
     public static void main(String[] args) throws Exception {
         String[] words = {"i", "love", "leetcode", "i", "love", "coding"};
         List<String> sorted = new TopKFrequentWords().topKFrequent(words, 2);
@@ -48,28 +31,32 @@ public class TopKFrequentWords {
     public List<String> topKFrequent(String[] words, int k) {
         Map<String, Integer> map = new HashMap<>();
         for (String w : words) {
-            map.putIfAbsent(w, 0);
-            int freq = map.get(w);
-            map.put(w, freq + 1);
+            map.put(w, map.getOrDefault(w, 0) + 1);
         }
-        Queue<Pair> pq =
-                new PriorityQueue<>(
-                        (o1, o2) ->
-                                (o1.freq == o2.freq)
-                                        ? o2.word.compareTo(o1.word)
-                                        : Integer.compare(o1.freq, o2.freq));
+        Queue<Pair> minHeap = new PriorityQueue<>((a, b) -> (a.freq == b.freq) ? b.word.compareTo(a.word) : Integer.compare(a.freq, b.freq));
+
         for (String w : map.keySet()) {
             int f = map.get(w);
-            pq.offer(new Pair(w, f));
-            if (pq.size() > k) {
-                pq.poll();
+            minHeap.offer(new Pair(w, f));
+            if (minHeap.size() > k) {
+                minHeap.poll();
             }
         }
-        List<String> result = new ArrayList<>();
-        while (!pq.isEmpty()) {
-            result.add(pq.poll().word);
+        LinkedList<String> result = new LinkedList<>(); // nOt using arraylist as it doesnt provide addFirst, otherwise we have to do collection reverse
+
+        while (!minHeap.isEmpty()) {
+            result.addFirst(minHeap.poll().word);
         }
-        Collections.reverse(result);
         return result;
+    }
+
+    static class Pair {
+        String word;
+        int freq;
+
+        Pair(String word, int freq) {
+            this.word = word;
+            this.freq = freq;
+        }
     }
 }

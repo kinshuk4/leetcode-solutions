@@ -84,8 +84,8 @@ public class PathSum2 {
         return result;
     }
 
-    public void helper2(BinaryTreeNode root, int curSum, int target, List<Integer> list, List<List<Integer>> result) {
-        ArrayList<Integer> curList = new ArrayList<>(list);
+    public void helper2(BinaryTreeNode root, int curSum, int target, List<Integer> current, List<List<Integer>> result) {
+        ArrayList<Integer> curList = new ArrayList<>(current);
         if (root == null) {
             return;
         }

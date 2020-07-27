@@ -1,7 +1,9 @@
 package com.vaani.leetcode.linked_list;
 
-/**
- * 22/03/2019 Given a non-empty, singly linked list with head node
+import com.vaani.dsa.ds.core.list.sll.simple.ListNode;
+
+/** https://leetcode.com/problems/middle-of-the-linked-list/
+ *  Given a non-empty, singly linked list with head node
  * head, return a middle node of linked list.
  *
  * <p>If there are two middle nodes, return the second middle node.
@@ -20,24 +22,10 @@ package com.vaani.leetcode.linked_list;
  */
 public class MiddleOfLinkedList {
 
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
-    /**
-     * Main method
-     *
-     * @param args
-     */
     public static void main(String[] args) {
     }
 
-    public ListNode middleNode(ListNode head) {
+    public ListNode middleNode1(ListNode head) {
         int count = 0;
         ListNode temp = head;
         while (temp != null) {
@@ -51,5 +39,16 @@ public class MiddleOfLinkedList {
             c++;
         }
         return head;
+    }
+
+    public ListNode middleNode(ListNode head) {
+        ListNode fast = head, slow = head;
+
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+
+        return slow;
     }
 }

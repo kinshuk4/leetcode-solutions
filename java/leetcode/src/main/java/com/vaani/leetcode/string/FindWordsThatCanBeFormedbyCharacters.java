@@ -14,7 +14,7 @@ import java.util.Map;
  *
  * <p>Example 1:
  *
- * <p>Input: words = ["cat","bt","hat","com.vaani.leetcode.tree"], chars = "atach" Output: 6 Explanation: The strings
+ * <p>Input: words = ["cat","bt","hat","tree"], chars = "atach" Output: 6 Explanation: The strings
  * that can be formed are "cat" and "hat" so the answer is 3 + 3 = 6. Example 2:
  *
  * <p>Input: words = ["hello","world","leetcode"], chars = "welldonehoneyr" Output: 10 Explanation:

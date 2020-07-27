@@ -1,17 +1,14 @@
 package com.vaani.leetcode.hashing;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
-/**
- * 25/03/2017. Given a string, sort it in decreasing order based
- * on the frequency of characters.
+/** https://leetcode.com/problems/sort-characters-by-frequency/
+ * Given a string, sort it in decreasing order based on the frequency of characters.
  *
  * <p>Example 1:
  *
- * <p>Input: "com.vaani.leetcode.tree"
+ * <p>Input: "tree"
  *
  * <p>Output: "eert"
  *
@@ -35,46 +32,47 @@ import java.util.List;
  * treated as two different characters.
  */
 public class SortCharByFrequency {
-    class Freq {
-        int i;
-        int c;
-    }
 
-    private int[] buff = new int[256];
 
-    /**
-     * Main method
-     *
-     * @param args
-     * @throws Exception
-     */
     public static void main(String[] args) throws Exception {
         System.out.println(new SortCharByFrequency().frequencySort("askdfkasdkfasdkljfklasdjfkl"));
     }
 
     public String frequencySort(String s) {
-        if (s == null || s.isEmpty()) return s;
-        Arrays.fill(buff, 0);
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0, l = s.length(); i < l; i++) buff[s.charAt(i)]++;
+        if (s == null || s.isEmpty()) {
+            return s;
+        }
+        int[] buff = new int[256];
 
-        List<Freq> fList = new ArrayList<>();
+        for (int i = 0, l = s.length(); i < l; i++) {
+            buff[s.charAt(i)]++;
+        }
+
+        List<CharFrequency> frequencyList = new ArrayList<>();
         for (int i = 0; i < 256; i++) {
             if (buff[i] > 0) {
-                Freq f = new Freq();
+                CharFrequency f = new CharFrequency();
                 f.i = i;
                 f.c = buff[i];
-                fList.add(f);
+                frequencyList.add(f);
             }
         }
 
-        Collections.sort(fList, (o1, o2) -> Integer.compare(o2.c, o1.c));
+        frequencyList.sort((o1, o2) -> Integer.compare(o2.c, o1.c));
 
-        for (Freq f : fList) {
+        StringBuilder resultSB = new StringBuilder();
+        for (CharFrequency f : frequencyList) {
             char c = (char) f.i;
             int freq = f.c;
-            while (freq-- > 0) sb.append(c);
+            while (freq-- > 0) {
+                resultSB.append(c);
+            }
         }
-        return sb.toString();
+        return resultSB.toString();
+    }
+
+    static class CharFrequency {
+        int i;
+        int c;
     }
 }

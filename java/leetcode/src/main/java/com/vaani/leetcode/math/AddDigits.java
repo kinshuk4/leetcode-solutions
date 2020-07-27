@@ -1,7 +1,7 @@
 package com.vaani.leetcode.math;
 
-/**
- * 02/08/2017. Given a non-negative integer num, repeatedly add
+/** https://leetcode.com/problems/add-digits/
+ * Given a non-negative integer num, repeatedly add
  * all its digits until the result has only one digit.
  *
  * <p>For example:
@@ -18,7 +18,9 @@ public class AddDigits {
     }
 
     public int addDigits(int num) {
-        if (num == 0) return 0;
+        if (num == 0) {
+            return 0;
+        }
         return num % 9 == 0 ? 9 : num % 9;
     }
 }

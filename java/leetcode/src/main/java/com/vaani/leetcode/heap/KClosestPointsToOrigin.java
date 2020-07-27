@@ -2,8 +2,8 @@ package com.vaani.leetcode.heap;
 
 import java.util.PriorityQueue;
 
-/**
- * 30/11/2019 We have a list of points on the plane. Find the K
+/** https://leetcode.com/problems/k-closest-points-to-origin/
+ * We have a list of points on the plane. Find the K
  * closest points to the origin (0, 0).
  *
  * <p>(Here, the distance between two points on a plane is the Euclidean distance.)
@@ -28,39 +28,67 @@ import java.util.PriorityQueue;
 public class KClosestPointsToOrigin {
     public static void main(String[] args) {
         int[][] A = {{3, 3}, {5, -1}, {-2, 4}};
-        int[][] ans = new KClosestPointsToOrigin().kClosest(A, 2);
+        int[][] ans = new KClosestPointsToOrigin.MaxHeapWithDataModel().kClosest(A, 2);
         System.out.println();
     }
 
-    class Point {
-        int a, b;
+    // 50 ms
+    static class MaxHeapWithDataModel {
+        static class Point {
+            int x, y;
 
-        Point(int a, int b) {
-            this.a = a;
-            this.b = b;
-        }
+            Point(int x, int y) {
+                this.x = x;
+                this.y = y;
+            }
 
-        public long distance() {
-            return (long) (a * a) + (long) (b * b);
-        }
-    }
-
-    public int[][] kClosest(int[][] points, int K) {
-        PriorityQueue<Point> pq =
-                new PriorityQueue<>((o1, o2) -> Long.compare(o2.distance(), o1.distance()));
-        for (int[] p : points) {
-            pq.offer(new Point(p[0], p[1]));
-            if (pq.size() > K) {
-                pq.poll();
+            public long distance() {
+                return (long) (x * x) + (long) (y * y);
             }
         }
-        int[][] ans = new int[K][2];
-        int i = 0;
-        while (!pq.isEmpty()) {
-            Point point = pq.poll();
-            ans[i][0] = point.a;
-            ans[i++][1] = point.b;
+
+        public int[][] kClosest(int[][] points, int K) {
+            PriorityQueue<Point> maxHeap = new PriorityQueue<>((o1, o2) -> Long.compare(o2.distance(), o1.distance()));
+            for (int[] p : points) {
+                maxHeap.offer(new Point(p[0], p[1]));
+                if (maxHeap.size() > K) {
+                    maxHeap.poll();
+                }
+            }
+            int[][] result = new int[K][2];
+            int i = 0;
+            while (!maxHeap.isEmpty()) {
+                Point point = maxHeap.poll();
+                result[i][0] = point.x;
+                result[i++][1] = point.y;
+            }
+            return result;
         }
-        return ans;
     }
+
+
+    // No big difference in time - 49 ms
+    public int[][] kClosest(int[][] points, int K) {
+        PriorityQueue<int[]> maxHeap = new PriorityQueue<>((o1, o2) -> Long.compare(getDistance(o2), getDistance(o1)));
+        for (int[] p : points) {
+            maxHeap.offer(p);
+            if (maxHeap.size() > K) {
+                maxHeap.poll();
+            }
+        }
+        int[][] result = new int[K][2];
+        int i = 0;
+        while (!maxHeap.isEmpty()) {
+            int[] point = maxHeap.poll();
+            result[i++] = point;
+        }
+        return result;
+    }
+
+    long getDistance(int[] point) {
+        return (long) (point[0] * point[0]) + (long) (point[1] * point[1]);
+    }
+
+
+
 }
