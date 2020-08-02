@@ -1,10 +1,12 @@
-package com.vaani.leetcode.array;
+package com.vaani.leetcode.greedy;
+
+import com.vaani.dsa.ds.core.visual.Interval;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 08/03/2019 We are given a list schedule of employees, which
+/** https://leetcode.com/problems/employee-free-time/
+ * We are given a list schedule of employees, which
  * represents the working time for each employee.
  *
  * <p>Each employee has a list of non-overlapping Intervals, and these intervals are in sorted
@@ -33,27 +35,6 @@ import java.util.List;
 * form a result array with the intervals which form the free time.
  */
 public class EmployeeFreeTime {
-
-    public static class Interval {
-        int start;
-        int end;
-
-        Interval() {
-            start = 0;
-            end = 0;
-        }
-
-        Interval(int s, int e) {
-            start = s;
-            end = e;
-        }
-    }
-
-    /**
-     * Main method
-     *
-     * @param args
-     */
     public static void main(String[] args) {
         List<List<Interval>> schedule = new ArrayList<>();
         List<Interval> ints1 = new ArrayList<>();

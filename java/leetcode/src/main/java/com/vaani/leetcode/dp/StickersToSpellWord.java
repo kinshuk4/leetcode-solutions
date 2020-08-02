@@ -35,9 +35,9 @@ package com.vaani.leetcode.dp;
  *
  * <p>stickers has length in the range [1, 50]. stickers consists of lowercase English words
  * (without apostrophes). target has length in the range [1, 15], and consists of lowercase English
- * letters. In all com.vaani.leetcode.test cases, all words were chosen randomly from the 1000 most common US English
+ * letters. In all test cases, all words were chosen randomly from the 1000 most common US English
  * words, and the target was chosen as a concatenation of two random words. The time limit may be
- * more challenging than usual. It is expected that a 50 sticker com.vaani.leetcode.test case can be solved within 35ms
+ * more challenging than usual. It is expected that a 50 sticker test case can be solved within 35ms
  * on average.
  *
  * <p>Solution: O(2 ^ T x T x S) where T is the length of target and S is length of sticker array.

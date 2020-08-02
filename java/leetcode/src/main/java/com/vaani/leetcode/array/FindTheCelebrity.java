@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * 25/11/2017.
+ * https://leetcode.com/problems/find-the-celebrity/
  *
  * <p>Suppose you are at a party with n people (labeled from 0 to n - 1) and among them, there may
  * exist one celebrity. The definition of a celebrity is that all the other n - 1 people know
@@ -22,16 +22,13 @@ import java.util.Set;
  *
  * <p>Note: There will be exactly one celebrity if he/she is in the party. Return the celebrity's
  * label if there is a celebrity in the party. If there is no celebrity, return -1.
+ * <p>
+ * https://www.youtube.com/watch?v=LZJBZEnoYLQ
  */
 public class FindTheCelebrity {
 
     private static Map<Integer, Set<Integer>> map = new HashMap<>();
 
-    /**
-     * Main method
-     *
-     * @param args
-     */
     public static void main(String[] args) {
         // initialize relationship
         map.put(0, new HashSet<>());
@@ -71,12 +68,6 @@ public class FindTheCelebrity {
         System.out.println(new FindTheCelebrity().findCelebrity(0));
     }
 
-    /**
-     * Find celebrity
-     *
-     * @param n
-     * @return
-     */
     public int findCelebrity(int n) {
         int candidate = -1, i = 0, next = 1;
         while (i < n) {
@@ -97,6 +88,24 @@ public class FindTheCelebrity {
             if (!knows(j, candidate) || knows(candidate, j)) {
                 candidate = -1;
                 break;
+            }
+        }
+        return candidate;
+    }
+
+    public int findCelebrity2(int n) {
+        int candidate = 0;
+        for (int i = 1; i < n; i++) {
+            if (knows(candidate, i)) {
+                candidate = i; // i can potentially be celebrity
+            }
+        }
+
+        for (int i = 0; i < n; i++) {
+            // ith value is not candidate and candidate know someone
+            // or someone doesn't know the candidate
+            if(i != candidate && knows(candidate, i) || !knows(i, candidate)){
+                return -1;
             }
         }
         return candidate;

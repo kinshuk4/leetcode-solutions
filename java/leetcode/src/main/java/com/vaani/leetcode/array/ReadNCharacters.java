@@ -10,7 +10,7 @@ package com.vaani.leetcode.array;
  * <p>By using the read4 API, implement the function int read(char *buf, int n) that reads n
  * characters from the file.
  *
- * <p>Note: The read function will only be called once for each com.vaani.leetcode.test case.
+ * <p>Note: The read function will only be called once for each test case.
  */
 public class ReadNCharacters {
 

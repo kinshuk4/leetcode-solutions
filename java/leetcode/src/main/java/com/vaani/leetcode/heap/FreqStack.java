@@ -35,9 +35,9 @@ import java.util.Stack;
  *
  * <p>Calls to FreqStack.push(int x) will be such that 0 <= x <= 10^9. It is guaranteed that
  * FreqStack.pop() won't be called if the stack has zero elements. The total number of
- * FreqStack.push calls will not exceed 10000 in a single com.vaani.leetcode.test case. The total number of
- * FreqStack.pop calls will not exceed 10000 in a single com.vaani.leetcode.test case. The total number of
- * FreqStack.push and FreqStack.pop calls will not exceed 150000 across all com.vaani.leetcode.test cases.
+ * FreqStack.push calls will not exceed 10000 in a single test case. The total number of
+ * FreqStack.pop calls will not exceed 10000 in a single test case. The total number of
+ * FreqStack.push and FreqStack.pop calls will not exceed 150000 across all test cases.
  *
  * <p>Solution: push O(log N) pop O(log N) Maintain a priority queue with a FreqNode where each
  * FreqNode contains a frequency and a stack with (value and pushCount). Each stack in a priority

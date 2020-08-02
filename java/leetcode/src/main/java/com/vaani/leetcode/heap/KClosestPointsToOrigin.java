@@ -3,6 +3,8 @@ package com.vaani.leetcode.heap;
 import java.util.PriorityQueue;
 
 /** https://leetcode.com/problems/k-closest-points-to-origin/
+ * 973. K Closest Points to Origin
+ * Medium
  * We have a list of points on the plane. Find the K
  * closest points to the origin (0, 0).
  *
@@ -69,7 +71,8 @@ public class KClosestPointsToOrigin {
 
     // No big difference in time - 49 ms
     public int[][] kClosest(int[][] points, int K) {
-        PriorityQueue<int[]> maxHeap = new PriorityQueue<>((o1, o2) -> Long.compare(getDistance(o2), getDistance(o1)));
+//        PriorityQueue<int[]> maxHeap = new PriorityQueue<>((a, b) -> Long.compare(getDistance(b), getDistance(a)));
+        PriorityQueue<int[]> maxHeap = new PriorityQueue<>((a, b) -> b[0] * b[0] + b[1] * b[1] - (a[0] * a[0] + a[1] * a[1]));
         for (int[] p : points) {
             maxHeap.offer(p);
             if (maxHeap.size() > K) {

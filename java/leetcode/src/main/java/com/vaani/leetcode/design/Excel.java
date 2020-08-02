@@ -51,9 +51,9 @@ import java.util.*;
  *
  * <p>Set(2, "B", 2); // set C(2,"B") to be 2. Note C(3, "C") should also be changed. // A B C // 1
  * 2 0 0 // 2 0 2 0 // 3 0 0 6 Note: You could assume that there won't be any circular sum
- * reference. For example, A1 = sum(B1) and B1 = sum(A1). The com.vaani.leetcode.test cases are using double-quotes to
+ * reference. For example, A1 = sum(B1) and B1 = sum(A1). The test cases are using double-quotes to
  * represent a character. Please remember to RESET your class variables declared in class Excel, as
- * static/class variables are persisted across multiple com.vaani.leetcode.test cases.
+ * static/class variables are persisted across multiple test cases.
  *
  * <p>Solution: Build a graph and for each cell keep track of forward and backward links. When a
  * cell is updated with a new value broadcast the new value to all the forward links and remove all

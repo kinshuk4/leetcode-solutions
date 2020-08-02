@@ -1,7 +1,9 @@
 package com.vaani.leetcode.string;
 
 /**
- * 383. Ransom Note https://leetcode.com/problems/ransom-note/
+ * https://leetcode.com/problems/ransom-note/
+ * 383. Ransom Note
+ * Easy
  * <p>
  * Given an arbitrary ransom note string and another string containing letters from all the magazines, write a function
  * that will return true if the ransom note can be constructed from the magazines ; otherwise, it will return false.
@@ -19,6 +21,7 @@ package com.vaani.leetcode.string;
  * <p>
  * Related Topics: String
  * <p>
+ *     https://www.youtube.com/watch?v=gWqbmAS3uxg
  * Similar Questions: (H) Stickers to Spell Word
  */
 public class RansomNote {

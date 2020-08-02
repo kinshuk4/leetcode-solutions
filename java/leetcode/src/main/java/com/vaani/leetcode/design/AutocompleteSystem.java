@@ -56,9 +56,9 @@ import java.util.*;
  * <p>Note: The input sentence will always start with a letter and end with '#', and only one blank
  * space will exist between two words. The number of complete sentences that to be searched won't
  * exceed 100. The length of each sentence including those in the historical data won't exceed 100.
- * Please use double-quote instead of single-quote when you write com.vaani.leetcode.test cases even for a character
+ * Please use double-quote instead of single-quote when you write test cases even for a character
  * input. Please remember to RESET your class variables declared in class AutocompleteSystem, as
- * static/class variables are persisted across multiple com.vaani.leetcode.test cases.
+ * static/class variables are persisted across multiple test cases.
  *
  * <p>Solution: Maintain a Trie (slightly modified) data-structure to all the input sentences where
  * each node of the Trie is a node containing a hash-map of child character and node and a TreeSet

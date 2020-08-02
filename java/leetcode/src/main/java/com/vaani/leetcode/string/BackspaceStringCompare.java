@@ -1,5 +1,7 @@
 package com.vaani.leetcode.string;
 
+import java.util.Stack;
+
 /**
  * https://leetcode.com/problems/backspace-string-compare/
  * Given two strings S and T, return if they are equal when both are typed into empty text editors. # means a backspace character.
@@ -97,4 +99,37 @@ public class BackspaceStringCompare {
         }
         return true;
     }
+
+    static class UsingStack {
+        public boolean backspaceCompare(String S, String T) {
+            Stack<Character> sStack = new Stack<>();
+            Stack<Character> tStack = new Stack<>();
+
+            for (char c : S.toCharArray()) {
+                if (c != '#') {
+                    sStack.push(c);
+                } else if (!sStack.isEmpty()) {
+                    sStack.pop();
+                }
+            }
+
+            for (char c : T.toCharArray()) {
+                if (c != '#') {
+                    tStack.push(c);
+                } else if (!tStack.isEmpty()) {
+                    tStack.pop();
+                }
+            }
+
+            while (!sStack.isEmpty()) {
+                char curr = sStack.pop();
+                if (tStack.isEmpty() || tStack.pop() != curr) {
+                    return false;
+                }
+            }
+
+            return tStack.isEmpty(); // if tStack is not empty, it is false
+        }
+    }
+
 }

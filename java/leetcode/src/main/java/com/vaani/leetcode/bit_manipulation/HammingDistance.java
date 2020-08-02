@@ -2,6 +2,8 @@ package com.vaani.leetcode.bit_manipulation;
 
 /**
  * https://leetcode.com/problems/hamming-distance/
+ * 461. Hamming Distance
+ * Easy
  * The Hamming distance between two integers is the
  * number of positions at which the corresponding bits are different.
  *
@@ -21,14 +23,8 @@ package com.vaani.leetcode.bit_manipulation;
  *
  * <p>Solution O(1): XOR (x, y) and count the number of bits set
  */
-public class HammingDistanceBetweenNumbers {
+public class HammingDistance {
 
-    /**
-     * Main method
-     *
-     * @param args
-     * @throws Exception
-     */
     public static void main(String[] args) throws Exception {
     }
 
@@ -51,5 +47,16 @@ public class HammingDistanceBetweenNumbers {
             }
         }
         return count;
+    }
+
+    // using mod
+    public int hammingDistance3(int x, int y) {
+        int result = 0;
+        while (x > 0 || y > 0) {
+            result += (x % 2) ^ (y % 2); // % mod checks if number is even, if even last bit is 0 else 1. we are xoring them
+            x >>= 1; // dividing the number by 2
+            y >>= 1;
+        }
+        return result;
     }
 }

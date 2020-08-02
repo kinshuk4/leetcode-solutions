@@ -31,7 +31,7 @@ import java.util.TreeSet;
  *
  * <p>Note:
  *
- * <p>The number of calls to MyCalendar.book per com.vaani.leetcode.test case will be at most 1000. In calls to
+ * <p>The number of calls to MyCalendar.book per test case will be at most 1000. In calls to
  * MyCalendar.book(start, end), start and end are integers in the range [0, 10^9].
  */
 public class MyCalendarII {

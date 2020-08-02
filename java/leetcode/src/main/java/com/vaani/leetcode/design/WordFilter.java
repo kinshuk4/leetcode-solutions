@@ -11,7 +11,7 @@ import java.util.Map;
  * exists, return -1.
  *
  * <p>Examples: Input: WordFilter(["apple"]) WordFilter.f("a", "e") // returns 0 WordFilter.f("b",
- * "") // returns -1 Note: words has length in range [1, 15000]. For each com.vaani.leetcode.test case, up to
+ * "") // returns -1 Note: words has length in range [1, 15000]. For each test case, up to
  * words.length queries WordFilter.f may be made. words[i] has length in range [1, 10]. prefix,
  * suffix have lengths in range [0, 10]. words[i] and prefix, suffix queries consist of lowercase
  * letters only.

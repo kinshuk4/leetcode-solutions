@@ -2,6 +2,8 @@ package com.vaani.leetcode.array;
 
 /**
  * https://leetcode.com/problems/find-pivot-index/
+ * 724. Find Pivot Index
+ * Easy
  * Given an array of integers nums, write a method that
  * returns the "pivot" index of this array.
  *

@@ -1,7 +1,10 @@
 package com.vaani.leetcode.array;
 
 /**
- * 09/02/2018. In a given integer array nums, there is always
+ * https://leetcode.com/problems/largest-number-at-least-twice-of-others/
+ * 747. Largest Number At Least Twice of Others
+ * Easy
+ * In a given integer array nums, there is always
  * exactly one largest element.
  *
  * <p>Find whether the largest element in the array is at least twice as much as every other number
@@ -25,14 +28,8 @@ package com.vaani.leetcode.array;
  * <p>nums will have a length in the range [1, 50]. Every nums[i] will be an integer in the range
  * [0, 99].
  */
-public class LargestNumberAtLeastTwice {
+public class LargestNumberAtLeastTwiceOfOthers {
 
-    /**
-     * Main method
-     *
-     * @param args
-     * @throws Exception
-     */
     public static void main(String[] args) throws Exception {
     }
 
@@ -51,5 +48,28 @@ public class LargestNumberAtLeastTwice {
             }
         }
         return index;
+    }
+
+    // submitted
+    public int dominantIndex2(int[] nums) {
+        if (nums.length == 1) {
+            return 0;
+        }
+
+        int index = 0;
+        long max = nums[0], secondMax = Integer.MIN_VALUE;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] > max) {
+                secondMax = max;
+                max = nums[i];
+                index = i;
+            } else if (nums[i] > secondMax) {
+                secondMax = nums[i];
+            }
+        }
+
+        secondMax *= 2;
+
+        return max >= secondMax ? index : -1;
     }
 }

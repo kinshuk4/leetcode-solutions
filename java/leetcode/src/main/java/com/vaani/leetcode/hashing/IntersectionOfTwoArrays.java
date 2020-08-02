@@ -1,10 +1,14 @@
 package com.vaani.leetcode.hashing;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
  * https://leetcode.com/problems/intersection-of-two-arrays/
+ * 349. Intersection of Two Arrays
+ * Easy
  * Given two arrays, write a function to compute their intersection.
  * <p>
  * Example 1:

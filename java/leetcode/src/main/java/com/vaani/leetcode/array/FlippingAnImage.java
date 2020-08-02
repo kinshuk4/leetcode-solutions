@@ -39,7 +39,7 @@ public class FlippingAnImage {
         return A;
     }
 
-    public int[][] flipAndInvertImage2(int[][] A) {
+    public int[][] flipAndInvertImage(int[][] A) {
         int m = A.length;
         int n = A[0].length;
         for (int[] row : A) {
