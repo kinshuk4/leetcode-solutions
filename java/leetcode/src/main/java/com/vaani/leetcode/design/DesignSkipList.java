@@ -63,9 +63,6 @@ import java.util.Random;
 public class DesignSkipList {
     // https://www.youtube.com/watch?v=7pWkspmYUVo
     static class Skiplist {
-        private static final double DEFAULT_PROB = 0.5;
-        private final Random rand = new Random();
-
         private static final class Node {
             private final int val;
             private Node left, right, up, down;
@@ -75,14 +72,27 @@ public class DesignSkipList {
             }
         }
 
-        private final List<Node> sentinels = new ArrayList<>();
+        private static final class CoinFlipper {
+            private final Random rand = new Random();
+            private static final int heads = 0;
+            private static final int tails = 1;
 
-        {
-            sentinels.add(new Node(Integer.MIN_VALUE));
+            // returns true if heads
+            public boolean flip() {
+                int result = rand.nextInt(2);
+                return result == heads;
+            }
         }
 
-        public Skiplist() {
+        private final CoinFlipper coinFlipper;
+        private final List<Node> sentinels;
 
+        public Skiplist() {
+            this.coinFlipper = new CoinFlipper();
+            this.sentinels = new ArrayList<>()
+            {{
+                add(new Node(Integer.MIN_VALUE));
+            }};
         }
 
         public boolean search(int target) {
@@ -135,29 +145,6 @@ public class DesignSkipList {
             return sentinels.get(sentinels.size() - 1);
         }
 
-        private void populateLevelUp(final Node toInsert) {
-            Node curPrev = toInsert.left, curr = toInsert;
-
-            while (flipCoin()) {
-                while (curPrev.left != null && curPrev.up == null) {
-                    curPrev = curPrev.left;
-                }
-                if (curPrev.up == null) {
-                    final Node newSentinel = new Node(Integer.MIN_VALUE);
-                    curPrev.up = newSentinel;
-                    newSentinel.down = curPrev;
-                    sentinels.add(curPrev.up);
-                }
-                curPrev = curPrev.up;
-                final Node newNode = new Node(toInsert.val);
-                curr.up = newNode;
-                newNode.down = curr;
-                curr = curr.up;
-                curPrev.right = curr;
-                curr.left = curPrev;
-            }
-        }
-
         private void append(Node prev, Node cur) {
             final Node next = prev.right;
             prev.right = cur;
@@ -168,11 +155,31 @@ public class DesignSkipList {
             }
         }
 
+        private void populateLevelUp(final Node toInsert) {
+            Node prev = toInsert.left, curr = toInsert;
 
-        private boolean flipCoin() {
-            return rand.nextDouble() < DEFAULT_PROB;
+            while (flipCoin()) {
+                while (prev.left != null && prev.up == null) {
+                    prev = prev.left;
+                }
+                if (prev.up == null) {
+                    final Node newSentinel = new Node(Integer.MIN_VALUE);
+                    prev.up = newSentinel;
+                    newSentinel.down = prev;
+                    sentinels.add(prev.up);
+                }
+                prev = prev.up;
+                final Node newNode = new Node(toInsert.val);
+                curr.up = newNode;
+                newNode.down = curr;
+                curr = curr.up;
+                prev.right = curr;
+                curr.left = prev;
+            }
         }
 
-
+        private boolean flipCoin() {
+            return coinFlipper.flip();
+        }
     }
 }
