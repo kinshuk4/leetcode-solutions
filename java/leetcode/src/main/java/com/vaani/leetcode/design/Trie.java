@@ -12,13 +12,6 @@ import java.util.Map;
 public class Trie {
 
     private Map<Character, Trie> map;
-
-    /**
-     * Main method
-     *
-     * @param args
-     * @throws Exception
-     */
     public static void main(String[] args) throws Exception {
         Trie trie = new Trie();
         trie.insert("boxing");
