@@ -5,7 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * 04/06/2019 Given a sequence of words, check whether it forms a
+ * https://leetcode.com/problems/valid-word-square/
+ * Given a sequence of words, check whether it forms a
  * valid word square.
  *
  * <p>A sequence of words forms a valid word square if the kth row and column read the exact same
