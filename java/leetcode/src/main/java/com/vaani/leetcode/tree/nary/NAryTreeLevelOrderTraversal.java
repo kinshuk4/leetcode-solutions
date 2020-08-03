@@ -36,7 +36,7 @@ import java.util.Queue;
  * The height of the n-ary tree is less than or equal to 1000
  * The total number of nodes is between [0, 10^4]
  */
-public class NaryTreeLevelOrderTraversal {
+public class NAryTreeLevelOrderTraversal {
     public List<List<Integer>> levelOrder(NAryTreeNode root) {
 
         List<List<Integer>> res = new ArrayList<>();
