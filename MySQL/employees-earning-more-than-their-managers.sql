@@ -1,4 +1,4 @@
-# Time: O(n^2)
+/*# Time: O(n^2)
 # Space: O(1)
 # 
 # The Employee table holds all employees including their managers. Every employee has an Id, and there is also a column for the manager Id.
@@ -20,18 +20,22 @@
 # +----------+
 #
 
-# Time: O(n^2)
+ */
+ /*
+  # Time: O(n^2)
 # Space: O(n)
-# Write your MySQL query statement below
+  */
 SELECT e.Name AS Employee  FROM Employee e LEFT JOIN Employee b
        ON e.ManagerId=b.Id
-       WHERE e.Salary > b.Salary
+       WHERE e.Salary > b.Salary;
 
-# Time: O(n^2)
-# Space: O(1)      
-# Write your MySQL query statement below
+/*
+ # Time: O(n^2)
+# Space: O(1)
+ */
+
 SELECT Name AS Employee 
     FROM Employee e 
     WHERE e.ManagerId IS NOT NULL AND e.Salary > (SELECT Salary 
                           FROM Employee 
-                          WHERE e.ManagerId = Id)
+                          WHERE e.ManagerId = Id);
