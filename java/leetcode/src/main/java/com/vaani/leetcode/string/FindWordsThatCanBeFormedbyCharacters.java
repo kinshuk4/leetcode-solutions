@@ -1,11 +1,15 @@
 package com.vaani.leetcode.string;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 28/08/2019 You are given an array of strings words and a com.vaani.leetcode.string
- * chars.
+ * https://leetcode.com/problems/find-words-that-can-be-formed-by-characters/
+ * 1160. Find Words That Can Be Formed by Characters
+ * Easy
+ *
+ * You are given an array of strings words and a chars.
  *
  * <p>A string is good if it can be formed by characters from chars (each character can only be used
  * once).
@@ -24,17 +28,18 @@ import java.util.Map;
  *
  * <p>1 <= words.length <= 1000 1 <= words[i].length, chars.length <= 100 All strings contain
  * lowercase English letters only.
- *
- * <p>Solution Do a linear check for each of the words and each of the characters and sum up the
- * lengths. Keep a hashmap of key-values to avoid picking the same character again.
  */
 public class FindWordsThatCanBeFormedbyCharacters {
     public static void main(String[] args) {
-        String[] A = {"cat", "bt", "hat", "com/vaani/leetcode/tree"};
+        String[] A = {"cat", "bt", "hat", "tree"};
         String chars = "atach";
         new FindWordsThatCanBeFormedbyCharacters().countCharacters(A, chars);
     }
 
+    /**
+     * <p>Solution Do a linear check for each of the words and each of the characters and sum up the
+     * lengths. Keep a hashmap of key-values to avoid picking the same character again.
+     */
     public int countCharacters(String[] words, String chars) {
         Map<Character, Integer> countMap = new HashMap<>();
         for (char c : chars.toCharArray()) {
@@ -60,5 +65,90 @@ public class FindWordsThatCanBeFormedbyCharacters {
             }
         }
         return ans;
+    }
+
+    // Using char array
+    public int countCharacters2(String[] words, String chars) {
+        int count = 0;
+        int[] seen = new int[26];
+        //Count char of Chars String
+        chars.chars().forEach(c -> ++seen[c - 'a']);
+
+
+        // Comparing each word in words
+        for (String word : words) {
+            // simple making copy of seen arr
+            int[] seenCopy = Arrays.copyOf(seen, seen.length);
+            int charPresentCnt = 0;
+            for (char c : word.toCharArray()) {
+                if (seenCopy[c - 'a'] > 0) {
+                    seenCopy[c - 'a']--;
+                    charPresentCnt++;
+                } else {
+                    break;
+                }
+            }
+            if (charPresentCnt == word.length()) {
+                count += charPresentCnt;
+            }
+        }
+        return count;
+    }
+
+    // submitted
+    public int countCharacters3(String[] words, String chars) {
+        int count = 0;
+        int[] seen = new int[26];
+        //Count char of Chars String
+        chars.chars().forEach(c -> ++seen[c - 'a']);
+
+
+        // Comparing each word in words
+        for (String word : words) {
+            // simple making copy of seen arr
+            int[] seenCopy = Arrays.copyOf(seen, seen.length);
+            boolean isFound = true;
+            for (char c : word.toCharArray()) {
+                if (seenCopy[c - 'a'] > 0) {
+                    seenCopy[c - 'a']--;
+                } else {
+                    isFound = false;
+                    break;
+                }
+            }
+            if (isFound) {
+                count += word.length();
+            }
+        }
+        return count;
+    }
+
+    // Slower - even with faster processing
+    public int countCharacters4(String[] words, String chars) {
+        int count = 0;
+        int[] seen = new int[26];
+        //Count char of Chars String
+        chars.chars().forEach(c -> ++seen[c - 'a']);
+
+
+        // Comparing each word in words
+        for (String word : words) {
+            // simple making copy of seen arr
+            int[] currSeen = new int[26];
+            word.chars().forEach(c -> ++currSeen[c - 'a']);
+
+            boolean isFound = true;
+            for (int i = 0; i < seen.length; i++) {
+                if (seen[i] < currSeen[i]) {
+                    isFound = false;
+                    break;
+                }
+            }
+
+            if (isFound) {
+                count += word.length();
+            }
+        }
+        return count;
     }
 }

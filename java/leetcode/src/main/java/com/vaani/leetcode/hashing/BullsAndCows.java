@@ -1,6 +1,7 @@
-package com.vaani.leetcode.array;
+package com.vaani.leetcode.hashing;
 
 /**
+ * https://leetcode.com/problems/bulls-and-cows/
  * 299. Bulls and Cows
  * <p>
  * You are playing the following Bulls and Cows game with your friend: You write down a number and ask your friend to
@@ -43,13 +44,43 @@ public class BullsAndCows {
     int cows = 0;
     int[] count = new int[10];
     for (int i = 0; i < secret.length(); i++) {
-      if (secret.charAt(i) == guess.charAt(i)) bulls++;
-      else {
+      if (secret.charAt(i) == guess.charAt(i)) {
+        bulls++;
+      } else {
         /*
          * If count is less than zero before we increase it, it means that it was decreased by guess already.
          */
-        if (count[secret.charAt(i) - '0']++ < 0) cows++;
-        if (count[guess.charAt(i) - '0']-- > 0) cows++;
+        if (count[secret.charAt(i) - '0']++ < 0) {
+          cows++;
+        }
+        if (count[guess.charAt(i) - '0']-- > 0) {
+          cows++;
+        }
+      }
+    }
+    return bulls + "A" + cows + "B";
+  }
+
+  // more elaborate
+  public String getHint2(String secret, String guess) {
+    int bulls = 0;
+    int cows = 0;
+    int[] numbers = new int[10];
+    for (int i = 0; i < secret.length(); i++) {
+      int s = secret.charAt(i) - '0'; // Character.getNumericValue(secret.charAt(i));
+      int g = guess.charAt(i) - '0';  // Character.getNumericValue(guess.charAt(i));
+
+      if (s == g) {
+        bulls++;
+      } else {
+        if (numbers[s] < 0) {
+          cows++;
+        }
+        if (numbers[g] > 0) {
+          cows++;
+        }
+        numbers[s]++;
+        numbers[g]--;
       }
     }
     return bulls + "A" + cows + "B";

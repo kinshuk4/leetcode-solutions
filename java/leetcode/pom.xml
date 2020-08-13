@@ -29,7 +29,6 @@
     </build>
 
     <dependencies>
-        <!-- my modele -->
         <dependency>
             <groupId>com.vaani</groupId>
             <artifactId>algorithms-java</artifactId>

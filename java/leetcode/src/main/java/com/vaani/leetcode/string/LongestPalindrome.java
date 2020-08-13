@@ -1,8 +1,11 @@
 package com.vaani.leetcode.string;
 /**
- * 20/03/2019 Given a string which consists of lowercase or
- * uppercase letters, find the length of the longest palindromes that can be built with those
- * letters.
+ * https://leetcode.com/problems/longest-palindrome/
+ * 409. Longest Palindrome
+ * Easy
+ *
+ * Given a string which consists of lowercase or uppercase letters,
+ * find the length of the longest palindromes that can be built with those letters.
  *
  * <p>This is case sensitive, for example "Aa" is not considered a palindrome here.
  *
@@ -22,34 +25,29 @@ import java.util.Map;
 
 public class LongestPalindrome {
 
-    /**
-     * Main method
-     *
-     * @param args
-     */
     public static void main(String[] args) {
         int result = new LongestPalindrome().longestPalindrome("asdfasdf");
         System.out.println(result);
     }
 
     public int longestPalindrome(String s) {
-        Map<Character, Integer> map = new HashMap<>();
-        for (char c : s.toCharArray()) {
-            map.putIfAbsent(c, 0);
-            int count = map.get(c);
-            map.put(c, count + 1);
-        }
+        Map<Character, Integer> freqMap = new HashMap<>();
+        s.chars().forEach(c -> freqMap.put((char) c, freqMap.getOrDefault((char) c, 0) + 1));
+
         int max = 0;
         boolean odd = false;
-        for (char c : map.keySet()) {
-            int count = map.get(c);
+        for (char c : freqMap.keySet()) {
+            int count = freqMap.get(c);
             max += count;
             if ((count % 2) != 0) {
                 max--;
                 odd = true;
             }
         }
-        if (odd) max++;
+        // allow 1 odd character in palindrome
+        if (odd) {
+            max++;
+        }
         return max;
     }
 }
