@@ -15,7 +15,7 @@ import java.util.Arrays;
  * <p>Example 1: Input: [[1,2], [2,3], [3,4]] Output: 2 Explanation: The longest chain is [1,2] ->
  * [3,4] Note: The number of given pairs will be in the range [1, 1000].
  *
- * <p>Solution: O(N log N) sort the pairs with ending interval (com.vaani.leetcode.greedy sort) and try to accommodate
+ * <p>Solution: O(N log N) sort the pairs with ending interval (greedy sort) and try to accommodate
  * as many pairs as possible. If any current pair violates the chaining condition (b < c) then,
  * ignore that particular pair.
  */

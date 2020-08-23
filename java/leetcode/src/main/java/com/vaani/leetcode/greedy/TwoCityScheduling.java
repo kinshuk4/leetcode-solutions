@@ -28,7 +28,7 @@ import java.util.List;
  *
  * <p>Solution: O(N log N) The general idea is to first allocate all the candidates to city A and
  * sum up the cost and mark this as MIN. Now, make pairs with (costA - CostB, i) and sort this list
- * of pairs in descending order (this is a com.vaani.leetcode.greedy way of getting to the minimum possible value) -
+ * of pairs in descending order (this is a greedy way of getting to the minimum possible value) -
  * take the first half of this sorted list and sum of their values and reduce this value from MIN to
  * get the answer.
  */

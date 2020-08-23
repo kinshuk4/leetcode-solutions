@@ -7,7 +7,7 @@ import java.util.List;
  * 09/03/2017. Given an array of words and a length L, format the
  * text such that each line has exactly L characters and is fully (left and right) justified.
  *
- * <p>You should pack your words in a com.vaani.leetcode.greedy approach; that is, pack as many words as you can in
+ * <p>You should pack your words in a greedy approach; that is, pack as many words as you can in
  * each line. Pad extra spaces ' ' when necessary so that each line has exactly L characters.
  *
  * <p>Extra spaces between words should be distributed as evenly as possible. If the number of

@@ -25,7 +25,7 @@ import java.util.TreeMap;
  *
  * <p>1 <= people.length <= 50000 1 <= people[i] <= limit <= 30000
  *
- * <p>Solution O N log N Simple strategy is to com.vaani.leetcode.greedy try to put in maximum possible people in a
+ * <p>Solution O N log N Simple strategy is to greedy try to put in maximum possible people in a
  * boat and increment the boat counter. Use TreeMap and sorting to achieve this easily
  */
 public class BoatsToSavePeople {

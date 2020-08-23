@@ -1,8 +1,9 @@
-package com.vaani.leetcode.array;
+package com.vaani.leetcode.interval;
+
+import com.vaani.dsa.ds.core.visual.Interval;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -17,21 +18,6 @@ import java.util.List;
  * Else, add the current interval to result set and begin a new current interval.
  */
 public class MergeIntervals {
-    public static class Interval {
-        int start;
-        int end;
-
-        Interval() {
-            start = 0;
-            end = 0;
-        }
-
-        Interval(int s, int e) {
-            start = s;
-            end = e;
-        }
-    }
-
     public static void main(String[] args) throws Exception {
         Interval i1 = new Interval(1, 2);
         Interval i2 = new Interval(3, 4);
@@ -42,8 +28,10 @@ public class MergeIntervals {
     }
 
     public List<Interval> merge(List<Interval> intervals) {
-        if (intervals.isEmpty()) return new ArrayList<>();
-        Collections.sort(intervals, (o1, o2) -> Integer.compare(o1.start, o2.start));
+        if (intervals.isEmpty()) {
+            return new ArrayList<>();
+        }
+        intervals.sort((o1, o2) -> Integer.compare(o1.start, o2.start));
         List<Interval> result = new ArrayList<>();
         Interval curr = intervals.get(0);
         for (int i = 1, l = intervals.size(); i < l; i++) {
