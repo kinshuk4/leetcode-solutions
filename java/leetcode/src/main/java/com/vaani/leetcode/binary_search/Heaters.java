@@ -41,19 +41,21 @@ import java.util.Arrays;
  */
 public class Heaters {
     public int findRadius(int[] houses, int[] heaters) {
-        if (houses == null || houses.length == 0)
+        if (houses == null || houses.length == 0) {
             return 0;
+        }
         Arrays.sort(heaters);
         Arrays.sort(houses);
-        int res = 0;
+        int ans = 0;
         int j = 0;
-        for (int i = 0; i < houses.length; i++) {
-            while (j < heaters.length && heaters[j] < houses[i])
+        for (int house : houses) {
+            while (j < heaters.length && heaters[j] < house) {
                 j++;
-            int pre = j == 0 ? Integer.MAX_VALUE : houses[i] - heaters[j - 1];
-            int post = j == heaters.length ? Integer.MAX_VALUE : heaters[j] - houses[i];
-            res = Math.max(res, Math.min(pre, post));
+            }
+            int pre = j == 0 ? Integer.MAX_VALUE : house - heaters[j - 1];
+            int post = j == heaters.length ? Integer.MAX_VALUE : heaters[j] - house;
+            ans = Math.max(ans, Math.min(pre, post));
         }
-        return res;
+        return ans;
     }
 }
