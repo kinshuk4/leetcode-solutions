@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
  * 20/08/2019 Given a non-empty array of unique positive integers
  * A, consider the following graph:
  *
- * <p>There are A.length nodes, labelled A[0] to A[A.length - 1]; There is an edge between A[i] and
+ * <p>There are A.length nodes, labelled A[0] to A[A.length - 1]; There is an vertex between A[i] and
  * A[j] if and only if A[i] and A[j] share a common factor greater than 1. Return the size of the
  * largest connected component in the graph.
  *

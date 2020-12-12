@@ -45,7 +45,7 @@ package com.vaani.leetcode.dp;
  *
  * <p>1 <= values.length <= 50000 -1000 <= values[i] <= 1000
  */
-public class StoneGameIII {
+public class StoneGame3 {
     private class State {
         int a, b;
 
@@ -57,7 +57,7 @@ public class StoneGameIII {
 
     public static void main(String[] args) {
         int[] V = {-1, -2, -3};
-        System.out.println(new StoneGameIII().stoneGameIII(V));
+        System.out.println(new StoneGame3().stoneGameIII(V));
     }
 
     private State[][] DP;

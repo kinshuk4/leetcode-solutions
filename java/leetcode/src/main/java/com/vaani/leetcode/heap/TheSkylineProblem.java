@@ -18,7 +18,7 @@ import java.util.*;
  *
  * <p>Buildings Skyline Contour The geometric information of each building is represented by a
  * triplet of integers [Li, Ri, Hi], where Li and Ri are the x coordinates of the left and right
- * edge of the ith building, respectively, and Hi is its height. It is guaranteed that 0 ≤ Li, Ri ≤
+ * vertex of the ith building, respectively, and Hi is its height. It is guaranteed that 0 ≤ Li, Ri ≤
  * INT_MAX, 0 < Hi ≤ INT_MAX, and Ri - Li > 0. You may assume all buildings are perfect rectangles
  * grounded on an absolutely flat surface at height 0.
  *
@@ -53,10 +53,10 @@ import java.util.*;
  *
  * <p>If the max calculated in step b is greater than current max then, include current x and max
  * height from priority queue to the result set. This indicates one of the larger rectangle's right
- * edge intersects with a smaller one.
+ * vertex intersects with a smaller one.
  *
  * <p>If the max calculated in stop b is smaller then check if the peek element in priority queue
- * has the left edge value equal to current point. If so, then this indicates that a new larger
+ * has the left vertex value equal to current point. If so, then this indicates that a new larger
  * rectangle starts from this point therefore add this point to the result set. 4. Return the result
  * set
  */
@@ -85,7 +85,7 @@ public class TheSkylineProblem {
                 new PriorityQueue<>(Comparator.comparing(Rectangle::getH)
                         .reversed()
                         .thenComparing(Rectangle::getX1)); // order by height, if height is same then, order by left most
-        // starting edge.
+        // starting vertex.
         List<List<Integer>> result = new ArrayList<>();
         Set<Integer> set = new HashSet<>();
         for (int[] p : buildings) {
@@ -123,7 +123,7 @@ public class TheSkylineProblem {
                 result.add(makeNewPoint(curr, 0)); // This is the last rectangle after this there is a gap of at least one unit
             } else {
                 if (max > pq.peek().getH()) {
-                    result.add(makeNewPoint(curr, pq.peek().getH())); // one of the larger rectangle's right edge intersects with a
+                    result.add(makeNewPoint(curr, pq.peek().getH())); // one of the larger rectangle's right vertex intersects with a
                     // smaller one
                 } else if (max < pq.peek().getH() && pq.peek().getX1() == curr) {
                     result.add(makeNewPoint(curr, pq.peek().getH())); // new larger rectangle begins at this point

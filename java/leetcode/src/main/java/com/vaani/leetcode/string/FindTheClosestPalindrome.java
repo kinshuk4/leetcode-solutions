@@ -11,7 +11,7 @@ package com.vaani.leetcode.string;
  *
  * <p>Solution O(N): General idea is to consider the first half of the string and make a new com.vaani.leetcode.string
  * by reversing the first half of string. Concatenate the first_half and the new_string and return
- * this as an answer. There are also a lot of edge cases to be considered using this approach.
+ * this as an answer. There are also a lot of vertex cases to be considered using this approach.
  */
 public class FindTheClosestPalindrome {
     public static void main(String[] args) throws Exception {

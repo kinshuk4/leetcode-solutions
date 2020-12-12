@@ -42,7 +42,7 @@ public class NumbersWithSameConsecutiveDifference {
                 return new int[0];
             }
             if (N == 1) {
-                ans.add(0);      // edge case
+                ans.add(0);      // vertex case
 
             }
             dfs(N, K, ans, 0);

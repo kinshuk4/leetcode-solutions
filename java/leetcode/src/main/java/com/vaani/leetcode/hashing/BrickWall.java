@@ -13,7 +13,7 @@ import java.util.Map;
  * <p>The brick wall is represented by a list of rows. Each row is a list of integers representing
  * the width of each brick in this row from left to right.
  *
- * <p>If your line go through the edge of a brick, then the brick is not considered as crossed. You
+ * <p>If your line go through the vertex of a brick, then the brick is not considered as crossed. You
  * need to find out how to draw the line to cross the least bricks and return the number of crossed
  * bricks.
  *

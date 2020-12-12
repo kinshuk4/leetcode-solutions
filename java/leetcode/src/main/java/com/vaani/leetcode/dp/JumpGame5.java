@@ -35,10 +35,10 @@ package com.vaani.leetcode.dp;
  *
  * <p>1 <= arr.length <= 1000 1 <= arr[i] <= 10^5 1 <= d <= arr.length
  */
-public class JumpGameV {
+public class JumpGame5 {
     public static void main(String[] args) {
         int[] A = {7, 1, 7, 1, 7, 1};
-        System.out.println(new JumpGameV().maxJumps(A, 2));
+        System.out.println(new JumpGame5().maxJumps(A, 2));
     }
 
     int[] DP;

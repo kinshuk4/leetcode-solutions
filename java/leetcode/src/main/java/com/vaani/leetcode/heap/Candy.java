@@ -21,7 +21,7 @@ import java.util.PriorityQueue;
  * two conditions.
  *
  * <p>Solution: O(N log N): Store the indexes in a com.vaani.leetcode.heap, iterate through the com.vaani.leetcode.heap one by one and
- * assign candies one greater than its neighbours. Take care of edge cases.
+ * assign candies one greater than its neighbours. Take care of vertex cases.
  */
 public class Candy {
 

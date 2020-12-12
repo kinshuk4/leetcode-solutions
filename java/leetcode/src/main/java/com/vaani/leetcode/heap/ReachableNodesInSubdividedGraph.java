@@ -7,17 +7,17 @@ import java.util.*;
  * graph") with nodes from 0 to N-1, subdivisions are made to some of the edges.
  *
  * <p>The graph is given as follows: edges[k] is a list of integer pairs (i, j, n) such that (i, j)
- * is an edge of the original graph,
+ * is an vertex of the original graph,
  *
- * <p>and n is the total number of new nodes on that edge.
+ * <p>and n is the total number of new nodes on that vertex.
  *
- * <p>Then, the edge (i, j) is deleted from the original graph, n new nodes (x_1, x_2, ..., x_n) are
+ * <p>Then, the vertex (i, j) is deleted from the original graph, n new nodes (x_1, x_2, ..., x_n) are
  * added to the original graph,
  *
  * <p>and n+1 new edges (i, x_1), (x_1, x_2), (x_2, x_3), ..., (x_{n-1}, x_n), (x_n, j) are added to
  * the original graph.
  *
- * <p>Now, you start at node 0 from the original graph, and in each move, you travel along one edge.
+ * <p>Now, you start at node 0 from the original graph, and in each move, you travel along one vertex.
  *
  * <p>Return how many nodes you can reach in at most M moves.
  *
@@ -38,7 +38,7 @@ import java.util.*;
  * node that can be travelled to using at most M moves starting from node 0.
  *
  * <p>Solution: O(E log N) E is the length of edges and N is the number of nodes. The n nodes on a
- * edge form a weight and thus the graph becomes a weighted graph. Keep track of number of moves
+ * vertex form a weight and thus the graph becomes a weighted graph. Keep track of number of moves
  * available and run a Dijkstra's algorithm.
  */
 public class ReachableNodesInSubdividedGraph {

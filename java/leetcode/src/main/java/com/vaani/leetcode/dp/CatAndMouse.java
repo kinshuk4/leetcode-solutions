@@ -10,13 +10,13 @@ import java.util.Queue;
  *
  * <p>A game on an undirected graph is played by two players, Mouse and Cat, who alternate turns.
  *
- * <p>The graph is given as follows: graph[a] is a list of all nodes b such that ab is an edge of
+ * <p>The graph is given as follows: graph[a] is a list of all nodes b such that ab is an vertex of
  * the graph.
  *
  * <p>Mouse starts at node 1 and goes first, Cat starts at node 2 and goes second, and there is a
  * Hole at node 0.
  *
- * <p>During each player's turn, they must travel along one edge of the graph that meets where they
+ * <p>During each player's turn, they must travel along one vertex of the graph that meets where they
  * are. For example, if the Mouse is at node 1, it must travel to any node in graph[1].
  *
  * <p>Additionally, it is not allowed for the Cat to travel to the Hole (node 0.)
