@@ -56,9 +56,7 @@ public class GameOfLife {
                     if (livesAround == 2 || livesAround == 3) {
                         continue;
                     }
-                    if (livesAround < 2 || livesAround > 3) {
-                        board[i][j] = die;
-                    }
+                    board[i][j] = die;
                 }
             }
         }
