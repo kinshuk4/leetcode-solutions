@@ -32,12 +32,6 @@ public class SmallestRange {
         }
     }
 
-    /**
-     * Main method
-     *
-     * @param args
-     * @throws Exception
-     */
     public static void main(String[] args) throws Exception {
         List<List<Integer>> list = new ArrayList<>();
         List<Integer> row1 = Arrays.asList(4, 10, 15, 24, 26);

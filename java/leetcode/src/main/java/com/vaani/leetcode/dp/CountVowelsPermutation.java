@@ -3,7 +3,8 @@ package com.vaani.leetcode.dp;
 import java.util.*;
 
 /**
- * 25/01/2020 Given an integer n, your task is to count how many
+ * https://leetcode.com/problems/count-vowels-permutation/
+ * Given an integer n, your task is to count how many
  * strings of length n can be formed under the following rules:
  *
  * <p>Each character is a lower case vowel ('a', 'e', 'i', 'o', 'u') Each vowel 'a' may only be

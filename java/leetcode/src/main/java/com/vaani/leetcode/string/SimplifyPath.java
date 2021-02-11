@@ -1,32 +1,80 @@
 package com.vaani.leetcode.string;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
-import java.util.StringTokenizer;
+import java.util.*;
 
 /**
- * 28/07/2017.
- *
- * <p>Given an absolute path for a file (Unix-style), simplify it.
- *
- * <p>For example, path = "/home/", => "/home" path = "/a/./b/../../c/", => "/c"
- *
- * <p>Corner Cases: Did you consider the case where path = "/../"? In this case, you should return
- * "/". Another corner case is the path might contain multiple slashes '/' together, such as
- * "/home//foo/". In this case, you should ignore redundant slashes and return "/home/foo".
+ * https://leetcode.com/problems/simplify-path/
+ * 71. Simplify Path
+ * Medium
+ * <p>
+ * Given a string path, which is an absolute path (starting with a slash '/') to a file or directory in a Unix-style file system, convert it to the simplified canonical path.
+ * <p>
+ * In a Unix-style file system, a period '.' refers to the current directory, a double period '..' refers to the directory up a level, and any multiple consecutive slashes (i.e. '//') are treated as a single slash '/'. For this problem, any other format of periods such as '...' are treated as file/directory names.
+ * <p>
+ * The canonical path should have the following format:
+ * <p>
+ * The path starts with a single slash '/'.
+ * Any two directories are separated by a single slash '/'.
+ * The path does not end with a trailing '/'.
+ * The path only contains the directories on the path from the root directory to the target file or directory (i.e., no period '.' or double period '..')
+ * Return the simplified canonical path.
+ * <p>
+ * <p>
+ * <p>
+ * Example 1:
+ * <p>
+ * Input: path = "/home/"
+ * Output: "/home"
+ * Explanation: Note that there is no trailing slash after the last directory name.
+ * Example 2:
+ * <p>
+ * Input: path = "/../"
+ * Output: "/"
+ * Explanation: Going one level up from the root directory is a no-op, as the root level is the highest level you can go.
+ * Example 3:
+ * <p>
+ * Input: path = "/home//foo/"
+ * Output: "/home/foo"
+ * Explanation: In the canonical path, multiple consecutive slashes are replaced by a single one.
+ * Example 4:
+ * <p>
+ * Input: path = "/a/./b/../../c/"
+ * Output: "/c"
+ * <p>
+ * <p>
+ * Constraints:
+ * <p>
+ * 1 <= path.length <= 3000
+ * path consists of English letters, digits, period '.', slash '/' or '_'.
+ * path is a valid absolute Unix path.
  */
 public class SimplifyPath {
-    /**
-     * Main method
-     *
-     * @param args
-     * @throws Exception
-     */
     public static void main(String[] args) throws Exception {
-        System.out.println(new SimplifyPath().simplifyPath("/home/"));
+        System.out.println(new SimplifyPath().simplifyPath1("/home/"));
     }
 
     public String simplifyPath(String path) {
+        Deque<String> stack = new ArrayDeque<>();
+        Set<String> dirs = Set.of(".", "", "..");
+        for (String token : path.split("/")) {
+            if (!stack.isEmpty() && "..".equals(token)) {
+                stack.pop();
+            } else if (!dirs.contains(token)) {
+                stack.push(token);
+            }
+        }
+
+        if (stack.isEmpty()) {
+            return "/";
+        }
+        StringBuilder ans = new StringBuilder();
+        while (!stack.isEmpty()) {
+            ans.append("/").append(stack.removeLast());
+        }
+        return ans.toString();
+    }
+
+    public String simplifyPath1(String path) {
         if (path == null || path.isEmpty()) return "/";
         StringTokenizer st = new StringTokenizer(path, "/");
         Deque<String> dQueue = new ArrayDeque<>();

@@ -25,46 +25,87 @@ package com.vaani.leetcode.math;
  *
  * <p>2 <= S.length <= 100 S will only contain lowercase letters and digits 2 through 9. S starts
  * with a letter. 1 <= K <= 10^9 The decoded string is guaranteed to have less than 2^63 letters.
- *
- * <p>Solution: General idea is as shown below example: If S = "leet2" and K = 6 the answer is "e"
- * which is same as finding answer for K = 2. As soon as the product exceeds the total value of K as
- * in this case the product of 4 (leet) x 2 is 8 and 8 clearly exceeds 6 therefore we can reduce K
- * to 8 - 6 = 2 and start from the beginning once again. Repeat the same process until we reach the
- * answer.
  */
 public class DecodedStringAtIndex {
     public static void main(String[] args) {
         System.out.println(
-                new DecodedStringAtIndex().decodeAtIndex("a2345678999999999999999", 1000000000));
+                new DecodedStringAtIndex.Solution1().decodeAtIndex("a2345678999999999999999", 1000000000));
     }
 
-    public String decodeAtIndex(String S, int K) {
-        long product = 0;
-        char lastC = S.charAt(0);
-        for (int i = 0, l = S.length(); i < l; ) {
-            char c = S.charAt(i);
-            if (Character.isLetter(c)) {
-                lastC = c;
-                product++;
-                i++;
-                if (K == product) break;
-            } else {
-                long temp = (product * Integer.parseInt(String.valueOf(c)));
-                if (temp == K) break;
-                else {
-                    if (temp > K) {
-                        long x = (K / product);
-                        if ((product * x) == K) break;
-                        K -= (product * x);
-                        i = 0;
-                        product = 0;
+    static class Solution1 {
+        /**
+         * <p>Solution: General idea is as shown below example: If S = "leet2" and K = 6 the answer is "e"
+         * which is same as finding answer for K = 2. As soon as the product exceeds the total value of K as
+         * in this case the product of 4 (leet) x 2 is 8 and 8 clearly exceeds 6 therefore we can reduce K
+         * to 8 - 6 = 2 and start from the beginning once again. Repeat the same process until we reach the
+         * answer.
+         */
+        public String decodeAtIndex(String S, int K) {
+            long product = 0;
+            char ans = S.charAt(0);
+            for (int i = 0, l = S.length(); i < l; ) {
+                char c = S.charAt(i);
+                if (Character.isLetter(c)) {
+                    ans = c;
+                    product++;
+                    i++;
+                    if (K == product) {
+                        break;
+                    }
+                } else {
+                    long temp = (product * Integer.parseInt(String.valueOf(c)));
+                    if (temp == K) {
+                        break;
                     } else {
-                        product = temp;
-                        i++;
+                        if (temp > K) {
+                            long x = (K / product);
+                            if ((product * x) == K) {
+                                break;
+                            }
+                            K -= (product * x);
+                            i = 0;
+                            product = 0;
+                        } else {
+                            product = temp;
+                            i++;
+                        }
                     }
                 }
             }
+            return String.valueOf(ans);
         }
-        return String.valueOf(lastC);
     }
+
+    static class Solution2 {
+        public String decodeAtIndex(String S, int K) {
+            long len = 0;
+
+            for (char c : S.toCharArray()) {
+                if (Character.isDigit(c)) {
+                    len *= (c - '0');
+                } else {
+                    ++len;
+                }
+            }
+
+            for (int i = S.length() - 1; i >= 0; i--) {
+                K %= len;
+
+                char c = S.charAt(i);
+
+                if (K == 0 && c >= 'a' && c <= 'z') {
+                    return "" + c;
+                }
+
+                if (Character.isDigit(c)) {
+                    len /= (c - '0');
+                } else {
+                    --len;
+                }
+            }
+            return "";
+        }
+
+    }
+
 }
