@@ -3,41 +3,58 @@ package com.vaani.leetcode.hashing;
 import java.util.*;
 
 /**
- * 04/05/2018. Given a list of words, we may encode it by writing
- * a reference string S and a list of indexes A.
- *
- * <p>For example, if the list of words is ["time", "me", "bell"], we can write it as S =
- * "time#bell#" and indexes = [0, 2, 5].
- *
- * <p>Then for each index, we will recover the word by reading from the reference string from that
- * index until we reach a "#" character.
- *
- * <p>What is the length of the shortest reference string S possible that encodes the given words?
- *
- * <p>Example:
- *
- * <p>Input: words = ["time", "me", "bell"] Output: 10 Explanation: S = "time#bell#" and indexes =
- * [0, 2, 5]. Note:
- *
- * <p>1 <= words.length <= 2000. 1 <= words[i].length <= 7. Each word has only lowercase letters.
- *
- * <p>Solution: Sort the words by length and then use a hashmap to map each substring of a com.vaani.leetcode.string
- * with its position.
+ * 820. Short Encoding of Words
+ * Medium
+ * A valid encoding of an array of words is any reference string s and array of indices indices such that:
+ * <p>
+ * - words.length == indices.length
+ * - The reference string s ends with the '#' character.
+ * - For each index indices[i], the substring of s starting from indices[i] and up to (but not including) the next '#' character is equal to words[i].
+ * Given an array of words, return the length of the shortest reference string s possible of any valid encoding of words.
+ * <p>
+ * <p>
+ * <p>
+ * Example 1:
+ * <p>
+ * Input: words = ["time", "me", "bell"]
+ * Output: 10
+ * Explanation: A valid encoding would be s = "time#bell#" and indices = [0, 2, 5].
+ * words[0] = "time", the substring of s starting from indices[0] = 0 to the next '#' is underlined in "time#bell#"
+ * words[1] = "me", the substring of s starting from indices[1] = 2 to the next '#' is underlined in "time#bell#"
+ * words[2] = "bell", the substring of s starting from indices[2] = 5 to the next '#' is underlined in "time#bell#"
+ * Example 2:
+ * <p>
+ * Input: words = ["t"]
+ * Output: 2
+ * Explanation: A valid encoding would be s = "t#" and indices = [0].
+ * <p>
+ * <p>
+ * <p>
+ * Constraints:
+ * <p>
+ * 1 <= words.length <= 2000
+ * 1 <= words[i].length <= 7
+ * words[i] consists of only lowercase letters.
  */
 public class ShortEncodingOfWords {
-    class Node {
-        String s;
-        int l;
-
-        Node(String s, int l) {
-            this.s = s;
-            this.l = l;
-        }
-    }
-
     public static void main(String[] args) {
         String[] A = {"memo", "me", "mo"};
         System.out.println(new ShortEncodingOfWords().minimumLengthEncoding(A));
+    }
+
+    /**
+     * <p>Solution: Sort the words by length and then use a hashmap to map each substring of a com.vaani.leetcode.string
+     * with its position.
+     */
+
+    static class Node {
+        String s;
+        int len;
+
+        Node(String s, int len) {
+            this.s = s;
+            this.len = len;
+        }
     }
 
     public int minimumLengthEncoding(String[] words) {
@@ -45,18 +62,20 @@ public class ShortEncodingOfWords {
         for (String w : words) {
             list.add(new Node(w, w.length()));
         }
-        Collections.sort(list, (o1, o2) -> Integer.compare(o2.l, o1.l));
+        list.sort((o1, o2) -> Integer.compare(o2.len, o1.len));
+
         Map<String, Integer> map = new HashMap<>();
-        int count = 0;
+
+        int ans = 0;
         for (Node node : list) {
             String str = node.s;
             if (!map.containsKey(str)) {
                 for (int i = 0, l = str.length(); i < l; i++) {
-                    map.put(str.substring(i, l), count + i);
+                    map.put(str.substring(i, l), ans + i);
                 }
-                count += (str.length() + 1);
+                ans += (str.length() + 1);
             }
         }
-        return count;
+        return ans;
     }
 }

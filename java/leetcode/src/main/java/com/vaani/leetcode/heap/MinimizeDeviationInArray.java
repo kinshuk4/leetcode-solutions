@@ -50,7 +50,7 @@ public class MinimizeDeviationInArray {
                 set.add(num);
             } else {
                 set.add(num * 2);
-            }Next Permutation
+            }
         }
 
         int ans = Integer.MAX_VALUE;
