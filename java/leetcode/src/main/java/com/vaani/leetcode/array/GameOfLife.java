@@ -36,10 +36,18 @@ package com.vaani.leetcode.array;
  * In this question, we represent the board using a 2D array. In principle, the board is infinite, which would cause problems when the active area encroaches the border of the array. How would you address these problems?
  */
 public class GameOfLife {
-    private static final int die = 2;
-    private static final int live = 3;
+    private static final int DIE = 2;
+    private static final int LIVE = 3;
+    private static final int[][] DIRS = {{-1, -1}, // north west
+            {-1, 0},  // north
+            {-1, 1},  // north east
+            {0, -1},  // west
+            {0, 1},   // east
+            {1, -1},  // south west
+            {1, 0},   // south
+            {1, 1}};  // south east
 
-    // just use two vars and we can get it done by flipping the value.
+    // just use two vars and we can get it done by flipping the value
     public void gameOfLife(int[][] board) {
         // we only flip the 1 to die and 0 to live
         // so when we find a die around, it must be a previous 1
@@ -48,15 +56,15 @@ public class GameOfLife {
         int n = board[0].length;
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                int livesAround = countLive(i, j, board);
+                int livesAround = countLives(i, j, board);
                 // if cell is dead
                 if (board[i][j] == 0 && livesAround == 3) {
-                    board[i][j] = live;
+                    board[i][j] = LIVE;
                 } else if (board[i][j] == 1) { // if cell is alive
                     if (livesAround == 2 || livesAround == 3) {
                         continue;
                     }
-                    board[i][j] = die;
+                    board[i][j] = DIE;
                 }
             }
         }
@@ -64,32 +72,29 @@ public class GameOfLife {
         // fix the board again
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                if (board[i][j] == die)
+                if (board[i][j] == DIE)
                     board[i][j] = 0;
-                if (board[i][j] == live)
+                if (board[i][j] == LIVE)
                     board[i][j] = 1;
             }
         }
 
     }
 
-    private int countLive(int i, int j, int[][] board) {
+    private int countLives(int i, int j, int[][] board) {
         int count = 0;
-        int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}, {1, 1}, {1, -1}, {-1, 1}, {-1, -1}};
 
-        for (int[] dir : dirs) {
+        for (int[] dir : DIRS) {
             int x = i + dir[0];
             int y = j + dir[1];
 
             if (x >= 0 && y >= 0 && x < board.length && y < board[0].length) {
 
-                if (board[x][y] == 1 || board[x][y] == die) {
+                if (board[x][y] == 1 || board[x][y] == DIE) {
                     count++;
                 }
             }
         }
-
         return count;
-
     }
 }
