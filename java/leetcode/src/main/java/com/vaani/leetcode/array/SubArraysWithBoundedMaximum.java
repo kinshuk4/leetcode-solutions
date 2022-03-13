@@ -1,49 +1,53 @@
 package com.vaani.leetcode.array;
 
 /**
- * 29/03/2019 We are given an array A of positive integers, and
- * two positive integers L and R (L <= R).
- *
- * <p>Return the number of (contiguous, non-empty) subarrays such that the value of the maximum
- * array element in that subarray is at least L and at most R.
- *
- * <p>Example : Input: A = [2, 1, 4, 3] L = 2 R = 3 Output: 3 Explanation: There are three subarrays
- * that meet the requirements: [2], [2, 1], [3]. Note:
- *
- * <p>L, R and A[i] will be an integer in the range [0, 10^9]. The length of A will be in the range
- * of [1, 50000].
+ * https://leetcode.com/problems/number-of-subarrays-with-bounded-maximum/
+ * 795. Number of Subarrays with Bounded Maximum
+ * Medium
+ * <p>
+ * We are given an array nums of positive integers, and two positive integers left and right (left <= right).
+ * <p>
+ * Return the number of (contiguous, non-empty) subarrays such that the value of the maximum array element in that subarray is at least left and at most right.
+ * <p>
+ * Example:
+ * Input:
+ * nums = [2, 1, 4, 3]
+ * left = 2
+ * right = 3
+ * Output: 3
+ * Explanation: There are three subarrays that meet the requirements: [2], [2, 1], [3].
+ * Note:
+ * <p>
+ * left, right, and nums[i] will be an integer in the range [0, 10^9].
+ * The length of nums will be in the range of [1, 50000].
  */
 public class SubArraysWithBoundedMaximum {
-    /**
-     * Main method
-     *
-     * @param args
-     */
     public static void main(String[] args) {
         int[] A = {2, 1, 4, 3};
         System.out.println(new SubArraysWithBoundedMaximum().numSubarrayBoundedMax(A, 2, 3));
     }
 
-    public int numSubarrayBoundedMax(int[] A, int L, int R) {
-        int[] DP = new int[A.length];
+    public int numSubarrayBoundedMax(int[] nums, int left, int right) {
+        final int n = nums.length;
+        int[] dp = new int[n];
         int v = -1;
-        for (int i = A.length - 1; i >= 0; i--) {
-            if (A[i] >= L && A[i] <= R) {
+        for (int i = n - 1; i >= 0; i--) {
+            if (nums[i] >= left && nums[i] <= right) {
                 if (v != -1) {
-                    DP[i] = v - i + 1;
+                    dp[i] = v - i + 1;
                 } else {
-                    DP[i] = 1;
+                    dp[i] = 1;
                     v = i;
                 }
-            } else if (A[i] < L) {
+            } else if (nums[i] < left) {
                 if (v == -1) {
                     v = i;
                 }
-                if (i + 1 < A.length) {
-                    if (A[i + 1] < L || (A[i + 1] >= L && A[i + 1] <= R)) {
-                        DP[i] = DP[i + 1];
+                if (i + 1 < n) {
+                    if (nums[i + 1] < left || (nums[i + 1] >= left && nums[i + 1] <= right)) {
+                        dp[i] = dp[i + 1];
                     } else {
-                        DP[i] = 0;
+                        dp[i] = 0;
                     }
                 }
             } else {
@@ -51,8 +55,8 @@ public class SubArraysWithBoundedMaximum {
             }
         }
         int sum = 0;
-        for (int i = 0; i < DP.length; i++) {
-            sum += DP[i];
+        for (int j : dp) {
+            sum += j;
         }
         return sum;
     }
