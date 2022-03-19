@@ -1,6 +1,6 @@
 package com.vaani.leetcode.tree.bst;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -30,7 +30,7 @@ import java.util.LinkedList;
  */
 public class FindModeInBinarySearchTree {
     static class UsingFrequencyMap {
-        public int[] findMode(BinaryTreeNode root) {
+        public int[] findMode(TreeNode root) {
             HashMap<Integer, Integer> map = new HashMap<>();
             preorder(root, map);
             LinkedList<Integer> list = new LinkedList<>();
@@ -50,7 +50,7 @@ public class FindModeInBinarySearchTree {
             return result;
         }
 
-        private void preorder(BinaryTreeNode root, HashMap<Integer, Integer> map) {
+        private void preorder(TreeNode root, HashMap<Integer, Integer> map) {
             if (root == null) {
                 return;
             }
@@ -61,7 +61,7 @@ public class FindModeInBinarySearchTree {
     }
 
     static class UsingO1SpaceInorderTraversal {
-        public int[] findMode(BinaryTreeNode root) {
+        public int[] findMode(TreeNode root) {
             inorder(root);
             modes = new int[modeCount];
             modeCount = 0;
@@ -93,7 +93,7 @@ public class FindModeInBinarySearchTree {
             }
         }
 
-        private void inorder(BinaryTreeNode root) {
+        private void inorder(TreeNode root) {
             if (root == null) return;
             inorder(root.left);
             handleValue(root.val);
@@ -102,7 +102,7 @@ public class FindModeInBinarySearchTree {
     }
 
     static class UsingO1SpaceInorderMorrisTraversal {
-        public int[] findMode(BinaryTreeNode root) {
+        public int[] findMode(TreeNode root) {
             inorder(root);
             modes = new int[modeCount];
             modeCount = 0;
@@ -135,14 +135,14 @@ public class FindModeInBinarySearchTree {
         }
 
         // Morris Traversal
-        private void inorder(BinaryTreeNode root) {
-            BinaryTreeNode node = root;
+        private void inorder(TreeNode root) {
+            TreeNode node = root;
             while (node != null) {
                 if (node.left == null) {
                     handleValue(node.val);
                     node = node.right;
                 } else {
-                    BinaryTreeNode prev = node.left;
+                    TreeNode prev = node.left;
                     while (prev.right != null && prev.right != node)
                         prev = prev.right;
                     if (prev.right == null) {
