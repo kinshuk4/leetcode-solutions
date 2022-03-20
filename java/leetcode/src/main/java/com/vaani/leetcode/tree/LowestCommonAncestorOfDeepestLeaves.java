@@ -1,6 +1,6 @@
 package com.vaani.leetcode.tree;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 /**
  * https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves/
@@ -45,7 +45,7 @@ import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
  */
 public class LowestCommonAncestorOfDeepestLeaves {
     SmallestSubtreeWithAllTheDeepestNodes smallestSubtreeWithAllTheDeepestNodes = new SmallestSubtreeWithAllTheDeepestNodes();
-    public BinaryTreeNode lcaDeepestLeaves(BinaryTreeNode root) {
+    public TreeNode lcaDeepestLeaves(TreeNode root) {
         return smallestSubtreeWithAllTheDeepestNodes.subtreeWithAllDeepest(root);
     }
 }
