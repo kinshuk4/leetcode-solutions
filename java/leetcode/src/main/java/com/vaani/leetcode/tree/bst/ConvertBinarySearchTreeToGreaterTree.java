@@ -1,6 +1,6 @@
 package com.vaani.leetcode.tree.bst;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 /**
  * https://leetcode.com/problems/binary-search-tree-to-greater-sum-tree/
@@ -35,7 +35,7 @@ import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
 public class ConvertBinarySearchTreeToGreaterTree {
     ConvertBSTToGreaterTree cbgt = new ConvertBSTToGreaterTree();
 
-    public BinaryTreeNode bstToGst(BinaryTreeNode root) {
+    public TreeNode bstToGst(TreeNode root) {
         return cbgt.convertBST(root);
     }
 }
