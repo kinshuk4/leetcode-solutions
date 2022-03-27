@@ -1,7 +1,7 @@
 package com.vaani.leetcode.tree.bst;
 
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 /**
  * https://leetcode.com/problems/trim-a-binary-search-tree/
@@ -49,7 +49,7 @@ Output:
 
  */
 public class TrimaBinarySearchTree {
-    public BinaryTreeNode trimBST(BinaryTreeNode root, int L, int R) {
+    public TreeNode trimBST(TreeNode root, int L, int R) {
         if (root == null) {
             return null;
         }
