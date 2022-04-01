@@ -1,6 +1,6 @@
 package com.vaani.leetcode.design;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 import java.util.*;
 
@@ -53,16 +53,16 @@ public class SerializeDeserializeBinaryTree {
     private static final String NULL = "#";
 
     public static void main(String[] args) throws Exception {
-        BinaryTreeNode root = new BinaryTreeNode(1);
-        BinaryTreeNode two = new BinaryTreeNode(2);
-        BinaryTreeNode three = new BinaryTreeNode(3);
-        BinaryTreeNode four = new BinaryTreeNode(4);
-        BinaryTreeNode five = new BinaryTreeNode(5);
-        BinaryTreeNode six = new BinaryTreeNode(6);
-        BinaryTreeNode seven = new BinaryTreeNode(7);
-        BinaryTreeNode eight = new BinaryTreeNode(8);
-        BinaryTreeNode nine = new BinaryTreeNode(9);
-        BinaryTreeNode ten = new BinaryTreeNode(10);
+        TreeNode root = new TreeNode(1);
+        TreeNode two = new TreeNode(2);
+        TreeNode three = new TreeNode(3);
+        TreeNode four = new TreeNode(4);
+        TreeNode five = new TreeNode(5);
+        TreeNode six = new TreeNode(6);
+        TreeNode seven = new TreeNode(7);
+        TreeNode eight = new TreeNode(8);
+        TreeNode nine = new TreeNode(9);
+        TreeNode ten = new TreeNode(10);
         root.left = null;
         root.right = two;
         two.left = three;
@@ -75,11 +75,11 @@ public class SerializeDeserializeBinaryTree {
         nine.right = ten;
         String serializedStr = new SerializeDeserializeBinaryTree().serialize(root);
 
-        BinaryTreeNode result = new SerializeDeserializeBinaryTree().deserialize(serializedStr);
+        TreeNode result = new SerializeDeserializeBinaryTree().deserialize(serializedStr);
     }
 
     // Encodes a tree to a single string.
-    public String serialize(BinaryTreeNode root) {
+    public String serialize(TreeNode root) {
         if (root == null) {
             return null;
         }
@@ -93,7 +93,7 @@ public class SerializeDeserializeBinaryTree {
         return sb.toString();
     }
 
-    private void encode(BinaryTreeNode root, List<String> list) {
+    private void encode(TreeNode root, List<String> list) {
         if (root == null) {
             list.add(NULL);
         } else {
@@ -104,7 +104,7 @@ public class SerializeDeserializeBinaryTree {
     }
 
     // Decodes your encoded data to tree.
-    public BinaryTreeNode deserialize(String data) {
+    public TreeNode deserialize(String data) {
         if (data == null || data.isEmpty()) {
             return null;
         }
@@ -116,12 +116,12 @@ public class SerializeDeserializeBinaryTree {
         return decode(queue);
     }
 
-    private BinaryTreeNode decode(Queue<String> queue) {
+    private TreeNode decode(Queue<String> queue) {
         String nodeVal = queue.poll();
         if (NULL.equals(nodeVal)) {
             return null;
         }
-        BinaryTreeNode root = new BinaryTreeNode(Integer.parseInt(nodeVal));
+        TreeNode root = new TreeNode(Integer.parseInt(nodeVal));
         root.left = decode(queue);
         root.right = decode(queue);
         return root;
