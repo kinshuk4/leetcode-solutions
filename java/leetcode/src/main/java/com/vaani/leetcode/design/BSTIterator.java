@@ -1,6 +1,6 @@
 package com.vaani.leetcode.design;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 import java.util.Stack;
 
@@ -18,18 +18,18 @@ import java.util.Stack;
  */
 public class BSTIterator {
 
-    private Stack<BinaryTreeNode> stack;
+    private Stack<TreeNode> stack;
 
     public static void main(String[] args) throws Exception {
-        BinaryTreeNode root = new BinaryTreeNode(10);
-        root.left = new BinaryTreeNode(5);
-        root.left.left = new BinaryTreeNode(4);
-        root.left.right = new BinaryTreeNode(8);
-        root.left.left.left = new BinaryTreeNode(1);
-        root.left.right.left = new BinaryTreeNode(7);
-        root.right = new BinaryTreeNode(12);
-        root.right.left = new BinaryTreeNode(11);
-        root.right.right = new BinaryTreeNode(15);
+        TreeNode root = new TreeNode(10);
+        root.left = new TreeNode(5);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(8);
+        root.left.left.left = new TreeNode(1);
+        root.left.right.left = new TreeNode(7);
+        root.right = new TreeNode(12);
+        root.right.left = new TreeNode(11);
+        root.right.right = new TreeNode(15);
         BSTIterator ite = new BSTIterator(root);
         System.out.println("Hasnext: " + ite.hasNext());
         System.out.println("next: " + ite.next());
@@ -44,7 +44,7 @@ public class BSTIterator {
         System.out.println("Hasnext: " + ite.hasNext());
     }
 
-    public BSTIterator(BinaryTreeNode root) {
+    public BSTIterator(TreeNode root) {
         stack = new Stack<>();
         fillStack(root);
     }
@@ -61,7 +61,7 @@ public class BSTIterator {
      */
     public int next() {
         if (!stack.isEmpty()) {
-            BinaryTreeNode top = stack.pop();
+            TreeNode top = stack.pop();
             fillStack(top.right);
             return top.val;
         }
@@ -73,8 +73,8 @@ public class BSTIterator {
      *
      * @param node curr node to begin with
      */
-    private void fillStack(BinaryTreeNode node) {
-        BinaryTreeNode ite = node;
+    private void fillStack(TreeNode node) {
+        TreeNode ite = node;
         while (ite != null) {
             stack.push(ite);
             ite = ite.left;
