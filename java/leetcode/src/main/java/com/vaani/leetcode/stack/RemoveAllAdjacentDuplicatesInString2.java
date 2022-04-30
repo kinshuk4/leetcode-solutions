@@ -1,15 +1,19 @@
 package com.vaani.leetcode.stack;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Stack;
 
 /**
- * Given a string s, a k duplicate removal consists of choosing k adjacent and equal letters from s and removing them causing the left and the right side of the deleted substring to concatenate together.
+ * https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/
+ * 1209. Remove All Adjacent Duplicates in String II
+ * Medium
+ * <p>
+ * You are given a string s and an integer k, a k duplicate removal consists of choosing k adjacent and equal letters from s and removing them, causing the left and the right side of the deleted substring to concatenate together.
  * <p>
  * We repeatedly make k duplicate removals on s until we no longer can.
  * <p>
- * Return the final string after all such duplicate removals have been made.
- * <p>
- * It is guaranteed that the answer is unique.
+ * Return the final string after all such duplicate removals have been made. It is guaranteed that the answer is unique.
  * <p>
  * <p>
  * <p>
@@ -30,31 +34,38 @@ import java.util.Stack;
  * <p>
  * Input: s = "pbbcggttciiippooaais", k = 2
  * Output: "ps"
+ * <p>
+ * <p>
+ * Constraints:
+ * <p>
+ * 1 <= s.length <= 105
+ * 2 <= k <= 104
+ * s only contains lower case English letters.
  */
 public class RemoveAllAdjacentDuplicatesInString2 {
     public String removeDuplicates(String s, int k) {
         int count = 0;
-        Stack<Character> stack = new Stack<>();
-        Stack<Integer> countStack = new Stack<>();
+        Deque<Character> charStack = new ArrayDeque<>();
+        Deque<Integer> countStack = new ArrayDeque<>();
         for (char c : s.toCharArray()) {
-            if (!stack.isEmpty() && stack.peek() == c) {
+            if (!charStack.isEmpty() && charStack.peek() == c) {
                 count = countStack.pop() + 1;
             } else {
                 count = 1;
             }
-            stack.push(c);
+            charStack.push(c);
             if (count == k) {
                 while (count-- > 0) {
-                    stack.pop();
+                    charStack.pop();
                 }
             } else {
                 countStack.push(count);
             }
         }
-        StringBuilder res = new StringBuilder();
-        while (!stack.isEmpty()) {
-            res.append(stack.pop());
+        StringBuilder ans = new StringBuilder();
+        while (!charStack.isEmpty()) {
+            ans.append(charStack.pop());
         }
-        return res.reverse().toString();
+        return ans.reverse().toString();
     }
 }
