@@ -1,6 +1,6 @@
 package com.vaani.leetcode.tree;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 /**
  * https://leetcode.com/problems/sum-of-root-to-leaf-binary-numbers/
@@ -33,11 +33,11 @@ public class SumOfRootToLeafBinaryNumbers {
 
 
     static class UsingRecursion {
-        public int sumRootToLeaf(BinaryTreeNode root) {
+        public int sumRootToLeaf(TreeNode root) {
             return dfs(root, 0);
         }
 
-        public int dfs(BinaryTreeNode root, int prevSum) {
+        public int dfs(TreeNode root, int prevSum) {
             if (root == null) {
                 return 0;
             }
