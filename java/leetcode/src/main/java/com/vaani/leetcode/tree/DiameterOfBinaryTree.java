@@ -1,6 +1,6 @@
 package com.vaani.leetcode.tree;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 import static com.vaani.dsa.algo.ds.tree.binary.TreeDiameter.getBinaryTreeDiameter;
 
@@ -21,25 +21,25 @@ public class DiameterOfBinaryTree {
     private int max = 0;
 
     public static void main(String[] args) throws Exception {
-        BinaryTreeNode root = new BinaryTreeNode(5);
-        root.left = new BinaryTreeNode(4);
+        TreeNode root = new TreeNode(5);
+        root.left = new TreeNode(4);
         System.out.println(new DiameterOfBinaryTree().diameterOfBinaryTreeDFS(root));
         System.out.println(new DiameterOfBinaryTree().diameterOfBinaryTree(root));
     }
 
-    public int diameterOfBinaryTreeDFS(BinaryTreeNode root) {
+    public int diameterOfBinaryTreeDFS(TreeNode root) {
         dfs(root);
         return max;
     }
 
-    public int diameterOfBinaryTree(BinaryTreeNode root) {
+    public int diameterOfBinaryTree(TreeNode root) {
         if (root == null) {
             return 0;
         }
         return getBinaryTreeDiameter(root) - 1;
     }
 
-    private int dfs(BinaryTreeNode node) {
+    private int dfs(TreeNode node) {
         if (node != null) {
             int left = dfs(node.left);
             int right = dfs(node.right);
