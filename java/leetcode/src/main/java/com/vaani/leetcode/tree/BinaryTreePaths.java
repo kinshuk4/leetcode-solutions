@@ -1,6 +1,6 @@
 package com.vaani.leetcode.tree;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +30,7 @@ Explanation: All root-to-leaf paths are: 1->2->5, 1->3
 
 public class BinaryTreePaths {
 
-    public List<String> binaryTreePaths(BinaryTreeNode root) {
+    public List<String> binaryTreePaths(TreeNode root) {
         List<String> result = new ArrayList<>();
         if (root == null) {
             return result;
@@ -42,7 +42,7 @@ public class BinaryTreePaths {
 
     private final static String ARROW = "->";
 
-    private void inorder(BinaryTreeNode root, List<String> list, String currentPath) {
+    private void inorder(TreeNode root, List<String> list, String currentPath) {
         currentPath += root.val;
         // if leaf
         if (root.left == null && root.right == null) {
@@ -59,7 +59,7 @@ public class BinaryTreePaths {
 
     }
 
-    private void inorder1(BinaryTreeNode root, List<String> list, String currentPath) {
+    private void inorder1(TreeNode root, List<String> list, String currentPath) {
         if (root != null) {
             if (root.left == null && root.right == null) {
                 list.add(currentPath + root.val);

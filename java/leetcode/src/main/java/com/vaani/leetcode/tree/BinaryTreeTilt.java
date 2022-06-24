@@ -1,6 +1,6 @@
 package com.vaani.leetcode.tree;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 /**
  * https://leetcode.com/problems/binary-tree-tilt/
@@ -37,9 +37,9 @@ Note:
 public class BinaryTreeTilt {
 
     public static void main(String[] args) {
-        BinaryTreeNode node = new BinaryTreeNode(1);
-        node.left = new BinaryTreeNode(2);
-        node.right = new BinaryTreeNode(3);
+        TreeNode node = new TreeNode(1);
+        node.left = new TreeNode(2);
+        node.right = new TreeNode(3);
         System.out.println(new BinaryTreeTilt().findTilt(node));
     }
 
@@ -50,7 +50,7 @@ public class BinaryTreeTilt {
 
     int result = 0;
 
-    public int findTilt(BinaryTreeNode root) {
+    public int findTilt(TreeNode root) {
         if (root == null) {
             return 0;
         }
@@ -58,7 +58,7 @@ public class BinaryTreeTilt {
         return result;
     }
 
-    private int dfs(BinaryTreeNode node) {
+    private int dfs(TreeNode node) {
         if (node == null) {
             return 0;
         }
