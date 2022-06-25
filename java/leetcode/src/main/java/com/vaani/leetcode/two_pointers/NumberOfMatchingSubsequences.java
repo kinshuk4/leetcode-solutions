@@ -37,20 +37,19 @@ public class NumberOfMatchingSubsequences {
         return count;
     }
 
-    private boolean isSubsequence(String S, String P) {
-        int i = 0, j = 0;
-        if (P.length() > S.length()) return false;
-        for (; ; ) {
-            if (j >= P.length()) return true;
-            else if (i >= S.length()) return false;
-            else {
-                if (S.charAt(i) == P.charAt(j)) {
-                    i++;
-                    j++;
-                } else {
-                    i++;
-                }
+    private boolean isSubsequence(String word, String inputString) {
+        int prevCharIndex = 0;
+
+        for (char ch : word.toCharArray()) {
+
+            int index = inputString.indexOf(ch, prevCharIndex);
+            if (index == -1) {
+                return false;
             }
+
+            prevCharIndex = index + 1;
         }
+
+        return true;
     }
 }
