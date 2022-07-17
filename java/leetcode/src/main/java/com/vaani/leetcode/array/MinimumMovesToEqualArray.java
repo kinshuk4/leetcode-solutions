@@ -21,7 +21,7 @@ import java.util.Arrays;
  * <p>[1,2,3] => [2,2,3] => [2,2,2]
  *
  * <p>Solution: O(n log n): Sort the array and find the median of the array. Use the median of array
-* to increment/decrement other value of array. Sum up the difference and return the answer.
+ * to increment/decrement other value of array. Sum up the difference and return the answer.
  */
 public class MinimumMovesToEqualArray {
     /**
@@ -36,8 +36,11 @@ public class MinimumMovesToEqualArray {
     }
 
     public int minMoves2(int[] nums) {
-        if (nums.length == 1) return 0;
-        else if (nums.length == 2) return Math.abs(nums[0] - nums[1]);
+        if (nums.length == 1) {
+            return 0;
+        } else if (nums.length == 2) {
+            return Math.abs(nums[0] - nums[1]);
+        }
         Arrays.sort(nums);
         int median;
         if ((nums.length % 2) == 1) {
