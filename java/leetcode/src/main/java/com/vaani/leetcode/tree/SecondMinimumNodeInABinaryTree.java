@@ -1,6 +1,6 @@
 package com.vaani.leetcode.tree;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -44,7 +44,7 @@ Explanation: The smallest value is 2, but there isn't any second smallest value.
  */
 public class SecondMinimumNodeInABinaryTree {
     static class GettingAllValuesOnSpace {
-        public int findSecondMinimumValue(BinaryTreeNode root) {
+        public int findSecondMinimumValue(TreeNode root) {
             Set<Integer> uniques = new HashSet<>();
             dfs(root, uniques);
 
@@ -57,7 +57,7 @@ public class SecondMinimumNodeInABinaryTree {
             return result < Integer.MAX_VALUE ? result : -1;
         }
 
-        public void dfs(BinaryTreeNode root, Set<Integer> uniques) {
+        public void dfs(TreeNode root, Set<Integer> uniques) {
             if (root != null) {
                 uniques.add(root.val);
                 dfs(root.left, uniques);
@@ -71,7 +71,7 @@ public class SecondMinimumNodeInABinaryTree {
         // to avoid test case when node value is Integer.MAX_VALUE, hence long
         long min2 = Long.MAX_VALUE;
 
-        public int findSecondMinimumValue(BinaryTreeNode root) {
+        public int findSecondMinimumValue(TreeNode root) {
             if(root == null){
                 return -1;
             }
@@ -81,7 +81,7 @@ public class SecondMinimumNodeInABinaryTree {
             return min2 < Long.MAX_VALUE ? (int)min2 : -1;
         }
 
-        public void dfs(BinaryTreeNode root) {
+        public void dfs(TreeNode root) {
             if (root == null) {
                 return;
             }

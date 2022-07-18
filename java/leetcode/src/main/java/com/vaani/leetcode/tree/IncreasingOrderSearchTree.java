@@ -1,6 +1,6 @@
 package com.vaani.leetcode.tree;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -51,22 +51,22 @@ public class IncreasingOrderSearchTree {
     static class UsingExtraSpace {
         // Time Complexity: O(N) where N is the number of nodes in the given tree.
         // Space Complexity: O(N) the size of the answer.
-        public BinaryTreeNode increasingBST(BinaryTreeNode root) {
+        public TreeNode increasingBST(TreeNode root) {
             if (root == null) {
                 return null;
             }
             List<Integer> res = new LinkedList<>();
             inOrder(root, res);
-            BinaryTreeNode newRoot = new BinaryTreeNode(res.get(0));
-            BinaryTreeNode curr = newRoot;
+            TreeNode newRoot = new TreeNode(res.get(0));
+            TreeNode curr = newRoot;
             for (int i = 1; i < res.size(); i++) {
-                curr.right = new BinaryTreeNode(res.get(i));
+                curr.right = new TreeNode(res.get(i));
                 curr = curr.right;
             }
             return newRoot;
         }
 
-        private void inOrder(BinaryTreeNode root, List<Integer> result) {
+        private void inOrder(TreeNode root, List<Integer> result) {
             if (root.left != null) {
                 inOrder(root.left, result);
             }
@@ -78,16 +78,16 @@ public class IncreasingOrderSearchTree {
     }
 
     static class WithoutExtraSpace {
-        BinaryTreeNode curr;
+        TreeNode curr;
 
-        public BinaryTreeNode increasingBST(BinaryTreeNode root) {
-            BinaryTreeNode result = new BinaryTreeNode(0);
+        public TreeNode increasingBST(TreeNode root) {
+            TreeNode result = new TreeNode(0);
             curr = result;
             inorder(root);
             return result.right;
         }
 
-        public void inorder(BinaryTreeNode root) {
+        public void inorder(TreeNode root) {
             if (root == null) {
                 return;
             }

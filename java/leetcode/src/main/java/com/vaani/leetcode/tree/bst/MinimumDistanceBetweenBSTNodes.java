@@ -1,6 +1,6 @@
 package com.vaani.leetcode.tree.bst;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +44,7 @@ import java.util.List;
  */
 public class MinimumDistanceBetweenBSTNodes {
     static class UsingOnSpaceInorder {
-        public int minDiffInBST(BinaryTreeNode root) {
+        public int minDiffInBST(TreeNode root) {
             List<Integer> res = new ArrayList<Integer>();
             inorder(res, root);
             int min = Integer.MAX_VALUE;
@@ -54,7 +54,7 @@ public class MinimumDistanceBetweenBSTNodes {
             return min;
         }
 
-        private void inorder(List<Integer> result, BinaryTreeNode root) {
+        private void inorder(List<Integer> result, TreeNode root) {
             if (root == null) {
                 return;
             }
@@ -67,7 +67,7 @@ public class MinimumDistanceBetweenBSTNodes {
     static class UsingO1SpaceInorder {
         Integer result = Integer.MAX_VALUE, prev = null;
 
-        public int minDiffInBST(BinaryTreeNode root) {
+        public int minDiffInBST(TreeNode root) {
             if (root.left != null) {
                 minDiffInBST(root.left);
             }

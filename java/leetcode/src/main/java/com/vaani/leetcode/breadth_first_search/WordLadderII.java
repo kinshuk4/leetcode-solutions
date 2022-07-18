@@ -3,34 +3,46 @@ package com.vaani.leetcode.breadth_first_search;
 import java.util.*;
 
 /**
- * 24/03/2017. Given two words (beginWord and endWord), and a
- * dictionary's word list, find all shortest transformation sequence(s) from beginWord to endWord,
- * such that:
- *
- * <p>Only one letter can be changed at a time Each transformed word must exist in the word list.
- * Note that beginWord is not a transformed word. For example,
- *
- * <p>Given: beginWord = "hit" endWord = "cog" wordList = ["hot","dot","dog","lot","log","cog"]
- * Return [ ["hit","hot","dot","dog","cog"], ["hit","hot","lot","log","cog"] ] Note: Return an empty
- * list if there is no such transformation sequence. All words have the same length. All words
- * contain only lowercase alphabetic characters. You may assume no duplicates in the word list. You
- * may assume beginWord and endWord are non-empty and are not the same.
+ * https://leetcode.com/problems/word-ladder-ii/
+ * 126. Word Ladder II
+ * Hard
+ * <p>
+ * <p>
+ * A transformation sequence from word beginWord to word endWord using a dictionary wordList is a sequence of words beginWord -> s1 -> s2 -> ... -> sk such that:
+ * <p>
+ * Every adjacent pair of words differs by a single letter.
+ * Every si for 1 <= i <= k is in wordList. Note that beginWord does not need to be in wordList.
+ * sk == endWord
+ * Given two words, beginWord and endWord, and a dictionary wordList, return all the shortest transformation sequences from beginWord to endWord, or an empty list if no such sequence exists. Each sequence should be returned as a list of the words [beginWord, s1, s2, ..., sk].
+ * <p>
+ * <p>
+ * <p>
+ * Example 1:
+ * <p>
+ * Input: beginWord = "hit", endWord = "cog", wordList = ["hot","dot","dog","lot","log","cog"]
+ * Output: [["hit","hot","dot","dog","cog"],["hit","hot","lot","log","cog"]]
+ * Explanation: There are 2 shortest transformation sequences:
+ * "hit" -> "hot" -> "dot" -> "dog" -> "cog"
+ * "hit" -> "hot" -> "lot" -> "log" -> "cog"
+ * Example 2:
+ * <p>
+ * Input: beginWord = "hit", endWord = "cog", wordList = ["hot","dot","dog","lot","log"]
+ * Output: []
+ * Explanation: The endWord "cog" is not in wordList, therefore there is no valid transformation sequence.
+ * <p>
+ * <p>
+ * Constraints:
+ * <p>
+ * 1 <= beginWord.length <= 5
+ * endWord.length == beginWord.length
+ * 1 <= wordList.length <= 1000
+ * wordList[i].length == beginWord.length
+ * beginWord, endWord, and wordList[i] consist of lowercase English letters.
+ * beginWord != endWord
+ * All the words in wordList are unique.
  */
 public class WordLadderII {
 
-    private static Queue<String> queue = new ArrayDeque<>();
-    private static Set<String> dictionary = new HashSet<>();
-    private static final String CONST = "abcdefghijklmnopqrstuvwxyz";
-    private static Map<String, Set<String>> graph = new HashMap<>();
-    private static Map<String, Integer> minDistance = new HashMap<>();
-    private static List<List<String>> result = new ArrayList<>();
-
-    /**
-     * Main method
-     *
-     * @param args
-     * @throws Exception
-     */
     public static void main(String[] args) throws Exception {
         List<String> dic =
                 Arrays.asList(
@@ -84,85 +96,129 @@ public class WordLadderII {
                         "van", "man", "pit", "guy", "foe", "hid", "mai", "sup", "jay", "hob", "mow", "jot",
                         "are", "pol", "arc", "lax", "aft", "alb", "len", "air", "pug", "pox", "vow", "got",
                         "meg", "zoe", "amp", "ale", "bud", "gee", "pin", "dun", "pat", "ten", "mob");
-        new WordLadderII().findLadders("cet", "ism", dic);
+        new WordLadderII.UsingBfsDfs1().findLadders("cet", "ism", dic);
     }
 
-    public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {
-        dictionary.addAll(wordList);
-        bfs(beginWord, endWord, wordList);
-        List<String> path = new ArrayList<>();
-        path.add(beginWord);
-        dfs(beginWord, endWord, path);
-        System.out.println(result);
-        return result;
-    }
+    static class UsingBfsDfs1 {
+        private static final Queue<String> queue = new ArrayDeque<>();
+        private static final Set<String> dictionary = new HashSet<>();
+        private static final String ALPHABET_SET = "abcdefghijklmnopqrstuvwxyz";
+        private static final Map<String, Set<String>> graph = new HashMap<>();
+        private static final Map<String, Integer> minDistance = new HashMap<>();
+        private static final List<List<String>> result = new ArrayList<>();
 
-    /**
-     * Bfs
-     *
-     * @param beginWord begin word
-     * @param endWord   end word
-     * @param wordList  wordlist
-     */
-    private void bfs(String beginWord, String endWord, List<String> wordList) {
-        queue.offer(beginWord);
-        minDistance.put(beginWord, 0);
-        while (!queue.isEmpty()) {
-            String currWord = queue.poll();
-            StringBuilder childSb = new StringBuilder(currWord);
-            for (int j = 0, ln = childSb.length(); j < ln; j++) {
-                for (int i = 0, l = CONST.length(); i < l; i++) {
-                    char old = childSb.charAt(j);
-                    childSb.replace(j, j + 1, String.valueOf(CONST.charAt(i)));
-                    String child = childSb.toString();
-                    if (dictionary.contains(child)) {
-                        if (minDistance.get(child) == null) {
-                            minDistance.put(child, minDistance.get(currWord) + 1);
-                            addChild(currWord, child);
-                            if (!child.equals(endWord)) queue.offer(child);
-                        } else {
-                            if (minDistance.get(child) == (minDistance.get(currWord) + 1))
+        public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {
+            dictionary.addAll(wordList);
+            bfs(beginWord, endWord, wordList);
+            List<String> path = new ArrayList<>();
+            path.add(beginWord);
+            dfs(beginWord, endWord, path);
+            return result;
+        }
+
+        private void bfs(String beginWord, String endWord, List<String> wordList) {
+            queue.offer(beginWord);
+            minDistance.put(beginWord, 0);
+            while (!queue.isEmpty()) {
+                String currWord = queue.poll();
+                StringBuilder childSb = new StringBuilder(currWord);
+                for (int j = 0, ln = childSb.length(); j < ln; j++) {
+                    for (int i = 0, l = ALPHABET_SET.length(); i < l; i++) {
+                        char old = childSb.charAt(j);
+                        childSb.replace(j, j + 1, String.valueOf(ALPHABET_SET.charAt(i)));
+                        String child = childSb.toString();
+                        if (dictionary.contains(child)) {
+                            if (minDistance.get(child) == null) {
+                                minDistance.put(child, minDistance.get(currWord) + 1);
                                 addChild(currWord, child);
+                                if (!child.equals(endWord)) queue.offer(child);
+                            } else {
+                                if (minDistance.get(child) == (minDistance.get(currWord) + 1))
+                                    addChild(currWord, child);
+                            }
+                        }
+                        childSb.replace(j, j + 1, String.valueOf(old));
+                    }
+                }
+            }
+        }
+
+        private void addChild(String parent, String child) {
+            Set<String> children = graph.get(parent);
+            if (children == null) children = new HashSet<>();
+            children.add(child);
+            graph.put(parent, children);
+        }
+
+        private void dfs(String currWord, String endWord, List<String> path) {
+            if (currWord.equals(endWord)) {
+                result.add(new ArrayList<>(path));
+            } else {
+                Set<String> children = graph.get(currWord);
+                if (children != null) {
+                    for (String c : children) {
+                        path.add(c);
+                        dfs(c, endWord, path);
+                        path.remove(path.size() - 1);
+                    }
+                }
+            }
+        }
+    }
+
+    static class UsingDFS {
+        private final Map<String, Set<String>> graph = new HashMap<>();
+        private final List<List<String>> result = new ArrayList<>();
+        private final Map<String, Integer> distanceMap = new HashMap<>();
+
+
+        public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {
+            buildGraph(graph, beginWord, wordList);
+            dfs(beginWord, endWord, new ArrayList<>());
+            return result;
+        }
+
+        private void buildGraph(Map<String, Set<String>> graph, String beginWord, List<String> wordList) {
+            Queue<String> queue = new LinkedList<>();
+            queue.add(beginWord);
+            distanceMap.put(beginWord, 0);
+            while (!queue.isEmpty()) {
+                int size = queue.size();
+                for (int i = 0; i < size; i++) {
+                    String word = queue.poll();
+                    Set<String> set = graph.getOrDefault(word, new HashSet<>());
+                    graph.put(word, set);
+                    for (String s : wordList) {
+                        int cnt = 0;
+                        for (int j = 0; j < word.length(); j++) {
+                            if (s.charAt(j) != word.charAt(j)) {
+                                cnt++;
+                            }
+                        }
+                        if (cnt == 1) {
+                            if (!distanceMap.containsKey(s)) {
+                                queue.add(s);
+                                distanceMap.put(s, distanceMap.get(word) + 1);
+                            }
+                            set.add(s);
                         }
                     }
-                    childSb.replace(j, j + 1, String.valueOf(old));
+                }
+            }
+        }
+
+        private void dfs(String word, String target, List<String> ans) {
+            ans.add(word);
+            if (target.equals(word)) {
+                result.add(ans);
+            } else {
+                for (String child : graph.get(word)) {
+                    if (distanceMap.get(word) + 1 == distanceMap.getOrDefault(child, Integer.MAX_VALUE)) {
+                        dfs(child, target, new ArrayList<>(ans));
+                    }
                 }
             }
         }
     }
 
-    /**
-     * Add child
-     *
-     * @param parent parent
-     * @param child  child
-     */
-    private void addChild(String parent, String child) {
-        Set<String> children = graph.get(parent);
-        if (children == null) children = new HashSet<>();
-        children.add(child);
-        graph.put(parent, children);
-    }
-
-    /**
-     * Dfs to build path
-     *
-     * @param currWord node
-     * @param endWord  endword
-     * @param path     path
-     */
-    private void dfs(String currWord, String endWord, List<String> path) {
-        if (currWord.equals(endWord)) {
-            result.add(new ArrayList<>(path));
-        } else {
-            Set<String> children = graph.get(currWord);
-            if (children != null) {
-                for (String c : children) {
-                    path.add(c);
-                    dfs(c, endWord, path);
-                    path.remove(path.size() - 1);
-                }
-            }
-        }
-    }
 }

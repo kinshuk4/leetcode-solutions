@@ -1,42 +1,50 @@
 package com.vaani.leetcode.string;
 
+import java.util.Arrays;
+
 /**
- * 24/07/2019 There are N dominoes in a line, and we place each
- * domino vertically upright.
- *
- * <p>In the beginning, we simultaneously push some of the dominoes either to the left or to the
- * right.
- *
- * <p>After each second, each domino that is falling to the left pushes the adjacent domino on the
- * left.
- *
- * <p>Similarly, the dominoes falling to the right push their adjacent dominoes standing on the
- * right.
- *
- * <p>When a vertical domino has dominoes falling on it from both sides, it stays still due to the
- * balance of the forces.
- *
- * <p>For the purposes of this question, we will consider that a falling domino expends no
- * additional force to a falling or already fallen domino.
- *
- * <p>Given a string "S" representing the initial state. S[i] = 'L', if the i-th domino has been
- * pushed to the left; S[i] = 'R', if the i-th domino has been pushed to the right; S[i] = '.', if
- * the i-th domino has not been pushed.
- *
- * <p>Return a string representing the final state.
- *
- * <p>Example 1:
- *
- * <p>Input: ".L.R...LR..L.." Output: "LL.RR.LLRRLL.." Example 2:
- *
- * <p>Input: "RR.L" Output: "RR.L" Explanation: The first domino expends no additional force on the
- * second domino. Note:
- *
- * <p>0 <= N <= 10^5 String dominoes contains only 'L', 'R' and '.' Solution: O(N)
+ * 838. Push Dominoes
+ * Medium
+ * <p>
+ * There are n dominoes in a line, and we place each domino vertically upright. In the beginning, we simultaneously push some of the dominoes either to the left or to the right.
+ * <p>
+ * After each second, each domino that is falling to the left pushes the adjacent domino on the left. Similarly, the dominoes falling to the right push their adjacent dominoes standing on the right.
+ * <p>
+ * When a vertical domino has dominoes falling on it from both sides, it stays still due to the balance of the forces.
+ * <p>
+ * For the purposes of this question, we will consider that a falling domino expends no additional force to a falling or already fallen domino.
+ * <p>
+ * You are given a string dominoes representing the initial state where:
+ * <p>
+ * dominoes[i] = 'L', if the ith domino has been pushed to the left,
+ * dominoes[i] = 'R', if the ith domino has been pushed to the right, and
+ * dominoes[i] = '.', if the ith domino has not been pushed.
+ * Return a string representing the final state.
+ * <p>
+ * <p>
+ * <p>
+ * Example 1:
+ * <p>
+ * Input: dominoes = "RR.L"
+ * Output: "RR.L"
+ * Explanation: The first domino expends no additional force on the second domino.
+ * Example 2:
+ * <p>
+ * <p>
+ * Input: dominoes = ".L.R...LR..L.."
+ * Output: "LL.RR.LLRRLL.."
+ * <p>
+ * <p>
+ * Constraints:
+ * <p>
+ * n == dominoes.length
+ * 1 <= n <= 105
+ * dominoes[i] is either 'L', 'R', or '.'.
  */
 public class PushDominoes {
     public static void main(String[] args) {
-        System.out.println(new PushDominoes().pushDominoes("RR.L"));
+//        System.out.println(new PushDominoes.UsingCountArray().pushDominoes("RR.L"));
+        System.out.println(new PushDominoes.UsingCountArray().pushDominoes("..R..")); // ..RRR
     }
 
     public String pushDominoes(String dominoes) {
@@ -71,5 +79,62 @@ public class PushDominoes {
             }
         }
         return String.valueOf(A);
+    }
+
+    static class UsingCountArray {
+        public String pushDominoes(String dominoes) {
+            int n = dominoes.length();
+            int[] left = new int[n];
+            int[] right = new int[n];
+            char prev = '.';
+            int count = 0;
+            for (int i = 0; i < n; i++) {
+                char c = dominoes.charAt(i);
+                if (c == 'R') {
+                    count = 1;
+                    prev = c;
+                }else if(c == 'L') {
+                    count = 0;
+                    prev = c;
+                }else if (c == '.' && prev == 'R'){
+                    right[i] = count++;
+                }
+            }
+
+            prev = '.';
+            for (int i = n - 1; i >= 0; i--) {
+                char c = dominoes.charAt(i);
+                if (c == 'L') {
+                    count = 1;
+                    prev = c;
+                }else if(c == 'R') {
+                    count = 0;
+                    prev = c;
+                }else if (c == '.' && prev == 'L'){
+                    left[i] = count++;
+                }
+            }
+            System.out.println(Arrays.toString(right));
+            System.out.println(Arrays.toString(left));
+            char[] ans = new char[n];
+            for (int i = 0; i < n; i++) {
+                int L = left[i];
+                int R = right[i];
+                if (L == 0 && R == 0) {
+                    ans[i] = dominoes.charAt(i);
+                } else if (L == 0) {
+                    ans[i] = 'R';
+                } else if (R == 0) {
+                    ans[i] = 'L';
+                } else if (L == R) {
+                    ans[i] = '.';
+                }else if(L < R) {
+                    ans[i] = 'L';
+                }else {
+                    ans[i] = 'R';
+                }
+            }
+            return new String(ans);
+        }
     }
 }

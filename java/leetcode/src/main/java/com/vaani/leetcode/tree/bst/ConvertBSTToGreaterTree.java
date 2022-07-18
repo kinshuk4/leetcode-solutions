@@ -1,6 +1,6 @@
 package com.vaani.leetcode.tree.bst;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 /**
  * https://leetcode.com/problems/convert-bst-to-greater-tree/
@@ -27,21 +27,21 @@ Note: This question is the same as 1038: https://leetcode.com/problems/binary-se
  */
 public class ConvertBSTToGreaterTree {
     public static void main(String[] args) {
-        BinaryTreeNode node = new BinaryTreeNode(5);
-        node.right = new BinaryTreeNode(13);
-        node.left = new BinaryTreeNode(2);
-        node.left.left = new BinaryTreeNode(1);
-        node.left.right = new BinaryTreeNode(3);
-        BinaryTreeNode result = new ConvertBSTToGreaterTree().convertBST(node);
+        TreeNode node = new TreeNode(5);
+        node.right = new TreeNode(13);
+        node.left = new TreeNode(2);
+        node.left.left = new TreeNode(1);
+        node.left.right = new TreeNode(3);
+        TreeNode result = new ConvertBSTToGreaterTree().convertBST(node);
         System.out.println(result);
     }
 
-    public BinaryTreeNode convertBST(BinaryTreeNode root) {
+    public TreeNode convertBST(TreeNode root) {
         postOrder(root, 0);
         return root;
     }
 
-    private int postOrder(BinaryTreeNode root, int value) {
+    private int postOrder(TreeNode root, int value) {
         if (root == null) {
             return value;
         }

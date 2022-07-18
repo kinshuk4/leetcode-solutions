@@ -1,6 +1,6 @@
 package com.vaani.leetcode.tree.bst;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 /**
  * 530. Minimum Absolute Difference in BST
@@ -34,20 +34,20 @@ The minimum absolute difference is 1, which is the difference between 2 and 1 (o
  */
 public class MinimumAbsoluteDifferenceInBST {
     public static void main(String[] args) throws Exception {
-        BinaryTreeNode root = new BinaryTreeNode(1);
-        root.right = new BinaryTreeNode(2);
-        root.right.right = new BinaryTreeNode(3);
+        TreeNode root = new TreeNode(1);
+        root.right = new TreeNode(2);
+        root.right.right = new TreeNode(3);
         new MinimumAbsoluteDifferenceInBST().getMinimumDifference(root);
     }
 
     int result = Integer.MAX_VALUE;
 
-    public int getMinimumDifference(BinaryTreeNode root) {
+    public int getMinimumDifference(TreeNode root) {
         getMin(root, null);
         return result;
     }
 
-    private Integer getMin(BinaryTreeNode root, Integer prev) {
+    private Integer getMin(TreeNode root, Integer prev) {
         if (root == null) {
             return prev;
         }

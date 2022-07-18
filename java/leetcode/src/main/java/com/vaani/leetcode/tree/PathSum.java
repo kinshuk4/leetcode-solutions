@@ -1,6 +1,6 @@
 package com.vaani.leetcode.tree;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 import org.junit.Assert;
 
 import static com.vaani.dsa.ds.utils.simple.BinaryTreeUtil.getABinaryTree1;
@@ -30,7 +30,7 @@ https://www.youtube.com/watch?v=Hg82DzMemMI
  */
 public class PathSum {
     public static void main(String[] args) {
-        BinaryTreeNode root = getABinaryTree1();
+        TreeNode root = getABinaryTree1();
 
 
         PathSum test = new PathSum();
@@ -38,14 +38,14 @@ public class PathSum {
         Assert.assertFalse(test.hasPathSum(null, 0)); // as per leetcode
     }
 
-    public boolean hasPathSum(BinaryTreeNode root, int sum) {
+    public boolean hasPathSum(TreeNode root, int sum) {
         if (root == null) {
             return false;
         }
         return hasPathSumRecursiveWithoutHelper(root, sum);
     }
 
-    public boolean hasPathSumRecursiveWithoutHelper(BinaryTreeNode root, int sum) {
+    public boolean hasPathSumRecursiveWithoutHelper(TreeNode root, int sum) {
         // isLeafNode?
         if (root != null && root.left == null && root.right == null) {
             return root.val == sum;
@@ -71,11 +71,11 @@ public class PathSum {
 //        return hasPathSumRecursiveWithoutHelper(root.left, sum - root.val) || hasPathSumRecursiveWithoutHelper(root.right, sum - root.val);
     }
 
-    public boolean hasPathSumRecursive2(BinaryTreeNode root, int sum) {
+    public boolean hasPathSumRecursive2(TreeNode root, int sum) {
         return hasPathSumHelper2(root, sum, 0);
     }
 
-    public boolean hasPathSumHelper2(BinaryTreeNode root, int sum, int currSum) {
+    public boolean hasPathSumHelper2(TreeNode root, int sum, int currSum) {
         if (root == null) {
             return false;
         }

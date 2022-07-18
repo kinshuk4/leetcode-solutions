@@ -1,8 +1,6 @@
 package com.vaani.leetcode.tree;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
-
-import java.util.*;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 /*
 Example 1: Input:
@@ -32,14 +30,14 @@ Sequence is 3,4,5
 Sequence is 2,3 and 3-2-1 as we cannot go up
  */
 public class BinaryTreeLongestConsecutiveSequence {
-    public int longestConsecutive(BinaryTreeNode root) {
+    public int longestConsecutive(TreeNode root) {
         int[] max = new int[1];
         finalLongestConsecutiveSequence(root, max, 0, 0);
         return max[0];
     }
 
     // Time complexity O(n)
-    private void finalLongestConsecutiveSequence(BinaryTreeNode root, int[] max, int count, int target) {
+    private void finalLongestConsecutiveSequence(TreeNode root, int[] max, int count, int target) {
         if(root == null){
             return;
         }else if (root.val == target){

@@ -1,7 +1,7 @@
 package com.vaani.leetcode.tree;
 
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -33,14 +33,14 @@ public class RangeSumOfBST {
     static class BetterDFS {
         int ans;
 
-        public int rangeSumBST(BinaryTreeNode root, int L, int R) {
+        public int rangeSumBST(TreeNode root, int L, int R) {
             ans = 0;
             dfs(root, L, R);
 
             return ans;
         }
 
-        public void dfs(BinaryTreeNode node, int L, int R) {
+        public void dfs(TreeNode node, int L, int R) {
             if (node == null) {
                 return;
             }
@@ -61,13 +61,13 @@ public class RangeSumOfBST {
     static class DFS {
         int ans;
 
-        public int rangeSumBST(BinaryTreeNode root, int L, int R) {
+        public int rangeSumBST(TreeNode root, int L, int R) {
             ans = 0;
             dfs(root, L, R);
             return ans;
         }
 
-        public void dfs(BinaryTreeNode node, int L, int R) {
+        public void dfs(TreeNode node, int L, int R) {
             if (node == null)
                 return;
             if (node.val >= L && node.val <= R) {
@@ -79,12 +79,12 @@ public class RangeSumOfBST {
     }
 
     static class Iterative {
-        public int rangeSumBST(BinaryTreeNode root, int L, int R) {
+        public int rangeSumBST(TreeNode root, int L, int R) {
             int ans = 0;
-            Stack<BinaryTreeNode> stack = new Stack<>();
+            Stack<TreeNode> stack = new Stack<>();
             stack.push(root);
             while (!stack.isEmpty()) {
-                BinaryTreeNode node = stack.pop();
+                TreeNode node = stack.pop();
                 if (node == null) {
                     continue;
                 }
@@ -100,12 +100,12 @@ public class RangeSumOfBST {
     }
 
     static class UsingLevelOrderTraversal {
-        public int rangeSumBST(BinaryTreeNode root, int L, int R) {
+        public int rangeSumBST(TreeNode root, int L, int R) {
             int sum = 0;
-            Queue<BinaryTreeNode> queue = new LinkedList<>();
+            Queue<TreeNode> queue = new LinkedList<>();
             queue.add(root);
             while (!queue.isEmpty()) {
-                BinaryTreeNode curr = queue.poll();
+                TreeNode curr = queue.poll();
 
                 if (curr.val >= L && curr.val <= R) {
                     sum += curr.val;

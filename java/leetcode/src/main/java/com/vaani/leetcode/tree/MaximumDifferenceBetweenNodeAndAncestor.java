@@ -1,6 +1,6 @@
 package com.vaani.leetcode.tree;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 /**
  * 1026. Maximum Difference Between Node and Ancestor
@@ -36,10 +36,10 @@ import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
  * 0 <= Node.val <= 10^5
  */
 public class MaximumDifferenceBetweenNodeAndAncestor {
-    public int maxAncestorDiff(BinaryTreeNode root) {
+    public int maxAncestorDiff(TreeNode root) {
         return root == null ? 0 : helper (root, Integer.MAX_VALUE, Integer.MIN_VALUE);
     }
-    private int helper (BinaryTreeNode root, int min, int max) {
+    private int helper (TreeNode root, int min, int max) {
         // diff when we reach leaf
         if (root == null) {
             return max - min;

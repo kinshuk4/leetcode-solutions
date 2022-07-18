@@ -1,6 +1,6 @@
 package com.vaani.leetcode.tree;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 import static com.vaani.dsa.algo.ds.tree.binary.IsSymmetricTree.isSymmetricRecursive;
 
@@ -17,13 +17,13 @@ import static com.vaani.dsa.algo.ds.tree.binary.IsSymmetricTree.isSymmetricRecur
 public class SymmetricTree {
 
     public static void main(String[] args) throws Exception {
-        BinaryTreeNode node = new BinaryTreeNode(3);
-        node.left = new BinaryTreeNode(4);
-        node.right = new BinaryTreeNode(5);
+        TreeNode node = new TreeNode(3);
+        node.left = new TreeNode(4);
+        node.right = new TreeNode(5);
         System.out.println(new SymmetricTree().isSymmetric(node));
     }
 
-    public boolean isSymmetric(BinaryTreeNode root) {
+    public boolean isSymmetric(TreeNode root) {
         return isSymmetricRecursive(root);
     }
 }

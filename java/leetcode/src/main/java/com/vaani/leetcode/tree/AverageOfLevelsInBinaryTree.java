@@ -1,6 +1,6 @@
 package com.vaani.leetcode.tree;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -26,15 +26,15 @@ public class AverageOfLevelsInBinaryTree {
     static class UsingLevelNode{
         static class LevelNode {
             int level;
-            BinaryTreeNode node;
+            TreeNode node;
 
-            LevelNode(int level, BinaryTreeNode node) {
+            LevelNode(int level, TreeNode node) {
                 this.level = level;
                 this.node = node;
             }
         }
 
-        public List<Double> averageOfLevels(BinaryTreeNode root) {
+        public List<Double> averageOfLevels(TreeNode root) {
             Queue<LevelNode> queue = new ArrayDeque<>();
             LevelNode node = new LevelNode(0, root);
             queue.offer(node);
@@ -66,8 +66,8 @@ public class AverageOfLevelsInBinaryTree {
 
     // submitted
     static class UsingSimpleLevelOrderTraversal {
-        public List<Double> averageOfLevels(BinaryTreeNode root) {
-            Queue<BinaryTreeNode> queue = new ArrayDeque<>();
+        public List<Double> averageOfLevels(TreeNode root) {
+            Queue<TreeNode> queue = new ArrayDeque<>();
             queue.offer(root);
 
             List<Double> result = new ArrayList<>();
@@ -75,7 +75,7 @@ public class AverageOfLevelsInBinaryTree {
                 int queueSize = queue.size();
                 long sum = 0L;
                 for (int i = 0; i < queueSize; i++) {
-                    BinaryTreeNode curr = queue.poll();
+                    TreeNode curr = queue.poll();
                     sum += curr.val;
                     if (curr.left != null) {
                         queue.offer(curr.left);

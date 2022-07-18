@@ -1,6 +1,6 @@
 package com.vaani.leetcode.tree;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -18,7 +18,7 @@ import java.util.Queue;
 public class Cousins_SiblingInBinaryTree {
 
     // not passing all cases
-    public boolean isCousins1(BinaryTreeNode root, int x, int y) {
+    public boolean isCousins1(TreeNode root, int x, int y) {
         if (root == null) {
             return false;
         }
@@ -38,7 +38,7 @@ public class Cousins_SiblingInBinaryTree {
         }
     }
 
-    public int getHeight(BinaryTreeNode root, int x, int height) {
+    public int getHeight(TreeNode root, int x, int height) {
         if (root == null)
             return 0;
         if (root.val == x)
@@ -50,7 +50,7 @@ public class Cousins_SiblingInBinaryTree {
         return getHeight(root.right, x, height + 1);
     }
 
-    public boolean sameParents(BinaryTreeNode root, int x, int y) {
+    public boolean sameParents(TreeNode root, int x, int y) {
         if (root == null) {
             return false;
         }
@@ -65,14 +65,14 @@ public class Cousins_SiblingInBinaryTree {
     }
 
     // submitted
-    boolean isCousins2(BinaryTreeNode root, int x, int y) {
+    boolean isCousins2(TreeNode root, int x, int y) {
         // Use queue to get nodes at the same level
-        Queue<BinaryTreeNode> queue = new LinkedList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
         queue.add(null);
         int found = 0;
         while (!queue.isEmpty()) {
-            BinaryTreeNode current = queue.poll();
+            TreeNode current = queue.poll();
             if (current == null) {
                 // move to next level
                 if (!queue.isEmpty()) queue.add(null);
@@ -94,7 +94,7 @@ public class Cousins_SiblingInBinaryTree {
         return false;
     }
 
-    public boolean isCousins3(BinaryTreeNode root, int x, int y) {
+    public boolean isCousins3(TreeNode root, int x, int y) {
         int[] res = new int[5];
         inorder(root.left, x, y, 0, root, res);
         inorder(root.right, x, y, 0, root, res);
@@ -104,7 +104,7 @@ public class Cousins_SiblingInBinaryTree {
         return false;
     }
 
-    public void inorder(BinaryTreeNode node, int x, int y, int depth, BinaryTreeNode parent, int[] res) {
+    public void inorder(TreeNode node, int x, int y, int depth, TreeNode parent, int[] res) {
         if (node == null)
             return;
         depth = depth + 1;

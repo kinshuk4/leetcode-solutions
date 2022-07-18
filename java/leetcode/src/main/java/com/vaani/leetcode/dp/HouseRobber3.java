@@ -1,6 +1,6 @@
 package com.vaani.leetcode.dp;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 /**
  * The thief has found himself a new place for his thievery again. There is only one entrance to this area, called the "root." Besides the root, each house has one and only one parent house. After a tour, the smart thief realized that "all houses in this place forms a binary tree". It will automatically contact the police if two directly-linked houses were broken into on the same night.
@@ -31,11 +31,11 @@ So, we rob 12 + 17 = 29
 
  */
 public class HouseRobber3 {
-    public int rob(BinaryTreeNode root) {
+    public int rob(TreeNode root) {
         return robRecursive(root);
     }
 
-    public int robRecursive(BinaryTreeNode root) {
+    public int robRecursive(TreeNode root) {
         if (root == null) {
             return 0;
         }
@@ -45,7 +45,7 @@ public class HouseRobber3 {
     }
 
     // int[0] - rob, int[1] - dont rob
-    private int[] helper(BinaryTreeNode root) {
+    private int[] helper(TreeNode root) {
         if (root == null) {
             return new int[]{0, 0};
         }
@@ -61,7 +61,7 @@ public class HouseRobber3 {
         return result;
     }
 
-    private int[] helper2(BinaryTreeNode root) {
+    private int[] helper2(TreeNode root) {
         int rob = root.val, noRob = 0;
         if (root.left != null) {
             int[] left = helper2(root.left);

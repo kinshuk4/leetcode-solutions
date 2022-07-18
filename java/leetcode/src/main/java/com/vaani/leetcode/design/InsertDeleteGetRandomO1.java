@@ -124,7 +124,8 @@ public class InsertDeleteGetRandomO1 {
 		public int getRandom() {
     /*if(list.size() == 0) return 0;
     else if (list.size() == 1) return list.get(0);*/
-			return list.get(random.nextInt(list.size() - 1));
+//			return list.get(random.nextInt(list.size() - 1)); - doesnt work any more
+			 return list.get((int)(Math.random() * list.size()));
 		}
 	}
 

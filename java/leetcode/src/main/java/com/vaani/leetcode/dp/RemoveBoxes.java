@@ -1,31 +1,56 @@
 package com.vaani.leetcode.dp;
 
 /**
- * 28/05/2019 Given several boxes with different colors
- * represented by different positive numbers. You may experience several rounds to remove boxes
- * until there is no box left. Each time you can choose some continuous boxes with the same color
- * (composed of k boxes, k >= 1), remove them and get k*k points. Find the maximum points you can
- * get.
- *
- * <p>Example 1: Input:
- *
- * <p>[1, 3, 2, 2, 2, 3, 4, 3, 1] Output: 23 Explanation: [1, 3, 2, 2, 2, 3, 4, 3, 1] ----> [1, 3,
- * 3, 4, 3, 1] (3*3=9 points) ----> [1, 3, 3, 3, 1] (1*1=1 points) ----> [1, 1] (3*3=9 points) ---->
- * [] (2*2=4 points) Note: The number of boxes n would not exceed 100.
- *
- * <p>Solution O(N ^ 4) For each sub-array [l, r] make a dp cache and calculate maximum of [l, i][1]
- * + [i + 1, r][1] or maximum of [l + 1, i - 1][n] + [i, r][1] where boxes[l] == boxes[i] where n is
- * the count of repetitions
+ * https://leetcode.com/problems/remove-boxes/
+ * 546. Remove Boxes
+ * Hard
+ * <p>
+ * You are given several boxes with different colors represented by different positive numbers.
+ * <p>
+ * You may experience several rounds to remove boxes until there is no box left. Each time you can choose some continuous boxes with the same color (i.e., composed of k boxes, k >= 1), remove them and get k * k points.
+ * <p>
+ * Return the maximum points you can get.
+ * <p>
+ * <p>
+ * <p>
+ * Example 1:
+ * <p>
+ * Input: boxes = [1,3,2,2,2,3,4,3,1]
+ * Output: 23
+ * Explanation:
+ * [1, 3, 2, 2, 2, 3, 4, 3, 1]
+ * ----> [1, 3, 3, 4, 3, 1] (3*3=9 points)
+ * ----> [1, 3, 3, 3, 1] (1*1=1 points)
+ * ----> [1, 1] (3*3=9 points)
+ * ----> [] (2*2=4 points)
+ * Example 2:
+ * <p>
+ * Input: boxes = [1,1,1]
+ * Output: 9
+ * Example 3:
+ * <p>
+ * Input: boxes = [1]
+ * Output: 1
+ * <p>
+ * <p>
+ * Constraints:
+ * <p>
+ * 1 <= boxes.length <= 100
+ * 1 <= boxes[i] <= 100
  */
 public class RemoveBoxes {
 
-    int[][][] dp;
-
+    /**
+     * <p>Solution O(N ^ 4) For each sub-array [l, r] make a dp cache and calculate maximum of [l, i][1]
+     * + [i + 1, r][1] or maximum of [l + 1, i - 1][n] + [i, r][1] where boxes[l] == boxes[i] where n is
+     * the count of repetitions
+     */
     public static void main(String[] args) {
         int[] boxes = {3, 3, 3};
         System.out.println(new RemoveBoxes().removeBoxes(boxes));
     }
 
+    int[][][] dp;
     public int removeBoxes(int[] boxes) {
         dp = new int[boxes.length][boxes.length][boxes.length + 1];
         return calculate(0, boxes.length - 1, 1, boxes);

@@ -1,6 +1,6 @@
 package com.vaani.leetcode.tree;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +35,7 @@ Return:
 public class PathSum2 {
 
     public static void main(String[] args) {
-        BinaryTreeNode root = getABinaryTree1();
+        TreeNode root = getABinaryTree1();
 
         PathSum2 underTest = new PathSum2();
         for (List<Integer> path : underTest.pathSum(root, 22)) {
@@ -43,7 +43,7 @@ public class PathSum2 {
         }
     }
 
-    public List<List<Integer>> pathSum(BinaryTreeNode root, int sum) {
+    public List<List<Integer>> pathSum(TreeNode root, int sum) {
         List<List<Integer>> result = new ArrayList<>();
         List<Integer> single = new ArrayList<>();
         if (root == null) {
@@ -53,7 +53,7 @@ public class PathSum2 {
         return result;
     }
 
-    public void pathSum(BinaryTreeNode root, int sum, List<Integer> single, List<List<Integer>> result) {
+    public void pathSum(TreeNode root, int sum, List<Integer> single, List<List<Integer>> result) {
         single.add(root.val);
 
         // is Leaf Node
@@ -76,7 +76,7 @@ public class PathSum2 {
     }
 
 
-    public List<List<Integer>> pathSum2(BinaryTreeNode root, int sum) {
+    public List<List<Integer>> pathSum2(TreeNode root, int sum) {
         // IMPORTANT: Please reset any member data you declared, as
         // the same Solution instance will be reused for each test case.
         List<List<Integer>> result = new ArrayList<>();
@@ -87,7 +87,7 @@ public class PathSum2 {
         return result;
     }
 
-    public void helper2(BinaryTreeNode root, int curSum, int target, List<Integer> current, List<List<Integer>> result) {
+    public void helper2(TreeNode root, int curSum, int target, List<Integer> current, List<List<Integer>> result) {
         ArrayList<Integer> curList = new ArrayList<>(current);
         if (root == null) {
             return;

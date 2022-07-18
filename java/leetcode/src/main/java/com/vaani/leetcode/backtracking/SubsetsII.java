@@ -5,22 +5,33 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * 14/03/2017. Given a collection of integers that might contain
- * duplicates, nums, return all possible subsets.
- *
- * <p>Note: The solution set must not contain duplicate subsets.
- *
- * <p>For example, If nums = [1,2,2], a solution is:
- *
- * <p>[ [2], [1], [1,2,2], [2,2], [1,2], [] ]
+ * https://leetcode.com/problems/subsets-ii/
+ * 90. Subsets II
+ * Medium
+ * <p>
+ * Given an integer array nums that may contain duplicates, return all possible subsets (the power set).
+ * <p>
+ * The solution set must not contain duplicate subsets. Return the solution in any order.
+ * <p>
+ * <p>
+ * <p>
+ * Example 1:
+ * <p>
+ * Input: nums = [1,2,2]
+ * Output: [[],[1],[1,2],[1,2,2],[2],[2,2]]
+ * Example 2:
+ * <p>
+ * Input: nums = [0]
+ * Output: [[],[0]]
+ * <p>
+ * <p>
+ * Constraints:
+ * <p>
+ * 1 <= nums.length <= 10
+ * -10 <= nums[i] <= 10
  */
 public class SubsetsII {
-    /**
-     * Main method
-     *
-     * @param args
-     * @throws Exception
-     */
+
     public static void main(String[] args) throws Exception {
         int[] n = {1, 2, 3};
         List<List<Integer>> result = new SubsetsII().subsetsWithDup(n);

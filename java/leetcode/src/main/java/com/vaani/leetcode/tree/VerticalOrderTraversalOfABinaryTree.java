@@ -1,6 +1,7 @@
 package com.vaani.leetcode.tree;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
+import com.vaani.leetcode.design.SerializeDeserializeBinaryTree;
 
 import java.util.*;
 
@@ -48,8 +49,46 @@ import java.util.*;
  * Each node's value will be between 0 and 1000.
  */
 public class VerticalOrderTraversalOfABinaryTree {
+    public static void main(String[] args) {
+        UsingRecursionAndArray sol = new UsingRecursionAndArray();
+        SerializeDeserializeBinaryTree creator = new SerializeDeserializeBinaryTree();
+//        TreeNode root = creator.deserialize("3,9,#,#,20,15,#,#,7,#,#");
+        TreeNode root = creator.deserialize("1,9,#,#,20,15,#,#,7,#,#");
+        sol.verticalTraversal(root);
+    }
+    static class UsingRecursionAndArray {
+
+        public List<List<Integer>> verticalTraversal(TreeNode root) {
+            List<List<Integer>> ans = new ArrayList<List<Integer>>();
+            Map<Integer, List<Integer>> verticals = new HashMap<>();
+            int[] minmax = new int[]{0, 0};
+            traverse(root, verticals, 0, minmax);
+            for (int i = minmax[0]; i <= minmax[1]; i++) {
+                if (verticals.containsKey(i)) {
+                    ans.add(verticals.get(i));
+                }
+            }
+            return ans;
+        }
+
+        private void traverse(TreeNode node, Map<Integer, List<Integer>> verticals, int score, int[] minmax) {
+            verticals.putIfAbsent(score, new ArrayList<Integer>());
+            verticals.get(score).add(node.val);
+
+            minmax[0] = Math.min(minmax[0], score);
+            minmax[1] = Math.max(minmax[1], score);
+
+            if (node.left != null) {
+                traverse(node.left, verticals, score - 1, minmax);
+            }
+            if (node.right != null) {
+                traverse(node.right, verticals, score + 1, minmax);
+            }
+        }
+    }
+
     static class UsingTreeMap {
-        public static List<List<Integer>> verticalTraversal(BinaryTreeNode root) {
+        public static List<List<Integer>> verticalTraversal(TreeNode root) {
             if (root == null) {
                 return new LinkedList<>();
             }
@@ -58,7 +97,7 @@ public class VerticalOrderTraversalOfABinaryTree {
             Map<Integer, List<Integer>> map = new TreeMap<>();
             List<List<Integer>> result = new LinkedList<>();
 
-            Queue<BinaryTreeNode> queue = new LinkedList<>();
+            Queue<TreeNode> queue = new LinkedList<>();
             queue.add(root);
             Queue<Integer> distanceQueue = new LinkedList<>();
             distanceQueue.add(0);
@@ -76,7 +115,7 @@ public class VerticalOrderTraversalOfABinaryTree {
                 Map<Integer, List<Integer>> tmp = new HashMap<>();
 
                 while (size > 0) {
-                    BinaryTreeNode current = queue.poll();
+                    TreeNode current = queue.poll();
 
                     int currDistance = distanceQueue.poll();
 
@@ -118,10 +157,10 @@ public class VerticalOrderTraversalOfABinaryTree {
         int min = 0, max = 0;
         Map<Integer, List<Integer>> map = new HashMap();
 
-        public List<List<Integer>> verticalTraversal(BinaryTreeNode root) {
+        public List<List<Integer>> verticalTraversal(TreeNode root) {
             List<List<Integer>> res = new ArrayList();
             if (root == null) return res;
-            Queue<BinaryTreeNode> qt = new LinkedList();
+            Queue<TreeNode> qt = new LinkedList();
             Queue<Integer> qi = new LinkedList();
             qt.add(root);
             qi.add(0);//not root.val
@@ -129,7 +168,7 @@ public class VerticalOrderTraversalOfABinaryTree {
                 int size = qt.size();
                 Map<Integer, List<Integer>> tmp = new HashMap();
                 for (int i = 0; i < size; i++) {
-                    BinaryTreeNode cur = qt.poll();
+                    TreeNode cur = qt.poll();
                     int idx = qi.poll();
                     if (!tmp.containsKey(idx)) tmp.put(idx, new ArrayList<Integer>());
                     tmp.get(idx).add(cur.val);

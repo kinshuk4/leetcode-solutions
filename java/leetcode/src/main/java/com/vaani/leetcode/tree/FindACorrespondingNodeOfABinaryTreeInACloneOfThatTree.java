@@ -1,13 +1,13 @@
 package com.vaani.leetcode.tree;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 import java.util.*;
 
 public class FindACorrespondingNodeOfABinaryTreeInACloneOfThatTree {
-    public final BinaryTreeNode getTargetCopy(final BinaryTreeNode original, final BinaryTreeNode cloned, final BinaryTreeNode target) {
-        BinaryTreeNode curr = cloned;
-        Queue<BinaryTreeNode> queue = new LinkedList<>();
+    public final TreeNode getTargetCopy(final TreeNode original, final TreeNode cloned, final TreeNode target) {
+        TreeNode curr = cloned;
+        Queue<TreeNode> queue = new LinkedList<>();
         queue.add(curr);
         while (queue.size() > 0) {
             curr = queue.poll();

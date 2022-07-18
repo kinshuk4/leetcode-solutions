@@ -1,6 +1,6 @@
 package com.vaani.leetcode.tree;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 import java.util.*;
 
@@ -46,9 +46,9 @@ import java.util.*;
  * The values of the nodes in the tree are unique.
  */
 public class SmallestSubtreeWithAllTheDeepestNodes {
-    Map<BinaryTreeNode, Integer> map = new HashMap<>();
+    Map<TreeNode, Integer> map = new HashMap<>();
 
-    public BinaryTreeNode subtreeWithAllDeepest(BinaryTreeNode root) {
+    public TreeNode subtreeWithAllDeepest(TreeNode root) {
         if (root == null) {
             return null;
         }
@@ -65,7 +65,7 @@ public class SmallestSubtreeWithAllTheDeepestNodes {
         }
     }
 
-    private int depth(BinaryTreeNode root) {
+    private int depth(TreeNode root) {
         if (root == null) return 0;
 
         if (map.containsKey(root)) {

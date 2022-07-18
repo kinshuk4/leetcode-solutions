@@ -1,6 +1,6 @@
 package com.vaani.leetcode.tree;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 /**
  * 623. Add One Row to Tree
@@ -57,12 +57,12 @@ import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
  * The given binary tree has at least one tree node.
  */
 public class AddOneRowToTree {
-    public BinaryTreeNode addOneRow(BinaryTreeNode root, int v, int d) {
+    public TreeNode addOneRow(TreeNode root, int v, int d) {
         if (d == 1) {
-            return new BinaryTreeNode(v, root, null);
+            return new TreeNode(v, root, null);
         } else if (d == 2) {
-            root.left = new BinaryTreeNode(v, root.left, null);
-            root.right = new BinaryTreeNode(v, null, root.right);
+            root.left = new TreeNode(v, root.left, null);
+            root.right = new TreeNode(v, null, root.right);
         } else {
             if (root.left != null) {
                 addOneRow(root.left, v, d - 1);

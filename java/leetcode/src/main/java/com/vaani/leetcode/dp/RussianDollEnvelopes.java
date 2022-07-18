@@ -5,36 +5,55 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * 05/05/2019 You have a number of envelopes with widths and
- * heights given as a pair of integers (w, h). One envelope can fit into another if and only if both
- * the width and height of one envelope is greater than the width and height of the other envelope.
- *
- * <p>What is the maximum number of envelopes can you Russian doll? (put one inside other)
- *
- * <p>Note: Rotation is not allowed.
- *
- * <p>Example:
- *
- * <p>Input: [[5,4],[6,4],[6,7],[2,3]] Output: 3 Explanation: The maximum number of envelopes you
- * can Russian doll is 3 ([2,3] => [5,4] => [6,7]).
- *
- * <p>Solution: O(N ^ 2) Sort the envelopes based on increasing order of area and for each envelope
- * iterate through all the possible envelopes which are smaller than that the current envelope and
- * check the maximum possible envelopes which an be russian dolled.
+ * 354. Russian Doll Envelopes
+ * Hard
+ * <p>
+ * 1766
+ * <p>
+ * 53
+ * <p>
+ * Add to List
+ * <p>
+ * Share
+ * You are given a 2D array of integers envelopes where envelopes[i] = [wi, hi] represents the width and the height of an envelope.
+ * <p>
+ * One envelope can fit into another if and only if both the width and height of one envelope is greater than the width and height of the other envelope.
+ * <p>
+ * Return the maximum number of envelopes can you Russian doll (i.e., put one inside the other).
+ * <p>
+ * Note: You cannot rotate an envelope.
+ * <p>
+ * <p>
+ * <p>
+ * Example 1:
+ * <p>
+ * Input: envelopes = [[5,4],[6,4],[6,7],[2,3]]
+ * Output: 3
+ * Explanation: The maximum number of envelopes you can Russian doll is 3 ([2,3] => [5,4] => [6,7]).
+ * Example 2:
+ * <p>
+ * Input: envelopes = [[1,1],[1,1],[1,1]]
+ * Output: 1
+ * <p>
+ * <p>
+ * Constraints:
+ * <p>
+ * 1 <= envelopes.length <= 5000
+ * envelopes[i].length == 2
+ * 1 <= wi, hi <= 104
  */
 public class RussianDollEnvelopes {
-
-    /**
-     * Main method
-     *
-     * @param args
-     */
     public static void main(String[] args) {
         int[][] A = {{5, 4}, {6, 4}, {6, 7}, {2, 3}};
         System.out.println(new RussianDollEnvelopes().maxEnvelopes(A));
     }
 
-    class Envelope {
+    /**
+     * * <p>Solution: O(N ^ 2) Sort the envelopes based on increasing order of area and for each envelope
+     * * iterate through all the possible envelopes which are smaller than that the current envelope and
+     * * check the maximum possible envelopes which an be russian dolled.
+     */
+    static class Envelope {
         int l, b;
 
         Envelope(int l, int b) {
@@ -43,12 +62,10 @@ public class RussianDollEnvelopes {
         }
     }
 
-    /**
-     * @param envelopes
-     * @return
-     */
     public int maxEnvelopes(int[][] envelopes) {
-        if (envelopes.length == 0) return 0;
+        if (envelopes.length == 0) {
+            return 0;
+        }
         List<Envelope> list = new ArrayList<>();
         for (int[] row : envelopes) {
             list.add(new Envelope(row[0], row[1]));
@@ -65,10 +82,6 @@ public class RussianDollEnvelopes {
                 }
             }
         }
-        int ans = 1;
-        for (int i : DP) {
-            ans = Math.max(ans, i);
-        }
-        return ans;
+        return Arrays.stream(DP).max().getAsInt();
     }
 }

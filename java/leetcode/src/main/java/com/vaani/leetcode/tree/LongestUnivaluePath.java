@@ -1,6 +1,6 @@
 package com.vaani.leetcode.tree;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 /**
  * https://leetcode.com/problems/longest-univalue-path/
@@ -46,7 +46,7 @@ import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
 public class LongestUnivaluePath {
     int result = 0;
 
-    public int longestUnivaluePath(BinaryTreeNode root) {
+    public int longestUnivaluePath(TreeNode root) {
         if (root == null) {
             return 0;
         }
@@ -54,7 +54,7 @@ public class LongestUnivaluePath {
         return result;
     }
 
-    private int helper(BinaryTreeNode node) {
+    private int helper(TreeNode node) {
         if (node == null) {
             return 0;
         }

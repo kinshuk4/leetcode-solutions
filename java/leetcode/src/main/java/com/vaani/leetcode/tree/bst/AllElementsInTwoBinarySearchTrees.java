@@ -1,6 +1,6 @@
 package com.vaani.leetcode.tree.bst;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -51,7 +51,7 @@ public class AllElementsInTwoBinarySearchTrees {
     static class UsingInOrderAndMinHeap {
 
         // without stream = 37 ms
-        public List<Integer> getAllElements(BinaryTreeNode root1, BinaryTreeNode root2) {
+        public List<Integer> getAllElements(TreeNode root1, TreeNode root2) {
             if (root1 == null && root2 == null) {
                 return new ArrayList<>();
             }
@@ -68,7 +68,7 @@ public class AllElementsInTwoBinarySearchTrees {
         }
 
         // with stream = 41 ms
-        public List<Integer> getAllElements2(BinaryTreeNode root1, BinaryTreeNode root2) {
+        public List<Integer> getAllElements2(TreeNode root1, TreeNode root2) {
             if (root1 == null && root2 == null) {
                 return new ArrayList<>();
             }
@@ -79,7 +79,7 @@ public class AllElementsInTwoBinarySearchTrees {
             return Stream.generate(minHeap::poll).takeWhile(Objects::nonNull).collect(Collectors.toList());
         }
 
-        private void inOrder(BinaryTreeNode root, Queue<Integer> heap) {
+        private void inOrder(TreeNode root, Queue<Integer> heap) {
             if (root == null) {
                 return;
             }

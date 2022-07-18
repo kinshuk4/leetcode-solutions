@@ -1,35 +1,37 @@
 package com.vaani.leetcode.dp;
 
 /**
- * 01/08/2019 In the computer world, use restricted resource you
- * have to generate maximum benefit is what we always want to pursue.
- *
- * <p>For now, suppose you are a dominator of m 0s and n 1s respectively. On the other hand, there
- * is an array with strings consisting of only 0s and 1s.
- *
- * <p>Now your task is to find the maximum number of strings that you can form with given m 0s and n
- * 1s. Each 0 and 1 can be used at most once.
- *
- * <p>Note:
- *
- * <p>The given numbers of 0s and 1s will both not exceed 100 The size of given string array won't
- * exceed 600.
- *
- * <p>Example 1:
- *
- * <p>Input: Array = {"10", "0001", "111001", "1", "0"}, m = 5, n = 3 Output: 4
- *
- * <p>Explanation: This are totally 4 strings can be formed by the using of 5 0s and 3 1s, which are
- * “10,”0001”,”1”,”0”
- *
- * <p>Example 2:
- *
- * <p>Input: Array = {"10", "0", "1"}, m = 1, n = 1 Output: 2
- *
- * <p>Explanation: You could form "10", but then you'd have nothing left. Better form "0" and "1".
- *
- * <p>Solution: O(S x m x n) For every string array position we have two choices i. pick this value
- * or ii. not pick this value. Evaluate both these cases and cache the result in a dp array.
+ * 474. Ones and Zeroes
+ * Medium
+ * <p>
+ * You are given an array of binary strings strs and two integers m and n.
+ * <p>
+ * Return the size of the largest subset of strs such that there are at most m 0's and n 1's in the subset.
+ * <p>
+ * A set x is a subset of a set y if all elements of x are also elements of y.
+ * <p>
+ * <p>
+ * <p>
+ * Example 1:
+ * <p>
+ * Input: strs = ["10","0001","111001","1","0"], m = 5, n = 3
+ * Output: 4
+ * Explanation: The largest subset with at most 5 0's and 3 1's is {"10", "0001", "1", "0"}, so the answer is 4.
+ * Other valid but smaller subsets include {"0001", "1"} and {"10", "1", "0"}.
+ * {"111001"} is an invalid subset because it contains 4 1's, greater than the maximum of 3.
+ * Example 2:
+ * <p>
+ * Input: strs = ["10","0","1"], m = 1, n = 1
+ * Output: 2
+ * Explanation: The largest subset is {"0", "1"}, so the answer is 2.
+ * <p>
+ * <p>
+ * Constraints:
+ * <p>
+ * 1 <= strs.length <= 600
+ * 1 <= strs[i].length <= 100
+ * strs[i] consists only of digits '0' and '1'.
+ * 1 <= m, n <= 100
  */
 public class OnesAndZeroes {
     public static void main(String[] args) {
@@ -37,9 +39,14 @@ public class OnesAndZeroes {
         System.out.println(new OnesAndZeroes().findMaxForm(str, 1, 1));
     }
 
+    /**
+     * * <p>Solution: O(S x m x n) For every string array position we have two choices i. pick this value
+     * * or ii. not pick this value. Evaluate both these cases and cache the result in a dp array.
+     */
     public int findMaxForm(String[] strs, int m, int n) {
-        int[][][] dp = new int[strs.length + 1][m + 1][n + 1];
-        for (int i = strs.length - 1; i >= 0; i--) {
+        int l = strs.length;
+        int[][][] dp = new int[l + 1][m + 1][n + 1];
+        for (int i = l - 1; i >= 0; i--) {
             String string = strs[i];
             int zero = 0;
             int one = 0;
@@ -50,11 +57,11 @@ public class OnesAndZeroes {
                     one++;
                 }
             }
-            for (int p = m; p >= 0; p--) {
-                for (int q = n; q >= 0; q--) {
-                    dp[i][p][q] = dp[i + 1][p][q];
-                    if (p - zero >= 0 && q - one >= 0) {
-                        dp[i][p][q] = Math.max(dp[i][p][q], dp[i + 1][p - zero][q - one] + 1);
+            for (int j = m; j >= 0; j--) {
+                for (int k = n; k >= 0; k--) {
+                    dp[i][j][k] = dp[i + 1][j][k];
+                    if (j - zero >= 0 && k - one >= 0) {
+                        dp[i][j][k] = Math.max(dp[i][j][k], dp[i + 1][j - zero][k - one] + 1);
                     }
                 }
             }

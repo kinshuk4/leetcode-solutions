@@ -1,7 +1,7 @@
 package com.vaani.leetcode.tree;
 
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 /**
  * https://leetcode.com/problems/count-complete-tree-nodes/
@@ -29,12 +29,12 @@ public class CountCompleteTreeNodes {
     static class UsingDFS1 {
         int count = 0;
 
-        public int countNodes(BinaryTreeNode root) {
+        public int countNodes(TreeNode root) {
             if (root == null) {
                 return 0;
             }
             int height = 0;
-            BinaryTreeNode curr = root;
+            TreeNode curr = root;
             while (curr != null) {
                 curr = curr.left;
                 height++;
@@ -46,7 +46,7 @@ public class CountCompleteTreeNodes {
         }
 
 
-        private void helper(BinaryTreeNode root, int height, int curHeight) {
+        private void helper(TreeNode root, int height, int curHeight) {
             if (root == null) {
                 return;
             }
@@ -65,7 +65,7 @@ public class CountCompleteTreeNodes {
 
     static class UsingDiffHeight {
         // very inefficient as calculating height again and again
-        public int countNodes(BinaryTreeNode root) {
+        public int countNodes(TreeNode root) {
             int left = getLeftHeight(root);
             int right = getRightHeight(root);
             if (left == right) {
@@ -75,7 +75,7 @@ public class CountCompleteTreeNodes {
 
         }
 
-        private int getLeftHeight(BinaryTreeNode root) {
+        private int getLeftHeight(TreeNode root) {
             int height = 0;
             while (root != null) {
                 root = root.left;
@@ -84,7 +84,7 @@ public class CountCompleteTreeNodes {
             return height;
         }
 
-        private int getRightHeight(BinaryTreeNode root) {
+        private int getRightHeight(TreeNode root) {
             int height = 0;
             while (root != null) {
                 root = root.right;

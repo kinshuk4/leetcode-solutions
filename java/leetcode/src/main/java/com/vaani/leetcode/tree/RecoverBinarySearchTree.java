@@ -39,7 +39,7 @@ package com.vaani.leetcode.tree;
 
  */
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 /**
  * * <p>Solution: O(N) time and O(1) space. Step 1, perform a inorder traversal and mark left and
@@ -49,16 +49,16 @@ import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
 public class RecoverBinarySearchTree {
 
     public static void main(String[] args) throws Exception {
-        BinaryTreeNode root = new BinaryTreeNode(10);
-        root.left = new BinaryTreeNode(1);
-        root.left.left = new BinaryTreeNode(3);
-        root.left.left.left = new BinaryTreeNode(5);
+        TreeNode root = new TreeNode(10);
+        root.left = new TreeNode(1);
+        root.left.left = new TreeNode(3);
+        root.left.left.left = new TreeNode(5);
         new RecoverBinarySearchTree().recoverTree(root);
     }
 
     private boolean violation;
-    private BinaryTreeNode left, right, prev;
-    public void recoverTree(BinaryTreeNode root) {
+    private TreeNode left, right, prev;
+    public void recoverTree(TreeNode root) {
         inorder(root);
         if (left != null && right != null) {
             int temp = left.val;
@@ -67,7 +67,7 @@ public class RecoverBinarySearchTree {
         }
     }
 
-    private void inorder(BinaryTreeNode root) {
+    private void inorder(TreeNode root) {
         if (root != null) {
             inorder(root.left);
             if (prev != null) {

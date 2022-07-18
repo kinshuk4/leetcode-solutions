@@ -1,6 +1,6 @@
 package com.vaani.leetcode.tree;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 import org.junit.Assert;
 
 import java.util.ArrayList;
@@ -78,16 +78,16 @@ Explanation:The maximum width existing in the fourth level with the length 8 (6,
 public class MaximumWidthOfBinaryTree {
 
     public static void main(String[] args) {
-        BinaryTreeNode root = new BinaryTreeNode(1);
-        root.left = new BinaryTreeNode(3);
-        root.left.left = new BinaryTreeNode(5);
-        root.left.right = new BinaryTreeNode(3);
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(3);
+        root.left.left = new TreeNode(5);
+        root.left.right = new TreeNode(3);
 
         MaximumWidthOfBinaryTree underTest = new MaximumWidthOfBinaryTree();
         Assert.assertEquals(2, underTest.widthOfBinaryTree(root));
     }
 
-    public int widthOfBinaryTree(BinaryTreeNode root) {
+    public int widthOfBinaryTree(TreeNode root) {
         Map<Integer, List<Integer>> map = new HashMap<>();
         preOrder(root, 1, 1, map);
         int max = 0;
@@ -103,7 +103,7 @@ public class MaximumWidthOfBinaryTree {
         return max;
     }
 
-    private void preOrder(BinaryTreeNode node, int level, int pos, Map<Integer, List<Integer>> map) {
+    private void preOrder(TreeNode node, int level, int pos, Map<Integer, List<Integer>> map) {
         if (node != null) {
             map.putIfAbsent(level, new ArrayList<>());
             map.get(level).add(pos);
@@ -112,7 +112,7 @@ public class MaximumWidthOfBinaryTree {
         }
     }
 
-    private void inorder(BinaryTreeNode node, int level, int pos, Map<Integer, List<Integer>> map) {
+    private void inorder(TreeNode node, int level, int pos, Map<Integer, List<Integer>> map) {
         if (node != null) {
 
             inorder(node.left, level + 1, pos * 2, map);

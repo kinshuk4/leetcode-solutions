@@ -122,4 +122,66 @@ public class AlienDictionary {
         visited.remove(u);
         return true;
     }
+
+    static class AlienDictionary2 {
+        public String alienOrder(String[] words) {
+            Map<Character, List<Character>> graph = new HashMap<>();
+
+            for (int i = 0; i < words.length - 1; i++) {
+                String w1 = words[i];
+                String w2 = words[i + 1];
+                int minLen = Math.min(w1.length(), w2.length());
+                if (w1.length() > w2.length() && w1.substring(0, minLen) == w2.substring(0, minLen)) {
+                    return ""; //This shouldnt be happening as word1 is longer, have same prefix
+                    // so sorting order is wrong.
+                }
+                for (int j = 0; j < minLen; j++) {
+                    if (w1.charAt(j) != w2.charAt(j)) {
+                        graph.putIfAbsent(w1.charAt(j), new ArrayList<>());
+                        graph.get(w1.charAt(j)).add(w2.charAt(j));
+                        break;
+                    }
+                }
+            }
+
+            boolean[] A = new boolean[26];
+            for (String w : words) {
+                for (int i = 0, l = w.length(); i < l; i++) {
+                    A[w.charAt(i) - 'a'] = true;
+                }
+            }
+
+            Map<Character, Boolean> visited = new HashMap<>();
+            Stack<Character> toposort = new Stack<>();
+
+
+            for (char c : graph.keySet()) {
+                if(dfs(graph, c, visited, toposort)){
+                    return "";
+                }
+            }
+
+            StringBuilder sb = new StringBuilder();
+            while (!toposort.isEmpty()) {
+                sb.append(toposort.pop());
+            }
+
+            return sb.toString();
+        }
+
+        private boolean dfs(Map<Character, List<Character>> graph, char c, Map<Character, Boolean> visited, Stack<Character> toposort) {
+            if(visited.containsKey(c)){
+                return visited.get(c);
+            }
+            visited.put(c, true);
+            for (char nei : graph.get(c)) {
+                if(dfs(graph, nei, visited, toposort)){
+                    return true;
+                }
+            }
+            toposort.push(c);
+            visited.put(c, false);
+            return true;
+        }
+    }
 }

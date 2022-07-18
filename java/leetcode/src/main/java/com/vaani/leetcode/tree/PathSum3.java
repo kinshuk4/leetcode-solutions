@@ -1,6 +1,6 @@
 package com.vaani.leetcode.tree;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -51,11 +51,11 @@ public class PathSum3 {
     private int totalCount;
 
     public static void main(String[] args) throws Exception {
-        BinaryTreeNode node = getABinaryTree1();
+        TreeNode node = getABinaryTree1();
         System.out.println(new PathSum3().pathSum1(node, 0));
     }
 
-    public int pathSum1(BinaryTreeNode root, int sum) {
+    public int pathSum1(TreeNode root, int sum) {
         if (root == null) {
             return 0;
         }
@@ -63,7 +63,7 @@ public class PathSum3 {
         return findPathFromNode(root, sum) + pathSum1(root.left, sum) + pathSum1(root.right, sum);
     }
 
-    public int findPathFromNode(BinaryTreeNode root, int sum) {
+    public int findPathFromNode(TreeNode root, int sum) {
         int cnt = 0;
         if (root == null) {
             return cnt;
@@ -76,13 +76,13 @@ public class PathSum3 {
         return cnt;
     }
 
-    public int pathSum2(BinaryTreeNode root, int sum) {
+    public int pathSum2(TreeNode root, int sum) {
         if (root == null) return 0;
         dfs2(root, sum, 0);
         return totalCount;
     }
 
-    private void dfs2(BinaryTreeNode root, int target, int currSum) {
+    private void dfs2(TreeNode root, int target, int currSum) {
         if (root != null) {
             currSum += root.val;
             if (currSum == target) {

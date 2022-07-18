@@ -1,6 +1,6 @@
 package com.vaani.leetcode.design;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 import java.util.*;
 
@@ -38,13 +38,13 @@ public class SerializeAndDeserializeBST {
     private static final String NULL = "#";
 
     public static void main(String[] args) throws Exception {
-        BinaryTreeNode root = new BinaryTreeNode(1);
+        TreeNode root = new TreeNode(1);
         String serializedStr = new SerializeAndDeserializeBST().serialize(root);
-        BinaryTreeNode result = new SerializeAndDeserializeBST().deserialize(serializedStr);
+        TreeNode result = new SerializeAndDeserializeBST().deserialize(serializedStr);
     }
 
     // Encodes a tree to a single string.
-    public String serialize(BinaryTreeNode root) {
+    public String serialize(TreeNode root) {
         if (root == null) {
             return "";
         }
@@ -54,7 +54,7 @@ public class SerializeAndDeserializeBST {
     }
 
     // Decodes your encoded data to tree.
-    public BinaryTreeNode deserialize(String data) {
+    public TreeNode deserialize(String data) {
         String[] nodeValues = data.split(",");
         Queue<String> queue = new LinkedList<>();
         Collections.addAll(queue, nodeValues);
@@ -64,13 +64,13 @@ public class SerializeAndDeserializeBST {
 
     }
 
-    public BinaryTreeNode decode(Queue<String> queue) {
+    public TreeNode decode(Queue<String> queue) {
         while (!queue.isEmpty()) {
             String s = queue.poll();
             if (s.equals("")) {
                 return null;
             }
-            BinaryTreeNode root = new BinaryTreeNode(Integer.parseInt(s));
+            TreeNode root = new TreeNode(Integer.parseInt(s));
             root.left = decode(queue);
             root.right = decode(queue);
             return root;

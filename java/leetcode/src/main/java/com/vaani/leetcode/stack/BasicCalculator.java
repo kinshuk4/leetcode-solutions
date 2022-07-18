@@ -3,15 +3,41 @@ package com.vaani.leetcode.stack;
 import java.util.Stack;
 
 /**
- * Implement a basic calculator to evaluate a simple expression string.
- *
- * <p>The expression string may contain open ( and closing parentheses ), the plus + or minus sign
- * -, non-negative integers and empty spaces .
- *
- * <p>You may assume that the given expression is always valid.
- *
- * <p>Some examples: "1 + 1" = 2 " 2-1 + 2 " = 3 "(1+(4+5+2)-3)+(6+8)" = 23 Note: Do not use the
- * eval built-in library function.
+ * https://leetcode.com/problems/basic-calculator/
+ 224. Basic Calculator
+ Hard
+
+
+ Given a string s representing a valid expression, implement a basic calculator to evaluate it, and return the result of the evaluation.
+
+ Note: You are not allowed to use any built-in function which evaluates strings as mathematical expressions, such as eval().
+
+
+
+ Example 1:
+
+ Input: s = "1 + 1"
+ Output: 2
+ Example 2:
+
+ Input: s = " 2-1 + 2 "
+ Output: 3
+ Example 3:
+
+ Input: s = "(1+(4+5+2)-3)+(6+8)"
+ Output: 23
+
+
+ Constraints:
+
+ 1 <= s.length <= 3 * 10^5
+ s consists of digits, '+', '-', '(', ')', and ' '.
+ s represents a valid expression.
+ '+' is not used as a unary operation.
+ '-' could be used as a unary operation but it has to be inside parentheses.
+ There will be no two consecutive operators in the input.
+ Every number and running calculation will fit in a signed 32-bit integer.
+
  *
  */
 public class BasicCalculator {
@@ -34,10 +60,7 @@ public class BasicCalculator {
         s = "(" + s + ")";
         for (char ch : s.toCharArray()) {
             switch (ch) {
-                case ' ':
-                case '(':
-                case '+':
-                case '-':
+                case ' ', '(', '+', '-' -> {
                     if (!num.toString().equals("")) {
                         stack.push(num.toString());
                         num = new StringBuilder();
@@ -45,33 +68,36 @@ public class BasicCalculator {
                     if (ch != ' ') { // ignore blank
                         stack.push(String.valueOf(ch));
                     }
-                    break;
-                case ')':
+                }
+                case ')' -> {
                     if (!num.toString().equals("")) {
                         stack.push(num.toString());
                         num = new StringBuilder();
                     }
                     int sum = 0;
                     int prev = 0; // maintain a prev value inorder to handle minus '-'
+                    label:
                     while (!stack.isEmpty()) {
                         String top = stack.pop();
-                        if (top.equals("-")) {
-                            sum -= (prev * 2);
-                            prev = 0;
-                        } else if (top.equals("+")) {
-                            // ignore
-                        } else if (top.equals("(")) {
-                            stack.push(String.valueOf(sum));
-                            break;
-                        } else {
-                            sum += Integer.parseInt(top);
-                            prev = Integer.parseInt(top);
+                        switch (top) {
+                            case "-":
+                                sum -= (prev * 2);
+                                prev = 0;
+                                break;
+                            case "+":
+                                // ignore
+                                break;
+                            case "(":
+                                stack.push(String.valueOf(sum));
+                                break label;
+                            default:
+                                sum += Integer.parseInt(top);
+                                prev = Integer.parseInt(top);
+                                break;
                         }
                     }
-                    break;
-                default:
-                    num.append(ch);
-                    break;
+                }
+                default -> num.append(ch);
             }
         }
         return Integer.parseInt(stack.peek());

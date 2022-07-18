@@ -16,12 +16,16 @@ public class InterleavingString {
     }
 
     public boolean isInterleave(String s1, String s2, String s3) {
-        boolean[][] DP = new boolean[s1.length() + 1][s2.length() + 1];
+        int m = s1.length();
+        int n = s2.length();
+        boolean[][] DP = new boolean[m + 1][n + 1];
         DP[0][0] = true;
-        if (s3.length() != (s2.length() + s1.length())) return false;
-        for (int i = 0; i <= s1.length(); i++) {
-            for (int j = 0; j <= s2.length(); j++) {
-                if (i == 0 && j == 0) continue;
+        if (s3.length() != (n + m)) return false;
+        for (int i = 0; i <= m; i++) {
+            for (int j = 0; j <= n; j++) {
+                if (i == 0 && j == 0) {
+                    continue;
+                }
                 int index = (i + j);
                 if (j > 0) {
                     if (s3.charAt(index - 1) == s2.charAt(j - 1) && DP[i][j - 1]) {
@@ -35,6 +39,6 @@ public class InterleavingString {
                 }
             }
         }
-        return DP[s1.length()][s2.length()];
+        return DP[m][n];
     }
 }

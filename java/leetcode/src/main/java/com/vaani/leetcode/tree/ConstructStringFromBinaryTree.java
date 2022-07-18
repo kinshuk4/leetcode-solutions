@@ -1,6 +1,6 @@
 package com.vaani.leetcode.tree;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 /**
  * https://leetcode.com/problems/construct-string-from-binary-tree/
@@ -45,14 +45,14 @@ except we can't omit the first parenthesis pair to break the one-to-one mapping 
  */
 public class ConstructStringFromBinaryTree {
     public static void main(String[] args) throws Exception {
-        BinaryTreeNode t = new BinaryTreeNode(1);
-        t.left = new BinaryTreeNode(2);
-        t.left.left = new BinaryTreeNode(4);
-        t.right = new BinaryTreeNode(3);
+        TreeNode t = new TreeNode(1);
+        t.left = new TreeNode(2);
+        t.left.left = new TreeNode(4);
+        t.right = new TreeNode(3);
         System.out.println(new ConstructStringFromBinaryTree().tree2str(t));
     }
 
-    public String tree2str(BinaryTreeNode t) {
+    public String tree2str(TreeNode t) {
         if (t == null) {
             return "";
         }

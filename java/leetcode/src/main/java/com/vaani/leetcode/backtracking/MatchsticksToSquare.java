@@ -25,24 +25,20 @@ import java.util.Set;
  * array will not exceed 15.
  *
  * <p>Solution: O(2 ^ N): Generate a power set of all combination of numbers for the given array
-* which sum up to the length of a side of square. Now, to check if a square can be made using all
+ * which sum up to the length of a side of square. Now, to check if a square can be made using all
  * the sides sticks of different length, generate a hash for for each of the combination which was
  * generated in the previous step. The hash function should be such that it uses unique indexes of
  * each match stick. If 4 different hash values are formed using unique and all indices then a
  * square is possible.
  */
 public class MatchsticksToSquare {
-    /**
-     * Main method
-     *
-     * @param args
-     */
+
     public static void main(String[] args) {
         int[] A = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 6, 10, 10};
         System.out.println(new MatchsticksToSquare().makesquare(A));
     }
 
-    class Pair {
+    static class Pair {
         int value, i;
 
         Pair(int value, int i) {
@@ -51,18 +47,22 @@ public class MatchsticksToSquare {
         }
     }
 
-    public boolean makesquare(int[] nums) {
-        if (nums.length == 0) return false;
+    public boolean makesquare(int[] matchsticks) {
+        if (matchsticks.length == 0) {
+            return false;
+        }
         int sum = 0;
-        for (int n : nums) {
+        for (int n : matchsticks) {
             sum += n;
         }
         int side = sum / 4;
-        if ((sum % 4) != 0) return false;
-        List<List<Pair>> list = powerSet(nums, side);
+        if ((sum % 4) != 0) {
+            return false;
+        }
+        List<List<Pair>> list = powerSet(matchsticks, side);
         Set<Integer> hashIndex = new HashSet<>();
         int cons = 0;
-        for (int i = 0; i < nums.length; i++) {
+        for (int i = 0; i < matchsticks.length; i++) {
             cons |= (1 << i);
         }
         for (int i = 0; i < list.size(); i++) {
@@ -87,7 +87,9 @@ public class MatchsticksToSquare {
                 if (allUnique) {
                     hashIndex.add(hash);
                     int complement = ((~hash) & cons);
-                    if (hashIndex.contains(complement)) return true;
+                    if (hashIndex.contains(complement)) {
+                        return true;
+                    }
                 }
             }
         }

@@ -1,36 +1,38 @@
 package com.vaani.leetcode.dp;
 
 /**
- * 20/01/2018. In a 2D grid from (0, 0) to (N-1, N-1), every cell
- * contains a 1, except those cells in the given list mines which are 0. What is the largest
- * axis-aligned plus sign of 1s contained in the grid? Return the order of the plus sign. If there
- * is none, return 0.
+ * https://leetcode.com/problems/largest-plus-sign/
+ * 764. Largest Plus Sign
+ * Medium
+
+ * You are given an integer n. You have an n x n binary grid grid with all values initially 1's except for some indices given in the array mines. The ith element of the array mines is defined as mines[i] = [xi, yi] where grid[xi][yi] == 0.
  *
- * <p>An "axis-aligned plus sign of 1s of order k" has some center grid[x][y] = 1 along with 4 arms
- * of length k-1 going up, down, left, and right, and made of 1s. This is demonstrated in the
- * diagrams below. Note that there could be 0s or 1s beyond the arms of the plus sign, only the
- * relevant area of the plus sign is checked for 1s.
+ * Return the order of the largest axis-aligned plus sign of 1's contained in grid. If there is none, return 0.
  *
- * <p>Examples of Axis-Aligned Plus Signs of Order k:
+ * An axis-aligned plus sign of 1's of order k has some center grid[r][c] == 1 along with four arms of length k - 1 going up, down, left, and right, and made of 1's. Note that there could be 0's or 1's beyond the arms of the plus sign, only the relevant area of the plus sign is checked for 1's.
  *
- * <p>Order 1: 000 010 000
  *
- * <p>Order 2: 00000 00100 01110 00100 00000
  *
- * <p>Order 3: 0000000 0001000 0001000 0111110 0001000 0001000 0000000 Example 1:
+ * Example 1:
  *
- * <p>Input: N = 5, mines = [[4, 2]] Output: 2 Explanation: 11111 11111 11111 11111 11011 In the
- * above grid, the largest plus sign can only be order 2. One of them is marked in bold. Example 2:
  *
- * <p>Input: N = 2, mines = [] Output: 1 Explanation: There is no plus sign of order 2, but there is
- * of order 1. Example 3:
+ * Input: n = 5, mines = [[4,2]]
+ * Output: 2
+ * Explanation: In the above grid, the largest plus sign can only be of order 2. One of them is shown.
+ * Example 2:
  *
- * <p>Input: N = 1, mines = [[0, 0]] Output: 0 Explanation: There is no plus sign, so return 0.
- * Note:
  *
- * <p>N will be an integer in the range [1, 500]. mines will have length at most 5000. mines[i] will
- * be length 2 and consist of integers in the range [0, N-1]. (Additionally, programs submitted in
- * C, C++, or C# will be judged with a slightly smaller time limit.)
+ * Input: n = 1, mines = [[0,0]]
+ * Output: 0
+ * Explanation: There is no plus sign, so return 0.
+ *
+ *
+ * Constraints:
+ *
+ * 1 <= n <= 500
+ * 1 <= mines.length <= 5000
+ * 0 <= xi, yi < n
+ * All the pairs (xi, yi) are unique.
  *
  * <p>Solution O(N x N) for each cell containing 1 find the nearest cell containing 0 in both
  * vertical and horizontal direction - save this value in a 2d array for each cell. The answer is
@@ -38,20 +40,14 @@ package com.vaani.leetcode.dp;
  */
 public class LargestPlusSign {
 
-    /**
-     * Main method
-     *
-     * @param args
-     * @throws Exception
-     */
     public static void main(String[] args) throws Exception {
         int[][] M = {{4, 2}};
         System.out.println(new LargestPlusSign().orderOfLargestPlusSign(5, M));
     }
 
-    public int orderOfLargestPlusSign(int N, int[][] mines) {
-        int[][] A = new int[N][N]; // array to save the mines information.
-        int[][] B = new int[N][N]; // array to save the minimum distance to the cell containing 0
+    public int orderOfLargestPlusSign(int n, int[][] mines) {
+        int[][] A = new int[n][n]; // array to save the mines information.
+        int[][] B = new int[n][n]; // array to save the minimum distance to the cell containing 0
         for (int[] row : mines) {
             int r = row[0];
             int c = row[1];
@@ -67,7 +63,7 @@ public class LargestPlusSign {
                 B[i][j] = Integer.MAX_VALUE;
             }
         }
-        // For each rwo
+        // For each row
         for (int i = 0; i < A.length; i++) {
             int prev = 0;
             // forward direction
@@ -82,7 +78,7 @@ public class LargestPlusSign {
             }
             prev = 0;
             // backward direction
-            for (int j = N - 1; j >= 0; j--) {
+            for (int j = n - 1; j >= 0; j--) {
                 if (A[i][j] == 0) {
                     prev = 0;
                     B[i][j] = 0;
@@ -108,7 +104,7 @@ public class LargestPlusSign {
             }
             prev = 0;
             // upward direction
-            for (int i = N - 1; i >= 0; i--) {
+            for (int i = n - 1; i >= 0; i--) {
                 if (A[i][j] == 0) {
                     prev = 0;
                     B[i][j] = 0;
@@ -119,12 +115,12 @@ public class LargestPlusSign {
             }
         }
 
-        int result = 0;
-        for (int i = 0; i < B.length; i++) {
+        int ans = 0;
+        for (int[] b : B) {
             for (int j = 0; j < B[0].length; j++) {
-                result = Math.max(result, B[i][j]);
+                ans = Math.max(ans, b[j]);
             }
         }
-        return result;
+        return ans;
     }
 }

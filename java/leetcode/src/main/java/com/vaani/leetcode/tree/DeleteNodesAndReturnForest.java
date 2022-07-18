@@ -1,7 +1,7 @@
 package com.vaani.leetcode.tree;
 
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 import java.util.*;
 
@@ -26,11 +26,11 @@ public class DeleteNodesAndReturnForest {
 
     static class UsingDFSSimpler {
         // Time complexity - O(n), Space complexity - O (n + k), k num values in to_delete
-        public List<BinaryTreeNode> delNodes(BinaryTreeNode root, int[] to_delete) {
+        public List<TreeNode> delNodes(TreeNode root, int[] to_delete) {
             Set<Integer> toDeleteSet = new HashSet<>();
             Arrays.stream(to_delete).forEach(toDeleteSet::add);
 
-            List<BinaryTreeNode> remainingList = new LinkedList<>();
+            List<TreeNode> remainingList = new LinkedList<>();
 
             removeNodes(root, toDeleteSet, remainingList);
 
@@ -43,7 +43,7 @@ public class DeleteNodesAndReturnForest {
         }
 
         // process tree bottom up
-        private static BinaryTreeNode removeNodes(BinaryTreeNode root, Set<Integer> toDeleteSet, List<BinaryTreeNode> remainingList) {
+        private static TreeNode removeNodes(TreeNode root, Set<Integer> toDeleteSet, List<TreeNode> remainingList) {
             if (root == null) {
                 return null;
             }
@@ -68,11 +68,11 @@ public class DeleteNodesAndReturnForest {
 
     static class UsingDFS1 {
 
-        public List<BinaryTreeNode> delNodes(BinaryTreeNode root, int[] to_delete) {
+        public List<TreeNode> delNodes(TreeNode root, int[] to_delete) {
             Set<Integer> toDeleteSet = new HashSet<>();
             Arrays.stream(to_delete).forEach(toDeleteSet::add);
 
-            Set<BinaryTreeNode> remainingSet = Set.of(root);
+            Set<TreeNode> remainingSet = Set.of(root);
 
             removeNodes(root, toDeleteSet, remainingSet); //- slightly complicated, so simplified
 
@@ -80,7 +80,7 @@ public class DeleteNodesAndReturnForest {
         }
 
 
-        private static void removeNodes(BinaryTreeNode root, Set<Integer> toDeleteSet, Set<BinaryTreeNode> remainingSet) {
+        private static void removeNodes(TreeNode root, Set<Integer> toDeleteSet, Set<TreeNode> remainingSet) {
             if (root == null) {
                 return;
             }

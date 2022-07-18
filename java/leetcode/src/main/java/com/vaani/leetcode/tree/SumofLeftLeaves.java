@@ -1,6 +1,6 @@
 package com.vaani.leetcode.tree;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 /* https://leetcode.com/problems/sum-of-left-leaves/
 Find the sum of all left leaves in a given binary tree.
@@ -21,11 +21,11 @@ public class SumofLeftLeaves {
 
 
 
-    public int sumOfLeftLeaves1(BinaryTreeNode root) {
+    public int sumOfLeftLeaves1(TreeNode root) {
         return inorder(root, false);
     }
 
-    private int inorder(BinaryTreeNode node, boolean isLeft) {
+    private int inorder(TreeNode node, boolean isLeft) {
         if (node != null) {
             if (node.left == null && node.right == null) {
                 if (isLeft) {
@@ -37,7 +37,7 @@ public class SumofLeftLeaves {
         return 0;
     }
 
-    public int sumOfLeftLeaves2(BinaryTreeNode root) {
+    public int sumOfLeftLeaves2(TreeNode root) {
         if(root == null){
             return 0;
         }

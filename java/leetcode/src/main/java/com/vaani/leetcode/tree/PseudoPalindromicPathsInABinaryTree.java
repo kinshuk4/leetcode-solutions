@@ -1,6 +1,6 @@
 package com.vaani.leetcode.tree;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 import java.util.*;
 
@@ -41,11 +41,11 @@ import java.util.*;
  * Node values are digits from 1 to 9.
  */
 public class PseudoPalindromicPathsInABinaryTree {
-    public int pseudoPalindromicPaths(BinaryTreeNode root) {
+    public int pseudoPalindromicPaths(TreeNode root) {
         return dfs(root, new HashSet<>());
     }
 
-    public int dfs(BinaryTreeNode root, HashSet<Integer> set) {
+    public int dfs(TreeNode root, HashSet<Integer> set) {
         if (root == null) {
             return 0;
         }

@@ -1,6 +1,6 @@
 package com.vaani.leetcode.tree;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 /**
  * https://leetcode.com/problems/merge-two-binary-trees/
@@ -33,13 +33,13 @@ public class MergeTwoBinaryTree {
 
     }
 
-    public BinaryTreeNode mergeTreesRecursive(BinaryTreeNode t1, BinaryTreeNode t2) {
-        BinaryTreeNode t3 = mergeTreeHelper(t1, t2);
+    public TreeNode mergeTreesRecursive(TreeNode t1, TreeNode t2) {
+        TreeNode t3 = mergeTreeHelper(t1, t2);
         return t3;
     }
 
 
-    private BinaryTreeNode mergeTreeHelper(BinaryTreeNode t1, BinaryTreeNode t2) {
+    private TreeNode mergeTreeHelper(TreeNode t1, TreeNode t2) {
         if (t1 == null && t2 == null) {
             return null;
         } else if (t1 == null) {
@@ -47,7 +47,7 @@ public class MergeTwoBinaryTree {
         } else if (t2 == null) {
             return t1;
         } else {
-            BinaryTreeNode t3 = new BinaryTreeNode(t1.val + t2.val);
+            TreeNode t3 = new TreeNode(t1.val + t2.val);
             t3.left = mergeTreeHelper(t1.left, t2.left);
             t3.right = mergeTreeHelper(t1.right, t2.right);
             return t3;

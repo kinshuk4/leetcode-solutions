@@ -1,6 +1,6 @@
 package com.vaani.leetcode.tree;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 /**
  * https://leetcode.com/problems/delete-node-in-a-bst/
@@ -50,7 +50,7 @@ Another valid answer is [5,2,6,null,4,null,7].
 public class DeleteNodeInABST {
     static class Recursive {
         // delete node always return the root of the tree
-        public BinaryTreeNode deleteNode(BinaryTreeNode root, int key) {
+        public TreeNode deleteNode(TreeNode root, int key) {
             if (root == null) {
                 return null;
             }
@@ -76,7 +76,7 @@ public class DeleteNodeInABST {
             return root;
         }
 
-        private int findMinimumNode(BinaryTreeNode root) {
+        private int findMinimumNode(TreeNode root) {
             while (root.left != null) {
                 root = root.left;
             }
@@ -85,10 +85,10 @@ public class DeleteNodeInABST {
     }
 
     static class Iterative {
-        public BinaryTreeNode deleteNode(BinaryTreeNode root, int key) {
+        public TreeNode deleteNode(TreeNode root, int key) {
             if (root == null) return null;
-            BinaryTreeNode dNode = root;
-            BinaryTreeNode parentNode = null;
+            TreeNode dNode = root;
+            TreeNode parentNode = null;
             while (dNode != null && key != dNode.val) {
                 parentNode = dNode;
                 if (key > dNode.val) {
@@ -107,7 +107,7 @@ public class DeleteNodeInABST {
                 else
                     parentNode.right = null;
             } else if (dNode.left != null && dNode.right != null) {
-                BinaryTreeNode tmp = dNode.right; //find the leftmost node of the right subtree
+                TreeNode tmp = dNode.right; //find the leftmost node of the right subtree
                 parentNode = null;
                 while (tmp.left != null) {
                     parentNode = tmp;
@@ -124,12 +124,12 @@ public class DeleteNodeInABST {
                 }
             } else { // one child is null
                 if (dNode.left != null) {
-                    BinaryTreeNode tmp = dNode.left;
+                    TreeNode tmp = dNode.left;
                     dNode.val = tmp.val;
                     dNode.left = tmp.left;
                     dNode.right = tmp.right;
                 } else {
-                    BinaryTreeNode tmp = dNode.right;
+                    TreeNode tmp = dNode.right;
                     dNode.val = tmp.val;
                     dNode.left = tmp.left;
                     dNode.right = tmp.right;

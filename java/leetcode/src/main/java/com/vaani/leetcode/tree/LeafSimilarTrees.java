@@ -1,6 +1,6 @@
 package com.vaani.leetcode.tree;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +30,7 @@ public class LeafSimilarTrees {
     }
 
     static class UsingRecursion {
-        public boolean leafSimilar(BinaryTreeNode root1, BinaryTreeNode root2) {
+        public boolean leafSimilar(TreeNode root1, TreeNode root2) {
             List<Integer> list1 = new ArrayList<>();
             List<Integer> list2 = new ArrayList<>();
             preorder(root1, list1);
@@ -47,7 +47,7 @@ public class LeafSimilarTrees {
             return true;
         }
 
-        private void preorder(BinaryTreeNode root, List<Integer> list) {
+        private void preorder(TreeNode root, List<Integer> list) {
             if (root == null) {
                 return;
             }
@@ -62,12 +62,12 @@ public class LeafSimilarTrees {
     }
 
     static class UsingIteration {
-        public boolean leafSimilar(BinaryTreeNode root1, BinaryTreeNode root2) {
+        public boolean leafSimilar(TreeNode root1, TreeNode root2) {
             List<Integer> leaves1 = new ArrayList<>();
-            Stack<BinaryTreeNode> stack = new Stack<>();
+            Stack<TreeNode> stack = new Stack<>();
             stack.push(root1);
             while (!stack.isEmpty()) {
-                BinaryTreeNode node = stack.pop();
+                TreeNode node = stack.pop();
                 if (node.right != null) {
                     stack.push(node.right);
                 }
@@ -82,12 +82,12 @@ public class LeafSimilarTrees {
             return check(leaves1, root2);
         }
 
-        private boolean check(List<Integer> leaves1, BinaryTreeNode root2) {
-            Stack<BinaryTreeNode> stack = new Stack<>();
+        private boolean check(List<Integer> leaves1, TreeNode root2) {
+            Stack<TreeNode> stack = new Stack<>();
             stack.push(root2);
             int cur = 0;
             while (!stack.isEmpty()) {
-                BinaryTreeNode node = stack.pop();
+                TreeNode node = stack.pop();
                 if (node.right != null)
                     stack.push(node.right);
                 if (node.left != null)

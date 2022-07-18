@@ -1,6 +1,6 @@
 package com.vaani.leetcode.tree;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 import java.util.*;
 /*
@@ -33,7 +33,7 @@ Therefore, you need to return above trees' root in the form of a list.
 
 // https://leetcode.com/articles/find-duplicate-subtrees/#
 public class FindDuplicateSubtrees {
-    public List<BinaryTreeNode> findDuplicateSubtrees(BinaryTreeNode root) {
+    public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
 //        return new DFSSolution().findDuplicateSubtrees(root);
         return new CloneHashCodeSolution().findDuplicateSubtrees(root);
     }
@@ -65,7 +65,7 @@ public class FindDuplicateSubtrees {
             }
         }
 
-        public static BinaryTreeNodeHashed cloneTree(BinaryTreeNode root) {
+        public static BinaryTreeNodeHashed cloneTree(TreeNode root) {
             if (root == null) {return null;}
             BinaryTreeNodeHashed newNode = new BinaryTreeNodeHashed(root.val);
             newNode.left = cloneTree(root.left);
@@ -73,9 +73,9 @@ public class FindDuplicateSubtrees {
             return newNode;
         }
 
-        public static BinaryTreeNode cloneTreeBack(BinaryTreeNodeHashed root) {
+        public static TreeNode cloneTreeBack(BinaryTreeNodeHashed root) {
             if (root == null) {return null;}
-            BinaryTreeNode newNode = new BinaryTreeNode(root.val);
+            TreeNode newNode = new TreeNode(root.val);
             newNode.left = cloneTreeBack(root.left);
             newNode.right = cloneTreeBack(root.right);
             return newNode;
@@ -95,13 +95,13 @@ public class FindDuplicateSubtrees {
         }
 
 
-        public List<BinaryTreeNode> findDuplicateSubtrees(BinaryTreeNode root) {
+        public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
             BinaryTreeNodeHashed hashedRoot = cloneTree(root);
             Set<BinaryTreeNodeHashed> visited = new HashSet<>();
             Set<BinaryTreeNodeHashed> resultSet = new HashSet<>();
             inorderTraversalRecursiveHelper(hashedRoot, visited, resultSet);
 
-            List<BinaryTreeNode> result = new ArrayList<>();
+            List<TreeNode> result = new ArrayList<>();
             resultSet.forEach(x -> result.add(cloneTreeBack(x)));
             return result;
 
@@ -112,17 +112,17 @@ public class FindDuplicateSubtrees {
     // Fails with duplicates
     static class DFSSolution {
         private Map<String, Integer> count;
-        private List<BinaryTreeNode> ans;
+        private List<TreeNode> ans;
 
         // dfs
-        public List<BinaryTreeNode> findDuplicateSubtrees(BinaryTreeNode root) {
+        public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
             count = new HashMap<>();
             ans = new ArrayList<>();
             collect(root);
             return ans;
         }
 
-        public String collect(BinaryTreeNode node) {
+        public String collect(TreeNode node) {
             if (node == null) return "#";
             String serial = node.val + "," + collect(node.left) + "," + collect(node.right);
             count.put(serial, count.getOrDefault(serial, 0) + 1);
@@ -137,9 +137,9 @@ public class FindDuplicateSubtrees {
         int t;
         Map<String, Integer> trees;
         Map<Integer, Integer> count;
-        List<BinaryTreeNode> ans;
+        List<TreeNode> ans;
 
-        public List<BinaryTreeNode> findDuplicateSubtrees(BinaryTreeNode root) {
+        public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
             t = 1;
             trees = new HashMap<>();
             ans = new ArrayList<>();
@@ -147,7 +147,7 @@ public class FindDuplicateSubtrees {
             return ans;
         }
 
-        public int lookup(BinaryTreeNode node) {
+        public int lookup(TreeNode node) {
             if (node == null) return 0;
             String serial = node.val + "," + lookup(node.left) + "," + lookup(node.right);
             int uid = trees.computeIfAbsent(serial, x -> t++);

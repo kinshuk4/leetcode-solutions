@@ -1,6 +1,6 @@
 package com.vaani.leetcode.tree;
 
-import com.vaani.dsa.ds.core.tree.binarytree.simple.BinaryTreeNode;
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 
 /* https://leetcode.com/problems/binary-tree-longest-consecutive-sequence-ii/
 Given a binary tree, you need to find the length of Longest Consecutive Path in Binary Tree.
@@ -49,14 +49,14 @@ public class BinaryTreeLongestConsecutiveSequence2 {
     private int max = Integer.MIN_VALUE;
 
     public static void main(String[] args) throws Exception {
-        BinaryTreeNode root = new BinaryTreeNode(2);
-        root.left = new BinaryTreeNode(1);
+        TreeNode root = new TreeNode(2);
+        root.left = new TreeNode(1);
         // root.left.left = new TreeNode(4);
-        root.right = new BinaryTreeNode(3);
+        root.right = new TreeNode(3);
         System.out.println(new BinaryTreeLongestConsecutiveSequence2().longestConsecutive(root));
     }
 
-    public int longestConsecutive(BinaryTreeNode root) {
+    public int longestConsecutive(TreeNode root) {
         Node n = preorder(root);
         if (n != null) {
             max = Math.max(max, n.d);
@@ -69,7 +69,7 @@ public class BinaryTreeLongestConsecutiveSequence2 {
         return max;
     }
 
-    private Node preorder(BinaryTreeNode node) {
+    private Node preorder(TreeNode node) {
         if (node == null) return null;
         Node left = preorder(node.left);
         Node curr = new Node(1, 1, node.val);
