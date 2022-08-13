@@ -1,3 +1,6 @@
 [submodule "algorithms-java"]
 	path = java/algorithms-java
 	url = https://github.com/kinshuk4/algorithms-java.git
+[submodule "java/algorithms-java"]
+	path = java/algorithms-java
+	url = https://github.com/kinshuk4/algorithms-java.git
