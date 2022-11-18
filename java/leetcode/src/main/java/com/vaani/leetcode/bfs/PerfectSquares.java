@@ -1,4 +1,4 @@
-package com.vaani.leetcode.breadth_first_search;
+package com.vaani.leetcode.bfs;
 
 import static java.lang.Math.*;
 

@@ -1,6 +1,6 @@
 package com.vaani.leetcode.depth_first_search;
 
-import com.vaani.dsa.ds.core.graph.simple.UnweightedAdjListGraph;
+import com.vaani.dsa.ds.core.graph.simple.map.UnweightedAdjListGraph;
 
 import java.util.*;
 
