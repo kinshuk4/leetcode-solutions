@@ -2,6 +2,7 @@
 // so that it can pick up the tests
 // Also, to follow folder structure, we need to add `mod.rs` under that folder and import here
 mod n_sum;
+mod binary_search;
 fn main() {
     println!("नमस्ते leetcode");
 }
