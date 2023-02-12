@@ -1,4 +1,4 @@
-package com.vaani.leetcode.biweekly;
+package com.vaani.leetcode.contests.biweekly._95;
 
 import java.util.*;
 
