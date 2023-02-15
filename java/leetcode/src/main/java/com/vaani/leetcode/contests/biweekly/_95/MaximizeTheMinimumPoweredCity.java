@@ -1,4 +1,4 @@
-package com.vaani.leetcode.biweekly;
+package com.vaani.leetcode.contests.biweekly._95;
 
 import java.util.PriorityQueue;
 import java.util.*;
@@ -26,7 +26,7 @@ public class MaximizeTheMinimumPoweredCity {
         for (Map.Entry<Integer, Long> entry: power.entrySet()) {
             minHeap.add(entry);
         }
-
+        return -1L;
         
     }
 }
