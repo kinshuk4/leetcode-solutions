@@ -6,6 +6,8 @@ import java.util.*;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+
+//import static com.vaani.leetcode.bfs.WordLadderII.UsingBfsDfs1.graph;
 /**
  * There are n cities connected by m flights. Each flight starts from city u and arrives at v with a price w.
  * <p>
@@ -237,6 +239,104 @@ public class CheapestFlightsWithinKStops {
             for (int[] flight : flights) {
                 graph.get(flight[0]).add(new Pair(flight[1], flight[2]));
             }
+        }
+    }
+
+    static class UsingDFS2 {
+        public int findCheapestPrice(int n, int[][] flights, int src, int dst, int K) {
+            Map<Integer, List<int[]>> graph = buildGraph(n, flights);
+            boolean[] visited = new boolean[n];
+
+            // I am passing fare as array object as Java is pass by value
+            int[] fare = new int[1];
+            fare[0] = Integer.MAX_VALUE;
+
+            //find cheapest price with k stops(k + 1 flights)
+            dfs(graph, src, dst, K+1, fare, 0, visited);
+
+            return fare[0] == Integer.MAX_VALUE ? -1 : fare[0];
+        }
+
+        public Map<Integer, List<int[]>> buildGraph(int n, int[][] flights) {
+            Map<Integer, List<int[]>> graph = new HashMap<>();
+            for (int i = 0; i < n; i++) {
+                graph.put(i, new LinkedList<>());
+            }
+
+            for(int[] f:flights) {
+                // map.putIfAbsent(f[0],new ArrayList<>());
+                graph.get(f[0]).add(new int[]{f[1],f[2]});
+            }
+            return graph;
+        }
+
+        private void dfs(Map<Integer, List<int[]>> graph, int src, int dst, int K, int[] fare, int currentCost, boolean[] visited) {
+            if (K == 0) {
+                return;
+            }
+            if (src == dst) {
+                fare[0] = Math.min(fare[0], currentCost);
+                return;
+            }
+
+            visited[src] = true;
+
+            for (int[] e : graph.get(src)) {
+                int eVertex = e[0], eCost = e[1];
+                //Pruning, check the sum of current price and next cost.
+                if (!visited[eVertex] && currentCost + eCost <= fare[0]) {
+                    dfs(graph, eVertex, dst, K - 1, fare, currentCost + eCost, visited);
+                }
+            }
+
+            visited[src] = false;
+        }
+    }
+
+    static class UsingBFS2 {
+        public Map<Integer, List<int[]>> buildGraph(int n, int[][] flights) {
+            Map<Integer, List<int[]>> graph = new HashMap<>();
+            for (int i = 0; i < n; i++) {
+                graph.put(i, new LinkedList<>());
+            }
+
+            for(int[] f:flights) {
+                // map.putIfAbsent(f[0],new ArrayList<>());
+                graph.get(f[0]).add(new int[]{f[1],f[2]});
+            }
+            return graph;
+        }
+        public int findCheapestPrice(int n, int[][] flights, int src, int dst, int K) {
+            Map<Integer, List<int[] >> graph = buildGraph(n, flights);
+            int step = 0;
+
+            int[] minCost = new int[graph.size()];
+            Arrays.fill(minCost, Integer.MAX_VALUE);
+            minCost[src] = 0;
+
+            Deque<int[]> q = new ArrayDeque<>();
+            q.offer(new int[] {
+                    src, 0, 0
+            });
+
+            while (!q.isEmpty()) {
+                int[] current = q.removeFirst();
+                if (current[0] == dst) {
+                    minCost[dst] = Math.min(minCost[dst], current[1]);
+                    continue;
+                }
+                if (current[2] <= K) {
+                    for (int[] adjacent : graph.get(current[0])) {
+                        // we only need to add the adjacent node to the queue if we have found
+                        // a better path to it
+                        if (minCost[adjacent[0]] > current[1] + adjacent[1]) {
+                            minCost[adjacent[0]] = current[1] + adjacent[1];
+                            q.add(new int[]{adjacent[0], minCost[adjacent[0]], current[2] + 1});
+                        }
+                    }
+                }
+            }
+            return minCost[dst] == Integer.MAX_VALUE ? -1 : minCost[dst];
         }
     }
 
