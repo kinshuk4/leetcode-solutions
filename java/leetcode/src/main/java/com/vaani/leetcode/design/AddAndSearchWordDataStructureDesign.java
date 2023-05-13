@@ -40,7 +40,7 @@ public class AddAndSearchWordDataStructureDesign {
 
 
         public class WordDictionary {
-            private static class TrieNode {
+            private class TrieNode {
                 TrieNode[] children;
                 boolean isLeaf;
 
@@ -199,7 +199,7 @@ public class AddAndSearchWordDataStructureDesign {
 
     static class UsingTrieNodeWithChildrenAsMapAndLighterSearch {
         public class WordDictionary {
-            private static class TrieNode {
+            private class TrieNode {
                 public boolean isLeaf;
                 public Map<Character, TrieNode> children;
 
