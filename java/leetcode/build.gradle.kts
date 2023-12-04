@@ -3,11 +3,11 @@
  */
 
 plugins {
-    id("com.vaani.java-conventions")
+    `java-library`
 }
 
 dependencies {
-    api(project(":algorithms-java"))
+    implementation(project(":algorithms-java"))
     api(libs.commons.io.commons.io)
     api(libs.cglib.cglib)
     api(libs.org.apache.commons.commons.lang3)
@@ -16,7 +16,6 @@ dependencies {
     api(libs.org.projectlombok.lombok)
     api(libs.com.google.guava.guava)
     api(libs.org.mapdb.mapdb)
-    implementation(project(mapOf("path" to ":algorithms-java")))
     testImplementation(libs.org.junit.jupiter.junit.jupiter)
 }
 
