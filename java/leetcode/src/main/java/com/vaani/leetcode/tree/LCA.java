@@ -1,5 +1,5 @@
 package com.vaani.leetcode.tree;
-
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 /**
  * 21/03/2017. Given a binary tree, find the lowest common
  * ancestor (LCA) of two given nodes in the tree.
@@ -13,15 +13,6 @@ package com.vaani.leetcode.tree;
  * can be a descendant of itself according to the LCA definition.
  */
 public class LCA {
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 
     /**
      * Main method

@@ -1,5 +1,5 @@
 package com.vaani.leetcode.tree;
-
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 /**
  * 08/05/2017.
  *
@@ -26,19 +26,6 @@ public class LargestBSTSubtree {
             this.min = min;
             this.max = max;
             this.count = count;
-        }
-    }
-
-    /**
-     * TreeNode
-     */
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
         }
     }
 

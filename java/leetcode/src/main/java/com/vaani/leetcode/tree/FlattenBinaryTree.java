@@ -1,5 +1,5 @@
 package com.vaani.leetcode.tree;
-
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 /**
  * 04/07/2017. Given a binary tree, flatten it to a linked list
  * in-place.
@@ -27,16 +27,6 @@ public class FlattenBinaryTree {
         LinkNode(TreeNode head, TreeNode tail) {
             this.head = head;
             this.tail = tail;
-        }
-    }
-
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
         }
     }
 

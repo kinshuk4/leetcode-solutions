@@ -1,5 +1,5 @@
 package com.vaani.leetcode.tree;
-
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 /**
  * 17/02/2018. Given a binary tree with n nodes, your task is to
  * check if it's possible to partition the tree to two trees which have the equal sum of values
@@ -20,15 +20,6 @@ package com.vaani.leetcode.tree;
  * [-100000, 100000]. 1 <= n <= 10000
  */
 public class EqualTreePartition {
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 
     private long sum;
     private boolean possible = false;

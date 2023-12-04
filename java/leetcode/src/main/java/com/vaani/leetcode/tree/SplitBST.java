@@ -1,5 +1,5 @@
 package com.vaani.leetcode.tree;
-
+import com.vaani.dsa.ds.core.tree.binarytree.simple.TreeNode;
 /**
  * 01/05/2018. Given a Binary Search Tree (BST) with root node
  * root, and a target value V, split the tree into two subtrees where one subtree has nodes that are
@@ -33,15 +33,6 @@ package com.vaani.leetcode.tree;
  */
 public class SplitBST {
 
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 
     /**
      * Main method
