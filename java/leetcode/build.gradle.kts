@@ -16,6 +16,7 @@ dependencies {
     api(libs.org.projectlombok.lombok)
     api(libs.com.google.guava.guava)
     api(libs.org.mapdb.mapdb)
+    implementation(project(mapOf("path" to ":algorithms-java")))
     testImplementation(libs.org.junit.jupiter.junit.jupiter)
 }
 
