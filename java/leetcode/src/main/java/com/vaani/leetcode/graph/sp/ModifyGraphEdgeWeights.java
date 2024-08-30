@@ -16,8 +16,9 @@ public class ModifyGraphEdgeWeights {
 
         private static final int INF = Integer.MAX_VALUE;
         private int source;
-        Map<Integer, List<Edge>> graph;
+        private Map<Integer, List<Edge>> graph;
         private int[] dist;
+
 
         public int[][] modifiedGraphEdges(int n, int[][] edges, int source, int destination, int target) {
             this.source = source;
@@ -26,43 +27,41 @@ public class ModifyGraphEdgeWeights {
             this.dist = new int[n];
 
             runDijkstra();
+
             if (dist[destination] < target) {
                 return new int[0][0];
             } else if (dist[destination] == target) {
                 return fill(edges);
             }
 
-            boolean in = false;
             for (int[] edge : edges) {
                 if (edge[2] == -1) {
-                    in = true;
-
                     int u = edge[0];
                     int v = edge[1];
+                    int wt = 1;
+                    edge[2] = wt;
+
                     graph.putIfAbsent(u, new ArrayList<>());
                     graph.putIfAbsent(v, new ArrayList<>());
 
-                    graph.get(u).add(new Edge(v, 1));
-                    graph.get(v).add(new Edge(u, 1));
+                    graph.get(u).add(new Edge(v, wt));
+                    graph.get(v).add(new Edge(u, wt));
+
+                    // Recalculate shortest path
                     runDijkstra();
 
-                    if (dist[destination] <= target) {
-                        edge[2] = (int) ((long) target - (long) dist[destination] + 1);
-                    }
-
-                    if (edge[2] == -1) {
-                        edge[2] = 1;
+                    if (dist[destination] == target) {
+                        return fill(edges); // found the target
+                    } else if (dist[destination] < target) {
+                        edge[2] += target - dist[destination];
+                        updateGraph(u, v, edge[2]);
+                        return fill(edges);
                     }
 
                 }
             }
 
-            if (dist[destination] > target) {
-                return new int[0][0];
-            }
-
-
-            return !in ? new int[0][0] : edges;
+            return new int[0][0];
         }
 
         private Map<Integer, List<Edge>> buildGraph(int[][] edges) {
@@ -87,8 +86,7 @@ public class ModifyGraphEdgeWeights {
         private void runDijkstra() {
             Arrays.fill(dist, INF);
             dist[source] = 0;
-
-            PriorityQueue<Edge> pq = new PriorityQueue<>(Comparator.comparingInt(i -> i.wt));
+            PriorityQueue<Edge> pq  = new PriorityQueue<>(Comparator.comparingInt(i -> i.wt));
             pq.add(new Edge(source, 0));
 
             while (!pq.isEmpty()) {
@@ -111,6 +109,14 @@ public class ModifyGraphEdgeWeights {
                 }
             }
             return edges;
+        }
+
+
+        private void updateGraph(int u, int v, int wt) {
+            graph.get(u).removeIf(e -> e.node == v);
+            graph.get(v).removeIf(e -> e.node == u);
+            graph.get(u).add(new Edge(v, wt));
+            graph.get(v).add(new Edge(u, wt));
         }
     }
 }
